@@ -1,0 +1,5 @@
+C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\bin\Debug\BravoVetsDb.dacpac
+C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\bin\Debug\BravoVetsDb.dll
+C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\bin\Debug\BravoVetsDb.pdb
+C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\obj\Debug\BravoVetsDb.dll
+C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\obj\Debug\BravoVetsDb.pdb

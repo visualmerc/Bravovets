@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+@using bvResources = ProfSite.Resources.Resource
+
+@model BravoVets.DomainObject.VeterinarianFacility
+
+@Html.HiddenFor(model => model.VeterinarianFacilityId)
+
+@{
+    var vId = Model.VeterinarianFacilityId;
+    string selectedCountry = string.IsNullOrEmpty(Model.Country) ? "" : Model.Country;
+}
+
+@Html.HiddenFor(model => model.IsEditable)
+
+@if (!Model.IsEditable)
+{
+
+
+    <li class="white-trans-bg diagonal-bottom">
+        <address>
+            <strong>@Html.DisplayTextFor(model => model.FacilityName)</strong><br>
+            @Html.DisplayTextFor(model => model.StreetAddress1)<br>
+            @Html.DisplayTextFor(model => model.StreetAddress2)<br>
+            @Html.DisplayTextFor(model => model.City) @Html.DisplayTextFor(model => model.StateProvince), @Html.DisplayTextFor(model => model.Country) @Html.DisplayTextFor(model => model.PostalCode)<br>
+            <abbr title="Phone">P:</abbr> @Html.DisplayTextFor(model => model.PrimaryPhoneNumber) <a href="#"><img src="/Images/phone.png" /></a> <br>
+            <abbr title="Phone">P2:</abbr>@Html.DisplayTextFor(model => model.SecondaryPhoneNumber) <a href="#"><img src="/Images/phone.png" /></a><br>
+            <abbr title="Fax">F:</abbr>@Html.DisplayTextFor(model => model.FaxNumber) <br>
+            <abbr title="Email">E:</abbr><a href="mailto:@Html.DisplayTextFor(model => model.EmailAddress)">@Html.DisplayTextFor(model => model.EmailAddress)</a>
+        </address>
+        <a href="javascript:void(0)" id="facilityEditButton_@vId" class="btn btn-default" onclick="editFacility(@vId)">@bvResources.BravoVets_Profile_Edit</a>
+        <a href="javascript:void(0)" id="facilityDeleteButton_@vId" class="btn btn-default" onclick="deleteFacility(@vId)">@bvResources.BravoVets_Profile_Delete</a>
+    </li>
+
+}
+else
+{
+    string addEditLocation;
+
+    addEditLocation = Model.VeterinarianFacilityId > 0 ? 
+        bvResources.BravoVets_Profile_EditLocation : 
+        bvResources.BravoVets_Profile_AddLocation;
+
+    <h2>@addEditLocation</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="location-name">@bvResources.FacilityName</label>
+                @Html.TextBoxFor(model => model.FacilityName, new { @class = "form-control", @maxlength = "255" })
+                @Html.ValidationMessageFor(model => model.FacilityName)
+            </div>
+            <div class="form-group">
+                <label for="address">@bvResources.StreetAddress1</label>
+                @Html.TextBoxFor(model => model.StreetAddress1, new { @class = "form-control", @maxlength = "255" })
+                @Html.ValidationMessageFor(model => model.StreetAddress1)
+            </div>
+            <div class="form-group">
+                <label for="address">@bvResources.StreetAddress2</label>
+                @Html.TextBoxFor(model => model.StreetAddress2, new { @class = "form-control", @maxlength = "255" })
+                @Html.ValidationMessageFor(model => model.StreetAddress2)
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="city">@bvResources.City</label>
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control", @maxlength = "99" })
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+            <div class="form-group">
+                <label for="state">@bvResources.StateProvince</label>
+                @Html.TextBoxFor(model => model.StateProvince, new { @class = "form-control", @maxlength = "23" })
+                @Html.ValidationMessageFor(model => model.StateProvince)
+            </div>
+            <div class="form-group">
+                <label for="country">@bvResources.Country</label>
+                @Html.DropDownListFor(m => m.Country,
+                    new SelectList(@ViewBag.Countries, "CountryName",
+                        "CountryName", @selectedCountry), "Select, please", new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="postal-code">@bvResources.PostalCode</label>
+                @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control", @maxlength = "23" })
+                @Html.ValidationMessageFor(model => model.PostalCode)
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label for="primary-phone">@bvResources.PrimaryPhoneNumber</label>
+                @Html.TextBoxFor(model => model.PrimaryPhoneNumber, new { @class = "form-control", @maxlength = "23" })
+                @Html.ValidationMessageFor(model => model.PrimaryPhoneNumber)
+            </div>
+            <div class="form-group">
+                <label for="SecondaryPhoneNumber">@bvResources.SecondaryPhoneNumber</label>
+                @Html.TextBoxFor(model => model.SecondaryPhoneNumber, new { @class = "form-control", @maxlength = "23" })
+                @Html.ValidationMessageFor(model => model.SecondaryPhoneNumber)
+            </div>
+            <div class="form-group">
+                <label for="FaxNumber">@bvResources.FaxNumber</label>
+                @Html.TextBoxFor(model => model.FaxNumber, new { @class = "form-control", @maxlength = "23" })
+            </div>
+            <div class="form-group">
+                <label for="email">@bvResources.Email</label>
+                @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @maxlength = "127" })
+                @Html.ValidationMessageFor(model => model.EmailAddress)
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

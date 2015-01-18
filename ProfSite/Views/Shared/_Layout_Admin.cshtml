@@ -1,0 +1,67 @@
+﻿@using System.Threading
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bravovets</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Admin/Content/css")
+    @Styles.Render("~/Content/fileupload")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+
+<body>
+    @Html.Partial("HappyBrowser")
+
+    <div class="page-wrapper">
+        @Html.Partial("_Layout_Admin_Header")
+        <div class="page-content-wrapper">
+            <div class="circles-header"></div>
+
+            @RenderBody()
+
+        </div>
+    </div>
+    @Html.Partial("_Layout_Admin_Footer")
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+    @Scripts.Render("~/bundles/fileupload")
+    
+    @Scripts.Render("~/bundles/admin")
+    
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var newPostUrl = $(".new-post-url");
+            newPostUrl.each(function () {
+                var href = $(this).attr("href");
+                var newhref = href.format(new Date().getTimezoneOffset());
+                $(this).attr("href",newhref);
+            });
+
+
+        });
+
+    </script>
+    @RenderSection("scripts", required: false)
+    
+</body>
+
+</html>

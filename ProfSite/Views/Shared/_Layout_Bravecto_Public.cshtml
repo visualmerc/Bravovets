@@ -1,0 +1,51 @@
+﻿@using System.Threading
+@using System.Web.UI.WebControls
+@using bvResources = ProfSite.Resources.Resource
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>@(ViewBag.Title ?? bvResources.Shared_Layout_Bravecto_PublicBravovetsUx)</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="bravectopage">
+    @Html.Partial("HappyBrowser")
+
+
+    <div class="circles-header"></div>
+    @*<div class="page-wrapper">*@
+    @*<div class="page-content-wrapper">*@
+    <header class="navbar bv-nav" role="banner">
+        <div class="container">
+            <div class="row nav-wrapper">
+                <div class="col-sm-4">
+                    <div class="navbar-header">
+                        <a href="/bravecto" class="navbar-brand bravovets">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    @RenderBody()
+    @*</div>*@
+    @*</div>*@
+    @Html.Partial("_Layout_Bravecto_Footer")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

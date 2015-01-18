@@ -1,0 +1,5 @@
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainObject\bin\Debug\BravoVets.DomainObject.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainObject\bin\Debug\BravoVets.DomainObject.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainObject\obj\Debug\BravoVets.DomainObject.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainObject\obj\Debug\BravoVets.DomainObject.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainObject\obj\Debug\BravoVets.DomainObject.csprojResolveAssemblyReference.cache

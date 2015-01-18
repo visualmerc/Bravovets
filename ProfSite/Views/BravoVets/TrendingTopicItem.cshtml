@@ -1,0 +1,108 @@
+﻿@model  SyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+@if (string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <li class="panel-diagonalbottom">
+        <h3>@Model.Title</h3>
+        <hr class="plus diagonal">
+        <div class="content-img-text-wrapper">
+            <div class="content-text">
+                <p>@Model.ContentText</p>
+
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(Model.LinkUrl))
+        {
+            <div class="attachment-wrapper">
+                <h4>@bvResources.BravoVets_Attachments</h4>
+                <hr class="diagonal">
+                <ul>
+                    <li class="link">
+                        <a target="_blank" href="/syndicatedcontent/viewcontent/@Model.Id">@Model.LinkUrlName</a>
+
+                    </li>
+                </ul>
+            </div>
+        }
+        <hr class="diagonal">
+        <div class="content-item-footer">
+            <div class="footer-link-container">
+                @Html.Partial("SyndicatedContentShareLink", new SyndicatedShareLinkModel { SyndicatedContentId = Model.Id, ShowShare = true,EnableShare = Model.ShowShare })
+                @if (Model.Hidden)
+                {
+
+                    <a href="syndicatedContentId=@Model.Id" class="showHide show-item btn btn-link btn-hide">@bvResources.BravoVets_TrendingTopicItem_ShowItem</a>
+                }
+                else
+                {
+                    if (Model.IsFavorite)
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-removefavorite">@bvResources.BravoVets_ResourceTopicItem_RemoveAsFavorite</a>
+                    }
+                    else
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-addfavorite">@bvResources.BravoVets_ResourceTopicItem_MarkAsFavorite</a>
+                    }
+                    if (Model.ShowHidden)
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="showHide hide-item btn btn-link btn-hide">@bvResources.BravoVets_TrendingTopicItem_HideItem</a>
+                    }
+
+
+                }
+            </div>
+        </div>
+    </li>
+}
+else
+{
+    <li class="full-image panel-diagonalbottom">
+        <img src="@Model.ImageUrl" alt="@Model.ImageName" class="content-image" />
+        <h3>@Model.Title</h3>
+        <hr class="plus diagonal">
+        <div class="content-text">
+            <p>@Model.ContentText</p>
+
+        </div>
+        @if (!string.IsNullOrEmpty(Model.LinkUrl))
+        {
+            <div class="attachment-wrapper">
+                <h4>@bvResources.BravoVets_Attachments</h4>
+                <hr class="diagonal">
+                <ul>
+                    <li class="link">
+                        <a target="_blank" href="/syndicatedcontent/viewcontent/@Model.Id">@Model.LinkUrlName</a>
+
+                    </li>
+                </ul>
+            </div>
+        }
+        <hr class="diagonal">
+        <div class="content-item-footer">
+            <div class="footer-link-container">
+                @Html.Partial("SyndicatedContentShareLink", new SyndicatedShareLinkModel { SyndicatedContentId = Model.Id, ShowShare = true, EnableShare = Model.ShowShare })
+                @if (Model.Hidden)
+                {
+                    <a href="syndicatedContentId=@Model.Id" class="showHide show-item btn btn-link btn-hide">@bvResources.BravoVets_TrendingTopicItem_ShowItem</a>
+                }
+                else
+                {
+                    if (Model.IsFavorite)
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-removefavorite">@bvResources.BravoVets_ResourceTopicItem_RemoveAsFavorite</a>
+                    }
+                    else
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-addfavorite">@bvResources.BravoVets_ResourceTopicItem_MarkAsFavorite</a>
+                    }
+
+                    if (Model.ShowHidden)
+                    {
+                        <a href="syndicatedContentId=@Model.Id" class="showHide hide-item btn btn-link btn-hide">@bvResources.BravoVets_TrendingTopicItem_HideItem</a>
+                    }
+                }
+            </div>
+        </div>
+    </li>
+}

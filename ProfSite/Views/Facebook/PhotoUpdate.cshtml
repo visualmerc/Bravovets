@@ -1,0 +1,28 @@
+﻿@model  FacebookTimelinePost
+@using bvResources = ProfSite.Resources.Resource
+
+<li class="social-post" role="photo">
+    <div class="avatar-wrapper">
+        <img src="@Model.Avatar/" alt="@Model.Name" />
+    </div>
+    <div class="post-content">
+        <p class="person-name"><a target="_blank" href="https://www.facebook.com/profile.php?id=@Model.FromId">@Model.Name</a></p>
+        <p>@Model.Message</p>
+        <div class="share-wrapper">
+            @foreach (var photo in Model.Photos)
+            {
+                <div class="photo">
+                    @Html.Raw(photo)
+                </div>
+            }
+            <div class="caption">
+                @Model.Caption
+            </div>
+        </div>
+        @Html.Partial("Comments", Model)
+    </div>
+    <div class="social-feed-icons">
+        <a href="@Model.Id" class="btn-social fb-like-post" role="like" data-unliketext="@bvResources.Facebook_LinkUpdate_UnLikePost"><span>@bvResources.Facebook_LinkUpdate_LikePost</span></a>
+        @*<a href="#" class="btn-social" role="share"><span>Share This</span></a>*@
+    </div>
+</li>

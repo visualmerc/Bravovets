@@ -1,0 +1,56 @@
+﻿@using BravoVets.DomainObject.Enum
+@model ViewSyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+<div class="container bv-resources">
+    <div class="row">
+        <div class="resources col-sm-8 resources-container">
+            <h1 class="page-title">@bvResources.BravoVets_ResourceTopicsItems_BravectoResources</h1>
+            <div class="sort-nav-container">
+                <div class="sort-nav">
+                    <div class="sort-title">@bvResources.BravoVets_ResourceTopics_View</div>
+                    <ul class="resources-filterby nav nav-pills">
+                        <li class="active"><a href="filterBy=All">@bvResources.BravoVets_ResourceTopics_All</a></li>
+                        <li><a id="show-favorites-filter" href="filterBy=@ContentFilterEnum.Favorites">@bvResources.BravoVets_ResourceTopics_Favorites</a></li>
+                        <li><a id="show-hidden-filter" href="filterBy=@ContentFilterEnum.Hidden" class="@(Model.ShowHidden ? string.Empty : "hide")">@bvResources.BravoVets_TrendingTopics_Hidden</a></li>
+                    </ul>
+                </div>
+                <div class="resources-sortby sort-nav pull-right">
+                    <div class="sort-title">@bvResources.BravoVets_ResourceTopics_SortBy</div>
+                    <select id="sort-topic" class="customedropdown">
+                        <option value="@ContentSortEnum.ContentDate">@bvResources.BravoVets_ResourceTopics_Date</option>
+                        <option value="@ContentSortEnum.Topic">@bvResources.BravoVets_ResourceTopics_Topic</option>
+                        <option value="@ContentSortEnum.TotalViews">@bvResources.BravoVets_ResourceTopics_Views</option>
+                    </select>
+                </div>
+            </div>
+            @Html.Partial("ResourceTopicsItems", Model)
+        </div>
+        <div class="col-sm-4 additional-content-container">
+            <h2 class="sidebar-title">@bvResources.BravoVets_TrendingTopics_AdditionalResources</h2>
+            <div class="additional-content">
+                @Html.Action("SocialTips", "BravovetsWidgets")
+                @Html.Action("TrendingTopics", "BravoVetsWidgets")
+                @Html.Action("SocialActivity", "BravoVetsWidgets")
+            </div>
+        </div>
+    </div>
+</div>
+
+    @section Scripts {
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $(".resources").trendingTopics({
+                    sortByName: "div.resources-sortby",
+                    filterByName: "ul.resources-filterby",
+                    widgetListName: "ul.syndicatedcontent-resources",
+                    getUrl: "/ResourceTopicsItems"
+                });
+            });
+
+            $(".content-widget").find(".share").socialPostDialog({ "dialogType": "trendingtopics", "fileupload": false });
+
+        </script>
+    }

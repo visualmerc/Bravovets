@@ -1,0 +1,28 @@
+﻿@using bvResources = ProfSite.Resources.Resource
+<footer>
+    <div class="container">
+        <!-- TODO: Uncomment this when search is added to the site -->
+        <!-- <div id="footer-search" class="row search-wrapper visible-xs">
+            <div class="col-xs-12"><input type="text" placeholder="Search"></div>
+        </div> -->
+        <div class="row">
+            <div class="col-xs-12 footer-nav-wrapper">
+                <ul class="nav nav-pills">
+                    <li>
+                        <a @Resource.BravoVets_Footer_Target href="@Resource.Bravecto_Footer_Disclaimer">@bvResources.Shared_Layout_FooterDisclaimer</a>
+                    </li>
+                    <li>
+                        <a @Resource.BravoVets_Footer_Target href="@Resource.Bravecto_Footer_PrivacyPolicy">@bvResources.Shared_Layout_FooterPrivacyPolicy</a>
+                    </li>
+                    <li>
+                        <a href="/bravecto/sitemap">@bvResources.Shared_Layout_FooterSiteMap</a>
+                    </li>
+                    <li>
+                        <a href="~/LFW20/Pages/ManageProfile.aspx">@bvResources.Shared_Layout_FooterMSDUserProfile</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

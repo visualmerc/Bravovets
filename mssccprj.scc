@@ -1,0 +1,13 @@
+SCC = This is a Source Code Control file
+
+[BravoVets-deploy.sln]
+SCC_Aux_Path = "\\USDATA021\eBusiness\VSS"
+SCC_Project_Name = "$/NET projects/BravoVets", TOGVAAAA
+
+[BravoVets.sln]
+SCC_Aux_Path = "\\USDATA021\eBusiness\VSS"
+SCC_Project_Name = "$/NET projects/BravoVets", TOGVAAAA
+
+[ProfSiteUS.sln]
+SCC_Aux_Path = "\\USDATA021\eBusiness\VSS"
+SCC_Project_Name = "$/NET projects/BravoVets", TOGVAAAA

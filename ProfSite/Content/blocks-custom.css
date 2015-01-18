@@ -1,0 +1,13 @@
+article.nowireframe h2 { color: #666 !important; }
+
+article > header > a > h2 { text-transform: none; }
+
+section.viewport li { margin-left: auto; }
+
+#esb > section.notes.components > article.active > aside.notes { width: 270px; }
+
+section.variation { max-width: 600px; }
+
+#esb > section.notes > article > section.viewport { padding: 0px; }
+
+#esb:not(.fullscreen):before { display: none; }

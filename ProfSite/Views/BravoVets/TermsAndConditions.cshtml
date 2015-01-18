@@ -1,0 +1,156 @@
+﻿@using System.Threading
+@{ Layout = null; }
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bravovets</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+    
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+
+<body class="globalpage global-bg termspage">
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+        <header class="navbar bv-nav" role="banner">
+            <div class="container">
+                <div class="row nav-wrapper">
+                    <div class="col-sm-4">
+                        <div class="navbar-header">
+                            <a href="/bravecto" class="navbar-brand bravovets">
+                                <img src="/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper">
+            <div class="container terms-content">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6">
+                        <img src="/images/dog-face.png" alt="Dog Face" class="dogface-bg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Welcome!</h1>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <hr class="plus diagonal">
+                        <p>You want to build a powerful practice, and now you have the tools to do it. BravoVets gives you the resources and information that will keep you up to date on pertinent research, expand your social media and PR visibility, and create bonds with current and potential clients. BravoVets will make you an expert that pet owners count on.</p>
+                        <p>Getting started is simple. Just accept BravoVets Terms and Conditions and all these valuable resources are open to you.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="white-trans-bg">
+                            <h3 class="alt">Please Accept Terms and Conditions</h3>
+                            <p>
+                                These terms and conditions ("Terms of Service") govern your access to and use of Merck Animal Health’s products, software, services, and web site (collectively "Services"), and any and all information, text, graphics, photos or other materials uploaded, downloaded, or appearing on the Services (collectively "Content"). By accessing and using the Services, you are agreeing to be bound by these Terms of Service...
+                                <br>
+                                <button class="btn btn-link" data-toggle="modal" data-target="#termsModal">Read All</button>
+                            </p>
+                            @Html.ActionLink("I Accept", "AcceptTermsAndConditions", "Facebook", new { @class = "btn btn-primary" })
+                            <a href="/bravecto" class="btn btn-default">Bravecto Homepage</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row hidden-xs">
+                    <div class="col-sm-4"><hr class="diagonal shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-bravecto-header-lg.jpg" alt="New Business">
+                                <h2>Bravecto Resources</h2>
+                            </div>
+                            <p>When it comes to an innovative product like Bravecto, there is always something new to learn and pass on to your clients. Use this tool to stay current on the latest information on veterinary pharmaceuticals and advances in preserving and improving pet health and well-being. </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-trendingTopics-header-lg.jpg" alt="New Business">
+                                <h2>Trending Topics</h2>
+                            </div>
+                            <p>This is where you can keep up with the hot news of the day in veterinary care. We’ll showcase topics that opinion makers in your business are discussing right now, so you can make it part of your social media conversation.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-socialTips-header-lg.jpg" alt="New Business">
+                                <h2>Social Tips</h2>
+                            </div>
+                            <p>If you haven’t established a social media presence for your practice yet, you’re in for a treat. With these tips, you’ll not only grow your business and strengthen relationships with your current clients, you’ll gain new and exciting prospects that wouldn’t have been possible before.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="alternate">Terms and Conditions</h1>
+                            <hr class="plus diagonal">
+                            <p>These terms and conditions ("Terms of Service") govern your access to and use of Merck Animal Health’s products, software, services, and web site (collectively "Services"), and any and all information, text, graphics, photos or other materials uploaded, downloaded, or appearing on the Services (collectively "Content"). By accessing and using the Services, you are agreeing to be bound by these Terms of Service. If you do not agree to be bound by these Terms of Service, you are not allowed to use the Services. Wherever used in these Terms of Service, "you", "your" or similar terms mean the person or legal entity utilizing or accessing the Services.</p>
+                            <p>Merck Animal Health may update and change these Terms of Service from time to time without notice. Continued use of the Service after any such changes shall constitute your consent to such changes. You are responsible for regularly reviewing the most current version of the Terms of Service.</p>
+                            <p>These Terms of Service include Merck Animal Health’s privacy policy which is currently available at: http://www.merck-animal-health-usa.com/privacy_policy.aspx. By accessing and using the Services you are consenting to (or promising that you have obtained appropriate consent for) the collection and use of personal information by Merck Animal Health in accordance with Merck Animal Health's privacy policy.</p>
+                            <p>You are responsible for your use of the Services and for any Content accessed or made available to others through your use of tools provided via the Services (even if that Content is accessed or made available by others). You take all risks associated with your use of the Services and any Content accessed or made available to others through your activities. Neither Merck Animal Health nor any of its affiliates, agents or employees will be held responsible for your use of the Services or for any such Content.</p>
+                            <p>To access or use the Services, you must agree to abide by these Terms of Service, and you must not be prohibited from receiving or using the Services under any applicable laws.</p>
+                            <p>Merck Animal Health may change the Services or stop providing them (temporarily or permanently) at any time and from time to time without notice.</p>
+                            <p>You acknowledge that the Services allow you to access and use content and services offered by third party service providers (e.g., Twitter, Facebook) ("Third Party Service Providers"). You must agree to comply with the relevant terms and conditions of any such Third Party Service Provider.</p>
+                            <p>Your access to and use of the Services must be in accordance with these Terms of Service and the terms and conditions of any Third Party Service Providers. If you violate these Terms of Service or the terms and conditions of any Third Party Service Provider, you are no longer permitted to use the Services and Merck Animal Health may (but has no obligation to) terminate your ability to access or use the Services at any time.</p>
+                            <p>You may not use the Services for any illegal or unauthorized purpose, including in any way that violates copyright or other applicable laws.</p>
+                            <p>You may not, without Merck Animal Health’s prior written permission (including the permissions granted by these Terms of Service): (a) copy, distribute (including by framing any of the Services on any web site), modify, enhance, translate, reproduce, sell, resell, sublicense, rent, lease, or otherwise attempt to exploit the Services; (b) decompile, disassemble, reverse engineer, or otherwise attempt to discover the source code (except to the extent that this restriction is expressly prohibited by law); (c) make derivative works of the Services; or (d) modify another website so as to falsely imply that it is associated with the Services or Merck Animal Health.</p>
+                            <p><strong>THE SERVICES ARE PROVIDED "AS IS", "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTIES, REPRESENTATIONS OR CONDITIONS OF ANY KIND. USE OF THE SERVICES IS ENTIRELY AT YOUR OWN RISK. MERCK ANIMAL HEALTH DOES NOT MAKE ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS ABOUT THE QUALITY, ACCURACY, SECURITY, RELIABILITY, COMPLETENESS, QUIET ENJOYMENT, CURRENCY, OR TIMELINESS OF THE SERVICES. MERCK ANIMAL HEALTH DOES NOT ASSUME ANY RESPONSIBILITY FOR ANY INCOMPLETENESS, ERRORS, SECURITY, VIRUSES, BUGS, PROBLEMS, OMISSIONS, INACCURACIES OR OTHER LIMITATIONS IN, OR INTERRUPTIONS IN THE OPERATION OF, THE SERVICES.</strong></p>
+                            <p><strong>YOU AGREE TO DEFEND, INDEMNIFY AND HOLD HARMLESS MERCK ANIMAL HEALTH, ITS AFFILIATES, AND ITS AND THEIR AGENTS AND EMPLOYEES FROM ANY AND ALL DIRECT AND INDIRECT CLAIMS ARISING FROM OR RELATED TO YOUR USE OF THE SERVICES AND CONTENT.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Layout_Bravecto_Footer");
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+
+
+
+</body>
+
+</html>

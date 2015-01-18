@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9721058F-D59C-4F04-B181-3BA5DB977271}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProfSite</RootNamespace>
+    <AssemblyName>ProfSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\lib\lfw\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=15c85baf291034f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.Client">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OAuth2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth2.ClientAuthorization">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OAuth2.ClientAuthorization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenIdOAuth">
+      <HintPath>..\lib\lfw\DotNetOpenAuth.OpenIdOAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LFW20.ASPNET.WebForms.Module.Template">
+      <HintPath>..\lib\lfw\LFW20.ASPNET.WebForms.Module.Template.dll</HintPath>
+    </Reference>
+    <Reference Include="LFW20.FrontEnd">
+      <HintPath>..\lib\lfw\LFW20.FrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="LFW20.XML">
+      <HintPath>..\lib\lfw\LFW20.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\lfw\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.Security.LFW20.HttpModule.FrontEnd, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.Security.LFW20.HttpModule.FrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.Security.LFW20.HttpModule.FrontEnd.Mock, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.Security.LFW20.HttpModule.FrontEnd.Mock.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.Security.LFW20.HttpModule.FrontEnd.MVC, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.Security.LFW20.HttpModule.FrontEnd.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.Security.LFW20.Interfaces, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.Security.LFW20.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.Security.LFW20.Utilities">
+      <HintPath>..\lib\lfw\Merck.Security.LFW20.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.WebTooling.HttpModules.LFW20.Frontend, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.WebTooling.HttpModules.LFW20.Frontend.dll</HintPath>
+    </Reference>
+    <Reference Include="Merck.WebTooling.HttpModules.LFW20.MVC, Version=1.3.2.0, Culture=neutral, PublicKeyToken=cf74eae0d6c1f324, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\lfw\Merck.WebTooling.HttpModules.LFW20.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SecureBinaries">
+      <HintPath>..\lib\lfw\SecureBinaries.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Auth\BravoVetsAuthManager.cs" />
+    <Compile Include="Auth\BravoVetsClaimsAuthorizationManager.cs" />
+    <Compile Include="Auth\BravoVetsTestableAuthManager.cs" />
+    <Compile Include="Auth\BravoVetsFilter.cs" />
+    <Compile Include="Auth\IBravoVetsAuthManager.cs" />
+    <Compile Include="Controllers\AbstractBaseController.cs" />
+    <Compile Include="Controllers\AbstractBaseSocialController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BravectoController.cs" />
+    <Compile Include="Controllers\BravovetsController.cs" />
+    <Compile Include="Controllers\BravovetsWidgetsController.cs" />
+    <Compile Include="Controllers\FacebookController.cs" />
+    <Compile Include="Controllers\FooterController.cs" />
+    <Compile Include="Controllers\ScheduledJobController.cs" />
+    <Compile Include="Controllers\ShareSocialContentController.cs" />
+    <Compile Include="Controllers\SyndicatedContentController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\GlobalizationViewEngine.cs" />
+    <Compile Include="Infrastructure\LanguageRoute.cs" />
+    <Compile Include="Models\AdminManagePostsModel.cs" />
+    <Compile Include="Models\FacebookResponseModel.cs" />
+    <Compile Include="Models\FacebookTimeline.cs" />
+    <Compile Include="Models\ShowSocialDialogModel.cs" />
+    <Compile Include="Models\SocialCalendarPostsModel.cs" />
+    <Compile Include="Models\SocialIntegrationModel.cs" />
+    <Compile Include="Models\SyndicatedContentLinkModel.cs" />
+    <Compile Include="Models\SyndicatedContentWidgetModel.cs" />
+    <Compile Include="Models\SyndicatedShareLinkModel.cs" />
+    <Compile Include="Models\TrendingTopicsMarkFavoriteModel.cs" />
+    <Compile Include="Models\TrendingTopicsModel.cs" />
+    <Compile Include="Models\TweetModel.cs" />
+    <Compile Include="Models\TwitterAccess.cs" />
+    <Compile Include="Models\TwitterResponseModel.cs" />
+    <Compile Include="Models\ViewDataUploadFilesResult.cs" />
+    <Compile Include="Utils\MultipartWriter.cs" />
+    <Compile Include="Utils\QueueContentHelper.cs" />
+    <Compile Include="Utils\TwitterHelper.cs" />
+    <Compile Include="Models\ExampleModel.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\SupportedCountry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Models\FacebookCodeExchange.cs" />
+    <Compile Include="Utils\FacebookHelper.cs" />
+    <Compile Include="Utils\LanguageHelper.cs" />
+    <Compile Include="Utils\WebRequestHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AntiXssLibrary.dll" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\de\ProfSite.resources.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth2.Client.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth2.ClientAuthorization.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth2.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenIdOAuth.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\es\ProfSite.resources.dll" />
+    <Content Include="bin\fr\ProfSite.resources.dll" />
+    <Content Include="bin\it\ProfSite.resources.dll" />
+    <Content Include="bin\LFW20.ASPNET.WebForms.Module.Template.dll" />
+    <Content Include="bin\LFW20.FrontEnd.dll" />
+    <Content Include="bin\LFW20.XML.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Merck.Security.LFW20.ExternalLogin.dll" />
+    <Content Include="bin\Merck.Security.LFW20.HttpModule.FrontEnd.dll" />
+    <Content Include="bin\Merck.Security.LFW20.HttpModule.FrontEnd.Mock.dll" />
+    <Content Include="bin\Merck.Security.LFW20.HttpModule.FrontEnd.MVC.dll" />
+    <Content Include="bin\Merck.Security.LFW20.Interfaces.dll" />
+    <Content Include="bin\Merck.Security.LFW20.Utilities.dll" />
+    <Content Include="bin\Merck.WebTooling.HttpModules.LFW20.Frontend.dll" />
+    <Content Include="bin\Merck.WebTooling.HttpModules.LFW20.MVC.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.Contracts.dll" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Mono.Math.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\nl\ProfSite.resources.dll" />
+    <Content Include="bin\Org.Mentalis.Security.Cryptography.dll" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\ProfSite.dll" />
+    <Content Include="bin\ProfSite.pdb" />
+    <Content Include="bin\SecureBinaries.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="components\customdropdown.html" />
+    <Content Include="components\datepicker.html" />
+    <Content Include="components\feeditem.html" />
+    <Content Include="components\js\customdropdown.js" />
+    <Content Include="components\js\datepicker.js" />
+    <Content Include="components\js\feeditem.js" />
+    <Content Include="components\js\loadindicator.js" />
+    <Content Include="components\js\socialcalendar.js" />
+    <Content Include="components\js\socialpost.js" />
+    <Content Include="components\js\timepicker.js" />
+    <Content Include="components\js\tweetlength.js" />
+    <Content Include="components\js\userprofile.js" />
+    <Content Include="components\loadingindicator.html" />
+    <Content Include="components\socialcalendar.html" />
+    <Content Include="components\timepicker.html" />
+    <Content Include="components\userprofile.html" />
+    <Content Include="Content\admin.css" />
+    <Content Include="Content\blocks-custom.css" />
+    <Content Include="Content\calendartemplate\day.html" />
+    <Content Include="Content\fileupload\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\fileupload\jquery.fileupload-ui.css" />
+    <Content Include="Content\calendartemplate\events-list.html" />
+    <Content Include="Content\calendartemplate\modal.html" />
+    <Content Include="Content\calendartemplate\month-day.html" />
+    <Content Include="Content\calendartemplate\month.html" />
+    <Content Include="Content\calendartemplate\week-days.html" />
+    <Content Include="Content\calendartemplate\week.html" />
+    <Content Include="Content\calendartemplate\year-month.html" />
+    <Content Include="Content\calendartemplate\year.html" />
+    <Content Include="Content\fonts\bravoicons.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\rotis_sansserif_std_light.svg" />
+    <Content Include="Content\img\generalFile.png" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\main2.css" />
+    <Content Include="Content\modal_bullet_format.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\admin_close_button.png" />
+    <Content Include="Images\ajax-loader-blue.gif" />
+    <Content Include="Images\ajax-loader-green.gif" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\arrow-down%402x.png" />
+    <Content Include="Images\arrow-down-active%402x.png" />
+    <Content Include="Images\arrow-down-active.png" />
+    <Content Include="Images\arrow-down.png" />
+    <Content Include="Images\arrow-dropdown.png" />
+    <Content Include="Images\arrow-slider-left.png" />
+    <Content Include="Images\arrow-slider-right.png" />
+    <Content Include="Images\arrow2-slider-left.png" />
+    <Content Include="Images\arrow2-slider-right.png" />
+    <Content Include="Images\arrow3-slider-left.png" />
+    <Content Include="Images\arrow3-slider-right.png" />
+    <Content Include="Images\bg-chart-footer.png" />
+    <Content Include="Images\bg-main.jpg" />
+    <Content Include="Images\bkg-bv-clouds.png" />
+    <Content Include="Images\bkg-clouds.jpg" />
+    <Content Include="Images\bkg-page-blur.jpg" />
+    <Content Include="Images\bkg-superdog-clouds.png" />
+    <Content Include="Images\bkg-superdog-clouds2.png" />
+    <Content Include="Images\bkg-superdog.jpg" />
+    <Content Include="Images\bkg-superdog.png" />
+    <Content Include="Images\bkg-WorldMap.png" />
+    <Content Include="Images\bravo-bravectoRes-noImage.jpg" />
+    <Content Include="Images\bravo-social-noImage.jpg" />
+    <Content Include="Images\bravo-trending-noImage.jpg" />
+    <Content Include="Images\bravovets-percents-fleas-free-households.png" />
+    <Content Include="Images\bravovets-percents-ticks-free-households.png" />
+    <Content Include="Images\bravovets-speed-of-kills-flea.png" />
+    <Content Include="Images\btn-close-dialog%402x.png" />
+    <Content Include="Images\btn-close-postimage%402x.png" />
+    <Content Include="Images\chart-bar-large.png" />
+    <Content Include="Images\chart-marketmatrix.png" />
+    <Content Include="Images\checkbox-checked%402x.png" />
+    <Content Include="Images\checkbox-checked-white%402x.png" />
+    <Content Include="Images\checkbox-unchecked%402x.png" />
+    <Content Include="Images\checkbox-unchecked-white%402x.png" />
+    <Content Include="Images\compliance-issu1-easierCompliance-lg.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-lg_es.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-lg_fr.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-lg_it.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-tile.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-tile_es.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-tile_fr.jpg" />
+    <Content Include="Images\compliance-issu1-easierCompliance-tile_it.jpg" />
+    <Content Include="Images\compliance-issu2-highlyPalatable-lg.jpg" />
+    <Content Include="Images\compliance-issu3-easyToManage-lg.jpg" />
+    <Content Include="Images\compliance-issu3-easyToManage-lg_es.jpg" />
+    <Content Include="Images\compliance-issu3-easyToManage-lg_fr.jpg" />
+    <Content Include="Images\compliance-issu3-easyToManage-lg_it.jpg" />
+    <Content Include="Images\compliance-issu4-applicationError-lg.jpg" />
+    <Content Include="Images\compliance-issu5-wellTolerated-lg.jpg" />
+    <Content Include="Images\compliance-issu5-wellTolerated-tile.jpg" />
+    <Content Include="Images\dog-clock-2.png" />
+    <Content Include="Images\dog-face.png" />
+    <Content Include="Images\dogclock.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\flag-de.png" />
+    <Content Include="Images\flag-es.png" />
+    <Content Include="Images\flag-fr.png" />
+    <Content Include="Images\flag-it.png" />
+    <Content Include="Images\flag-nl.png" />
+    <Content Include="Images\flag-uk.png" />
+    <Content Include="Images\footer-circles-logo.png" />
+    <Content Include="Images\footer-circles.png" />
+    <Content Include="Images\googleplus.png" />
+    <Content Include="Images\header-circles%402x.png" />
+    <Content Include="Images\header-circles.png" />
+    <Content Include="Images\homepage-compliance-header-lg.jpg" />
+    <Content Include="Images\homepage-compliance-header-lg_es.jpg" />
+    <Content Include="Images\homepage-compliance-header-lg_fr.jpg" />
+    <Content Include="Images\homepage-compliance-header-lg_it.jpg" />
+    <Content Include="Images\homepage-innovation-header-lg.jpg" />
+    <Content Include="Images\homepage-innvoation-header-lg_es.jpg" />
+    <Content Include="Images\homepage-innvoation-header-lg_fr.jpg" />
+    <Content Include="Images\homepage-innvoation-header-lg_it.jpg" />
+    <Content Include="Images\homepage-newBus-header-lg.jpg" />
+    <Content Include="Images\ico-person%402x.png" />
+    <Content Include="Images\ico-person.png" />
+    <Content Include="Images\icon-chart%402x.png" />
+    <Content Include="Images\icon-chart.png" />
+    <Content Include="Images\icon-facebook.png" />
+    <Content Include="Images\icon-message%402x.png" />
+    <Content Include="Images\icon-twitter.png" />
+    <Content Include="Images\img-chart-blue-column.png" />
+    <Content Include="Images\img-chart-four-green.png" />
+    <Content Include="Images\img-chart-four-grey.png" />
+    <Content Include="Images\img-chart-four-purple.png" />
+    <Content Include="Images\img-chart-four-red.png" />
+    <Content Include="Images\img-chart-grey-column.png" />
+    <Content Include="Images\innovation-issu1-newInnovation-lg.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-lg_es.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-lg_fr.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-lg_it.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-tile-lg.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-tile-lg_es.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-tile-lg_fr.jpg" />
+    <Content Include="Images\innovation-issu1-newInnovation-tile-lg_it.jpg" />
+    <Content Include="Images\innovation-issu2-revolutionary-lg.jpg" />
+    <Content Include="Images\innovation-issu3-peaceOfMind-lg.jpg" />
+    <Content Include="Images\innovation-issu4-vectorBorne-lg.jpg" />
+    <Content Include="Images\innovation-issu4-vectorBorne-tile.jpg" />
+    <Content Include="Images\logo-bravecto%402x.png" />
+    <Content Include="Images\logo-bravecto.png" />
+    <Content Include="Images\logo-bravovets%402x.png" />
+    <Content Include="Images\logo-bravovets.png" />
+    <Content Include="Images\logo-BravoVets.svg" />
+    <Content Include="Images\logo-MerckAH.png" />
+    <Content Include="Images\logo-MerckAH.svg" />
+    <Content Include="Images\molecule.png" />
+    <Content Include="Images\newBus-issu1-socialMediaPower-lg.jpg" />
+    <Content Include="Images\newBus-issu1-socialMediaPower-text-lg.jpg" />
+    <Content Include="Images\newBus-issu1-socialMediaPower-tile.jpg" />
+    <Content Include="Images\newBus-issu2-overTheCounter-lg.jpg" />
+    <Content Include="Images\newBus-issu3-goToResource-lg.jpg" />
+    <Content Include="Images\newBus-issu4-strongRelationship-lg.jpg" />
+    <Content Include="Images\newBus-issu4-strongRelationship-tile.jpg" />
+    <Content Include="Images\noimage.gif" />
+    <Content Include="Images\nowireframe.png" />
+    <Content Include="Images\pat-diagonalblocks%402x.png" />
+    <Content Include="Images\pat-diagonalblocks-horizontal%402x.png" />
+    <Content Include="Images\pat-diagonalblocks-horizontal.png" />
+    <Content Include="Images\pat-diagonalblocks.png" />
+    <Content Include="Images\pat-DiagonalLines.png" />
+    <Content Include="Images\pat-plus%402x.png" />
+    <Content Include="Images\pat-plus.png" />
+    <Content Include="Images\phone.png" />
+    <Content Include="Images\photo-dog.jpg" />
+    <Content Include="Images\photo-dogjump+weeks.jpg" />
+    <Content Include="Images\photo-dogjump.jpg" />
+    <Content Include="Images\photo-man+dogrunning.jpg" />
+    <Content Include="Images\photo-vet+dog.jpg" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\sprite-legend-colors.png" />
+    <Content Include="Images\superdog-es.png" />
+    <Content Include="Images\superdog-fr.png" />
+    <Content Include="Images\superdog-gr.png" />
+    <Content Include="Images\superdog-it.png" />
+    <Content Include="Images\superdog-nl.png" />
+    <Content Include="Images\superdog-old.png" />
+    <Content Include="Images\superdog.png" />
+    <Content Include="Images\SuperDog_web.png" />
+    <Content Include="Images\SuperDog_web_es.png" />
+    <Content Include="Images\SuperDog_web_fr.png" />
+    <Content Include="Images\SuperDog_web_it.png" />
+    <Content Include="Images\temp-carousel-img1.png" />
+    <Content Include="Images\temp-carousel-img2.png" />
+    <Content Include="Images\temp-dog-thumbnail.png" />
+    <Content Include="Images\terms-bravecto-header-lg.jpg" />
+    <Content Include="Images\terms-socialTips-header-lg.jpg" />
+    <Content Include="Images\terms-trendingTopics-header-lg.jpg" />
+    <Content Include="Images\toggle-facebook.png" />
+    <Content Include="Images\toggle-twitter.png" />
+    <Content Include="Images\TrendingTopics_9.jpeg" />
+    <Content Include="Images\vet+dog.jpg" />
+    <Content Include="LFW20\Email\EMAIL_VERIFICATION.html" />
+    <Content Include="LFW20\Email\FORGOT_PASSWORD.html" />
+    <Content Include="LFW20\Email\PROFILE_VERIFICATION.html" />
+    <Content Include="LFW20\Email\REQUEST_EXPLICIT_PERMISSION.html" />
+    <Content Include="LFW20\Email\REQUEST_LEVEL_UPGRADE.html" />
+    <Content Include="LFW20\Email\SEND_PROFILE.html" />
+    <Content Include="LFW20\Email\SEND_REQUESTED_PASSWORD.html" />
+    <Content Include="LFW20\Pages\Blocked.aspx" />
+    <Content Include="LFW20\Pages\ChangeEmail.aspx" />
+    <Content Include="LFW20\Pages\ChangePassword.aspx" />
+    <Content Include="LFW20\Pages\DeleteUser.aspx" />
+    <Content Include="LFW20\Pages\LoggedIn.aspx" />
+    <Content Include="LFW20\Pages\Login.aspx" />
+    <Content Include="LFW20\Pages\Logout.aspx" />
+    <Content Include="LFW20\Pages\ManageProfile.aspx" />
+    <Content Include="LFW20\Pages\MessagePage.aspx" />
+    <Content Include="LFW20\Pages\RegisterAccount.aspx" />
+    <Content Include="LFW20\Pages\RequestPassword.aspx" />
+    <Content Include="LFW20\Pages\SendMailVerification.aspx" />
+    <Content Include="LFW20\Pages\SendRequestedPassword.aspx" />
+    <Content Include="LFW20\Pages\UpgradeExplicitPermission.aspx" />
+    <Content Include="LFW20\Pages\VerifyEmailAddress.aspx" />
+    <Content Include="LFW20\Styles\facebook_32.png" />
+    <Content Include="LFW20\Styles\google_32.png" />
+    <Content Include="LFW20\Styles\LFW.css" />
+    <Content Include="readme.txt" />
+    <Content Include="SAML\webcast.aspx" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-timepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="config\LFW20Configuration.config" />
+    <Content Include="config\protected-binaries.config" />
+    <Content Include="bin\ProfSite.dll.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\bravoicons.eot" />
+    <Content Include="Content\fonts\bravoicons.ttf" />
+    <Content Include="Content\fonts\bravoicons.woff" />
+    <Content Include="Content\fonts\rotis_sansserif_std_light.eot" />
+    <Content Include="Content\fonts\rotis_sansserif_std_light.ttf" />
+    <Content Include="Content\fonts\rotis_sansserif_std_light.woff" />
+    <Content Include="docs\Bravecto_SPC-PIL_en.pdf" />
+    <Content Include="Images\Í.textClipping" />
+    <Content Include="docs\BravoVets-content-walkThrough.pdf" />
+    <Content Include="docs\Bravecto_SPC-PIL_es.pdf" />
+    <Content Include="docs\Bravecto_SPC-PIL_fr.pdf" />
+    <Content Include="docs\Bravecto_SPC-PIL_pt.pdf" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <None Include="Properties\PublishProfiles\Stage.pubxml" />
+    <None Include="Properties\PublishProfiles\staging.pubxml" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\calendar\bootstrap-datepicker.js" />
+    <Content Include="Scripts\calendar\bootstrap-timepicker.js" />
+    <Content Include="Scripts\calendar\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\calendar\carousel.js" />
+    <Content Include="Scripts\calendar\collapse.js" />
+    <Content Include="Scripts\calendar\jstz.js" />
+    <Content Include="Scripts\calendar\modal.js" />
+    <Content Include="Scripts\calendar\scrollspy.js" />
+    <Content Include="Scripts\calendar\site.js" />
+    <Content Include="Scripts\calendar\tab.js" />
+    <Content Include="Scripts\calendar\transition.js" />
+    <Content Include="Scripts\calendar\underscore-min.js" />
+    <Content Include="Scripts\calendar\underscore.js" />
+    <Content Include="Scripts\detectizr.js" />
+    <Content Include="Scripts\es5-shim.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\directives\chart.js" />
+    <Content Include="Scripts\directives\mouse-capture.js" />
+    <Content Include="Scripts\es5-shim.min.js" />
+    <Content Include="Scripts\fileupload\canvas-to-blob.js" />
+    <Content Include="Scripts\fileupload\canvas-to-blob.min.js" />
+    <Content Include="Scripts\fileupload\cors\jquery.postmessage-transport.js" />
+    <Content Include="Scripts\fileupload\cors\jquery.xdr-transport.js" />
+    <Content Include="Scripts\fileupload\jquery.fileupload-fp.js" />
+    <Content Include="Scripts\fileupload\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\fileupload\jquery.fileupload.js" />
+    <Content Include="Scripts\fileupload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\fileupload\load-image.js" />
+    <Content Include="Scripts\fileupload\load-image.min.js" />
+    <Content Include="Scripts\fileupload\main.js" />
+    <Content Include="Scripts\fileupload\tmpl.js" />
+    <Content Include="Scripts\fileupload\tmpl.min.js" />
+    <Content Include="Scripts\fileupload\vendor\jquery.ui.widget.js" />
+    <Content Include="Scripts\GA-Click-Tracker.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-social-post-dialog.js" />
+    <Content Include="Scripts\jquery.admin.js" />
+    <Content Include="Scripts\jquery.common.js" />
+    <Content Include="Scripts\jquery.socialcalendar.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\json3.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locales\de-DE.js" />
+    <Content Include="Scripts\locales\es-ES.js" />
+    <Content Include="Scripts\locales\fr-FR.js" />
+    <Content Include="Scripts\locales\it-IT.js" />
+    <Content Include="Scripts\locales\nl-NL.js" />
+    <Content Include="Scripts\locales\pt-PT.js" />
+    <Content Include="Scripts\locales\ru-RU.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\read-more-modal.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\jquery.social.js" />
+    <Content Include="Scripts\services\chart.js" />
+    <Content Include="Scripts\services\dragging-service.js" />
+    <Content Include="Scripts\tooltip.js" />
+    <Content Include="Scripts\trendingtopics.js" />
+    <Content Include="Scripts\twitter-text.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout_Bravecto.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\BravoVets\Dashboard.cshtml" />
+    <Content Include="Views\Bravecto\Home.cshtml" />
+    <Content Include="Views\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\BravoVets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\BravoVets\SelectCountry.cshtml" />
+    <Content Include="Views\Facebook\AccountSetupComplete.cshtml" />
+    <Content Include="Views\BravoVets\ResourceTopics.cshtml" />
+    <Content Include="Views\BravoVets\TrendingTopics.cshtml" />
+    <Content Include="Views\BravoVets\SocialTips.cshtml" />
+    <Content Include="Views\BravoVets\Profile.cshtml" />
+    <Content Include="Views\Twitter\Timeline.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\VeterinarianFacility.cshtml" />
+    <Content Include="Views\Facebook\Timeline.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\VeterinarianFacility.cshtml" />
+    <Content Include="Views\Twitter\Tweet.cshtml" />
+    <Content Include="Views\Shared\SocialLoading.cshtml" />
+    <Content Include="Views\Facebook\LinkUpdate.cshtml" />
+    <Content Include="Views\Facebook\PhotoUpdate.cshtml" />
+    <Content Include="Views\Facebook\StatusUpdate.cshtml" />
+    <Content Include="Views\Facebook\Comment.cshtml" />
+    <Content Include="Views\Shared\SocialFollowing.cshtml" />
+    <Content Include="Views\Facebook\SelectManagedPage.cshtml" />
+    <Content Include="Views\Facebook\VideoUpdate.cshtml" />
+    <Content Include="Views\Twitter\TimelineError.cshtml" />
+    <Content Include="Views\Facebook\Comments.cshtml" />
+    <Content Include="Views\BravoVets\TrendingTopicItem.cshtml" />
+    <Content Include="Views\BravoVets\TrendingTopicItems.cshtml" />
+    <Content Include="Views\Shared\_Layout_SubHeader.cshtml" />
+    <Content Include="Views\BravoVetsWidgets\SocialActivityWidget.cshtml" />
+    <Content Include="Views\Shared\_Layout_Header.cshtml" />
+    <Content Include="Views\Shared\_Layout_Footer.cshtml" />
+    <Content Include="Views\ShareSocialContent\ShareSocialContent.cshtml" />
+    <Content Include="Views\BravoVetsWidgets\SyndicatedContentWidget.cshtml" />
+    <Content Include="Views\BravoVets\SocialTipItems.cshtml" />
+    <Content Include="Views\BravoVets\SocialTipItem.cshtml" />
+    <Content Include="Views\BravoVets\ResourceTopicsItems.cshtml" />
+    <Content Include="Views\BravoVets\ResourceTopicItem.cshtml" />
+    <Content Include="Views\Shared\_Layout_Bravecto_Footer.cshtml" />
+    <Content Include="Views\Shared\_Layout_Bravecto_Header.cshtml" />
+    <Content Include="Views\Shared\Disclaimer.cshtml" />
+    <Content Include="Views\Shared\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Shared\SiteMap.cshtml" />
+    <Content Include="Views\ShareSocialContent\SocialCalendar.cshtml" />
+    <Content Include="Views\Shared\_Layout_Bravecto_Public.cshtml" />
+    <Content Include="Views\Facebook\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Shared\HappyBrowser.cshtml" />
+    <Content Include="Views\ScheduledJob\DeliverQueuedMessages.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Admin\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin_Header.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin_Footer.cshtml" />
+    <Content Include="Views\Admin\ManagePosts.cshtml" />
+    <Content Include="Views\Admin\ManagePostItems.cshtml" />
+    <Content Include="Views\Admin\ManagePostsEdit.cshtml" />
+    <Content Include="Views\Admin\ManagePostPreview.cshtml" />
+    <Content Include="Views\BravoVets\SyndicatedContentLink.cshtml" />
+    <Content Include="Views\Shared\SyndicatedContentShareLink.cshtml" />
+    <Content Include="Views\Globalization\es\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\es\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\es\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\es\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\es\Bravovets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\es\Bravovets\vssver.scc" />
+    <Content Include="Views\Globalization\es\Facebook\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\es\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\es\Twitter\Timeline.cshtml" />
+    <Content Include="Views\Globalization\es\Twitter\TimelineError.cshtml" />
+    <Content Include="Views\Globalization\es\Twitter\Tweet.cshtml" />
+    <Content Include="Views\Globalization\fr\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\fr\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\fr\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\fr\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\fr\Bravecto\vssver.scc" />
+    <Content Include="Views\Globalization\fr\BravoVets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\fr\BravoVets\vssver.scc" />
+    <Content Include="Views\Globalization\fr\Facebook\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\fr\Facebook\vssver.scc" />
+    <Content Include="Views\Globalization\fr\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\fr\Twitter\vssver.scc" />
+    <Content Include="Views\Globalization\it\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\it\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\it\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\it\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\it\Bravecto\vssver.scc" />
+    <Content Include="Views\Globalization\za\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\za\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\za\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\za\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\za\Bravecto\vssver.scc" />
+    <Content Include="Views\Globalization\za\Shared\Disclaimer.cshtml" />
+    <Content Include="Views\Globalization\za\Shared\vssver.scc" />
+    <Content Include="Views\Globalization\za\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\za\Twitter\vssver.scc" />
+    <Content Include="Views\Globalization\pt\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\pt\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\pt\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\pt\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\pt\BravoVets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\pt\BravoVets\Profile.cshtml" />
+    <Content Include="Views\Globalization\pt\Shared\Disclaimer.cshtml" />
+    <Content Include="Views\Globalization\pt\Shared\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Globalization\br\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\br\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\br\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\br\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\br\BravoVets\Profile.cshtml" />
+    <Content Include="Views\Globalization\br\BravoVets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\br\Shared\Disclaimer.cshtml" />
+    <Content Include="Views\Globalization\br\Shared\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Globalization\ru\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\ru\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\ru\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\ru\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\ru\BravoVets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\ru\Facebook\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\ru\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\ru\Shared\Disclaimer.cshtml" />
+    <Content Include="Views\Globalization\ru\Shared\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Bravecto\Compliance.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Bravecto\Home.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Bravecto\Innovation.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Bravecto\NewBusiness.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Bravovets\TermsAndConditions.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Facebook\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Twitter\NoLinkedAccount.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Twitter\Timeline.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Twitter\TimelineError.cshtml" />
+    <Content Include="Views\Globalization\es-ES\Twitter\Tweet.cshtml" />
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Stage.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\bin\de\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.de.resx" />
+    <EmbeddedResource Include="Resources\Resource.es.resx" />
+    <EmbeddedResource Include="Resources\Resource.es-ES.resx" />
+    <EmbeddedResource Include="Resources\Resource.fr.resx" />
+    <EmbeddedResource Include="Resources\Resource.it.resx" />
+    <EmbeddedResource Include="Resources\Resource.nl.resx" />
+    <EmbeddedResource Include="Resources\Resource.br.resx" />
+    <EmbeddedResource Include="Resources\Resource.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource.pt.resx" />
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BravoVets.DomainObject\BravoVets.DomainObject.csproj">
+      <Project>{2a268fdc-2b55-4cee-aa25-17058ce79777}</Project>
+      <Name>BravoVets.DomainObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BravoVets.DomainService\BravoVets.DomainService.csproj">
+      <Project>{0e87faf0-6913-4a5b-b422-4715b30bb475}</Project>
+      <Name>BravoVets.DomainService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'stage|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dev|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'stage|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2480</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2480/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,6 @@
+﻿@model SyndicatedShareLinkModel
+
+@if (Model.ShowShare)
+{
+    <a href="#" data-event-id="@Model.SyndicatedContentId" class="share @(!Model.EnableShare?"disabled":string.Empty) btn btn-link btn-share">@Resource.BravoVets_TrendingTopicItem_Share</a>
+}

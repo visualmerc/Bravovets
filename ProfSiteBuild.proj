@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         ToolsVersion="12.0">
+  <UsingTask
+    AssemblyFile="packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
+    TaskName="Xunit.Runner.MSBuild.xunit" />
+
+  <Target Name="Build">
+    <MSBuild Projects="BravoVets.sln" Targets="Build"/>
+  </Target>
+
+  <Target Name="Test" DependsOnTargets="Build">
+    <!-- create list after build -->
+    <CreateItem Include="**/bin/**/*.tests.dll">
+      <Output ItemName="TestAssemblies" TaskParameter="Include"/>
+    </CreateItem>
+
+    <Message Text="Found these Test Assemblies:"/>
+    <Message Text="@(TestAssemblies)"/>
+    <Message Text="End of Test Assembly list"/>
+    <xunit Assemblies="@(TestAssemblies)" Xml="test.xunit.dll.xml"/>
+  </Target>
+
+
+</Project>

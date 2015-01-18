@@ -1,0 +1,60 @@
+﻿@using System.Threading
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>@(ViewBag.Title ?? "Bravovets")</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fileupload")
+
+
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+
+    <body>
+        @Html.Partial("HappyBrowser")
+
+
+        <div class="circles-header"></div>
+        <div class="page-wrapper">
+            @Html.Partial("_Layout_Header")
+            @Html.Action("PracticeHeader", "Bravovets")
+            <div class="page-content-wrapper">
+                @RenderBody()
+            </div>
+        </div>
+        @Html.Partial("_Layout_Footer")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jquery-plugins")
+        @Scripts.Render("~/bundles/locales")
+        
+        @RenderSection("scripts", required: false)
+
+        <script type="text/javascript" src="/Scripts/GA-Click-Tracker.js"></script>
+
+        
+        @if (ViewBag.Language == "fr-FR")
+        {
+            <noscript>
+                <a href="//policy.merck.sitemorse.com/e0adce0b-fr.html" style="z-index: 32001; background: #fff none no-repeat scroll 0 0; text-decoration: none; display: block; position: fixed; bottom: 0; right: 20px; font: normal normal normal 10pt Verdana,Geneva,sans-serif; color: #000000; border: 1px solid #b202c2; border-bottom: 0; border-radius: 5px 5px 0 0; padding: 4px 20px; cursor: pointer; opacity: 0.8">cookies</a>
+            </noscript>
+            <script type="text/javascript" src="//policy.merck.sitemorse.com/e0adce0b_panel-fr.js"></script>
+        }
+        
+    </body>
+
+</html>

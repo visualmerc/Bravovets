@@ -1,0 +1,97 @@
+﻿@using BravoVets.DomainObject.Enum
+@model AdminManagePostsModel
+<div class="container admin-page manage-posts">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>@Resource.Admin_Nav_ManagePosts</h2>
+            <h1>@Model.Header</h1>
+        </div>
+    </div>
+    <div class="row" id="adminManagePosts" data-confirmdelete="@Resource.Admin_ManagePost_ConfirmDelete">
+        <div class="col-sm-12">
+            <ul id="managePostTabs" class="nav nav-tabs">
+                <li class="@(Model.ActiveTab == "future"?"active":"")"><a href="#future" data-toggle="tab">@Resource.Admin_ManagePosts_FuturePosts</a></li>
+                <li class="@(Model.ActiveTab == "past"?"active":"")"><a href="#past" data-toggle="tab">@Resource.Admin_ManagePosts_PastPosts</a></li>
+            </ul>
+            <div class="sort-container">
+                <form class="form-inline sort-form" role="form">
+                    <div class="form-group">
+                        <label for="sortby">@Resource.Admin_ManagePosts_SortBy</label>
+                        <div class="btn-group">
+                            <button id="sortBy" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span id="sortByLabel"></span> <span class="caret"></span>
+                            </button>
+                            <ul id="sortByItems" class="dropdown-menu" role="menu">
+                                <li><a id="sortByNewest" class="active" data-sort="@ContentSortEnum.ContentDate" href="#"></a></li>
+                                <li><a id="sortByOldest" data-sort="@ContentSortEnum.ContentDateAscending" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+                <div class="pagination-wrapper">
+
+                    <a class="btn btn-primary previous" disabled>@Resource.Admin_ManagePost_Paging_Previous</a>
+
+                    <ul class="pagination"></ul>
+
+                    <a class="btn btn-primary next" disabled>@Resource.Admin_ManagePost_Paging_Next</a>
+
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane @(Model.ActiveTab == "future"?"active":"")" id="future">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Admin_ManagePost_Date <span class="caret"></span></th>
+                                <th></th>
+                                <th>@Resource.Admin_ManagePost_Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="tab-pane @(Model.ActiveTab == "past"?"active":"")" id="past">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Resource.Admin_ManagePost_Date <span class="caret"></span></th>
+                                <th></th>
+                                <th>@Resource.Admin_ManagePost_Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="sort-container">
+                <div class="pagination-wrapper">
+
+                    <a class="btn btn-primary previous" disabled>@Resource.Admin_ManagePost_Paging_Previous</a>
+
+                    <ul class="pagination"></ul>
+
+                    <a class="btn btn-primary next" disabled>@Resource.Admin_ManagePost_Paging_Next</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    @section Scripts {
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                $("#adminManagePosts").managePosts({
+                    "getUrl": "@Model.GetUrl",
+                    "pastNewestLabel": "@Resource.Admin_ManagePosts_PastNewest",
+                    "pastOldestLabel": "@Resource.Admin_ManagePosts_PastOldest",
+                    "futureNewestLabel": "@Resource.Admin_ManagePosts_FutureNewest",
+                    "futureOldestLabel":"@Resource.Admin_ManagePosts_FutureOldest"
+                });
+            });
+
+        </script>
+    }

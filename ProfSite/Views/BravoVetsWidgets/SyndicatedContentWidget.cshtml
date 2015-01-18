@@ -1,0 +1,57 @@
+﻿@model  SyndicatedContentWidgetModel
+@using bvResources = ProfSite.Resources.Resource
+
+
+<div class="additional-content-item content-widget">
+    <div id="carousel-@Model.Id" class="carousel slide bv-carousel" data-ride="" data-interval="false">
+        <!-- Wrapper for carousel nav and title -->
+        <div class="carousel-header">
+            <a class="left carousel-control" href="#carousel-@Model.Id" data-slide="prev"><img src="/images/arrow2-slider-left.png" alt="left arrow"></a>
+            <a class="right carousel-control" href="#carousel-@Model.Id" data-slide="next"><img src="/images/arrow2-slider-right.png" alt="left arrow"></a>
+            <div class="section-nav-wrapper">
+                <h2>@Model.Title</h2>
+                <a class="btn btn-link" href="@Model.ViewAllUrl">@bvResources.BravoVetsWidget_SocialActivityWidget_ViewAll</a>
+            </div>
+        </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            @foreach (var item in Model.Contents)
+            {
+                <div class="item @item.ActiveCSS">
+                    <div class="content-wrapper diagonal-bottom">
+                        <div class="section-head">
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img src="@item.ImageUrl" alt="@item.ImageName" />
+                            }
+                        </div>
+                        <h3>@item.Title</h3>
+                        <hr class="plus diagonal">
+                        <div class="content-text">
+                            @Html.Raw(item.ContentText)        
+                            @if (item.SyndicatedLinks != null && item.SyndicatedLinks.Count > 0)
+                            {
+                                <div class="attachment-wrapper">
+                                    <h4>@bvResources.BravoVets_Attachments</h4>
+                                    <hr class="diagonal diagonal2">
+                                    <ul>
+                                        @foreach (var syndicatedLink in item.SyndicatedLinks)
+                                        {
+                                            @Html.Partial("~/Views/BravoVets/SyndicatedContentLink.cshtml", syndicatedLink)
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                        <div class="footer">
+                            <a style="float:left;display:none;" target="_blank" href="#" class="readmore btn btn-link">@bvResources.BravoVets_ResourceTopicItem_ReadMore</a>
+                            <div style="float:right;">
+                                @Html.Partial("SyndicatedContentShareLink", new SyndicatedShareLinkModel { SyndicatedContentId = item.Id, EnableShare = true, ShowShare = Model.ShowShare })
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

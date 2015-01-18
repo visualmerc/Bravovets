@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\testdeploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AntiXssLibrary.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/BravoVets.Dal.dll">
+      <publishTime>02/17/2014 17:14:09</publishTime>
+    </File>
+    <File Include="bin/BravoVets.DomainObject.dll">
+      <publishTime>02/17/2014 17:14:09</publishTime>
+    </File>
+    <File Include="bin/BravoVets.DomainService.dll">
+      <publishTime>02/17/2014 17:14:10</publishTime>
+    </File>
+    <File Include="bin/de/ProfSite.resources.dll">
+      <publishTime>02/17/2014 17:14:11</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth2.Client.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth2.ClientAuthorization.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth2.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>02/17/2014 15:40:08</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenIdOAuth.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/es/ProfSite.resources.dll">
+      <publishTime>02/17/2014 17:14:11</publishTime>
+    </File>
+    <File Include="bin/fr/ProfSite.resources.dll">
+      <publishTime>02/17/2014 17:14:11</publishTime>
+    </File>
+    <File Include="bin/it/ProfSite.resources.dll">
+      <publishTime>02/17/2014 17:14:11</publishTime>
+    </File>
+    <File Include="bin/LFW20.ASPNET.WebForms.Module.Template.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/LFW20.FrontEnd.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/LFW20.XML.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.ExternalLogin.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.HttpModule.FrontEnd.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.HttpModule.FrontEnd.Mock.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.HttpModule.FrontEnd.MVC.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.Interfaces.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.Security.LFW20.Utilities.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/Merck.WebTooling.HttpModules.LFW20.Frontend.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Merck.WebTooling.HttpModules.LFW20.MVC.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Contracts.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/Mono.Math.dll">
+      <publishTime>02/17/2014 15:40:09</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/nl/ProfSite.resources.dll">
+      <publishTime>02/17/2014 17:14:11</publishTime>
+    </File>
+    <File Include="bin/Org.Mentalis.Security.Cryptography.dll">
+      <publishTime>02/17/2014 15:40:10</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/ProfSite.dll">
+      <publishTime>02/17/2014 17:14:10</publishTime>
+    </File>
+    <File Include="bin/ProfSite.dll.config">
+      <publishTime>02/17/2014 15:21:22</publishTime>
+    </File>
+    <File Include="bin/SecureBinaries.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>02/12/2014 11:03:14</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="config/LFW20Configuration.config">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="config/protected-binaries.config">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Content/main.css">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/bkg-WorldMap.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/facebook.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/favicon.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-de.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-es.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-fr.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-it.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-nl.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/flag-uk.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/googleplus.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/logo-bravecto.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/pat-DiagonalLines.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Images/vet+dog.jpg">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/EMAIL_VERIFICATION.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/FORGOT_PASSWORD.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/PROFILE_VERIFICATION.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/REQUEST_EXPLICIT_PERMISSION.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/REQUEST_LEVEL_UPGRADE.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/SEND_PROFILE.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Email/SEND_REQUESTED_PASSWORD.html">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/Blocked.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/ChangeEmail.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/ChangePassword.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/DeleteUser.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/LoggedIn.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/Login.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/Logout.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/ManageProfile.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/MessagePage.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/RegisterAccount.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/RequestPassword.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/SendMailVerification.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/SendRequestedPassword.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/UpgradeExplicitPermission.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Pages/VerifyEmailAddress.aspx">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Styles/facebook_32.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Styles/google_32.png">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="LFW20/Styles/LFW.css">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="readme.txt">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.common.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>02/17/2014 15:48:04</publishTime>
+    </File>
+    <File Include="Views/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/BravoVets/Dashboard.cshtml">
+      <publishTime>02/17/2014 15:54:04</publishTime>
+    </File>
+    <File Include="Views/BravoVets/Profile.cshtml">
+      <publishTime>02/17/2014 13:57:39</publishTime>
+    </File>
+    <File Include="Views/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/BravoVets/SelectCountry.cshtml">
+      <publishTime>02/17/2014 15:13:22</publishTime>
+    </File>
+    <File Include="Views/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Facebook/AccountSetupComplete.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Facebook/Timeline.cshtml">
+      <publishTime>02/17/2014 12:26:51</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/BravoVets/Dashboard.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/de/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/BravoVets/Dashboard.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/es/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/BravoVets/Dashboard.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/fr/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/BravoVets/Dashboard.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/it/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/Bravecto/Compliance.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/Bravecto/Home.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/Bravecto/Innovation.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/Bravecto/NewBusiness.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/BravoVets/Dashboard.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/BravoVets/ResourceTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/BravoVets/SocialTips.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/BravoVets/TermsAndConditions.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Globalization/nl/BravoVets/TrendingTopics.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/VeterinarianFacility.cshtml">
+      <publishTime>02/17/2014 12:45:25</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout_Bravecto.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Views/Twitter/Timeline.cshtml">
+      <publishTime>02/14/2014 11:52:21</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>02/14/2014 10:20:46</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>02/12/2014 11:03:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/17/2014 17:16:15</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

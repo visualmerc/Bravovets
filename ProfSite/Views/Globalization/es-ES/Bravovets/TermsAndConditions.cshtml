@@ -1,0 +1,184 @@
+﻿@using System.Threading
+@{ Layout = null; }
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bravovets</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+    
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+
+<body class="globalpage global-bg termspage">
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+        <header class="navbar bv-nav" role="banner">
+            <div class="container">
+                <div class="row nav-wrapper">
+                    <div class="col-sm-4">
+                        <div class="navbar-header">
+                            <a href="/bravecto" class="navbar-brand bravovets">
+                                <img src="/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper">
+            <div class="container terms-content">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6">
+                        <img src="/images/dog-face.png" alt="Dog Face" class="dogface-bg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>¡Bienvenido!</h1>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <hr class="plus diagonal">
+                        <p>Para construir una marca potente para tu clínica y ahora tienes las herramientas para hacerlo. BravoVets te da los recursos e información que le ayudarán a, mantenerte informado sobre investigaciones recientes, expandir tus medios de comunicación en redes sociales y tu visibilidad, y crear nuevos vínculos con clientes nuevos y potenciales. BravoVetstle hará un experto en la comunicación con los dueños de mascotas.</p>
+                        <p>Empezar es muy sencillo. Acepta los Términos y Condiciones de BravoVets y todos estos valiosos recursos estarán disponibles para ti.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="white-trans-bg">
+                            <h3 class="alt">Por favor acepte los términos y condiciones de uso</h3>
+                            <p>
+                                Estos términos y condiciones ("Términos de Servicio") regulan el acceso y uso de los productos de Merck Animal Health, software, servicios y sitios web (en adelante "Servicios"), y cualquier y toda la información, texto, gráficos, fotos u otros los materiales cargados, descargados, o que aparezcan en los Servicios (en adelante "Contenido"). Al acceder y utilizar los Servicios, usted acepta estos Términos de Servicio....
+                                <br>
+                                <button class="btn btn-link" data-toggle="modal" data-target="#termsModal">Leer más</button>
+                            </p>
+                            @Html.ActionLink("Acepto", "AcceptTermsAndConditions", "Facebook", new { @class = "btn btn-primary" })
+                            <a href="/bravecto" class="btn btn-default">Página de inicio</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row hidden-xs">
+                    <div class="col-sm-4"><hr class="diagonal shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-bravecto-header-lg.jpg" alt="New Business">
+                                <h2>RECURSOS BRAVECTO</h2>
+                            </div>
+                            <p>Cuando se trata de un producto innovador como Bravecto, siempre hay algo nuevo que aprender y transmitir a tus clientes. Utiliza esta herramienta para estar al día con la última información sobre los productos farmacéuticos veterinarios y los avances en la preservación y mejora de la salud y el bienestar animal.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-trendingTopics-header-lg.jpg" alt="New Business">
+                                <h2>TEMAS DE TENDENCIA</h2>
+                            </div>
+                            <p>Aquí podrás estar al día con las noticias más importantes en cuidado veterinario. Se mostrarán temas que líderes de opinión en tu área de negocio están tratando en ese momento, puedes hacer que estas conversaciones formen parte de las redes sociales.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-socialTips-header-lg.jpg" alt="New Business">
+                                <h2>RECOMENDACIONES PARA MEDIOS SOCIALES</h2>
+                            </div>
+                            <p>Si aún no has establecido una estrategia en redes sociales para tu negocio, esto te va a interesar. Con estas recomendaciones, no sólo vas a hacer crecer tu negocio y fortalecer tus relaciones con clientes actuales, sino que también ganarás nuevos clientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="alternate">Términos y condiciones de uso.</h1>
+                            <hr class="plus diagonal">
+                            <p>Estos términos y condiciones ("Términos de Servicio") regulan el acceso y uso de los productos de Merck Animal Health, software, servicios y sitios web (en adelante "Servicios"), y cualquier y toda la información, texto, gráficos, fotos u otros los materiales cargados, descargados, o que aparezcan en los Servicios (en adelante "Contenido"). Al acceder y utilizar los Servicios, usted acepta estos Términos de Servicio. Si usted no acepta estas Condiciones de uso, no se le permitirá utilizar los Servicios. Dondequiera que se utilice estas Condiciones de servicio, "usted", "su" o términos similares referentes a la persona física o jurídica que utiliza o acceda a los Servicios.</p>
+                            <p>Merck Animal Health puede actualizar y modificar estos Términos de Servicio de vez en cuando sin previo aviso. El uso continuado del Servicio después de las modificaciones constituirá su consentimiento a dichos cambios. Usted es responsable de revisar regularmente la versión más actualizada de los Términos de Servicio. </p>
+                            <p>Estas Condiciones del servicio son la política de privacidad de Merck Animal Health, que está disponible actualmente en: http://www.merck-animal-health-usa.com/privacy_policy.aspx. Al acceder y utilizar los Servicios usted acepta (o asegura que ha obtenido el consentimiento apropiado) la recopilación y uso de información personal por parte de Merck Animal Health, de acuerdo con la política de privacidad de Merck Animal Health. </p>
+                            <p>Usted es responsable del uso de los Servicios y de cualquier Contenido cedido o puesto a disposición de otros a través de su uso de las herramientas proporcionadas a través de los Servicios (incluso si se accede o pone a disposición el contenido por otros). Usted toma todos los riesgos asociados al uso de los Servicios y de cualquier Contenido cedido o puesto a disposición de otros a través de sus actividades. Ni Merck Animal Health ni ninguna de sus afiliadas, agentes o empleados serán responsables por su uso de los Servicios o de cualquier Contenido. </p>
+                            <p>Para acceder o utilizar los Servicios, usted debe estar de acuerdo en cumplir estos Términos de Servicio, y no debe estar prohibido recibir o utilizar los Servicios en virtud de cualquier ley aplicable. </p>
+                            <p>Merck Animal Health puede cambiar los Servicios o dejar de prestar estos (temporal o permanente) en cualquier momento y de vez en cuando sin previo aviso. </p>
+                            <p>Usted reconoce que los Servicios le permiten acceder y utilizar contenidos y servicios ofrecidos por terceros proveedores de servicios (por ejemplo, Twitter, Facebook) ("Proveedores de servicios de terceros"). Usted debe comprometerse a cumplir con los términos y condiciones pertinentes de cualquier proveedor de servicios de terceros.</p>
+                            <p>Su acceso y uso de los servicios deben estar de acuerdo con estas Condiciones de servicio y los términos y condiciones de cualquier proveedor de servicios de terceros. Si usted viola estas Condiciones de servicio o los términos y condiciones de cualquier proveedor de servicios de terceros, usted ya no se le permitirá utilizar los Servicios y Merck Animal Health puede (pero no está obligada a) rescindir su capacidad para acceder o utilizar los Servicios en cualquier momento.</p>
+                            <p>Usted no puede utilizar los Servicios para ningún propósito ilegal o no autorizado, incluyendo en forma alguna que viole los derechos de autor u otras leyes aplicables.</p>
+                            <p>Usted no puede, sin el permiso previo por escrito de Merck Animal Health (incluyendo los permisos concedidos por las presentes Condiciones de Servicio): (a) copiar, distribuir (incluyendo enmarcar cualquiera de los Servicios en cualquier sitio web), modificar, mejorar, traducir, reproducir , vender, revender, sublicenciar, alquilar, arrendar ni intentar explotar los Servicios; (b) descompilar, desensamblar, realizar ingeniería inversa, o tratar de descubrir el código fuente (salvo en la medida en que esta restricción esté expresamente prohibida por la ley); (c) hacer trabajos derivados de los Servicios; o (d) modificar otro sitio web para implicar falsamente que está asociado con los Servicios o Merck Animal Health.</p>
+                            <p><strong>LOS SERVICIOS SE PROPORCIONAN "TAL CUAL", "SEGÚN DISPONIBILIDAD", CON TODOS SUS DEFECTOS Y SIN GARANTÍAS, REPRESENTACIONES O CONDICIONES DE CUALQUIER CLASE. EL USO DE LOS SERVICIOS ES BAJO SU PROPIO RIESGO. MERCK ANIMAL HEALTH NO HACE NINGUNA REPRESENTACIÓN, GARANTÍAS O CONDICIONES EN RELACIÓN A LA CALIDAD, PRECISIÓN, SEGURIDAD, CONFIABILIDAD, INTEGRIDAD, DISFRUTE Y VIGENCIA O ACTUALIDAD DE LOS SERVICIOS. MERCK ANIMAL HEALTH NO ASUME NINGUNA RESPONSABILIDAD POR CUALQUIER DATO INCOMPLETO, ERRORES, SEGURIDAD, VIRUS, PROBLEMAS, OMISIONES, INEXACTITUDES U OTRAS LIMITACIONES O INTERRUPCIONES EN EL FUNCIONAMIENTO DE, LOS SERVICIOS.</strong></p>
+                            <p><strong>USTED ACEPTA DEFENDER, INDEMNIZAR Y MANTENER INDEMNE A MERCK ANIMAL HEALTH, SUS AFILIADOS Y SUS AGENTES Y EMPLEADOS DE CUALQUIER DAÑO DIRECTO Y RECLAMOS INDIRECTOS DERIVADOS DE LO RELACIONADO CON EL USO DE LOS SERVICIOS Y DE LOS CONTENIDOS.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Layout_Bravecto_Footer");
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+
+
+
+<!-- Adding tracking code for /. -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var ahTracker = _gat._createTracker("UA-11736042-1");
+ahTracker._setDomainName("none");
+ahTracker._setAllowLinker(true);
+ahTracker._setCustomVar(3, "LO", "_international_english", 3);
+ahTracker._setCustomVar(4, "TA", "veterinarians,dog owners", 3);
+ahTracker._setCustomVar(5, "SI", "product", 3);
+ahTracker._trackPageview();
+
+var siteTracker = _gat._createTracker("UA-12168657-13");
+siteTracker._setCustomVar(3, "TA", "veterinarians,dog owners", 3);
+siteTracker._setCustomVar(4, "PA", "home", 3);
+siteTracker._setCustomVar(5, "SP", "dogs", 3);
+siteTracker._trackPageview();
+} catch (err) {
+if (typeof(console) != 'undefined' && console) {
+console.warn(err);
+}
+}
+</script>
+
+</body>
+
+</html>

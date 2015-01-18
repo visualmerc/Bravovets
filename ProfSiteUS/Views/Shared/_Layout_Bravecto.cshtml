@@ -1,0 +1,126 @@
+﻿@using System.Threading
+@using System.Web.UI.WebControls
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@(ViewBag.Title ?? "Bravecto")</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+
+    
+    @Styles.Render("~/Content/resetcss")
+    @Styles.Render("~/Content/bootstrapcss")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+    @if (IsSectionDefined("metaSection"))
+    {
+        @RenderSection("metaSection")
+    }    
+</head>
+<body class="bravectopage" ng-app="chartsApp">
+    @Html.Partial("HappyBrowser")
+
+
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+
+        @Html.Partial("_Layout_Bravecto_Header")
+
+        <div class="page-content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("_Layout_Bravecto_Footer")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+
+        var waitForFinalEvent = (function () {
+            var timers = {};
+            return function (callback, ms, uniqueId) {
+                if (!uniqueId) {
+                    uniqueId = "Don't call this twice without a uniqueId";
+                }
+                if (timers[uniqueId]) {
+                    clearTimeout(timers[uniqueId]);
+                }
+                timers[uniqueId] = setTimeout(callback, ms);
+            };
+        })();
+
+        function scrollToSolutions() {
+            var selectorString = '#solutions-wrapper';
+            var scrollTo = $(selectorString).offset().top;
+
+            $('html, body').delay(200).animate({
+                scrollTop: scrollTo
+            }, 500)
+        }
+
+        function scrollToIssues() {
+            var selectorString = '#issues-wrapper';
+            var scrollTo = $(selectorString).offset().top;
+
+            $('html, body').delay(200).animate({
+                scrollTop: scrollTo
+            }, 500)
+        }
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function resizeHeroBg() {
+            if ($('#hero-wrapper').length > 0) {
+                var heroBottom = $('#hero-bottom').position().top;
+                $('.hero-banner-image').css("height", heroBottom - 20);
+            }
+        }
+
+        $('.issue-link').on('click', function () {
+            scrollToSolutions();
+        });
+
+        $('.back-to-top').on('click', function () {
+            scrollToIssues();
+        });
+
+        $(document).ready(function () {
+
+            var solutionNumber = parseInt(getParameterByName('solutionID'));
+
+            if (solutionNumber > -1) {
+                $('#carousel-solutions').carousel(solutionNumber);
+
+                setTimeout(function () { scrollToSolutions() }, 500);
+            }
+
+            setTimeout(function () {
+                resizeHeroBg();
+            }, 100);
+
+            $(window).resize(function () {
+                waitForFinalEvent(function () {
+                    resizeHeroBg();
+                }, 150, "herobgresize");
+            });
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

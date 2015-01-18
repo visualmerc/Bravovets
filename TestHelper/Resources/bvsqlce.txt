@@ -1,0 +1,414 @@
+-- Script Date: 5/3/2014 7:20 PM  - ErikEJ.SqlCeScripting version 3.5.2.37
+CREATE TABLE [SyndicatedContentType] (
+  [SyndicatedContentTypeId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentTypeName] nvarchar(128) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContentPostType] (
+  [SyndicatedContentPostTypeId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentPostTypeName] nvarchar(200) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContentAttachment] (
+  [SyndicatedContentAttachmentId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentId] int NOT NULL
+, [AttachmentFileName] nvarchar(255) NOT NULL
+, [AttachmentExtension] nvarchar(15) NOT NULL
+, [AttachmentFile] image NOT NULL
+, [DisplayInUi] bit DEFAULT ((1)) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+);
+GO
+CREATE TABLE [SocialPlatform] (
+  [SocialPlatformId] int IDENTITY (1,1) NOT NULL
+, [SocialPlatformName] nvarchar(128) NOT NULL
+, [Url] nvarchar(256) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [QueueContentDeliveryLog] (
+  [QueueContentDeliveryLogId] int IDENTITY (1,1) NOT NULL
+, [DeliverySessionId] uniqueidentifier NOT NULL
+, [DeliverySessionStartTimeUtc] datetime NOT NULL
+, [QueueContentId] int NOT NULL
+, [WasDelivered] bit DEFAULT ((0)) NOT NULL
+, [DeliverySessionTimeUtc] datetime NULL
+, [PublishError] nvarchar(512) NULL
+);
+GO
+CREATE TABLE [QueueContentAttachment] (
+  [QueueContentAttachmentId] int IDENTITY (1,1) NOT NULL
+, [QueueContentId] int NOT NULL
+, [SyndicatedContentAttachmentId] int NULL
+, [AttachmentFileName] nvarchar(255) NULL
+, [AttachmentExtension] nvarchar(15) NULL
+, [AttachmentFile] image NULL
+, [CreateDateUtc] datetime NULL
+, [ModifiedDateUtc] datetime NULL
+);
+GO
+CREATE TABLE [MerckLfwUser] (
+  [MerckLfwUserId] int IDENTITY (1,1) NOT NULL
+, [MerckId] int NOT NULL
+, [FirstName] nvarchar(50) NOT NULL
+, [LastName] nvarchar(50) NOT NULL
+, [CountryOriginIso] nvarchar(4) NOT NULL
+, [Occupation] nvarchar(50) NULL
+, [EmailAddress] nvarchar(50) NULL
+, [LanguageIsoCode] nvarchar(4) NULL
+, [IP] nvarchar(50) NULL
+, [UA] nvarchar(50) NULL
+, [LoginGUID] nvarchar(50) NULL
+, [ForgeryID] nvarchar(50) NULL
+, [WebsiteProperties] nvarchar(50) NULL
+, [AccessOnGroups] nvarchar(50) NULL
+, [CookiesEnabled] nvarchar(50) NULL
+, [LfwMessage] nvarchar(50) NULL
+);
+GO
+CREATE TABLE [FeaturedContent] (
+  [FeaturedContentId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentTypeId] int NOT NULL
+, [BravoVetsCountryId] int NOT NULL
+, [ContentFileName] nvarchar(255) NOT NULL
+, [ContentExtension] nvarchar(15) NOT NULL
+, [ContentThumbnail] image NULL
+, [ContentFile] image NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+);
+GO
+CREATE TABLE [ChannelType] (
+  [ChannelTypeId] int IDENTITY (1,1) NOT NULL
+, [ChannelTypeName] nvarchar(128) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [BravoVetsStatus] (
+  [BravoVetsStatusId] int IDENTITY (1,1) NOT NULL
+, [StatusName] nvarchar(128) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [BravoVetsLanguage] (
+  [BravoVetsLanguageId] int IDENTITY (1,1) NOT NULL
+, [LanguageName] nvarchar(128) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [BravoVetsCountry] (
+  [BravoVetsCountryId] int IDENTITY (1,1) NOT NULL
+, [CountryName] nvarchar(128) NOT NULL
+, [CountryNameResourceKey] nvarchar(128) NOT NULL
+, [CountryIsoCode] nvarchar(3) NOT NULL
+, [BravoVetsLanguageId] int NOT NULL
+, [LanguageCode] nvarchar(3) NOT NULL
+, [CultureName] nvarchar(6) NOT NULL
+, [Active] bit DEFAULT ((1)) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [Veterinarian] (
+  [VeterinarianId] int IDENTITY (1,1) NOT NULL
+, [BravoVetsCountryId] int NOT NULL
+, [BusinessName] nvarchar(256) NOT NULL
+, [JoinDate] datetime NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [VeterinarianSocialIntegration] (
+  [VeterinarianSocialIntegrationId] int IDENTITY (1,1) NOT NULL
+, [VeterinarianId] int NOT NULL
+, [SocialPlatformId] int NOT NULL
+, [AccountName] nvarchar(255) NULL
+, [AccountPassword] nvarchar(255) NULL
+, [AccessToken] nvarchar(2000) NULL
+, [AccessCode] nvarchar(2000) NULL
+, [PageId] nvarchar(2000) NULL
+, [PageAccessToken] nvarchar(2000) NULL
+, [NumberOfFollowers] int DEFAULT ((0)) NOT NULL
+, [FollowerDiff] int DEFAULT ((0)) NOT NULL
+, [LastFeed] ntext NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [VeterinarianFacility] (
+  [VeterinarianFacilityId] int IDENTITY (1,1) NOT NULL
+, [VeterinarianId] int NOT NULL
+, [FacilityName] nvarchar(256) NOT NULL
+, [StreetAddress1] nvarchar(256) NULL
+, [StreetAddress2] nvarchar(256) NULL
+, [City] nvarchar(100) NULL
+, [StateProvince] nvarchar(24) NULL
+, [Country] nvarchar(100) NULL
+, [PostalCode] nvarchar(24) NULL
+, [PrimaryPhoneNumber] nvarchar(24) NULL
+, [SecondaryPhoneNumber] nvarchar(24) NULL
+, [EmailAddress] nvarchar(128) NULL
+, [FaxNumber] nvarchar(24) NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+, [IsEditable] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [VeterinarianFacilityChannel] (
+  [VeterinarianFacilityChannelId] int IDENTITY (1,1) NOT NULL
+, [VeterinarianFacilityId] int NOT NULL
+, [ChannelTypeId] int NOT NULL
+, [ChannelValue] nvarchar(24) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [Contact] (
+  [ContactId] int IDENTITY (1,1) NOT NULL
+, [VeterinarianId] int NOT NULL
+, [FirstName] nvarchar(100) NOT NULL
+, [Lastname] nvarchar(100) NOT NULL
+, [Email] nvarchar(255) NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContent] (
+  [SyndicatedContentId] int IDENTITY (1,1) NOT NULL
+, [BravoVetsCountryId] int NOT NULL
+, [SyndicatedContentTypeId] int NOT NULL
+, [SyndicatedContentPostTypeId] int NOT NULL
+, [Title] nvarchar(100) NOT NULL
+, [Author] nvarchar(200) NULL
+, [Subject] nvarchar(100) NOT NULL
+, [Summary] nvarchar(255) NULL
+, [ContentText] nvarchar(4000) NULL
+, [LinkUrl] nvarchar(255) NULL
+, [BravoVetsStatusId] int NOT NULL
+, [NumberOfFavorites] int DEFAULT ((0)) NOT NULL
+, [NumberOfShares] int DEFAULT ((0)) NOT NULL
+, [NumberOfViews] int DEFAULT ((0)) NOT NULL
+, [PublishDateUtc] datetime NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContentTag] (
+  [SyndicatedContentTagId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentId] int NOT NULL
+, [Tag] nvarchar(100) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContentLink] (
+  [SyndicatedContentLinkId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentId] int NOT NULL
+, [LinkTitle] nvarchar(255) NOT NULL
+, [LinkUrl] nvarchar(255) NOT NULL
+, [SyndicatedContentAttachmentId] int NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+);
+GO
+CREATE TABLE [BravoVetsUser] (
+  [BravoVetsUserId] int IDENTITY (1,1) NOT NULL
+, [VeterinarianId] int NOT NULL
+, [MerckId] int NOT NULL
+, [Email] nvarchar(255) NULL
+, [FirstName] nvarchar(100) NOT NULL
+, [Lastname] nvarchar(100) NOT NULL
+, [BravoVetsCountryId] int NOT NULL
+, [CultureName] nvarchar(6) NOT NULL
+, [RepContactId] int NULL
+, [EmailOptIn] bit DEFAULT ((0)) NOT NULL
+, [AcceptedTandC] bit DEFAULT ((0)) NOT NULL
+, [BravoVetsStatusId] int DEFAULT ((1)) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [QueueContent] (
+  [QueueContentId] int IDENTITY (1,1) NOT NULL
+, [BravoVetsCountryId] int NOT NULL
+, [BravoVetsUserId] int NOT NULL
+, [SyndicatedContentPostTypeId] int NULL
+, [ContentText] nvarchar(4000) NOT NULL
+, [SyndicatedContentId] int NULL
+, [LinkUrl] nvarchar(255) NULL
+, [BravoVetsStatusId] int NOT NULL
+, [PublishDateUtc] datetime NOT NULL
+, [PlatformPublishId] int NOT NULL
+, [AccountName] nvarchar(255) NULL
+, [AccessCode] nvarchar(2000) NULL
+, [IsPublished] bit DEFAULT ((0)) NOT NULL
+, [PublishError] nvarchar(255) NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [ActivityType] (
+  [ActivityTypeId] int IDENTITY (1,1) NOT NULL
+, [ActivityTypeName] nvarchar(128) NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit NOT NULL
+);
+GO
+CREATE TABLE [SyndicatedContentUser] (
+  [SyndicatedContentUserId] int IDENTITY (1,1) NOT NULL
+, [SyndicatedContentId] int NOT NULL
+, [BravoVetsUserId] int NOT NULL
+, [ActivityTypeId] int NOT NULL
+, [AddtionalText] nvarchar(255) NULL
+, [BravoVetsStatusId] int NOT NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+CREATE TABLE [BravoVetsUserActivity] (
+  [BravoVetsUserActivityId] bigint IDENTITY (1,1) NOT NULL
+, [BravoVetsUserId] int NOT NULL
+, [ActivityTypeId] int NOT NULL
+, [Description] nvarchar(128) NULL
+, [Url] nvarchar(256) NULL
+, [CreateDateUtc] datetime NOT NULL
+, [ModifiedDateUtc] datetime NOT NULL
+, [Deleted] bit DEFAULT ((0)) NOT NULL
+);
+GO
+ALTER TABLE [SyndicatedContentType] ADD CONSTRAINT [PK__Syndicat__E850C17C15A4A84F] PRIMARY KEY ([SyndicatedContentTypeId]);
+GO
+ALTER TABLE [SyndicatedContentPostType] ADD CONSTRAINT [PK__Syndicat__9D82964AF59E4BB9] PRIMARY KEY ([SyndicatedContentPostTypeId]);
+GO
+ALTER TABLE [SyndicatedContentAttachment] ADD CONSTRAINT [PK__Syndicat__9092F499404EE78F] PRIMARY KEY ([SyndicatedContentAttachmentId]);
+GO
+ALTER TABLE [SocialPlatform] ADD CONSTRAINT [pk_SocialPlatformId] PRIMARY KEY ([SocialPlatformId]);
+GO
+ALTER TABLE [QueueContentDeliveryLog] ADD CONSTRAINT [PK__QueueCon__D564CACEF3E38E69] PRIMARY KEY ([QueueContentDeliveryLogId]);
+GO
+ALTER TABLE [QueueContentAttachment] ADD CONSTRAINT [PK__QueueCon__C0BAD7EB215AC925] PRIMARY KEY ([QueueContentAttachmentId]);
+GO
+ALTER TABLE [MerckLfwUser] ADD CONSTRAINT [PK__MerckLfw__D6A1C13112F8E96E] PRIMARY KEY ([MerckLfwUserId]);
+GO
+ALTER TABLE [FeaturedContent] ADD CONSTRAINT [PK__Featured__EB982EC23B6ED169] PRIMARY KEY ([FeaturedContentId]);
+GO
+ALTER TABLE [ChannelType] ADD CONSTRAINT [PK__ChannelT__5ACA2B186453D717] PRIMARY KEY ([ChannelTypeId]);
+GO
+ALTER TABLE [BravoVetsStatus] ADD CONSTRAINT [pk_StatusId] PRIMARY KEY ([BravoVetsStatusId]);
+GO
+ALTER TABLE [BravoVetsLanguage] ADD CONSTRAINT [pk_LanguageId] PRIMARY KEY ([BravoVetsLanguageId]);
+GO
+ALTER TABLE [BravoVetsCountry] ADD CONSTRAINT [pk_RegionId] PRIMARY KEY ([BravoVetsCountryId]);
+GO
+ALTER TABLE [Veterinarian] ADD CONSTRAINT [PK_Veterinarian] PRIMARY KEY ([VeterinarianId]);
+GO
+ALTER TABLE [VeterinarianSocialIntegration] ADD CONSTRAINT [PK_VeterinarianSocialIntegration] PRIMARY KEY ([VeterinarianSocialIntegrationId]);
+GO
+ALTER TABLE [VeterinarianFacility] ADD CONSTRAINT [PK_VeterinarianFacility] PRIMARY KEY ([VeterinarianFacilityId]);
+GO
+ALTER TABLE [VeterinarianFacilityChannel] ADD CONSTRAINT [PK__Veterina__E4755C445050402A] PRIMARY KEY ([VeterinarianFacilityChannelId]);
+GO
+ALTER TABLE [Contact] ADD CONSTRAINT [PK_Contact] PRIMARY KEY ([ContactId]);
+GO
+ALTER TABLE [SyndicatedContent] ADD CONSTRAINT [PK_SyndicatedContent] PRIMARY KEY ([SyndicatedContentId]);
+GO
+ALTER TABLE [SyndicatedContentTag] ADD CONSTRAINT [PK_SyndicatedContentTag] PRIMARY KEY ([SyndicatedContentTagId]);
+GO
+ALTER TABLE [SyndicatedContentLink] ADD CONSTRAINT [PK__Syndicat__9CD656751D89CB60] PRIMARY KEY ([SyndicatedContentLinkId]);
+GO
+ALTER TABLE [BravoVetsUser] ADD CONSTRAINT [PK_BravoVetsUser] PRIMARY KEY ([BravoVetsUserId]);
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [PK__QueueCon__D58D054AC801F401] PRIMARY KEY ([QueueContentId]);
+GO
+ALTER TABLE [ActivityType] ADD CONSTRAINT [pk_ActivityTypeId] PRIMARY KEY ([ActivityTypeId]);
+GO
+ALTER TABLE [SyndicatedContentUser] ADD CONSTRAINT [PK_SyndicatedContentUser] PRIMARY KEY ([SyndicatedContentUserId]);
+GO
+ALTER TABLE [BravoVetsUserActivity] ADD CONSTRAINT [PK_BravoVetsUserActivity] PRIMARY KEY ([BravoVetsUserActivityId]);
+GO
+CREATE UNIQUE INDEX [IX_BravoVetsUser_MerckId] ON [BravoVetsUser] ([MerckId] ASC);
+GO
+ALTER TABLE [BravoVetsCountry] ADD CONSTRAINT [FK_Region_Language] FOREIGN KEY ([BravoVetsLanguageId]) REFERENCES [BravoVetsLanguage]([BravoVetsLanguageId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [Veterinarian] ADD CONSTRAINT [FK_Veterinarian_ToTable] FOREIGN KEY ([BravoVetsCountryId]) REFERENCES [BravoVetsCountry]([BravoVetsCountryId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [VeterinarianSocialIntegration] ADD CONSTRAINT [FK_VeterinarianSocialIntegration_SocialPlatform] FOREIGN KEY ([SocialPlatformId]) REFERENCES [SocialPlatform]([SocialPlatformId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [VeterinarianSocialIntegration] ADD CONSTRAINT [FK_VeterinarianSocialIntegration_Veterinarian] FOREIGN KEY ([VeterinarianId]) REFERENCES [Veterinarian]([VeterinarianId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [VeterinarianFacility] ADD CONSTRAINT [FK_VeterinarianFacility_Veterinarian] FOREIGN KEY ([VeterinarianId]) REFERENCES [Veterinarian]([VeterinarianId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [VeterinarianFacilityChannel] ADD CONSTRAINT [FK_VeterinarianFacilityChannel_ChannelType] FOREIGN KEY ([ChannelTypeId]) REFERENCES [ChannelType]([ChannelTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [VeterinarianFacilityChannel] ADD CONSTRAINT [FK_VeterinarianFacilityChannel_ToTable] FOREIGN KEY ([VeterinarianFacilityId]) REFERENCES [VeterinarianFacility]([VeterinarianFacilityId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [Contact] ADD CONSTRAINT [FK_Contact_Veterinarian] FOREIGN KEY ([VeterinarianId]) REFERENCES [Veterinarian]([VeterinarianId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContent] ADD CONSTRAINT [FK_SyndicatedContent_ContentType] FOREIGN KEY ([SyndicatedContentTypeId]) REFERENCES [SyndicatedContentType]([SyndicatedContentTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContent] ADD CONSTRAINT [FK_SyndicatedContent_PostType] FOREIGN KEY ([SyndicatedContentPostTypeId]) REFERENCES [SyndicatedContentPostType]([SyndicatedContentPostTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContent] ADD CONSTRAINT [FK_SyndicatedContent_Region] FOREIGN KEY ([BravoVetsCountryId]) REFERENCES [BravoVetsCountry]([BravoVetsCountryId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContent] ADD CONSTRAINT [FK_SyndicatedContent_Status] FOREIGN KEY ([BravoVetsStatusId]) REFERENCES [BravoVetsStatus]([BravoVetsStatusId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentTag] ADD CONSTRAINT [FK_SyndicatedContentTag_SyndicatedContent] FOREIGN KEY ([SyndicatedContentId]) REFERENCES [SyndicatedContent]([SyndicatedContentId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentLink] ADD CONSTRAINT [FK_SyndicatedContentLink_ToSyndicatedContent] FOREIGN KEY ([SyndicatedContentId]) REFERENCES [SyndicatedContent]([SyndicatedContentId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [BravoVetsUser] ADD CONSTRAINT [FK_BravoVetsUser_BravoVetsCountry] FOREIGN KEY ([BravoVetsCountryId]) REFERENCES [BravoVetsCountry]([BravoVetsCountryId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [BravoVetsUser] ADD CONSTRAINT [FK_BravoVetsUser_Status] FOREIGN KEY ([BravoVetsStatusId]) REFERENCES [BravoVetsStatus]([BravoVetsStatusId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [BravoVetsUser] ADD CONSTRAINT [FK_BravoVetsUser_Veterinarian] FOREIGN KEY ([VeterinarianId]) REFERENCES [Veterinarian]([VeterinarianId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [FK_QueueContent_ToBravoVetsStatus] FOREIGN KEY ([BravoVetsStatusId]) REFERENCES [BravoVetsStatus]([BravoVetsStatusId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [FK_QueueContent_ToCountry] FOREIGN KEY ([BravoVetsCountryId]) REFERENCES [BravoVetsCountry]([BravoVetsCountryId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [FK_QueueContent_ToPlatform] FOREIGN KEY ([PlatformPublishId]) REFERENCES [SocialPlatform]([SocialPlatformId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [FK_QueueContent_ToSyndicatedContentPostType] FOREIGN KEY ([SyndicatedContentPostTypeId]) REFERENCES [SyndicatedContentPostType]([SyndicatedContentPostTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [QueueContent] ADD CONSTRAINT [FK_QueueContent_ToUser] FOREIGN KEY ([BravoVetsUserId]) REFERENCES [BravoVetsUser]([BravoVetsUserId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentUser] ADD CONSTRAINT [FK_SyndicatedContentUser_ActivityType] FOREIGN KEY ([ActivityTypeId]) REFERENCES [ActivityType]([ActivityTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentUser] ADD CONSTRAINT [FK_SyndicatedContentUser_BravoVetsUser] FOREIGN KEY ([BravoVetsUserId]) REFERENCES [BravoVetsUser]([BravoVetsUserId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentUser] ADD CONSTRAINT [FK_SyndicatedContentUser_Status] FOREIGN KEY ([BravoVetsStatusId]) REFERENCES [BravoVetsStatus]([BravoVetsStatusId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [SyndicatedContentUser] ADD CONSTRAINT [FK_SyndicatedContentUser_SyndicatedContent] FOREIGN KEY ([SyndicatedContentId]) REFERENCES [SyndicatedContent]([SyndicatedContentId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [BravoVetsUserActivity] ADD CONSTRAINT [FK_BravoVetsUserActivity_ActivityType] FOREIGN KEY ([ActivityTypeId]) REFERENCES [ActivityType]([ActivityTypeId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [BravoVetsUserActivity] ADD CONSTRAINT [FK_BravoVetsUserActivity_BravoVetsUser] FOREIGN KEY ([BravoVetsUserId]) REFERENCES [BravoVetsUser]([BravoVetsUserId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [FeaturedContent] ADD CONSTRAINT [FK_FeaturedContent_ToCountry] FOREIGN KEY ([BravoVetsCountryId]) REFERENCES [BravoVetsCountry]([BravoVetsCountryId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+

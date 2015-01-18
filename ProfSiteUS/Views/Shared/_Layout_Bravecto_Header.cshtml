@@ -1,0 +1,44 @@
+﻿@using ProfSite.Models
+<header class="navbar bv-nav" role="banner">
+    <div class="container">
+        <div class="row nav-wrapper">
+            <div class="col-sm-4">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand bravovets">
+                        <img src="/images/logo-bravecto@2x.png" alt="Bravecto Logo" class="logo-bravecto" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-right navbar-bravecto">                       
+                        @foreach (var item in ((BravectoMenu)ViewBag.Menu).MenuItems)
+                        {
+                            <li><a class="@(((BravectoMenu)ViewBag.Menu).ActiveItem == item.Code? "active":"")" href="@item.Url"><span>@item.Display</span></a></li>
+                        }
+
+                        <li class="bravovets-link">
+                            <a href="http://www.mypet.com/bravecto" target="_blank">
+                                Pet Owners
+                            </a>
+                        </li>
+                        <ul class="nav navbar-nav product-info">
+                            <li>
+                                <a href="http://intervetus.naccvp.com/product/view/1047512?e=d97b22ed63e734e84c1a5910a9c8f531z1688
+" target="_blank">
+                                    See Prescribing Information
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

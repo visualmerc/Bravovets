@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BravoVetsDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{da83bfc9-557b-4e3d-9fa3-d86d0c50f586}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BravoVetsDb</RootNamespace>
+    <AssemblyName>BravoVetsDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'dev|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'stage|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'dev|x64' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'stage|x64' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="ref\" />
+    <Folder Include="ref\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="script" />
+    <Folder Include="script\postdeploy" />
+    <Folder Include="tst" />
+    <Folder Include="tst\Tables" />
+    <Folder Include="Deploy" />
+    <Folder Include="Deploy\2005" />
+    <Folder Include="Deploy\Static" />
+    <Folder Include="Deploy\Version002" />
+    <Folder Include="dbo\Programmability" />
+    <Folder Include="Deploy\Version003" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="ref\Tables\BravoVetsStatus.sql" />
+    <Build Include="ref\Tables\SocialPlatform.sql" />
+    <Build Include="ref\Tables\BravoVetsLanguage.sql" />
+    <Build Include="ref\Tables\ActivityType.sql" />
+    <Build Include="dbo\Tables\BravoVetsUser.sql" />
+    <Build Include="dbo\Tables\BravoVetsUserActivity.sql" />
+    <Build Include="dbo\Tables\Contact.sql" />
+    <Build Include="dbo\Tables\SyndicatedContent.sql" />
+    <Build Include="dbo\Tables\SyndicatedContentTag.sql" />
+    <Build Include="dbo\Tables\SyndicatedContentUser.sql" />
+    <Build Include="dbo\Tables\Veterinarian.sql" />
+    <Build Include="dbo\Tables\VeterinarianFacility.sql" />
+    <Build Include="dbo\Tables\VeterinarianSocialIntegration.sql" />
+    <Build Include="Security\ref.sql" />
+    <None Include="script\postdeploy\static.ref.activitytype.sql" />
+    <None Include="script\postdeploy\static.ref.socialplatform.sql" />
+    <None Include="script\postdeploy\static.ref.bravovetsstatus.sql" />
+    <Build Include="ref\Tables\BravoVetCountry.sql" />
+    <Build Include="tst.sql" />
+    <Build Include="tst\Tables\MerckLfwUser.sql" />
+    <Build Include="dbo\Tables\VeterinarianFacilityChannel.sql" />
+    <Build Include="dbo\Tables\ChannelType.sql" />
+    <None Include="script\postdeploy\static.ref.channeltype.sql" />
+    <Build Include="dbo\Tables\SyndicatedContentAttachment.sql" />
+    <Build Include="dbo\Tables\SyndicatedContentPostType.sql" />
+    <None Include="Deploy\2005\BravovetsDb2005.publish.sql" />
+    <Build Include="ref\Tables\SyndicatedContentType.sql" />
+    <Build Include="dbo\Tables\QueueContent.sql" />
+    <Build Include="dbo\Tables\QueueContentAttachment.sql" />
+    <None Include="script\postdeploy\static.tst.CreateBigTestData_02.sql" />
+    <None Include="script\postdeploy\static.content.SyndicatedContent.sql" />
+    <None Include="script\postdeploy\static.content.SyndicatedContentAttachment.sql" />
+    <None Include="Deploy\Static\dbo.AllEnglishSyndicatedContent.staticdata.sql" />
+    <None Include="Deploy\Static\static.english.SyndicatedContentAttachment.sql" />
+    <None Include="Deploy\Static\dbo.IandSSyndicatedContent.staticdata.sql" />
+    <Build Include="dbo\Tables\QueueContentDeliveryLog.sql" />
+    <Build Include="dbo\Tables\FeaturedContent.sql" />
+    <Build Include="dbo\Tables\SyndicatedContentLink.sql" />
+    <None Include="script\postdeploy\static.ref.FeaturedContent.sql" />
+    <Build Include="dbo\Programmability\DeleteOrphanedSyndicatedContent.sql" />
+    <Build Include="dbo\Programmability\FindOrphanedSyndicatedContent.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="script\postdeploy\Main.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="script\postdeploy\static.ref.bravovetslanguage.sql" />
+    <None Include="LocalBravoVetsDb.publish.xml" />
+    <None Include="script\postdeploy\static.ref.BravoVetsCountry.sql" />
+    <None Include="script\postdeploy\static.tst.MerckLfwUser.sql" />
+    <None Include="script\postdeploy\CreateTestUsers.sql" />
+    <None Include="PowerRoom.publish.xml" />
+    <None Include="script\postdeploy\static.ref.SyndicatedContentPostType.sql" />
+    <None Include="script\postdeploy\static.ref.SyndicatedContentType.sql" />
+    <None Include="script\postdeploy\static.tst.CreateBigTestData.sql" />
+    <None Include="DonerDev.publish.xml" />
+    <None Include="DonerStaging.publish.xml" />
+    <None Include="Deploy\Version002\BravoVetsDb2005.v2.Publish.sql" />
+    <None Include="BravoVetsDbV2DiffScript.publish.xml" />
+    <None Include="Deploy\Version003\BravoVetsDb2005.v03.Publish.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BravoVetsDb.refactorlog" />
+  </ItemGroup>
+</Project>

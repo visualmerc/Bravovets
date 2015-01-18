@@ -1,0 +1,21 @@
+<div class = "cal-row-fluid">
+    <% for(var i=0; i < 7; i++) { %>
+    <div class="cal-cell1">
+        <div style="margin-bottom:5px;">
+            <% _.each(events, function(event){ %>
+            <% if(event.start_day == i) { %>
+            <div class="call-cell1 day-highlight dh-<%= event['class'] %>" data-event-class="<%= event['class'] %>">
+                <a href="<%= event.url ? event.url : 'javascript:void(0)' %>" data-event-id="<%= event.id %>" class="cal-event-week event<%= event.id %> <%= event.status %>  event-item week-view">
+                    <div>
+                        <span class="<%= event.class %>"></span>
+                        <span class="event-time"><%= event.display_start %></span>
+                    </div>
+                    <%= event.title %>
+                </a>
+            </div>
+            <% } %>
+            <% }) %>
+        </div>
+    </div>
+    <%}%>
+ </div>

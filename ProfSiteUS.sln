@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfSiteUS", "ProfSiteUS\ProfSiteUS.csproj", "{4655D9BA-15A9-437E-9623-C3FF2CFD399A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{53566A06-19B0-4DAA-AE71-B1E3A92F9A24}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\test-build.msbuild = ..\build\test-build.msbuild
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		dev|Any CPU = dev|Any CPU
+		dev|x64 = dev|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		stage|Any CPU = stage|Any CPU
+		stage|x64 = stage|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Debug|x64.ActiveCfg = Debug|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Debug|x64.Build.0 = Debug|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.dev|Any CPU.ActiveCfg = dev|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.dev|Any CPU.Build.0 = dev|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.dev|x64.ActiveCfg = dev|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.dev|x64.Build.0 = dev|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Release|x64.ActiveCfg = Release|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.Release|x64.Build.0 = Release|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.stage|Any CPU.ActiveCfg = stage|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.stage|Any CPU.Build.0 = stage|Any CPU
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.stage|x64.ActiveCfg = stage|x64
+		{4655D9BA-15A9-437E-9623-C3FF2CFD399A}.stage|x64.Build.0 = stage|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
