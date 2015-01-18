@@ -1,0 +1,16 @@
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\SqlCe\bravovets.sdf
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\BravoVets.Dal.dll.config
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\BravoVets.Dal.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\BravoVets.Dal.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\BravoVets.DomainObject.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.SqlServer.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.SqlServerCompact.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\System.Data.SqlServerCe.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\BravoVets.DomainObject.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.xml
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.SqlServer.xml
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\bin\Debug\EntityFramework.SqlServerCompact.xml
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\obj\Debug\BravoVets.Dal.csprojResolveAssemblyReference.cache
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\obj\Debug\BravoVets.Dal.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.Dal\obj\Debug\BravoVets.Dal.pdb

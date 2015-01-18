@@ -1,0 +1,42 @@
+﻿@model SocialIntegrationModel
+@using bvResources = ProfSite.Resources.Resource
+<div class="additional-content-item social-activity">
+    <div class="section-nav-wrapper">
+        <h2>@bvResources.BravoVetsWidget_SocialActivityWidget_SocialActivity</h2>
+        <a class="btn btn-link" href="/dashboard">@bvResources.BravoVetsWidget_SocialActivityWidget_ViewAll</a>
+    </div>
+    <div class="content-wrapper diagonal-bottom">
+        <div class="notification-container facebook">
+            <div class="icon"></div>
+            <div class="stats">
+                @if (@Model.FacebookProfile.difference != 0)
+                {
+                    <div class="new-notifications">
+                        <span class="new-count">@Model.FacebookProfile.difference</span> @bvResources.BravoVets_Widget_SocialActivity_NewNotifications
+                    </div>
+                }
+                <div class="total-notifications">
+                    <span class="total-count">@Model.FacebookProfile.likes</span> @bvResources.BravoVets_Widget_SocialActivity_Total
+                </div>
+                <a href="/dashboard#0">@bvResources.BravoVets_Widget_SocialActivity_ViewRecentActivity</a>
+            </div>
+        </div>
+        <hr class="plus diagonal">
+        <div class="notification-container twitter">
+            <div class="icon"></div>
+            <div class="stats">
+                @if (@Model.TwitterProfile.difference != 0)
+                {
+                    <div class="new-notifications">
+                        <span class="new-count">@Model.TwitterProfile.difference</span> @bvResources.BravoVets_Widget_SocialActivity_NewNotifications
+                    </div>
+                }
+                <div class="total-notifications">
+                    <span class="total-count">@Model.TwitterProfile.followers_count</span> @bvResources.BravoVets_Widget_SocialActivity_Total
+
+                </div>
+                <a href="/dashboard#1">@bvResources.BravoVets_Widget_SocialActivity_ViewRecentActivity</a>
+            </div>
+        </div>
+    </div>
+</div>

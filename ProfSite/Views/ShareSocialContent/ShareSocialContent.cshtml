@@ -1,0 +1,194 @@
+﻿@using System.Diagnostics.Tracing
+@using bvResources = ProfSite.Resources.Resource
+@model  SocialDialogModel
+
+<div class="modal social-post-dialog @Model.HeaderClass" id="modalFacebookPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <input type="hidden" name="syndicatedContentId" id="syndicatedContentId" value="@Model.ContentModel.Id">
+    <input type="hidden" name="isPublished" id="isPublished" value="@Model.ContentModel.IsPublished.ToString().ToLower()">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">@Model.Header</h4>
+                <hr class="plus diagonal">
+            </div>
+            <div class="modal-body">
+                @if (Model.ShowShareOptions)
+                {
+                    <ul class='share-options row '>
+                        <li class="col-xs-6 ">
+                            <div class="share-option facebook @(Model.EnableFacebook == false? " disabled":"")">
+                                <input type="checkbox" id="post-to-facebook">
+                                <div class="indicator"></div>
+                                <span>Facebook</span>
+                            </div>
+                        </li>
+                        <li class="col-xs-6 ">
+                            <div class="share-option twitter @(Model.EnableTwitter == false? " disabled":"")">
+                                <input type="checkbox" id="post-to-twitter">
+                                <div class="indicator"></div>
+                                <span>Twitter</span>
+                            </div>
+                        </li>
+                    </ul>
+                }
+                <div class="tweetlength-wrapper" data-script="TweetLength" data-tweetfield="share-message">
+                    <span class="twitter-prefix hidden">@Resource.Twitter_char_length_prefix</span> 
+                    <span class="twitter-attachment-prefix hidden">@Resource.Twitter_char_length_attachment_prefix</span> 
+                    <span class="twitter-suffix hidden">@Resource.Twitter_char_length_suffix</span>
+                    <span class="message"></span>
+                    <div class="character-count">
+                        <span class="current-count">245</span>
+                        /
+                        <span class="remaining-count">140</span>
+                    </div>
+                </div>
+                <div class="form-group message-wrapper">
+                    <div class="textarea-wrapper">
+                        <textarea name="message" id="share-message" rows="6" class="form-control" placeholder="@Resource.BravoVets_ShareDialog_Message_Placeholder">@Model.ContentModel.ContentText</textarea>
+                    </div>
+                </div>
+                @if (!Model.ShowShareOptions)
+                {
+                    <div class="post-images-wrapper images-added">
+                        <div class="add-images-wrapper"></div>
+                        <div id="filesContainer" class="post-image-list files" role="presentation" data-toggle="modal-gallery" data-target="#modal-gallery">
+                            @if (Model.ContentModel.Attachments.Count > 0)
+                            {
+                                foreach (var socialDialogAttachmentModel in Model.ContentModel.Attachments)
+                                {
+                                    <div id="@socialDialogAttachmentModel.AttachmentId" class=" template-download post-image-wrapper loaded">
+                                        <img id="delete-@socialDialogAttachmentModel.AttachmentId" src="/images/btn-close-postimage@2x.png" alt="Close Post Image" class="btn close delete-attachment" data-attachmentid="@socialDialogAttachmentModel.AttachmentId" data-url="@socialDialogAttachmentModel.DeleteUrl" />
+                                        <img src="@socialDialogAttachmentModel.Url" class="post-image" alt="@socialDialogAttachmentModel.FileName" style="height:100%;">
+                                    </div>
+                                }
+                            }
+                            else if (!string.IsNullOrEmpty(Model.ContentModel.LinkUrl))
+                            {
+                                <div id="urlAttachment" class="attach-url-template">
+                                    <img id="delete-url-attachment" src="/images/btn-close-postimage@2x.png" alt="Close Post Image" class="btn close" />
+                                    <a href="@Model.ContentModel.LinkUrl" target="_blank">@Model.ContentModel.LinkUrl</a>
+                                </div>
+                            }
+                            <div class="post-image-wrapper">
+                                <a id="attach-media" class="attach-media">@Resource.BravoVets_ShareDialog_AttachMedia</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="fileupload" method="POST" enctype="multipart/form-data" class="form-inline attach-media-form" role="form">
+                        @if (Model.EnableAttachUrl)
+                        {
+                            <div class="form-group">
+                                <input id="videoOrUrl" type="text" placeholder="@Resource.BravoVets_ShareDialog_AttachUrl_Placeholder" value="@Model.ContentModel.LinkUrl">
+                            </div>
+                            <div class="form-group">
+                                <button id="attachUrlVideo" class="btn" type="button">@Resource.BravoVets_ShareDialog_Attach</button>
+                            </div>
+
+                            <div class="form-group upload-link fileinput-button">
+                                <span>@Resource.BravoVets_ShareDialog_or</span>
+                                <a href="#0">@Resource.BravoVets_ShareDialog_UploadImage</a>
+                                <input type="file" name="files[]" multiple="" accept="image/*">
+                            </div>
+                        }
+                        else
+                        {
+
+                            <div class="form-group upload-link fileinput-button">
+                                <a class="btn" href="#0">@Resource.BravoVets_ShareDialog_UploadImage</a>
+                                <input type="file" name="files[]" accept="image/*">
+                            </div>
+                        }
+                        <!-- The loading indicator is shown during file processing -->
+                        <div class="fileupload-loading"></div>
+                        <br>
+                        <input type="hidden" name="queuedContentId" id="queuedContentId" value="@Model.ContentModel.Id">
+
+                    </form>
+                }  else if (!string.IsNullOrEmpty(Model.ContentModel.LinkUrl))
+                {
+                    <div id="urlAttachment" class="attach-url-template"></div>
+                }
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label for="postDate">@Resource.BravoVets_ShareDialog_Date</label>
+                        <div class="datepicker-container" data-script="DatePicker" data-language="@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName" data-format="MM dd, yyyy">
+                            <div class="input-group date">
+                                <input id="postDate" type="text" class="form-control" data-current="@Model.ContentModel.PublishDate.AddMinutes(-Model.ClientOffset).ToString("MM dd, yyyy")" data-current-date="@DateTime.Today.ToString("MM dd, yyyy")" value="@Model.ContentModel.PublishDate.AddMinutes(-Model.ClientOffset).ToString("MM dd, yyyy")"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postTime">@Resource.BravoVets_ShareDialog_Time</label>
+                        <div class="timepicker-container" data-script="TimePicker" data-language="@System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName">
+                            <div class="input-group input-append bootstrap-timepicker">
+                                <input id="postTime" name="postTime" type="text" class="form-control" value="@Model.ContentModel.PublishDate.AddMinutes(-Model.ClientOffset).ToString("HH:00")">
+                                <span class="input-group-addon add-on"><i class="bravicon icon-clock"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="postnow" @(Model.ContentModel.PostNow ? "checked" : "")>
+                                <div class="indicator"></div>
+                            </div> @Resource.BravoVets_ShareDialog_PostNow
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div id="error-message-wrapper" style="display:none;">
+                    <div class="alert alert-danger alert-dismissable">
+                        <span id="error-message" data-futuredate="Please select a current date or time" data-selectnetwork="@Resource.BravoVets_ShareDialog_Error_SelectNetwork" data-nomessage="@Resource.BravoVets_ShareDialog_Error_EnterMessage"></span>
+                    </div>
+                </div>
+                @if (Model.ShowDelete)
+                {
+                    <button id="deleteContent" type="button" class="btn btn-primary">@Resource.BravoVets_ShareDialog_Delete</button>
+                }
+                <button id="postContent" type="button" class="btn btn-primary">@Model.PostText</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script id="template-upload" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    {% if (file.error) { %}
+    <div class="template-upload  post-image-wrapper fade">
+        <div class="error" colspan="2"><span class="label label-important">{%=file.name%}</span> {%=file.error%}</div>
+    </div>
+    {% } else { %}
+    <div class="template-upload  post-image-wrapper loading">
+        <img src="/images/btn-close-postimage@2x.png" alt="Close Post Image" class="btn close" />
+        <div class="error" colspan="2"><span class="label label-important">{%=file.name%}</span> {%=file.error%}</div>
+    </div>
+
+    {% } %}
+    {% } %}
+</script>
+
+
+<script id="template-download" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    <div id="{%=file.attachmentId%}" class=" template-download fade post-image-wrapper loaded">
+        <img id="delete-{%=file.attachmentId%}" src="/images/btn-close-postimage@2x.png" alt="Close Post Image" class="btn close" data-url="{%=file.delete_url%}" />
+        {% if (file.error) { %}
+        <div class="error" colspan="2"><span class="label label-important">Error</span> {%=file.error%}</div>
+        {% } else { %}
+        <img src="{%=file.url%}" class="post-image" alt=" {%=file.name%}" style="height:100%;">
+        {% } %}
+    </div>
+    {% } %}
+</script>
+
+<script id="attach-url-template" type="text/x-tmpl">
+    <div id="urlAttachment" class="attach-url-template">
+        <img id="delete-url-attachment" src="/images/btn-close-postimage@2x.png" alt="Close Post Image" class="btn close" />
+        <a href="{%=o.url%}" target="_blank">{%=o.url%}</a>
+    </div>
+</script>
+

@@ -1,0 +1,76 @@
+﻿@model  SelectCountry
+@{ Layout = null;}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>@(ViewBag.Title ?? "Bravovets")</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/favicon.png" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body class="no-bootstrap-icons poc">
+    <!-- test for an outdated browser -->
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <section class="viewport">
+        <div class="page-bg select-country"></div>
+        <div class="site-logo-header">
+            <img src="images/logo-bravecto.png" alt="Bravecto Logo">
+        </div>
+        <div class="container">
+            <div class="row" id="select-country">
+                <div class="panel full-width panel-translight panel-diagonalbottom text-center">
+                    <p class="center-block page-instructions">@Model.Info</p>
+                    <form action="">
+                        <div class="row country-list" data-baseurl="@Model.BaseUrl">
+                            @foreach (var country in Model.SupportedCountries)
+                            {
+                                <div class="col-xs-2 option-country" data-country="@country.SiteUrl">
+                                    <input type="radio" name="country" value="@country.SiteUrl" id="country-@country.LocaleCode" />
+                                    <img src="@string.Format("images/flag-{0}.png",country.Code)" alt="@country.LocaleCode Flag">
+                                    <span>@country.DisplayName</span>
+                                </div>
+                            }
+                        </div>
+                    </form>
+                    <a id="select-your-country" href="#0" class="btn btn-lg btn-bv">@Model.ButtonText</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#select-your-country").click(function () {
+                var baseUrl = $(".country-list").data("baseurl");
+                var siteUrl = $("input[type='radio']:checked").val();
+                var url = "http://{0}{1}/bravecto/".format(baseUrl, siteUrl);
+                window.location = url;
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

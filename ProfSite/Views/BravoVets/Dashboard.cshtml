@@ -1,0 +1,76 @@
+﻿@using bvResources = ProfSite.Resources.Resource
+
+<div class="container bv-resources">
+    <div class="row">
+        <div class="col-sm-8 resources-container">
+            @Html.Action("GetSocialFollowing", "Facebook")
+         
+            <div class="tab-content">
+                <div class="tab-pane white-trans-bg fade in active" id="facebook">
+                    <div id="fb-loading" style="display:none;">
+                        @Html.Partial("SocialLoading")
+                    </div>
+
+                    <div id="fbplaceholder">
+                    </div>
+                </div>
+                <div class="tab-pane white-trans-bg fade" id="twitter">
+                    <div id="twitter-loading" style="display:none;">
+                        @Html.Partial("SocialLoading")
+                    </div>
+                    <div id="twitterplaceholder">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 additional-content-container">
+            <h2 class="sidebar-title">@bvResources.BravoVets_Dashboard_AdditionalContent</h2>
+            <div class="additional-content">
+                @Html.Action("BravectoContent", "BravovetsWidgets")
+                @Html.Action("TrendingTopics", "BravovetsWidgets")
+                @Html.Action("SocialTips", "BravoVetsWidgets")
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/fileupload")
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".get-queuedcontent").socialPostDialog({"dialogType":"socialcal"});
+
+            //$("#twitterplaceholder").twitterTimeline();
+            $("#fbplaceholder").facebookTimeline();
+
+            //$('a[href="#twitter"]').tab('show');
+
+
+
+            $('#dashboard-tabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+                var platform = $(this).attr("href");
+                if (platform == "#twitter") {
+                    $("#twitterplaceholder").twitterTimeline();
+                } else {
+                    $("#fbplaceholder").facebookTimeline();
+                }
+
+                $(this).closest('.nav-tabs').find('.active').removeClass('active');
+                $(this).closest('li').addClass('active');
+            });
+            $(".tab-wrapper.twitter").click();
+
+
+            $(".content-widget").find(".share").socialPostDialog({ "dialogType": "trendingtopics", "fileupload": false });
+        });
+
+    </script>
+}

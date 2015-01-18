@@ -1,0 +1,23 @@
+﻿@model  TwitterTimeline
+
+<a id="post-to-twitter" class="btn btn-tweet">@Resource.BravoVets_Dashboard_PostToTwitter</a>
+<ul class="twitter-timeline social-feed list-unstyled">
+    @foreach (var tweet in Model.Tweets)
+    {
+        @Html.Partial("Tweet", tweet)
+    }
+    <li class="tweetLoading" style="display:none;">
+        <div class="loader-wrapper">
+            <div class="loader css-anim">
+                <div id="animation">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="load-btn-wrapper">
+    <a id="twitter-more" class="next-page btn btn-primary" href="/twitter/timeline?maxId=@Model.LastId">@Resource.BravoVets_SocialTips_LoadMore</a>
+</div>

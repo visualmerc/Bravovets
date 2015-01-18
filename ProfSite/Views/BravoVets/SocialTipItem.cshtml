@@ -1,0 +1,89 @@
+﻿@model  SyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+@if (string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <li class="panel-diagonalbottom">
+        <h3>@Model.Title</h3>
+        <hr class="plus diagonal">
+        <div class="content-img-text-wrapper">
+            <div class="content-text">
+                <p>@Html.Raw(Model.ContentText)</p>
+                @if (!string.IsNullOrEmpty(Model.LinkUrl))
+                {
+                    <a target="_blank" href="/syndicatedcontent/viewcontent/@Model.Id" class="btn btn-link">@bvResources.BravoVets_ResourceTopicItem_ReadMore</a>
+                }
+            </div>
+        </div>
+        @if (Model.SyndicatedLinks.Any())
+        {
+            <div class="attachment-wrapper">
+                <h4>@bvResources.BravoVets_Attachments</h4>
+                <hr class="diagonal">
+                <ul>
+                    @foreach (var syndicatedLink in Model.SyndicatedLinks)
+                    {
+                        @Html.Partial("SyndicatedContentLink", syndicatedLink)
+                    }
+                </ul>
+            </div>
+        }
+        <hr class="diagonal">
+        <div class="content-item-footer">
+            <div class="footer-link-container">
+
+                @if (Model.IsFavorite)
+                {
+                    <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-removefavorite">@bvResources.BravoVets_ResourceTopicItem_RemoveAsFavorite</a>
+                }
+                else
+                {
+                    <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-addfavorite">@bvResources.BravoVets_ResourceTopicItem_MarkAsFavorite</a>
+                }
+
+            </div>
+        </div>
+    </li>
+}
+else
+{
+    <li class="full-image panel-diagonalbottom">
+        <img src="@Model.ImageUrl" alt="@Model.ImageName" class="content-image" />
+        <h3>@Model.Title</h3>
+        <hr class="plus diagonal">
+        <div class="content-text">
+            <p>@Html.Raw(Model.ContentText)</p>
+            @if (!string.IsNullOrEmpty(Model.LinkUrl))
+            {
+                <a target="_blank" href="/syndicatedcontent/viewcontent/@Model.Id" class="btn btn-link">@bvResources.BravoVets_ResourceTopicItem_ReadMore</a>
+            }
+        </div>
+        @if (Model.SyndicatedLinks.Any())
+        {
+            <div class="attachment-wrapper">
+                <h4>@bvResources.BravoVets_Attachments</h4>
+                <hr class="diagonal">
+                <ul>
+                    @foreach (var syndicatedLink in Model.SyndicatedLinks)
+                    {
+                        @Html.Partial("SyndicatedContentLink", syndicatedLink)
+                    }
+                </ul>
+            </div>
+        }
+        <hr class="diagonal">
+        <div class="content-item-footer">
+            <div class="footer-link-container">
+
+                @if (Model.IsFavorite)
+                {
+                    <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-removefavorite">@bvResources.BravoVets_ResourceTopicItem_RemoveAsFavorite</a>
+                }
+                else
+                {
+                    <a href="syndicatedContentId=@Model.Id" class="favorite btn btn-link btn-addfavorite">@bvResources.BravoVets_ResourceTopicItem_MarkAsFavorite</a>
+                }
+
+            </div>
+        </div>
+    </li>
+}

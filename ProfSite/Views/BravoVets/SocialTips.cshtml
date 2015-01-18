@@ -1,0 +1,56 @@
+﻿@using BravoVets.DomainObject.Enum
+@model ViewSyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+<div class="container bv-resources">
+    <div class="row">
+        <div class="socialtips col-sm-8 resources-container">
+            <h1 class="page-title">@bvResources.BravoVets_SocialTips_SocialTips</h1>
+            <div class="sort-nav-container">
+                <div class="sort-nav">
+                    <div class="sort-title">@bvResources.BravoVets_SocialTips_View</div>
+                    <ul class="social-tips-filterby nav nav-pills">
+                        <li class="active"><a href="filterBy=All">@bvResources.BravoVets_SocialTips_All</a></li>
+                        <li><a id="show-favorites-filter" href="filterBy=@ContentFilterEnum.Favorites">@bvResources.BravoVets_SocialTips_Favorites</a></li>
+                    </ul>
+                </div>
+                <div class="social-tips-sortby sort-nav pull-right">
+                    <div class="sort-title">@bvResources.BravoVets_ResourceTopics_SortBy</div>
+                    <select id="sort-topic" class="customedropdown">
+                        <option value="@ContentSortEnum.ContentDate">@bvResources.BravoVets_SocialTips_Date</option>
+                        <option value="@ContentSortEnum.Topic">@bvResources.BravoVets_SocialTips_Topic</option>
+                        <option value="@ContentSortEnum.TotalViews">@bvResources.BravoVets_SocialTips_Views</option>
+                    </select>
+                </div>
+            </div>
+            @Html.Partial("SocialTipItems", Model)
+        </div>
+        <div class="col-sm-4 additional-content-container">
+            <h2 class="sidebar-title">@bvResources.BravoVets_SocialTips_AdditionalContent</h2>
+            <div class="additional-content">
+                @Html.Action("BravectoContent", "BravovetsWidgets")
+                @Html.Action("TrendingTopics", "BravoVetsWidgets")
+                @Html.Action("SocialActivity", "BravoVetsWidgets")
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".socialtips").trendingTopics({
+                sortByName: "div.social-tips-sortby",
+                filterByName: "ul.social-tips-filterby",
+                widgetListName: "ul.syndicatedcontent-socialtips",
+                getUrl: "/SocialTipItems"
+            });
+
+            $(".content-widget").find(".share").socialPostDialog({ "dialogType": "trendingtopics", "fileupload": false });
+
+
+        });
+
+    </script>
+}

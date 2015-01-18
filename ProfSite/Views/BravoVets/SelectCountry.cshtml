@@ -1,0 +1,143 @@
+﻿@model  SelectCountry
+@using bvResources = ProfSite.Resources.Resource
+
+@{ Layout = null;}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>@bvResources.BravoVets_SelectCountry_Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/favicon.png" />
+
+    <!-- Typekit font is a close helvetica alternative. Replace with helvetica when available. -->
+    <!--
+    <script type="text/javascript" src="//use.typekit.net/nhs7hxx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body class="globalpage global-bg">
+    @Html.Partial("HappyBrowser")
+        <div class="circles-header"></div>
+        <div class="dog-bg"></div>
+
+        <div class="page-wrapper">
+            <header class="navbar bv-nav" role="banner">
+                <div class="container">
+                    <div class="row nav-wrapper">
+                        <div class="col-sm-4">
+                            <div class="navbar-header">
+                                <a href="homepage.html" class="navbar-brand bravovets">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="page-content-wrapper">
+                <div class="container">
+                    <noscript>
+                        <div id="javaNotification" style="border: 1px solid #ffde9f;padding: 5px; background: #fffecd;">
+                            <div class="col">
+                                <h3>@bvResources.JavaScriptDisable_Title</h3>
+                                <p>@bvResources.JavaScriptDisable_Text1<br /> @bvResources.JavaScriptDisable_Text2</p>
+                            </div>
+                        </div>
+                    </noscript>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1>@bvResources.BravoVets_SelectCountry_Welcome</h1>
+                            <hr class="plus diagonal">
+                            <p>@bvResources.BravoVets_SelectCountry_Pinnacle</p>
+                            <p>@bvResources.BravoVets_SelectCountry_Platform</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="white-trans-bg">
+                                <h3>@bvResources.BravoVets_SelectCountry_SelectCountry</h3>
+                                <p>@bvResources.BravoVets_SelectCountry_Customize</p>
+                                <hr class="plus diagonal">
+                                <h3>@bvResources.BravoVets_SelectCountry_DropDown</h3>
+                                @Html.DropDownList("selCountry", @Model.SupportedCountries, @bvResources.BravoVets_SelectCountry_DropDown, new { @class = "select-country ie9_select_adjust" })
+
+                                <button id="select-your-country" data-baseurl="@Model.BaseUrl" class="btn btn-primary pull-right">@bvResources.BravoVets_SelectCountry_Continue</button>
+                                <input id="testUserIdBox" style="width: 32px;display:none" />
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer>
+        <div class="container">
+            <!-- TODO: Uncomment this when search is added to the site -->
+            <!-- <div id="footer-search" class="row search-wrapper visible-xs">
+                <div class="col-xs-12"><input type="text" placeholder="Search"></div>
+            </div> -->
+           
+        </div>
+    </footer>
+
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                var hash = window.location.hash;
+                if (hash !== "") {
+                    $("#testUserIdBox").show();
+                }
+
+                $(".customedropdown").bravoVetDropDown();
+
+                $("#select-your-country").click(function (event) {
+                    event.preventDefault();
+
+                    var siteUrl = $("#selCountry").val();
+                    if (siteUrl === "") {
+                        return;
+                    }
+                    var baseUrl = $(this).data("baseurl");
+                    var testUserVal = $("#testUserIdBox").val();
+                    var url = "";
+                    if (testUserVal === "") {                        
+                        if (siteUrl === "us.bravovets.com" || siteUrl.indexOf("staging") != -1) {
+	                        url = "http://{0}".format(siteUrl);
+                    	} else {
+                        	url = "http://{0}{1}".format(baseUrl, siteUrl);
+			            }
+                    } else {
+                        url = "http://{0}{1}/testuserid/{2}".format(baseUrl, siteUrl, testUserVal);
+                    }
+                    window.location = url;
+
+                });
+            });
+
+        </script>
+
+        @if (ViewBag.Language == "fr-FR")
+        {
+            <noscript>
+                <a href="//policy.merck.sitemorse.com/e0adce0b-fr.html" style="z-index: 32001; background: #fff none no-repeat scroll 0 0; text-decoration: none; display: block; position: fixed; bottom: 0; right: 20px; font: normal normal normal 10pt Verdana,Geneva,sans-serif; color: #000000; border: 1px solid #b202c2; border-bottom: 0; border-radius: 5px 5px 0 0; padding: 4px 20px; cursor: pointer; opacity: 0.8">cookies</a>
+            </noscript>
+            <script type="text/javascript" src="//policy.merck.sitemorse.com/e0adce0b_panel-fr.js"></script>
+        }
+
+    </body>
+
+</html>

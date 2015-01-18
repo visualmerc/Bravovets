@@ -1,0 +1,13 @@
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\SqlCe\bravovets.sdf
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.DomainService.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.DomainService.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.Dal.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.DomainObject.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\EntityFramework.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\log4net.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.Dal.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\BravoVets.DomainObject.pdb
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\EntityFramework.xml
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.csprojResolveAssemblyReference.cache
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.dll
+Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.pdb

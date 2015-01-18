@@ -1,0 +1,185 @@
+﻿@using System.Threading
+@{ Layout = null; }
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bravovets</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+    
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+
+<body class="globalpage global-bg termspage">
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+        <header class="navbar bv-nav" role="banner">
+            <div class="container">
+                <div class="row nav-wrapper">
+                    <div class="col-sm-4">
+                        <div class="navbar-header">
+                            <a href="/bravecto" class="navbar-brand bravovets">
+                                <img src="/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper">
+            <div class="container terms-content">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6">
+                        <img src="/images/dog-face.png" alt="Dog Face" class="dogface-bg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Bienvenue sur BravoVets!</h1>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <hr class="plus diagonal">
+                        <p>Vous souhaitez d&eacute;velopper votre activit&eacute;, vous avez d&eacute;sormais les outils pour le faire. BravoVets vous apporte les ressources et les informations qui vous permettront d&rsquo;&ecirc;tre &agrave; jour des derni&egrave;res recherches, d&rsquo;&eacute;tendre votre pr&eacute;sence et votre visibilit&eacute; sur les r&eacute;seaux sociaux et cr&eacute;er des liens avec vos clients actuels et futurs. BravoVets fera de vous l&rsquo;expert en sant&eacute; animale sur lequel vos clients peuvent compter.</p>
+                        <p>Commen&ccedil;ons simplement. Il vous suffit d&rsquo;accepter les termes et conditions d&rsquo;utilisation et toutes les ressources seront &agrave; votre disposition.</p></div>
+                    <div class="col-sm-6">
+                        <div class="white-trans-bg">
+                            <h3 class="alt">Accepter les termes et conditions d&rsquo;utilisation</h3>
+                            <p>
+                                Les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation r&eacute;gissent la mise &agrave; disposition par MSD Sant&eacute; Animale de produits, logiciels, services et sites Internet (de mani&egrave;re g&eacute;n&eacute;rale, &laquo; Services &raquo;) et tout ou partie d&rsquo;informations, textes, graphiques, photos ou autres mat&eacute;riels partag&eacute;s, t&eacute;l&eacute;charg&eacute;s ou pr&eacute;sents dans les Services (ou Contenu) de MSD Sant&eacute; Animale. En tant qu&rsquo;utilisateur des Services et du Contenu, vous acceptez sans aucune r&eacute;serve ces conditions g&eacute;n&eacute;rales d&rsquo;utilisation...
+                                <br>
+                                <button class="btn btn-link" data-toggle="modal" data-target="#termsModal">Lire la suite</button>
+                            </p>
+                            @Html.ActionLink("J’accepte", "AcceptTermsAndConditions", "Facebook", new { @class = "btn btn-primary" })
+                            <a href="/bravecto" class="btn btn-default">Page d&rsquo;accueil</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row hidden-xs">
+                    <div class="col-sm-4"><hr class="diagonal shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-bravecto-header-lg.jpg" alt="New Business">
+                                <h2>Ressources Bravecto</h2>
+                            </div>
+                            <p>Quand un produit innovant tel que Bravecto arrive sur le march&eacute; il a y a de nombreux &eacute;l&eacute;ments &agrave; apprendre et &agrave; transmettre. Utiliser cet outil pour rester connect&eacute; aux derni&egrave;res informations techniques et les avanc&eacute;es dans la l&rsquo;am&eacute;lioration de la sant&eacute; et du bien &ecirc;tre animal</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-trendingTopics-header-lg.jpg" alt="New Business">
+                                <h2>Sujets d&rsquo;actualit&eacute;</h2>
+                            </div>
+                            <p>C&rsquo;est ici que vous pouvez trouver les derni&egrave;res actualit&eacute;s du monde v&eacute;t&eacute;rinaire. Vous y retrouverez les sujets discut&eacute;s par les leaders d&rsquo;opinion ; vous pourrez les utiliser dans vos propres discussions sur les r&eacute;seaux</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-socialTips-header-lg.jpg" alt="New Business">
+                                <h2>Astuces media</h2>
+                            </div>
+                            <p>Si vous n&rsquo;avez pas encore mis en place votre pr&eacute;sence sur les r&eacute;seaux sociaux, nous pouvons y rem&eacute;dier. Gr&acirc;ce &agrave; ces astuces, vous ne ferez pas seulement croitre votre activit&eacute; et vos relations avec vos clients actuels, vous pourrez &eacute;galement l&rsquo;utiliser pour une nouvelle forme de prospection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="alternate">CONDITIONS GENERALES D&rsquo;UTILISATION</h1>
+                            <hr class="plus diagonal">
+                            <p>Les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation r&eacute;gissent la mise &agrave; disposition par MSD Sant&eacute; Animale de produits, logiciels, services et sites Internet (de mani&egrave;re g&eacute;n&eacute;rale, &laquo; Services &raquo;) et tout ou partie d&rsquo;informations, textes, graphiques, photos ou autres mat&eacute;riels partag&eacute;s, t&eacute;l&eacute;charg&eacute;s ou pr&eacute;sents dans les Services (ou Contenu) de MSD Sant&eacute; Animale. En tant qu&rsquo;utilisateur des Services et du Contenu, vous acceptez sans aucune r&eacute;serve ces conditions g&eacute;n&eacute;rales d&rsquo;utilisation. Le cas &eacute;ch&eacute;ant, vous n&rsquo;&ecirc;tes pas autoris&eacute; &agrave; acc&eacute;der et utiliser ces Services et Contenu. Les mots &laquo; vous &raquo;, &laquo; votre &raquo; ou autres termes similaires font r&eacute;f&eacute;rence &agrave; la personne ou l&rsquo;entit&eacute; l&eacute;gale ayant acc&egrave;s ou utilisant ces services.</p>
+                            <p>MSD Sant&eacute; Animale se r&eacute;serve le droit de changer, modifier, ajouter ou supprimer &agrave; tout moment de mani&egrave;re temporaire ou permanente les termes des pr&eacute;sentes Conditions et autres mentions d&rsquo;avertissement contenues sur les Services &agrave; sa seule discr&eacute;tion. Vous vous engagez donc &agrave; v&eacute;rifier r&eacute;guli&egrave;rement les &eacute;ventuelles modifications et &agrave; vous y conformer scrupuleusement. Toute utilisation des Services post&eacute;rieure &agrave; des mises &agrave; jour et/ou modifications emporte acceptation des Conditions ainsi mises &agrave; jour et modifi&eacute;es. En tout &eacute;tat de cause, MSD Sant&eacute; Animale se r&eacute;serve le droit de faire accepter formellement la nouvelle version des Conditions.</p>
+                            <p>Les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation incluent la politique globale de confidentialit&eacute; sur Internet de MSD Sant&eacute; Animale, disponible &agrave; l&rsquo;adresse suivante : http://www.msd-sante-animale.fr/binaries/confidentialit__tcm90-50999.pdf. En acc&eacute;dant et en utilisant les Services et le Contenu, vous consentez (ou jurez avoir obtenu le consentement) que MSD Sant&eacute; Animale collecte et utilise des informations personnelles en accord avec la politique globale de confidentialit&eacute; sur Internet de MSD Sant&eacute; Animale.</p>
+                            <p>Vous &ecirc;tes l&rsquo;unique responsable de l&rsquo;utilisation que vous faites des Services et du Contenu accessibles ou mis &agrave; disposition de tiers &agrave; travers les outils disponibles dans les Services (m&ecirc;me si le Contenu est accessible ou mis &agrave; disposition par des tiers). Vous &ecirc;tes responsables des risques associ&eacute;s &agrave; votre utilisation des Services et du Contenu accessibles ou mis &agrave; disposition de tiers &agrave; travers vos activit&eacute;s. En aucun cas MSD Sant&eacute; Animale, ses employ&eacute;s, ses affili&eacute;s ou ses agents ne sont responsables de l&rsquo;utilisation que vous faites des Services et du Contenu.</p>
+                            <p>En acc&eacute;dant ou utilisant les Services, vous acceptez de respecter les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation, dans la mesure permise par la loi applicable.</p>
+                            <p>MSD Sant&eacute; Animale se r&eacute;serve le droit de modifier ou de stopper la mise &agrave; disposition des Services, de mani&egrave;re temporaire ou d&eacute;finitive et &agrave; sa seule discr&eacute;tion.</p>
+                            <p>Vous avez connaissance que les Services vous permettent d&rsquo;acc&eacute;der et d&rsquo;utiliser des contenus et services fournis par des tiers ou fournisseurs de services (comme Twitter, Facebook) (&laquo; Tiers ou Fournisseurs de services). Vous &ecirc;tes dans l&rsquo;obligation d&rsquo;accepter les termes et conditions de ces Tiers ou Fournisseurs de service.</p>
+                            <p>Votre acc&egrave;s et votre utilisation des Services doivent &ecirc;tre en accord avec les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation ainsi que les termes et conditions des Tiers ou Fournisseurs de services. Si vous violez ces pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation ou les termes et conditions des Tiers ou Fournisseurs de services, vous n&rsquo;&ecirc;tes plus en mesure d&rsquo;utiliser les Services et MSD Sant&eacute; Animale se r&eacute;serve le droit (mais n&rsquo;est pas dans l&rsquo;obligation) de r&eacute;duire votre acc&egrave;s ou votre utilisation des Services &agrave; tout moment.</p>
+                            <p>Vous vous engagez &agrave; ne pas, directement ou indirectement, utiliser dans le cadre des Services tout &eacute;l&eacute;ment ou contenu de mani&egrave;re inappropri&eacute;e ou ill&eacute;gale, qui porterait atteinte aux droits de propri&eacute;t&eacute; intellectuelle et industrielle, au droit &agrave; la vie priv&eacute;e et/ou au droit &agrave; l&rsquo;image et/ou &agrave; tout autre droit d&rsquo;autrui.</p>
+                            <p>Vous vous engagez &agrave; ne pas, sans l&rsquo;autorisation pr&eacute;alable expresse de MSD Sant&eacute; Animale (y compris les autorisations accord&eacute;es par les pr&eacute;sentes conditions g&eacute;n&eacute;rales d&rsquo;utilisation) : a) arranger, modifier, traduire, adapter, reproduire, indexer, copier et/ou extraire toute information, tout logiciel, tout produit ou tout autre &eacute;l&eacute;ment ou partie du Contenu ou des Services ; b) mener des activit&eacute;s visant &agrave; acc&eacute;der &agrave; des &eacute;l&eacute;ments ou fonctionnalit&eacute;s des Services dont l&rsquo;utilisation n&rsquo;a pas &eacute;t&eacute; autoris&eacute;e par MSD Sant&eacute; Animale ; c) faire un usage inappropri&eacute; des Services ; d) modifier, fausser, bloquer, alourdir de mani&egrave;re anormale, perturber, ralentir, et/ou entraver le fonctionnement normal de tout ou partie des Services, ou leur accessibilit&eacute; aux autres Utilisateurs, ou le fonctionnement des r&eacute;seaux de MSD Sant&eacute; Animale, ou tenter de faire tout ce qui pr&eacute;c&egrave;de.</p>
+                            <p><strong>LES SERVICES SONT FOURNIS EN L&rsquo;ETAT. MSD SANTE ANIMALE NE GARANTIT ET NE S&rsquo;ENGAGE PAS QUANT A L&rsquo;UTILISATION OU AUX RESULTATS DE L&rsquo;UTILISATION DES SERVICES. L&rsquo;UTILISATION DES SERVICES EST DE VOTRE ENTIERE RESPONSABILITE. EN OUTRE, MSD SANTE ANIMALE N&rsquo;OFFRE AUCUNE GARANTIE QUE LES SERVICES, EN CE COMPRIS LES SERVEURS ET LOGICIELS NECESSAIRES A LEUR OPERATION, SERONT SANS INTERRUPTION OU SANS ERREURS, BUGS, VIRUS OU ELEMENTS NEFASTES, NI QUE LES ERREURS, BUGS, VIRUS OU ELEMENTS NEFASTES SERONT CORRIGES. ENFIN, OWLIENT N&rsquo;OFFRE AUCUNE GARANTIE RELATIVE AU CARACTERE EXACT, COMPLET OU ACTUALISE DES INFORMATIONS, CONTENUS ET/OU DES ELEMENTS ACCESSIBLES VIA LES SERVICES. </strong></p>
+                            <p><strong>VOUS VOUS ENGAGEZ A DEFENDRE, GARANTIR ET INDEMNISER MSD SANTE ANIMALE, SES AFFILIES, SES AGENTS ET SES EMPLOYES POUR TOUT PREJUDICE DIRECT ET INDIRECT, CONSECUTIF A ET/OU DECOULANT DE VOTRE UTILISATION DES SERVICES ET DU CONTENU.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Layout_Bravecto_Footer");
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+
+
+
+<!-- Adding tracking code for /. -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var ahTracker = _gat._createTracker("UA-11736042-1");
+ahTracker._setDomainName("none");
+ahTracker._setAllowLinker(true);
+ahTracker._setCustomVar(3, "LO", "_international_english", 3);
+ahTracker._setCustomVar(4, "TA", "veterinarians,dog owners", 3);
+ahTracker._setCustomVar(5, "SI", "product", 3);
+ahTracker._trackPageview();
+
+var siteTracker = _gat._createTracker("UA-15183140-25");
+siteTracker._setCustomVar(3, "TA", "veterinarians,dog owners", 3);
+siteTracker._setCustomVar(4, "PA", "home", 3);
+siteTracker._setCustomVar(5, "SP", "dogs", 3);
+siteTracker._trackPageview();
+} catch (err) {
+if (typeof(console) != 'undefined' && console) {
+console.warn(err);
+}
+}
+</script>
+
+</body>
+
+</html>

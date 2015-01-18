@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7a8ac9c3db046d883b81560b7532d0e" Name="Diagram1">
+        <EntityTypeShape EntityType="BravoVetsDbEntities.ActivityType" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.BravoVetsCountry" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.BravoVetsLanguage" Width="1.5" PointX="1.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.BravoVetsStatu" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.BravoVetsUser" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.BravoVetsUserActivity" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.ChannelType" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.Contact" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.MerckLfwUser" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.QueueContent" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.QueueContentAttachment" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SocialPlatform" Width="1.5" PointX="6" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContent" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentAttachment" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentPostType" Width="1.5" PointX="3.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentTag" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentType" Width="1.5" PointX="3.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentUser" Width="1.5" PointX="11.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.Veterinarian" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.VeterinarianFacility" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.VeterinarianFacilityChannel" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.VeterinarianSocialIntegration" Width="1.5" PointX="11.25" PointY="15" IsExpanded="true" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_BravoVetsUserActivity_ActivityType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentUser_ActivityType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_BravoVetsUser_BravoVetsCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_QueueContent_ToCountry" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_Region_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContent_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_Veterinarian_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_BravoVetsUser_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_QueueContent_ToBravoVetsStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContent_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentUser_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_BravoVetsUser_Veterinarian" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_BravoVetsUserActivity_BravoVetsUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_QueueContent_ToUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentUser_BravoVetsUser" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_VeterinarianFacilityChannel_ChannelType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_Contact_Veterinarian" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_QueueContent_ToPlatform" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_QueueContent_ToSyndicatedContentPostType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_VeterinarianSocialIntegration_SocialPlatform" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContent_ContentType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContent_PostType" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentTag_SyndicatedContent" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentUser_SyndicatedContent" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_VeterinarianFacility_Veterinarian" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_VeterinarianSocialIntegration_Veterinarian" ManuallyRouted="false" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_VeterinarianFacilityChannel_ToTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.QueueContentDeliveryLog" Width="1.5" PointX="10.375" PointY="5.75" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.FeaturedContent" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BravoVetsDbEntities.SyndicatedContentLink" Width="1.5" PointX="8.25" PointY="20.375" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_SyndicatedContentLink_ToSyndicatedContent" />
+        <AssociationConnector Association="BravoVetsDbEntities.FK_FeaturedContent_ToCountry" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

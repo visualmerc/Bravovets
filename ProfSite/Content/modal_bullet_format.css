@@ -1,0 +1,108 @@
+.modal-body p,
+.modal-body ul,
+.modal-body ol {
+    margin-top: 0;
+    font-size: 1.143em;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    padding-left: 0px;
+    text-align: left;
+    color: #394147;
+    font-weight: normal;
+}
+
+    .modal-body ul li {
+        list-style-type: disc;
+    }
+
+    .modal-body ol li {
+        list-style-type: decimal;
+    }
+
+
+.modal-body .attachment-wrapper {
+    background-color: rgba(90,42,130,.05);
+    padding: 20px 25px;
+    border: 1px solid #5a2a82;
+}
+
+    .modal-body .attachment-wrapper h4 {
+        color: #5a2a82;
+        margin: 0;
+    }
+
+    .modal-body .attachment-wrapper hr.diagonal {
+        margin: 7px 0 10px;
+    }
+
+    .modal-body .attachment-wrapper ul li {
+        list-style-type: none;
+    }
+
+        .modal-body .attachment-wrapper ul li:before {
+            content: '';
+            display: inline-block;
+            color: #5a2a82;
+            font-size: 16px;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .modal-body .attachment-wrapper ul li a {
+            display: inline-block;
+            padding-left: 2px;
+            color: #394147;
+            height: 24px;
+            text-decoration: underline;
+        }
+
+            .modal-body .attachment-wrapper ul li a:hover {
+                color: #22272b;
+            }
+
+        .modal-body .attachment-wrapper ul li.doc:before {
+            font-family: bravoicons;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e61b";
+        }
+
+        .modal-body .attachment-wrapper ul li.link:before {
+            font-family: bravoicons;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\f0c1";
+        }
+
+        .modal-body .attachment-wrapper ul li.picture:before {
+            font-family: bravoicons;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\f03e";
+        }
+
+
+#readMoreModal .modal-dialog hr.diagonal2 {
+    margin: 7px 0 10px;
+}

@@ -1,0 +1,306 @@
+﻿@using BravoVets.DomainObject.Enum
+@model AdminEditPostModel
+
+<div id="editPost" class="container admin-page new-post">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>New Post</h2>
+            <h1>@Model.Header</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>@Html.Raw(Model.HeaderText)</p>
+            <form role="form" class="admin-form">
+                <div class="form-group">
+                    <label for="title">@Resource.Admin_EditPost_PostTitle</label>
+                    <input type="text" class="form-control" id="title" placeholder="" value="@Model.Title" maxlength="99">
+                    <span class="notes">
+                        @Resource.Admin_EditPost_PostTitleLength
+                    </span>
+                </div>
+                <div class="form-group">
+                    <div class="post-copy-title-wrapper">
+                        <label for="postCopy">Post Copy</label>
+                        @if (Model.TwitterValidation)
+                        {
+                            <div class="character-counter error">
+
+                                <span class="count"></span> characters
+                            </div>
+                        }
+                    </div>
+                    <textarea id="postCopy" class="unformatted-text form-control">@Model.ContentText</textarea>
+                    <div class="post-copy-title-wrapper">
+                        @if (Model.TwitterValidation)
+                        {
+                            <div class="character-counter error">
+                                <span class="note">
+                                    @Html.Raw(Resource.Admin_EditPost_TwitterText)
+                                </span>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                @Resource.Admin_EditPost_Schedule
+                                <a class="help" data-toggle="tooltip" data-original-title="@Model.ScheduleTooltip">?</a>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <!-- TODO: Replace this with a checkbox -->
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="postNow" checked><label for="postnow">@Resource.BravoVets_ShareDialog_PostNow</label>
+                            </div>
+                            <hr class="or">
+                            <form action="" class="admin-form">
+                                <div class="form-group">
+                                    <label for="postDate">@Resource.BravoVets_ShareDialog_Date</label>
+                                    <div class="datepicker-container" data-script="DatePicker" data-language="en">
+                                        <div class="input-group date">
+                                            <input id="postDate" type="text" class="form-control" data-current="@Model.PublishDate.AddMinutes(-Model.ClientOffset).ToShortDateString()" data-current-date="@DateTime.Today.ToShortDateString()" value="@Model.PublishDate.AddMinutes(-Model.ClientOffset).ToShortDateString()"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postTime">@Resource.BravoVets_ShareDialog_Time</label>
+                                    <div class="timepicker-container" data-script="TimePicker" data-language="en">
+                                        <div class="input-group input-append bootstrap-timepicker">
+                                            <input id="postTime" name="postTime" type="text" class="form-control" value="@Model.PublishDate.AddMinutes(-Model.ClientOffset).ToString("HH:00")">
+                                            <span class="input-group-addon add-on"><i class="bravicon icon-clock"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                @Resource.Admin_EditPost_FeaturedImage
+                                <a class="help" data-toggle="tooltip" data-original-title="@Model.FeaturedImageTooltip">?</a>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="post-image-wrapper">
+                                        <img id="featuredImage" src="@(Model.FeaturedImageId.HasValue ? "/syndicatedcontent/image/" + Model.Id + "/" + Model.FeaturedImageId : "/images/noimage.gif")" alt="Image Placeholder">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <p>@Resource.Admin_EditPost_AttachmentText</p>
+                                    <div class="dropdown">
+                                        <button id="featuredImage" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span id="featuredImageLabel">@(string.IsNullOrEmpty(Model.FeaturedImageName) ? @Resource.Admin_EditPost_PickFeaturedImageText : Model.FeaturedImageName)</span>  <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="featuredImage">
+                                            <li><a data-target="" data-imageurl="/images/noimage.gif">Remove Selected Image</a></li>
+                                            @if (!Model.FeaturedImageIsInList)
+                                            {
+                                                if (Model.FeaturedImageId.HasValue)
+                                                {
+                                                    <li><a class="selected-featuredimage" data-target="-1" data-imageurl="/syndicatedcontent/image/@Model.Id/@Model.FeaturedImageId">@Model.FeaturedImageName</a></li>
+                                                }
+                                            }
+                                            @foreach (var item in Model.FeaturedImages)
+                                            {
+                                                <li><a class="@(item.ContentFileName == Model.FeaturedImageName ? "selected-featuredimage" : "")" data-target="@item.FeaturedContentId" data-imageurl="/syndicatedcontent/featuredcontent/@item.FeaturedContentId/@Model.ContentType?useFullImage=true">@item.ContentFileName</a></li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                @Resource.Admin_EditPost_Attachments
+                                <a class="help" data-toggle="tooltip" data-original-title="@Model.AttachmentTooltip">?</a>
+                                <span class="description">
+                                    @(Model.ContentType == SyndicatedContentTypeEnum.TrendingTopics ? Resource.Admin_EditPost_TrendingTopicsNumberOfAttachments : string.Format(Resource.Admin_EditPost_NumberOfAttachments, Model.NumberOfAttachments))
+                                </span>
+                            </h3>
+                        </div>
+                        <div id="attachment-panel" class="panel-body attachment-panel">
+                            <form id="fileupload" method="POST" enctype="multipart/form-data" class="attachment-form admin-form" role="form">
+
+                                <div class="form-group">
+                                    <input  type="text" class="form-control" name="attachmentName" id="attachmentName" placeholder="@Resource.Admin_EditPost_AttachmentNamePlaceholder">
+                                </div>
+
+                                <div class="attach-link-form">
+                                    <div class="form-group attach-link-wrapper">
+                                        <input type="text" class="form-control" name="attachmentLink" id="attachmentLink" placeholder="@Resource.Admin_EditPost_AttachmentTypes">
+                                    </div>
+                                    <div class="attach-buttons-wrapper">
+                                        <button id="attachLink" type="button" class="btn btn-default">@Resource.Admin_EditPost_AttachLink</button>
+                                        @if (Model.AllowFileAttachments)
+                                        {
+                                            <span class="or">@Resource.BravoVets_ShareDialog_or</span>
+                                            <div class="form-group upload-link fileinput-button">
+                                                <button type="button" class="btn btn-default">@Resource.Admin_EditPost_UploadDocument</button>
+                                                <input type="file" name="files[]">
+                                            </div>
+                                            <span class="acceptable-types">
+                                                @Resource.Admin_EditPost_AllowedAttachmentTypes
+                                            </span>
+                                        }
+                                        <input type="hidden" id="syndicatedContentId" name="syndicatedContentId" value="@Model.Id" />
+                                        <input type="hidden" id="contentType" name="contentType" value="@Model.ContentType" />
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="attachments" data-totalallowed="@Model.NumberOfAttachments">
+                                <h5>
+                                    @Resource.Admin_EditPost_AttachmentItemsText
+                                    <span class="note">@Resource.Admin_EditPost_DeleteAttachToAddNew</span>
+                                </h5>
+                                <ul style="display:none;">
+                                    <li id="attachment-template" data-attachmenttype="attachment-link" style="display:none;">
+                                        <h5 class="title">
+                                            <span></span>
+                                            <a target="_blank" href="">link</a>
+                                        </h5>
+                                        <div class="attachment-actions-wrapper">
+                                            <a class="btn-link btn-danger delete" href="">@Resource.Admin_EditPost_DeleteText</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul id="attachment-list" class="attachment-list files" role="presentation">
+                                    @if (Model.ContentType == SyndicatedContentTypeEnum.TrendingTopics && !string.IsNullOrEmpty(Model.LinkUrl))
+                                    {
+                                        <li data-attachmenttype="attachment-link">
+                                            <h5 class="title">
+                                                <span></span>
+                                                <a target="_blank" href="@Model.LinkUrl">@Model.LinkUrlDisplay</a>
+                                            </h5>
+                                            <div class="attachment-actions-wrapper">
+                                                <a class="btn-link btn-danger delete" href="">@Resource.Admin_EditPost_DeleteText</a>
+                                            </div>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        foreach (var adminPostAttachment in Model.Attachments)
+                                        {
+                                            <li data-attachmenttype="attachment-link" data-id="@adminPostAttachment.id">
+                                                <h5 class="title">
+                                                    <span>@adminPostAttachment.name</span>
+                                                    <a target="_blank" href="@adminPostAttachment.url">@adminPostAttachment.url</a>
+                                                </h5>
+                                                <div class="attachment-actions-wrapper">
+                                                    <a class="btn-link btn-danger delete" href="">@Resource.Admin_EditPost_DeleteText</a>
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button data-list="@Model.ListUrl" data-deleteurl="@Model.DeleteUrl" id="delete" type="button" class="btn btn-danger @(Model.AllowDelete == false?"disabled":"")">Delete</button>
+                    <a href="@Model.ListUrl" type="button" class="btn btn-default">@Resource.Admin_EditPost_CancelText</a>
+                </div>
+                <div class="col-sm-6 right-buttons-wrapper">
+
+                    <button data-previewurl="@Model.PreviewUrl" id="preview" type="button" class="btn btn-info help">@Resource.Admin_EditPost_PreviewText</button>
+
+                    <button data-posturl="@Model.PostUrl" id="save" type="button" class="btn btn-success" data-list="@Model.ListUrl">@Model.SaveText</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-wrapper">
+    <div id="previewPostModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Dialog Post" aria-hidden="true">
+        <div class="admin-dialog">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <iframe id="previewIFrame" src="#" style="height: 100%;width: 100%;"></iframe>
+        </div>
+    </div>
+</div>
+
+
+<script id="template-upload" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    <li class="template-upload" data-attachmenttype="attachment-file" data-id="{%=file.attachmentId %}">
+        {% if (file.error) { %}
+        <div class="template-upload  fade">
+            <div class="error" colspan="2"><span class="label label-important">{%=file.name%}</span> {%=file.error%}</div>
+        </div>
+        {% } else { %}
+
+        <h5 class="title">
+            <span>{%=file.name%}</span>
+            <a target="_blank" href="{%=file.url%}">{%=file.url%}</a>
+        </h5>
+        <div class="attachment-actions-wrapper">
+            <a class="btn-link btn-danger delete" href="">@Resource.Admin_EditPost_DeleteText</a>
+        </div>
+        {% } %}
+    </li>
+    {% } %}
+</script>
+
+
+<script id="template-download" type="text/x-tmpl">
+    {% for (var i=0, file; file=o.files[i]; i++) { %}
+    <li class="template-upload" data-attachmenttype="attachment-file" data-id="{%=file.attachmentId %}">
+        {% if (file.error) { %}
+        <div class="template-upload  fade">
+            <div class="error" colspan="2"><span class="label label-important">{%=file.name%}</span> {%=file.error%}</div>
+        </div>
+        {% } else { %}
+
+        <h5 class="title">
+            <span>{%=file.name%}</span>
+            <a target="_blank" href="{%=file.url%}">{%=file.url%}</a>
+        </h5>
+        <div class="attachment-actions-wrapper">
+            <a class="btn-link btn-danger delete" href="">@Resource.Admin_EditPost_DeleteText</a>
+        </div>
+        {% } %}
+    </li>
+
+    {% } %}
+</script>
+
+
+@section Scripts {
+
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#editPost").editPost({
+                "twitterValidation": "@Model.TwitterValidation.ToString().ToLower()",
+                "allowRichText": "@Model.AllowRichText.ToString().ToLower()"
+            });
+
+            $('.help').tooltip();
+
+        });
+
+    </script>
+}

@@ -1,0 +1,19 @@
+﻿CREATE TABLE dbo.[MerckLfwUser]
+(
+	[MerckLfwUserId] INT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+	MerckId INT NOT NULL,
+	FirstName NVARCHAR(50) NOT NULL,
+	LastName NVARCHAR(50) NOT NULL,
+	CountryOriginIso NVARCHAR(4) NOT NULL,
+	Occupation NVARCHAR(50) NULL,
+	EmailAddress NVARCHAR(50) NULL,
+	LanguageIsoCode NVARCHAR(4) NULL,
+	IP NVARCHAR(50) NULL,
+	UA NVARCHAR(50) NULL,
+	LoginGUID NVARCHAR(50) NULL,
+	ForgeryID NVARCHAR(50) NULL,
+	WebsiteProperties NVARCHAR(50) NULL,
+	AccessOnGroups NVARCHAR(50) NULL,
+	CookiesEnabled NVARCHAR(50) NULL,
+	LfwMessage NVARCHAR(50) NULL
+)

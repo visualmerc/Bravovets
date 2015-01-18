@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BravectoCompliance" xml:space="preserve">
+    <value>Adesão à Terapêutica</value>
+  </data>
+  <data name="BravectoHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="BravectoInnovation" xml:space="preserve">
+    <value>Inovação</value>
+  </data>
+  <data name="BravectoNewBusiness" xml:space="preserve">
+    <value>Novo Negócio</value>
+  </data>
+  <data name="BravovetsHome" xml:space="preserve">
+    <value>Bravovets</value>
+  </data>
+  <data name="BusinessName" xml:space="preserve">
+    <value>Nome da Clínica</value>
+    <comment>For User Profile</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Cidade</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Endereço eletrônico</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="FacilityName" xml:space="preserve">
+    <value>Nome do local</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="France" xml:space="preserve">
+    <value>França</value>
+  </data>
+  <data name="Germany" xml:space="preserve">
+    <value>Alemanha</value>
+  </data>
+  <data name="Italy" xml:space="preserve">
+    <value>Itália</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>LastName</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Link</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Linked" xml:space="preserve">
+    <value>Linked</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="LinkedAccounts" xml:space="preserve">
+    <value>Linked Accounts</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="LinkedAccountText" xml:space="preserve">
+    <value>Get the most out of BravoVats. Learn about setting up linked accounts</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="ManagePracticeLoc" xml:space="preserve">
+    <value>Manage practice locations with BravoVets. Statement about the benefits here.</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Netherlands" xml:space="preserve">
+    <value>Holanda</value>
+  </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Personal Info</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+    <comment>For User Profile</comment>
+  </data>
+  <data name="PracticeLocations" xml:space="preserve">
+    <value>Localizações da clínica</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="SelectCountryButton" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="SelectCountryInfo" xml:space="preserve">
+    <value>The Bravecto site is a customized experience for your country. Choose from the list below.</value>
+  </data>
+  <data name="SiteUrl" xml:space="preserve">
+    <value>/en/bravovets/dashboard</value>
+  </data>
+  <data name="Spain" xml:space="preserve">
+    <value>Espanha</value>
+  </data>
+  <data name="StateProvince" xml:space="preserve">
+    <value>Estado / Província / Região</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="StreetAddress1" xml:space="preserve">
+    <value>Endereço 1</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="StreetAddress2" xml:space="preserve">
+    <value>Endereço 2</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="UnitedKingdom" xml:space="preserve">
+    <value>EU (English Language)</value>
+  </data>
+  <data name="UnitedStates" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="Unlink" xml:space="preserve">
+    <value>Unlink</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Unlinked" xml:space="preserve">
+    <value>Unlinked</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Button text</comment>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+    <comment>Button text</comment>
+  </data>
+  <data name="PrimaryPhoneNumber" xml:space="preserve">
+    <value>Número de Telefone Principal</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="SecondaryPhoneNumber" xml:space="preserve">
+    <value>Número de Telefone Secundário</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="CompleteProfile" xml:space="preserve">
+    <value>Concluir Perfil</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Editar Perfil</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="EnterPracticeName" xml:space="preserve">
+    <value>Introduzir o nome da clínica</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="LinkYourFacebookAccount" xml:space="preserve">
+    <value>Associar à sua conta de Facebook</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="LinkYourTwitterAccount" xml:space="preserve">
+    <value>Associar à sua conta de Twitter</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="UnlinkYourFacebookAccount" xml:space="preserve">
+    <value>Não associar à sua conta de Facebook</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="UnlinkYourTwitterAccount" xml:space="preserve">
+    <value>Não associar à sua conta de Twitter</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Are you certain you would like to delete?</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>Get Started</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="LinkSocialAccounts" xml:space="preserve">
+    <value>Link Social Accounts</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="SaveAndContinue" xml:space="preserve">
+    <value>Guardar e Continuar</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="ValueIsRequired" xml:space="preserve">
+    <value>Value is required</value>
+    <comment>Validation Message</comment>
+  </data>
+  <data name="ValueIsTooLong" xml:space="preserve">
+    <value>Value is too long</value>
+    <comment>Validation Message</comment>
+  </data>
+  <data name="BravoVets_Dashboard_AdditionalContent" xml:space="preserve">
+    <value>Additional Resources</value>
+  </data>
+  <data name="BravoVets_Dashboard_FacebookActivity" xml:space="preserve">
+    <value>Facebook Activity</value>
+  </data>
+  <data name="BravoVets_Dashboard_SocialActivity" xml:space="preserve">
+    <value>Social Activity</value>
+  </data>
+  <data name="BravoVets_Dashboard_TwitterActivity" xml:space="preserve">
+    <value>Twitter Activity</value>
+  </data>
+  <data name="BravoVets_ResourceTopicItem_MarkAsFavorite" xml:space="preserve">
+    <value>Marcar como Favorito</value>
+  </data>
+  <data name="BravoVets_ResourceTopicItem_ReadMore" xml:space="preserve">
+    <value>Saiba mais</value>
+  </data>
+  <data name="BravoVets_ResourceTopicItem_RemoveAsFavorite" xml:space="preserve">
+    <value>Ocultar Item</value>
+  </data>
+  <data name="BravoVets_ResourceTopicsItems_BravectoResources" xml:space="preserve">
+    <value>Recursos de Bravecto</value>
+  </data>
+  <data name="BravoVets_ResourceTopicsItems_LoadMore" xml:space="preserve">
+    <value>Carregar mais</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_AdditionalContent" xml:space="preserve">
+    <value>Additional Resources</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_All" xml:space="preserve">
+    <value>Feed</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_Favorites" xml:space="preserve">
+    <value>Favoritos</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_SortBy" xml:space="preserve">
+    <value>Ordenar por</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_Topic" xml:space="preserve">
+    <value>Tópico</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_View" xml:space="preserve">
+    <value>Ver</value>
+  </data>
+  <data name="BravoVets_ResourceTopics_Views" xml:space="preserve">
+    <value>Visualizações</value>
+  </data>
+  <data name="BravoVets_ResourceTopicsItems_NoMoreItems" xml:space="preserve">
+    <value>You have no {0} items</value>
+    <comment>Information Message</comment>
+  </data>
+  <data name="BravoVets_SocialTips_LoadMore" xml:space="preserve">
+    <value>Carregar Mais</value>
+  </data>
+  <data name="BravoVets_SocialTips_NoMoreItems" xml:space="preserve">
+    <value>You have no {0} items</value>
+    <comment>Information Message</comment>
+  </data>
+  <data name="BravoVetsWidget_SocialActivityWidget_SocialActivity" xml:space="preserve">
+    <value>Social Activity</value>
+  </data>
+  <data name="BravoVetsWidget_SocialActivityWidget_SocialPropertyNotifications" xml:space="preserve">
+    <value>Social Property Notifications</value>
+  </data>
+  <data name="BravoVetsWidget_SocialActivityWidget_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="BravoVetsWidget_SocialActivityWidget_ViewAll" xml:space="preserve">
+    <value>Ver tudo</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Continue" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Customize" xml:space="preserve">
+    <value>De forma a permitir personalizar a sua experiência na página da Internet, por favor indique o seu país de origem.</value>
+  </data>
+  <data name="BravoVets_SelectCountry_DropDown" xml:space="preserve">
+    <value>Select Country</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Pinnacle" xml:space="preserve">
+    <value>Como ponto alto da inovação farmacêutica veterinária, somos os parceiros ideais para o ajudar a desenvolver o seu negócio. Juntos vamos explorar novos recursos para a sua clínica, estabelecer uma melhor comunicação com os donos dos animais de estimação e, idealmente, fidelizá-los durante a vida dos seus animais de estimação — e para além desta.</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Platform" xml:space="preserve">
+    <value>Esta é uma plataforma para utilização profissional pelos veterinários. Inscreva-se e dê o primeiro passo importante para o desenvolvimento da sua clínica.</value>
+  </data>
+  <data name="BravoVets_SelectCountry_SelectCountry" xml:space="preserve">
+    <value>Por favor selecione o seu país e inicie sessão</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Welcome" xml:space="preserve">
+    <value>Bem-vindo!</value>
+  </data>
+  <data name="BravoVets_SocialTips_AdditionalContent" xml:space="preserve">
+    <value>Recursos Adicionais</value>
+  </data>
+  <data name="BravoVets_SocialTips_All" xml:space="preserve">
+    <value>TUDO</value>
+  </data>
+  <data name="BravoVets_SocialTips_Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="BravoVets_SocialTips_Favorites" xml:space="preserve">
+    <value>Favoritos</value>
+  </data>
+  <data name="BravoVets_SocialTips_SocialTips" xml:space="preserve">
+    <value>Conselhos para as Redes Sociais</value>
+  </data>
+  <data name="BravoVets_SocialTips_SortBy" xml:space="preserve">
+    <value>Ordenar por</value>
+  </data>
+  <data name="BravoVets_SocialTips_Topic" xml:space="preserve">
+    <value>Tópico</value>
+  </data>
+  <data name="BravoVets_SocialTips_View" xml:space="preserve">
+    <value>Ver</value>
+  </data>
+  <data name="BravoVets_SocialTips_Views" xml:space="preserve">
+    <value>Visualizações</value>
+  </data>
+  <data name="BravoVets_TrendingTopicItem_HideItem" xml:space="preserve">
+    <value>Ocultar Item</value>
+  </data>
+  <data name="BravoVets_TrendingTopicItem_Share" xml:space="preserve">
+    <value>Partilhas</value>
+  </data>
+  <data name="BravoVets_TrendingTopicItem_ShowItem" xml:space="preserve">
+    <value>Show Item</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_AdditionalResources" xml:space="preserve">
+    <value>Recursos Adicionais</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_Hidden" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_Shared" xml:space="preserve">
+    <value>Shared</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_Shares" xml:space="preserve">
+    <value>Shares</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_TrendingTopics" xml:space="preserve">
+    <value>Tópicos Mais Abordados</value>
+  </data>
+  <data name="PersonalizePractice" xml:space="preserve">
+    <value>Aqui irá personalizar a sua página de BravoVets com o nome da sua clínica.</value>
+    <comment>For User Profile</comment>
+  </data>
+  <data name="BravoVets_Profile_CompleteBizProfile" xml:space="preserve">
+    <value>Para preencher o perfil do seu negócio, permita que a aplicação estabeleça a associação da sua nova conta à informação social anterior. Nenhum conteúdo da sua conta pessoal será visto pelos seguidores da página do seu negócio.</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="BravoVets_Profile_LinkSocialAcccounts" xml:space="preserve">
+    <value>Associar contas das redes sociais</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="BravoVets_Profile_Step" xml:space="preserve">
+    <value>Passo</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Facebook_Comments_ViewMore" xml:space="preserve">
+    <value>View More</value>
+  </data>
+  <data name="Facebook_Comments_WriteComment" xml:space="preserve">
+    <value>Write a comment…</value>
+  </data>
+  <data name="Facebook_Comment_LikeComment" xml:space="preserve">
+    <value>Like This Comment</value>
+  </data>
+  <data name="Facebook_Comment_YouLike" xml:space="preserve">
+    <value>Liked</value>
+  </data>
+  <data name="Facebook_LinkUpdate_LikePost" xml:space="preserve">
+    <value>Like Post</value>
+  </data>
+  <data name="Facebook_SelectManagedPage_FbAccountSetup" xml:space="preserve">
+    <value>Facebook Account Setup</value>
+  </data>
+  <data name="Facebook_SelectManagedPage_SelectFbAccount" xml:space="preserve">
+    <value>Please Select a Facebook Account to Manage</value>
+  </data>
+  <data name="BravoVets_Profile_AddLocation" xml:space="preserve">
+    <value>Adicionar Novo Local</value>
+  </data>
+  <data name="BravoVets_Profile_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BravoVets_Profile_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="BravoVets_Profile_EditLocation" xml:space="preserve">
+    <value>Edit Location</value>
+  </data>
+  <data name="BravoVets_Profile_ExploreResources" xml:space="preserve">
+    <value>Explore os muitos recursos disponíveis em BravoVets!</value>
+    <comment>for User Profile</comment>
+  </data>
+  <data name="Bravecto_Footer_Disclaimer" xml:space="preserve">
+    <value>/bravecto/disclaimer</value>
+    <comment>for Bravecto disclaimer</comment>
+  </data>
+  <data name="Bravecto_Footer_PrivacyPolicy" xml:space="preserve">
+    <value>/bravecto/privacypolicy</value>
+    <comment>for Bravecto privacy policy</comment>
+  </data>
+  <data name="BravoVets_Footer_Disclaimer" xml:space="preserve">
+    <value>/disclaimer</value>
+    <comment>for Bravovets footer</comment>
+  </data>
+  <data name="BravoVets_Footer_PrivacyPolicy" xml:space="preserve">
+    <value>/privacypolicy</value>
+    <comment>for Bravovets privacy policy</comment>
+  </data>
+  <data name="BravoVets_Footer_Target" xml:space="preserve">
+    <value />
+    <comment>Target for footer</comment>
+  </data>
+  <data name="BravoVets_Widget_SocialActivity_NewNotifications" xml:space="preserve">
+    <value>New Notifications</value>
+  </data>
+  <data name="BravoVets_Widget_SocialActivity_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="BravoVets_Widget_SocialActivity_ViewRecentActivity" xml:space="preserve">
+    <value>View Recent Activity</value>
+  </data>
+  <data name="Facebook_LinkUpdate_UnLikePost" xml:space="preserve">
+    <value>Liked</value>
+  </data>
+  <data name="Shared_ErrorError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Shared_ErrorErrorOccurred" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="Shared_HappyBrowser_browser" xml:space="preserve">
+    <value>navegador que está utilizando encontra-se</value>
+  </data>
+  <data name="Shared_HappyBrowser_ImproveExperience" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="Shared_HappyBrowser_outdated" xml:space="preserve">
+    <value>desatualizado</value>
+  </data>
+  <data name="Shared_HappyBrowser_Please" xml:space="preserve">
+    <value>Para obter todas as vantagens desta página da Internet,</value>
+  </data>
+  <data name="Shared_HappyBrowser_UpgradeBrowser" xml:space="preserve">
+    <value>atualize agora o seu navegador.</value>
+  </data>
+  <data name="Shared_HappyBrowser_YouUsing" xml:space="preserve">
+    <value>O </value>
+  </data>
+  <data name="Shared_Layout_Bravecto_HeaderDownloadProductInfo" xml:space="preserve">
+    <value>Descarregar Informação do Produto</value>
+  </data>
+  <data name="Shared_Layout_Bravecto_HeaderToggleNavigation" xml:space="preserve">
+    <value>Toggle Navigation</value>
+  </data>
+  <data name="Shared_Layout_Bravecto_PublicBravovetsUx" xml:space="preserve">
+    <value>Bravovets</value>
+  </data>
+  <data name="Shared_Layout_FooterDisclaimer" xml:space="preserve">
+    <value>Exoneração de Responsabilidade</value>
+  </data>
+  <data name="Shared_Layout_FooterMerckAnimalHealthLogo" xml:space="preserve">
+    <value>Merck Animal Health Logo</value>
+  </data>
+  <data name="Shared_Layout_FooterMSDUserProfile" xml:space="preserve">
+    <value>Perfil de Usuário</value>
+  </data>
+  <data name="Shared_Layout_FooterPrivacyPolicy" xml:space="preserve">
+    <value>Política de Privacidade</value>
+  </data>
+  <data name="Shared_Layout_FooterSiteMap" xml:space="preserve">
+    <value>Mapa da Página da Internet</value>
+  </data>
+  <data name="Shared_Layout_SubHeaderEditProfile" xml:space="preserve">
+    <value>Editar Perfil</value>
+  </data>
+  <data name="Shared_Layout_SubHeaderSignOut" xml:space="preserve">
+    <value>Terminar Sessão</value>
+  </data>
+  <data name="Shared_Layout_SubHeaderWelcome" xml:space="preserve">
+    <value>Bem-vindo</value>
+  </data>
+  <data name="Shared_SiteMap_BravectoHome" xml:space="preserve">
+    <value>BravectoHome</value>
+  </data>
+  <data name="Shared_SiteMap_BravectoResources" xml:space="preserve">
+    <value>Recursos de Bravecto</value>
+  </data>
+  <data name="Shared_SiteMap_BravoVets" xml:space="preserve">
+    <value>Bravovets</value>
+  </data>
+  <data name="Shared_SiteMap_EditProfile" xml:space="preserve">
+    <value>Editar Perfil</value>
+  </data>
+  <data name="Shared_SiteMap_SiteMap" xml:space="preserve">
+    <value>Mapa da Página da Internet</value>
+  </data>
+  <data name="Shared_SiteMap_SocialTips" xml:space="preserve">
+    <value>Conselhos para as Redes Sociais</value>
+  </data>
+  <data name="Shared_SiteMap_TrendingTopics" xml:space="preserve">
+    <value>Tópicos mais Abordados</value>
+  </data>
+  <data name="Shared_SocialFollowing_Facebook" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="Shared_SocialFollowing_SocialActivity" xml:space="preserve">
+    <value>Social Activity</value>
+  </data>
+  <data name="Shared_SocialFollowing_Twitter" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="ShareSocialContent_ShareImage_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ShareSocialContent_ShareImage_Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="ShareSocialContent_ShareImage_ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_Day" xml:space="preserve">
+    <value>Dia</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_Month" xml:space="preserve">
+    <value>Mês</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_SchedulePosts" xml:space="preserve">
+    <value>Schedule Posts</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_SocialCalendar" xml:space="preserve">
+    <value>Calendário Social</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_Today" xml:space="preserve">
+    <value>Hoje</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_Week" xml:space="preserve">
+    <value>Semana</value>
+  </data>
+  <data name="ShareSocialContent_SocialCalendar_Year" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="Twitter_TimelineError_NoRetrieveTwitter" xml:space="preserve">
+    <value>Could not retrieve twitter feed. </value>
+  </data>
+  <data name="Twitter_TimelineError_TryAgain" xml:space="preserve">
+    <value>Please try again</value>
+  </data>
+  <data name="Twitter_Tweet_Reply" xml:space="preserve">
+    <value>Reply</value>
+  </data>
+  <data name="Twitter_Tweet_Retweet" xml:space="preserve">
+    <value>Retweet</value>
+  </data>
+  <data name="Twitter_Tweet_tweet" xml:space="preserve">
+    <value>tweet</value>
+  </data>
+  <data name="Bravecto" xml:space="preserve">
+    <value>Bravecto</value>
+  </data>
+  <data name="BravoVets_Footer_ChangeEmail" xml:space="preserve">
+    <value>Change email address</value>
+  </data>
+  <data name="BravoVets_Footer_ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="BravoVets_Footer_ForgotPassword" xml:space="preserve">
+    <value>Esqueci-me da minha palavra-passe</value>
+  </data>
+  <data name="BravoVets_Footer_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="BravoVets_Footer_Register" xml:space="preserve">
+    <value>Registar</value>
+  </data>
+  <data name="Lfw20_Pages_Login_Pinnacle" xml:space="preserve">
+    <value>As the pinnacle of veterinary pharmaceutical innovation, we’re the perfect partner to help you grow your business. Together let’s explore new resources for your practice, build better communication with pet owners and, ideally, make them loyal customers for the lives of their pets—and beyond.</value>
+  </data>
+  <data name="Lfw20_Pages_Login_ProfessionalUse" xml:space="preserve">
+    <value>This is a platform for professional use by veterinarians. Sign in and take your first step towards doing something very important for the growth of your practice.</value>
+  </data>
+  <data name="BravoVets_Dashboard_PostToFacebook" xml:space="preserve">
+    <value>Post To Facebook</value>
+  </data>
+  <data name="BravoVets_Dashboard_PostToTwitter" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Attach" xml:space="preserve">
+    <value>Attach</value>
+  </data>
+  <data name="BravoVets_ShareDialog_AttachMedia" xml:space="preserve">
+    <value>Attach Media</value>
+  </data>
+  <data name="BravoVets_ShareDialog_AttachUrl_Placeholder" xml:space="preserve">
+    <value>Video or Image URL</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Error_EnterMessage" xml:space="preserve">
+    <value>Please enter a message to share</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Error_SelectNetwork" xml:space="preserve">
+    <value>Select a social network to share to</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Facebook_Header" xml:space="preserve">
+    <value>Post to Facebook</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Facebook_Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Message_Placeholder" xml:space="preserve">
+    <value>Your message</value>
+  </data>
+  <data name="BravoVets_ShareDialog_or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="BravoVets_ShareDialog_PostNow" xml:space="preserve">
+    <value>Post Now</value>
+  </data>
+  <data name="BravoVets_ShareDialog_SyndicatedHeader" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Twitter_Header" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="BravoVets_ShareDialog_UploadImage" xml:space="preserve">
+    <value>Upload Image</value>
+  </data>
+  <data name="Twitter_char_length_prefix" xml:space="preserve">
+    <value>Tweets must be </value>
+  </data>
+  <data name="Admin_Nav_BravectoResources" xml:space="preserve">
+    <value>Bravecto Resources</value>
+  </data>
+  <data name="Admin_Nav_Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Admin_Nav_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Admin_Nav_ManagePosts" xml:space="preserve">
+    <value>Manage Posts</value>
+  </data>
+  <data name="Admin_Nav_Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Admin_Nav_SocialTips" xml:space="preserve">
+    <value>Social Tips</value>
+  </data>
+  <data name="Admin_Nav_TrendingTopics" xml:space="preserve">
+    <value>Trending Topics</value>
+  </data>
+  <data name="Admin_ManagePosts_FuturePosts" xml:space="preserve">
+    <value>Future Posts</value>
+  </data>
+  <data name="Admin_ManagePosts_PastPosts" xml:space="preserve">
+    <value>Past Posts</value>
+  </data>
+  <data name="Admin_ManagePosts_SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="Admin_ManagePost_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Admin_ManagePost_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Admin_ManagePost_Paging_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Admin_ManagePost_Paging_Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Admin_ManagePost_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Admin_ManagePost_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Admin_ManagePost_ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this record?</value>
+  </data>
+  <data name="Admin_ManagePost_NoRecords" xml:space="preserve">
+    <value>No records found</value>
+  </data>
+  <data name="Admin_EditPost_BravectoHeaderCopy" xml:space="preserve">
+    <value>This is the area where you can upload Bravecto content. Keep your vets up to date on your company by posting important information they should know about, such as product updates, reviews, testimonials, and upcoming events.</value>
+  </data>
+  <data name="Admin_EditPost_SocialTipsHeaderCopy" xml:space="preserve">
+    <value>This is the area where you can upload informational content to help vets maximize their social networking potential.</value>
+  </data>
+  <data name="Admin_EditPost_TrendingTopicHeaderCopy" xml:space="preserve">
+    <value>&lt;p&gt;
+                This is non-Bravecto content that is of interest to vets and can be shared on social networks such as Facebook and Twitter.
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;div&gt;Posting to Twitter&lt;/div&gt;
+                If you’d like vets to share on Twitter, keep in mind that Twitter posts must be 140 characters or less.
+            &lt;/p&gt;</value>
+  </data>
+  <data name="BravoVets_SelectCountry_Title" xml:space="preserve">
+    <value>Seleção do País</value>
+  </data>
+  <data name="Bravecto_Compliance_Title" xml:space="preserve">
+    <value>Adesão à Terapêutica | Bravecto</value>
+  </data>
+  <data name="Bravecto_Homepage_Title" xml:space="preserve">
+    <value>Página Inicial de Bravecto</value>
+  </data>
+  <data name="Bravecto_Innovation_Title" xml:space="preserve">
+    <value>Inovação  | Bravecto</value>
+  </data>
+  <data name="Bravecto_NewBusiness_Title" xml:space="preserve">
+    <value>Novo Negócio | Bravecto</value>
+  </data>
+  <data name="BravoVets_BravectoResources_Title" xml:space="preserve">
+    <value>Recursos de Bravecto</value>
+  </data>
+  <data name="BravoVets_EditProfile_Title" xml:space="preserve">
+    <value>Página de Perfil | BravoVets</value>
+  </data>
+  <data name="BravoVets_Homepage_Title" xml:space="preserve">
+    <value>Homepage | BravoVets</value>
+  </data>
+  <data name="BravoVets_Profile_Title" xml:space="preserve">
+    <value>Profile Page | BravoVets</value>
+  </data>
+  <data name="BravoVets_SocialCalendar_Title" xml:space="preserve">
+    <value>Calendário Social</value>
+  </data>
+  <data name="BravoVets_SocialTips_Title" xml:space="preserve">
+    <value>Conselhos para as Redes Sociais</value>
+  </data>
+  <data name="BravoVets_TrendingTopics_Title" xml:space="preserve">
+    <value>Trending Topics | BravoVets</value>
+  </data>
+  <data name="Footer_SiteMap_Title" xml:space="preserve">
+    <value>Mapa da Página da Internet</value>
+  </data>
+  <data name="Lfw20_Pages_Login_Title" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Lfw20_Pages_Profile_Title" xml:space="preserve">
+    <value>User Profile</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Facebook_EditHeader" xml:space="preserve">
+    <value>Edit Facebook Post</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Facebook_Repost" xml:space="preserve">
+    <value>Repost</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Twitter_EditHeader" xml:space="preserve">
+    <value>Edit Tweet</value>
+  </data>
+  <data name="BravoVets_ShareDialog_Twitter_Retweet" xml:space="preserve">
+    <value>Retweet</value>
+  </data>
+  <data name="Admin_EditPost_Bravecto_Attachment_Tooltip" xml:space="preserve">
+    <value>If you have any articles, videos or additional images, you can post up to five here.</value>
+  </data>
+  <data name="Admin_EditPost_FeaturedImage_Tooltip" xml:space="preserve">
+    <value>This image will accompany your post, and will be seen by vets only; not by consumers. Choose an image that makes sense with the content of the post.</value>
+  </data>
+  <data name="Admin_EditPost_Schedule_Tooltip" xml:space="preserve">
+    <value>Plan when you'd like the post to appear.</value>
+  </data>
+  <data name="Admin_EditPost_SocialTips_Attachment_Tooltip" xml:space="preserve">
+    <value>If you have any articles, videos or additional images, you can post up to five here.</value>
+  </data>
+  <data name="Admin_EditPost_Trending_Attachment_Tooltip" xml:space="preserve">
+    <value>If you have a link to an article, video or images, you can include it here.</value>
+  </data>
+  <data name="Twitter_char_length_attachment_prefix" xml:space="preserve">
+    <value>Tweets with attachments must be</value>
+  </data>
+  <data name="Twitter_char_length_suffix" xml:space="preserve">
+    <value>characters or less</value>
+  </data>
+  <data name="BravoVets_Attachments" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="Admin_EditPost_AllowedAttachmentTypes" xml:space="preserve">
+    <value>Acceptable uploadable file types are JPG, GIF, PNG, TIFF or PDF under 25MB.</value>
+  </data>
+  <data name="Admin_EditPost_AttachLink" xml:space="preserve">
+    <value>Attach Link</value>
+  </data>
+  <data name="Admin_EditPost_AttachmentItemsText" xml:space="preserve">
+    <value>Attached Items</value>
+  </data>
+  <data name="Admin_EditPost_AttachmentNamePlaceholder" xml:space="preserve">
+    <value>Attachment Name</value>
+  </data>
+  <data name="Admin_EditPost_Attachments" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="Admin_EditPost_AttachmentText" xml:space="preserve">
+    <value>This image will accompany your post, and will be seen by vets only; not by consumers. Choose an image that makes sense with the content of the post.</value>
+  </data>
+  <data name="Admin_EditPost_AttachmentTypes" xml:space="preserve">
+    <value>Image/Video/Article Link</value>
+  </data>
+  <data name="Admin_EditPost_BravectoResources_HeaderText" xml:space="preserve">
+    <value>Bravecto Resources</value>
+  </data>
+  <data name="Admin_EditPost_CancelText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Admin_EditPost_DeleteAttachToAddNew" xml:space="preserve">
+    <value>Delete current attachment to add new attachment</value>
+  </data>
+  <data name="Admin_EditPost_DeleteText" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Admin_EditPost_FeaturedImage" xml:space="preserve">
+    <value>Featured Image</value>
+  </data>
+  <data name="Admin_EditPost_NumberOfAttachments" xml:space="preserve">
+    <value>Only {0} Attachments Per Post</value>
+  </data>
+  <data name="Admin_EditPost_PickFeaturedImageText" xml:space="preserve">
+    <value>Pick Featured Image</value>
+  </data>
+  <data name="Admin_EditPost_PreviewText" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Admin_EditPost_Schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Admin_EditPost_ScheduleText" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Admin_EditPost_SocialTips_HeaderText" xml:space="preserve">
+    <value>Social Tips</value>
+  </data>
+  <data name="Admin_EditPost_TrendingTopicsHeaderText" xml:space="preserve">
+    <value>Trending Topics</value>
+  </data>
+  <data name="Admin_EditPost_TwitterText" xml:space="preserve">
+    <value>&lt;strong&gt;Note:&lt;/strong&gt; If you’d like vets to share on Twitter, keep in mind that Twitter posts must be 140 characters or less, and 118 or less for tweets with attachments.</value>
+  </data>
+  <data name="Admin_EditPost_UpdateText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Admin_EditPost_UploadDocument" xml:space="preserve">
+    <value>Upload Document</value>
+  </data>
+  <data name="BravectoResourcesMenu" xml:space="preserve">
+    <value>Recursos de Bravecto</value>
+  </data>
+  <data name="CalendarMenu" xml:space="preserve">
+    <value>Calendário Social</value>
+  </data>
+  <data name="SocialTipsMenu" xml:space="preserve">
+    <value>Conselhos Para as Redes Sociais</value>
+  </data>
+  <data name="TrendingTopicsMenu" xml:space="preserve">
+    <value>Tópicos mais Abordados</value>
+  </data>
+  <data name="Disclaimer_Title" xml:space="preserve">
+    <value>Exoneração de responsabilidade</value>
+  </data>
+  <data name="Privacy_Title" xml:space="preserve">
+    <value>Política de Privacidade</value>
+  </data>
+  <data name="Admin_EditPost_PostTitle" xml:space="preserve">
+    <value>Post Title</value>
+  </data>
+  <data name="Admin_EditPost_PostTitleLength" xml:space="preserve">
+    <value>Titles must be less than 100 characters</value>
+  </data>
+  <data name="Admin_EditPost_TrendingTopicsNumberOfAttachments" xml:space="preserve">
+    <value>Only 1 Attachment Per Post</value>
+  </data>
+  <data name="Admin_ManagePosts_FutureNewest" xml:space="preserve">
+    <value>Posting Sooner to Later</value>
+  </data>
+  <data name="Admin_ManagePosts_FutureOldest" xml:space="preserve">
+    <value>Posting Later to Sooner</value>
+  </data>
+  <data name="Admin_ManagePosts_PastNewest" xml:space="preserve">
+    <value>Posted Recent to Oldest</value>
+  </data>
+  <data name="Admin_ManagePosts_PastOldest" xml:space="preserve">
+    <value>Posted Oldest to Recent</value>
+  </data>
+  <data name="SouthAfrica" xml:space="preserve">
+    <value>South Africa</value>
+  </data>
+  <data name="Canada" xml:space="preserve">
+    <value>Canadá</value>
+  </data>
+  <data name="JavaScriptDisable_Text1" xml:space="preserve">
+    <value>Isso resultará em funcionalidade reduzida e vai afetar a apresentação gráfica deste site.</value>
+  </data>
+  <data name="JavaScriptDisable_Text2" xml:space="preserve">
+    <value>No entanto, todo o conteúdo ainda estará disponível...</value>
+  </data>
+  <data name="JavaScriptDisable_Title" xml:space="preserve">
+    <value>Você tem JavaScript deficientes</value>
+  </data>
+  <data name="Brazil" xml:space="preserve">
+    <value>Brasil</value>
+  </data>
+  <data name="Russia" xml:space="preserve">
+    <value>Rússia</value>
+  </data>
+  <data name="BravoVets_Profile_Start" xml:space="preserve">
+    <value>Get started</value>
+  </data>
+  <data name="Latam" xml:space="preserve">
+    <value>LATAM</value>
+  </data>
+</root>

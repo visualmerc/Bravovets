@@ -1,0 +1,154 @@
+﻿@using System.Threading
+@{ Layout = null; }
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>P&aacute;gina incial de Bravovets</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+    
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- endbuild -->
+</head>
+<body class="globalpage global-bg termspage">
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+        <header class="navbar bv-nav" role="banner">
+            <div class="container">
+                <div class="row nav-wrapper">
+                    <div class="col-sm-4">
+                        <div class="navbar-header">
+                            <a href="/bravecto" class="navbar-brand bravovets">
+                                <img src="/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper">
+            <div class="container terms-content">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-6">
+                        <img src="/images/dog-face.png" alt="Dog Face" class="dogface-bg">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Bem-vindo a BravoVets!</h1>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <hr class="plus diagonal">
+                        <p>Pretende construir um CAMV influente e agora tem as ferramentas para esse efeito. BravoVets proporciona-lhe os recursos e informa&ccedil;&otilde;es que o manter&atilde;o atualizado acerca da investiga&ccedil;&atilde;o pertinente, aumentar&atilde;o a sua visibilidade nas redes sociais, e criar&aacute; relacionamento com atuais e potenciais clientes. BravoVets far&aacute; de si um especialista com quem os donos dos animais de estima&ccedil;&atilde;o poder&atilde;o contar. </p>
+                        <p>Come&ccedil;ar &eacute; simples. Basta aceitar os Termos e Condi&ccedil;&otilde;es de BravoVets e todos estes valiosos recursos estar&atilde;o &agrave; sua disposi&ccedil;&atilde;o.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="white-trans-bg">
+                            <h3 class="alt">Aceite, por favor, os Termos e Condi&ccedil;&otilde;es</h3>
+                            <p>
+                                Estes termos e condi&ccedil;&otilde;es ("Termos de Servi&ccedil;o") regulam o seu acesso e utiliza&ccedil;&atilde;o dos produtos, software, servi&ccedil;os, e p&aacute;gina da internet (coletivamente "Servi&ccedil;os") da &ldquo;Merck Animal Health&rdquo; e todas as outras informa&ccedil;&otilde;es, textos, gr&aacute;ficos, fotografias ou outros materiais transferidos ou descarregados, ou que apare&ccedil;am nos Servi&ccedil;os (coletivamente "Conte&uacute;do"). Ao aceder e utilizar os Servi&ccedil;os, concorda em ficar vinculado a estes Termos de Servi&ccedil;o...
+                                <br>
+                                <button class="btn btn-link" data-toggle="modal" data-target="#termsModal">Saiba tudo</button>
+                            </p>
+                            @Html.ActionLink("Aceito", "AcceptTermsAndConditions", "Facebook", new { @class = "btn btn-primary" })
+                            <a href="/bravecto" class="btn btn-default">P&aacute;gina Inicial de Bravecto</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row hidden-xs">
+                    <div class="col-sm-4"><hr class="diagonal shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left shift-right"></div>
+                    <div class="col-sm-4"><hr class="plus diagonal shift-left"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-bravecto-header-lg.jpg" alt="New Business">
+                                <h2>Recursos de Bravecto</h2>
+                            </div>
+                            <p>Quando se trata de um medicamento inovador como Bravecto, h&aacute; sempre novos conceitos a aprender e para transmitir aos seus clientes. Utilize esta ferramenta para se manter atualizado acerca das mais recentes informa&ccedil;&otilde;es sobre medicamentos veterin&aacute;rios e avan&ccedil;os na manuten&ccedil;&atilde;o e melhoria da sa&uacute;de e bem-estar dos animais de estima&ccedil;&atilde;o.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-trendingTopics-header-lg.jpg" alt="New Business">
+                                <h2>T&oacute;picos mais abordados</h2>
+                            </div>
+                            <p>Aqui poder&aacute; estar a par das not&iacute;cias mais recentes em termos de cuidados veterin&aacute;rios. Iremos apresentar temas que os l&iacute;deres de opini&atilde;o do seu neg&oacute;cio est&atilde;o a discutir neste preciso momento, para que possa torn&aacute;-los parte da sua conversa nas redes sociais.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-trans-bg diagonal-bottom">
+                            <div class="section-head">
+                                <img src="/images/terms-socialTips-header-lg.jpg" alt="New Business">
+                                <h2>Conselhos para as redes sociais</h2>
+                            </div>
+                            <p>Se ainda n&atilde;o criou uma presen&ccedil;a nas redes sociais para o seu CAMV, dever&aacute; pensar em faz&ecirc;-lo. Com estes conselhos n&atilde;o s&oacute; desenvolver&aacute; o seu neg&oacute;cio e refor&ccedil;ar&aacute; as suas rela&ccedil;&otilde;es com os seus clientes atuais, como ter&aacute; acesso a novas e estimulantes perspetivas que n&atilde;o tinham sido poss&iacute;veis at&eacute; agora.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Termos de Servi&ccedil;o</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1 class="alternate">Termos de Servi&ccedil;o</h1>
+                            <hr class="plus diagonal">
+                            <p>Estes termos e condi&ccedil;&otilde;es ("Termos de Servi&ccedil;o") regulam o seu acesso e utiliza&ccedil;&atilde;o dos produtos, software, servi&ccedil;os, e p&aacute;gina da internet (coletivamente "Servi&ccedil;os") da &ldquo;Merck Animal Health&rdquo; e todas as outras informa&ccedil;&otilde;es, textos, gr&aacute;ficos, fotografias ou outros materiais transferidos ou descarregados, ou que apare&ccedil;am nos Servi&ccedil;os (coletivamente "Conte&uacute;do"). Ao aceder e utilizar os Servi&ccedil;os, concorda em ficar vinculado a estes Termos de Servi&ccedil;o. Se n&atilde;o concordar com estes Termos de Servi&ccedil;o n&atilde;o poder&aacute; utilizar os referidos Servi&ccedil;os. Sempre que forem utilizados nestes Termos de Servi&ccedil;o, as palavras "voc&ecirc;", "seu/sua" ou palavras semelhantes estar&aacute; a referir-se a pessoa ou entidade legal que utiliza ou acede aos Servi&ccedil;os.</p>
+                            <p>&ldquo;Merck Animal Health&rdquo; poder&aacute; atualizar e alterar estes Termos de Servi&ccedil;o, sempre que for necess&aacute;rio, sem aviso pr&eacute;vio. A utiliza&ccedil;&atilde;o continuada deste Servi&ccedil;o ap&oacute;s a introdu&ccedil;&atilde;o destas altera&ccedil;&otilde;es significar&aacute; que concorda com estas altera&ccedil;&otilde;es. Ser&aacute; respons&aacute;vel por analisar regularmente a vers&atilde;o mais atual dos Termos de Servi&ccedil;o. </p>
+                            <p>Estes Termos de Servi&ccedil;o incluem a pol&iacute;tica de privacidade da &ldquo;Merck Animal Health&rdquo; atualmente dispon&iacute;vel em: http://www.merck-animal-health-usa.com/privacy_policy.aspx. Ao aceder e utilizar os Servi&ccedil;os, est&aacute; a dar o seu consentimento (ou a garantir que obteve o respetivo consentimento adequado) para a recolha e utiliza&ccedil;&atilde;o de dados pessoais pela &ldquo;Merck Animal Health&rdquo; de acordo com a pol&iacute;tica de privacidade da &ldquo;Merck Animal Health&rdquo;.</p>
+                            <p>Ser&aacute; respons&aacute;vel pela utiliza&ccedil;&atilde;o dos Servi&ccedil;os e por qualquer Conte&uacute;do acedido ou disponibilizado a outros por meio de ferramentas disponibilizadas pelos Servi&ccedil;os utilizadas por si (mesmo que este Conte&uacute;do seja acedido ou disponibilizado por outros). S&atilde;o da sua responsabilidade todos os riscos associados &agrave; sua utiliza&ccedil;&atilde;o dos Servi&ccedil;os e qualquer conte&uacute;do acedido ou disponibilizado a outros atrav&eacute;s das suas atividades. Nem a &ldquo;Merck Animal Health&rdquo; nem qualquer uma das suas filiais, agentes ou colaboradores poder&atilde;o ser responsabilizados pela sua utiliza&ccedil;&atilde;o dos Servi&ccedil;os ou qualquer Conte&uacute;do respetivo.</p>
+                            <p>Para aceder ou utilizar os Servi&ccedil;os, dever&aacute; concordar em respeitar esses Termos de Servi&ccedil;o, e n&atilde;o dever&aacute; estar proibido de receber ou utilizar os Servi&ccedil;os ao abrigo das leis aplic&aacute;veis.</p>
+                            <p>A &ldquo;Merck Animal Health&rdquo; pode alterar os Servi&ccedil;os ou deixar de os prestar (tempor&aacute;ria ou permanentemente), em qualquer altura, e sempre que for necess&aacute;rio sem aviso pr&eacute;vio.</p>
+                            <p>Reconhece que os Servi&ccedil;os lhe permitem aceder e utilizar o conte&uacute;do e servi&ccedil;os oferecidos por terceiros prestadores de servi&ccedil;os (por exemplo, Twitter, Facebook) ("Terceiros Prestadores de Servi&ccedil;os"). Dever&aacute; concordar em cumprir os termos e condi&ccedil;&otilde;es relevantes desse Terceiro Prestador de Servi&ccedil;os.</p>
+                            <p>O seu acesso e utiliza&ccedil;&atilde;o dos Servi&ccedil;os devem estar em conformidade com estes Termos de Servi&ccedil;o e os termos e condi&ccedil;&otilde;es de quaisquer Terceiros Prestadores de Servi&ccedil;os. Em caso de viola&ccedil;&atilde;o destes Termos de Servi&ccedil;o ou dos termos e condi&ccedil;&otilde;es de quaisquer Terceiros Prestadores de Servi&ccedil;os, deixar&aacute; de ter autoriza&ccedil;&atilde;o para utilizar os Servi&ccedil;os e a &ldquo;Merck Animal Health&rdquo; poder&aacute; (sem, no entanto, ter essa obriga&ccedil;&atilde;o) rescindir a sua capacidade de aceder ou utilizar os Servi&ccedil;os em qualquer altura.</p>
+                            <p>N&atilde;o poder&aacute; utilizar os Servi&ccedil;os para quaisquer fins ilegais ou n&atilde;o autorizados, incluindo, de qualquer forma, viola&ccedil;&otilde;es dos direitos de autor ou de outras leis aplic&aacute;veis.</p>
+                            <p>N&atilde;o poder&aacute;, sem autoriza&ccedil;&atilde;o pr&eacute;via por escrito da &ldquo;Merck Animal Health&rdquo; (incluindo as autoriza&ccedil;&otilde;es concedidas por estes Termos de Servi&ccedil;o): (a) copiar, distribuir (incluindo o enquadramento de qualquer dos Servi&ccedil;os numa p&aacute;gina da internet), modificar, melhorar, traduzir, reproduzir, vender, revender, sublicenciar, alugar, arrendar, ou de outra forma tentar explorar os Servi&ccedil;os; (b) descompilar, desmontar, fazer engenharia reversa, ou de outra forma tentar descobrir o c&oacute;digo da fonte (exceto na medida em que esta restri&ccedil;&atilde;o for expressamente proibida por lei); (c) fazer trabalhos resultantes dos Servi&ccedil;os; ou (d) modificar outra p&aacute;gina da internet para criar a impress&atilde;o que est&atilde;o associadas com os Servi&ccedil;os ou &agrave; &ldquo;Merck Animal Health&rdquo;.</p>
+                            <p><strong>OS SERVI&Ccedil;OS S&Atilde;O DISPONIBILIZADOS "TAL COMO SE APRESENTAM", "CONFORME ESTIVEREM DISPON&Iacute;VEIS&rdquo;, COM TODAS AS FALHAS E SEM GARANTIAS, REPRESENTA&Ccedil;&Otilde;ES OU CONDI&Ccedil;&Otilde;ES DE QUALQUER ESP&Eacute;CIE. A UTILIZA&Ccedil;&Atilde;O DOS SERVI&Ccedil;OS &Eacute; DA SUA INTEIRA RESPONSABILIDADE. A &ldquo;MERCK ANIMAL HEALTH&rdquo; N&Atilde;O CONCEDE QUAISQUER REPRESENTA&Ccedil;&Otilde;ES, GARANTIAS OU CONDI&Ccedil;&Otilde;ES ACERCA DA QUALIDADE, RIGOR, SEGURAN&Ccedil;A, FIABILIDADE, INTEGRIDADE, USUFRUTO TRANQUILO, MOEDA E ATUALIDADE DOS SERVI&Ccedil;OS.&rdquo; A &ldquo;MERCK ANIMAL HEALTH&rdquo; N&Atilde;O ASSUME QUALQUER RESPONSABILIDADE POR QUALQUER FALHA, ERROS, SEGURAN&Ccedil;A, V&Iacute;RUS, DEFEITOS, PROBLEMAS, OMISS&Otilde;ES, IMPRECIS&Otilde;ES OU OUTRAS LIMITA&Ccedil;&Otilde;ES, OU INTERRUP&Ccedil;&Otilde;ES NA OPERA&Ccedil;&Atilde;O, DOS SERVI&Ccedil;OS.</strong></p>
+                            <p><strong>CONCORDA EM DEFENDER, INDEMNIZAR E ISENTAR A &ldquo;MERCK ANIMAL HEALTH&rdquo;, AS SUAS FILIAIS E SEUS AGENTES E COLABORADORES DE QUAISQUER QUEIXAS DIRETAS OU INDIRETAS EMERGENTES OU RESULTANTES DA SUA UTILIZA&Ccedil;&Atilde;O DOS SERVI&Ccedil;OS E CONTE&Uacute;DOS.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("_Layout_Bravecto_Footer");
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+
+
+
+</body>
+</html>

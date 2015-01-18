@@ -1,0 +1,33 @@
+﻿@model AdminManagePostsModel
+<div data-pagecount="@Model.PageCount">
+    <table>
+        <tbody>
+            @if (Model.Items.Count.Equals(0))
+            {
+                <tr>
+                    <td colspan="3">@Resource.Admin_ManagePost_NoRecords</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model.Items)
+                {
+                    <tr id="post-@item.SyndicatedContentId">
+                        <td nowrap>
+                            @item.PublishDateUtc.AddMinutes(-Model.ClientOffset).ToString("MMM dd, yyyy HH:00")
+                        </td>
+                        <td>
+                            <h4 class="post-title">@item.Title</h4>
+                            <p>@Html.Raw(item.ContentText)</p>
+                        </td>
+                        <td nowrap>
+                            <a data-id="@item.SyndicatedContentId" href="@Model.EditUrl@item.SyndicatedContentId" class="btn btn-default edit-post" role="button">@Resource.Admin_ManagePost_Edit</a>
+                            <a data-id="@item.SyndicatedContentId"  class="btn btn-default delete-post" role="button">@Resource.Admin_ManagePost_Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

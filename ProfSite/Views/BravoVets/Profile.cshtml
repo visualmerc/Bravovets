@@ -1,0 +1,278 @@
+﻿@model BravoVets.DomainObject.BravoVetsUser
+@using BravoVets.DomainObject
+@using bvResources = ProfSite.Resources.Resource
+
+@{
+    // This one view will render conditionally, based on whether it is an initial view, or has been reached through the "edit profile" link
+    bool isInitial;
+    string titleText;
+    string facebookText;
+    string isFacebookLinked;
+    string twitterText;
+    string isTwitterLinked;
+    string vetTextBoxStyle = "form-control";
+
+    isInitial = !Model.Veterinarian.CanEditFacilities;
+    if (isInitial)
+    {
+        titleText = Resource.CompleteProfile;
+    }
+    else
+    {
+        titleText = Resource.EditProfile;
+    }
+
+    if (Model.Veterinarian.IsFacebookLinked)
+    {
+        facebookText = Resource.UnlinkYourFacebookAccount;
+        isFacebookLinked = "1";
+    }
+    else
+    {
+        facebookText = Resource.LinkYourFacebookAccount;
+        isFacebookLinked = "0";
+    }
+    if (Model.Veterinarian.IsTwitterLinked)
+    {
+        twitterText = Resource.UnlinkYourTwitterAccount;
+        isTwitterLinked = "1";
+    }
+    else
+    {
+        twitterText = Resource.LinkYourTwitterAccount;
+        isTwitterLinked = "0";
+    }
+
+    if (string.IsNullOrEmpty(Model.Veterinarian.BusinessName))
+    {
+        vetTextBoxStyle = "has-error";
+    }
+
+}
+
+
+@if (isInitial)
+{
+
+    using (Html.BeginForm())
+    {
+
+        <script type="text/javascript">
+            function editFacility(id) {
+                window.location.href = "/EditProfileAndFacility/" + id;
+            }
+
+            function deleteFacility(id) {
+                if (confirm('@bvResources.ConfirmDelete')) {
+                    window.location.href = "/DeleteFacility/" + id;
+                }
+            }
+
+            function toggleFacebook(isLinked) {
+                if (isLinked) {
+                    if (confirm('@bvResources.ConfirmDelete')) {
+                        window.location.href = "/facebook/delete";
+                    }
+                } else {
+                    window.location.href = "/facebook/OAuthRedirect";
+                }
+            }
+
+            function toggleTwitter(isLinked) {
+                if (isLinked) {
+                    if (confirm('@bvResources.ConfirmDelete')) {
+                        window.location.href = "/twitter/delete";
+                    }
+                } else {
+                    window.location.href = "/twitter/OAuthRedirect";
+                }
+            }
+
+        </script>
+
+        <div class="page-content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="user-profile">
+                            <h1 class="page-title user">@bvResources.CompleteProfile</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="profile-form">
+                            <div class="white-trans-bg diagonal-bottom">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="step one">@bvResources.BravoVets_Profile_Step</div>
+                                        <h2>@bvResources.EnterPracticeName</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>@bvResources.PersonalizePractice</p>
+                                    </div>
+                                    <div class="col-sm-6 plus-diagonal-vertical">
+                                        <div class="form-group">
+                                            <label for="practiceName">@bvResources.BusinessName</label>
+                                            @Html.HiddenFor(model => model.BravoVetsUserId)
+                                            @Html.HiddenFor(model => model.VeterinarianId)
+                                            @Html.HiddenFor(model => model.Veterinarian.VeterinarianId)
+                                            @Html.TextBoxFor(model => model.Veterinarian.BusinessName, new { @class = vetTextBoxStyle })
+                                            @Html.ValidationMessageFor(model => model.Veterinarian.BusinessName, null, new { @class = "has-error" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white-trans-bg diagonal-bottom">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="step two">@bvResources.BravoVets_Profile_Step</div>
+                                        <h2>@bvResources.BravoVets_Profile_LinkSocialAcccounts</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>@bvResources.BravoVets_Profile_CompleteBizProfile</p>
+                                    </div>
+                                    <div class="col-sm-6 plus-diagonal-vertical">
+                                        <a href="javascript:void(0)" class="btn social-button facebook-bg linked" onclick="toggleFacebook(@isFacebookLinked);return false;">@facebookText</a>
+                                        <a href="javascript:void(0)" class="btn social-button twitter-bg" onclick=" toggleTwitter(@isTwitterLinked);return false; ">@twitterText</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="white-trans-bg diagonal-bottom">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="step three">@bvResources.BravoVets_Profile_Step</div>
+                                        <h2>@bvResources.BravoVets_Profile_Start</h2>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>@bvResources.BravoVets_Profile_ExploreResources</p>
+                                    </div>
+
+                                    <div class="col-sm-6 plus-diagonal-vertical">
+                                        <button class="btn btn-primary">@bvResources.SaveAndContinue</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+}
+else
+{
+
+    using (Html.BeginForm())
+    {
+
+        string locationButtonText = bvResources.BravoVets_Profile_AddLocation;
+
+        if (Model.Veterinarian.EditableFacility != null)
+        {
+            if (Model.Veterinarian.EditableFacility.VeterinarianFacilityId > 0)
+            {
+                locationButtonText = bvResources.BravoVets_Profile_EditLocation;
+            }
+        }
+
+
+        <div class="page-content-wrapper">
+            <script type="text/javascript">
+                function editFacility(id) {
+                    window.location.href = "/EditProfileAndFacility/" + id;
+                }
+
+                function deleteFacility(id) {
+                    if (confirm('@bvResources.ConfirmDelete')) {
+                        window.location.href = "/DeleteFacility/" + id;
+                    }
+                }
+
+                function toggleFacebook(isLinked) {
+                    if (isLinked) {
+                        if (confirm('@bvResources.ConfirmDelete')) {
+                            window.location.href = "/facebook/delete";
+                        }
+                    } else {
+                        window.location.href = "/facebook/OAuthRedirect";
+                    }
+                }
+
+                function toggleTwitter(isLinked) {
+                    if (isLinked) {
+                        if (confirm('@bvResources.ConfirmDelete')) {
+                            window.location.href = "/twitter/delete";
+                        }
+                    } else {
+                        window.location.href = "/twitter/OAuthRedirect";
+                    }
+                }
+
+            </script>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="user-profile">
+                            <h1 class="page-title user">@bvResources.EditProfile</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="white-trans-bg diagonal-bottom profile-form">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="practiceName">@bvResources.BusinessName</label>
+                                        @Html.HiddenFor(model => model.BravoVetsUserId)
+                                        @Html.HiddenFor(model => model.VeterinarianId)
+                                        @Html.HiddenFor(model => model.Veterinarian.VeterinarianId)
+                                        @Html.TextBoxFor(model => model.Veterinarian.BusinessName, new { @class = vetTextBoxStyle })
+                                        @Html.ValidationMessageFor(model => model.Veterinarian.BusinessName, null, new { @class = "has-error" })
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="plus diagonal">
+                            <div class="form-inline">
+                                <a href="javascript:void(0)" class="btn social-button facebook-bg linked" onclick=" toggleFacebook(@isFacebookLinked);return false; ">@facebookText</a>
+                                <a href="javascript:void(0)" class="btn social-button twitter-bg" onclick=" toggleTwitter(@isTwitterLinked);return false; ">@twitterText</a>
+                            </div>
+                            <hr class="plus diagonal">
+                            <div class="pull-right">
+                                <a class="btn btn-primary" href="#EditSectionHr">@locationButtonText</a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <h2>@bvResources.PracticeLocations</h2>
+                            <ul class="current-locations list-unstyled">
+                                @Html.EditorFor(model => model.Veterinarian.VeterinarianFacilities)
+                            </ul>
+                            <hr id="EditSectionHr" class="plus diagonal">                           
+                            @Html.EditorFor(model => model.Veterinarian.EditableFacility)
+                            <div class="pull-right">
+                                <button class="btn btn-primary">@bvResources.SaveAndContinue</button>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

@@ -1,0 +1,14 @@
+<span id="cal-slide-tick" style="display: none"></span>
+<div id="cal-slide-content" class="cal-event-list">
+	<ul class="unstyled list-unstyled">
+		<% _.each(events, function(event) { %>
+			<li class="<%= event['network'] %>">
+				<span class="pull-left event <%= event['class'] %>"></span>&nbsp;
+				<span class="event-time"><%= event['display_start'] %> - </span>
+				<a  data-event-id="<%= event.id %>"
+					data-event-class="<%= event['class'] %>" class="event-item">
+					<%= event.title %></a>
+			</li>
+		<% }) %>
+	</ul>
+</div>

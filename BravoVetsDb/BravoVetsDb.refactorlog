@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="2ee8cc85-698a-4323-a6ae-af9d712fb876" ChangeDateTime="01/28/2014 16:39:40">
+    <Property Name="ElementName" Value="[dbo].[Region].[RegionId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Region]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsCountryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="07dd8fac-b46b-4f55-b248-01610468afd2" ChangeDateTime="01/28/2014 16:39:52">
+    <Property Name="ElementName" Value="[dbo].[Region].[RegionName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Region]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CountryName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7d7d8a21-fd36-4bfa-811a-723950c5330e" ChangeDateTime="01/28/2014 16:52:57">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsStatus].[StatusId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsStatus]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsStatusId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6eadc5ad-8608-43c2-902e-5c48486b9dfc" ChangeDateTime="01/28/2014 16:53:55">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsLanguage].[LanguageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsLanguage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsLanguageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b6c1f077-8014-4700-bbdd-c05b7f527d8d" ChangeDateTime="01/28/2014 17:13:37">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsCountry].[LanguageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsCountry]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsLanguageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="33e5e9ef-6970-4228-9331-f1e9b185588f" ChangeDateTime="02/01/2014 18:59:01">
+    <Property Name="ElementName" Value="[dbo].[Veterinarian].[RegionId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Veterinarian]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsCountryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ee63aaca-b689-469f-8e80-87407181c248" ChangeDateTime="02/01/2014 19:02:50">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsUser].[LanguageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsCountryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="709a86d8-051f-4bf1-86a6-f08ec86d067d" ChangeDateTime="02/01/2014 19:04:10">
+    <Property Name="ElementName" Value="[dbo].[FK_BravoVetsUser_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_BravoVetsUser_BravoVetsCountry]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="15cd49dc-4ed9-4802-ab28-fbd26be86c84" ChangeDateTime="02/01/2014 19:13:50">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsUser].[StatusId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BravoVetsStatusId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="85b1071d-4d39-4f0d-b8f8-c908a18886c7" ChangeDateTime="02/05/2014 03:20:55">
+    <Property Name="ElementName" Value="[tst].[MerckLfwUser].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[tst].[MerckLfwUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MerckLfwUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d8708fc3-8b39-445d-aadb-a4948b0bda6b" ChangeDateTime="02/12/2014 15:55:58">
+    <Property Name="ElementName" Value="[dbo].[BravoVetsUser].[IX_BravoVetsUser_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[dbo].[BravoVetsUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_BravoVetsUser_MerckId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="84907f3c-6bc8-43af-8051-25c66784437d" ChangeDateTime="02/12/2014 16:42:48">
+    <Property Name="ElementName" Value="[dbo].[FK_VeterinarianFacilityChannel_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[VeterinarianFacilityChannel]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_VeterinarianFacilityChannel_ChannelType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="60583e5c-e7c3-43ac-aefd-5dcd31db8c59" ChangeDateTime="02/24/2014 00:35:06">
+    <Property Name="ElementName" Value="[dbo].[VeterinarianSocialIntegration].[PageToken]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[VeterinarianSocialIntegration]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PageAccessToken" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3afb0e9c-348c-462c-8bfb-24bee28dec32" ChangeDateTime="02/25/2014 23:24:54">
+    <Property Name="ElementName" Value="[dbo].[SyndicatedContentAttachment].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SyndicatedContentAttachment]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SyndicatedContentAttachmentId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dc84ffda-091a-4064-9096-df28bbf43be6" ChangeDateTime="02/26/2014 02:39:42">
+    <Property Name="ElementName" Value="[dbo].[SyndicatedContentQueue].[PublishDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SyndicatedContentQueue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PublishDateUtc" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="995185e1-f349-4b7e-873d-1c21d354b922" ChangeDateTime="03/07/2014 00:40:24">
+    <Property Name="ElementName" Value="[dbo].[QueueContent].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[QueueContent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="QueueContentId" />
+  </Operation>
+</Operations>

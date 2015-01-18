@@ -1,0 +1,19 @@
+﻿@model  FacebookTimelinePost
+@using bvResources = ProfSite.Resources.Resource
+
+<ul class="comment-list list-unstyled fb-comment-@Model.Id">
+    @foreach (var comment in Model.Comments)
+    {
+        @Html.Partial("Comment", comment)
+    }    
+    @if (!string.IsNullOrEmpty(Model.FBPostUr))
+    {
+        <li>
+            <a href="@Model.FBPostUr">@bvResources.Facebook_Comments_ViewMore</a>
+        </li>
+    }
+</ul>
+<form action="@Model.Id" class="form-comment fb-comment" role="form">
+    <input type="text" placeholder="@bvResources.Facebook_Comments_WriteComment" class="form-control">
+</form>
+

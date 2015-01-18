@@ -1,0 +1,29 @@
+﻿@model ViewSyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+
+<ul class="bravecto-content syndicatedcontent-resources">
+    @if (Model.Content.Count() > 0)
+    {
+        foreach (var topic in Model.Content)
+        {
+            @Html.Partial("ResourceTopicItem", topic)
+        }
+    }
+    else if (Model.IsFirstPage)
+    {
+        <li class="panel-diagonalbottom"><div class="no-items-message">@string.Format(bvResources.BravoVets_ResourceTopicsItems_NoMoreItems, Model.CurrentView.ToLower())</div></li>
+    }
+    <li class="loading" style="display:none;">
+        @Html.Partial("SocialLoading")
+    </li>
+    <li class="noItems panel-diagonalbottom" style="display:none;">
+        <div class="no-items-message"> @bvResources.BravoVets_ResourceTopicsItems_NoMoreItems</div>
+    </li>
+</ul>
+@if (Model.Content.Count > 0)
+{
+    <div class="load-btn-wrapper">
+        <button id="nextPage" data-nextpage="take=@Model.Take&skip=@Model.Skip" class="btn btn-primary">@bvResources.BravoVets_ResourceTopicsItems_LoadMore</button>
+    </div>
+}

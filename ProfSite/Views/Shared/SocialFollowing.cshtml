@@ -1,0 +1,33 @@
+﻿@using bvResources = ProfSite.Resources.Resource
+@model SocialIntegrationModel
+<h1 class="page-title comment-bubbles">@bvResources.Shared_SocialFollowing_SocialActivity</h1>
+<ul id="dashboard-tabs" class="nav nav-tabs">
+    <li class="col-xs-6 active">
+        <div class="tab-wrapper facebook">
+            <a href="#facebook">
+                @bvResources.Shared_SocialFollowing_Facebook
+                <div class="stats-wrapper">
+                    @if (Model.FacebookProfile.difference != 0)
+                    {
+                        <span class="new">@Model.FacebookProfile.difference</span>
+                    }
+                    <span class="likes">@Model.FacebookProfile.likes</span>
+                </div>
+            </a>
+        </div>
+    </li>
+    <li class="col-xs-6">
+        <div class="tab-wrapper twitter">
+            <a href="#twitter">
+                @bvResources.Shared_SocialFollowing_Twitter
+                <div class="stats-wrapper">
+                    @if (Model.TwitterProfile.difference != 0)
+                    {
+                        <span class="new">@Model.TwitterProfile.difference</span>
+                    }
+                    <span class="followers">@Model.TwitterProfile.followers_count</span>
+                </div>
+            </a>
+        </div>
+    </li>
+</ul>           

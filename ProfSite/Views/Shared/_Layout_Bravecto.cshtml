@@ -1,0 +1,134 @@
+﻿@using System.Threading
+@using System.Web.UI.WebControls
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>@(ViewBag.Title ?? "Bravecto")</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/images/favicon.png" />
+
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+
+    <!-- endbuild -->
+</head>
+<body class="bravectopage" ng-app="chartsApp">
+    @Html.Partial("HappyBrowser")
+
+
+    <div class="circles-header"></div>
+    <div class="page-wrapper">
+
+        @Html.Partial("_Layout_Bravecto_Header")
+
+        <div class="page-content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("_Layout_Bravecto_Footer")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+
+
+    @Scripts.Render("~/bundles/charts")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+
+        var waitForFinalEvent = (function () {
+            var timers = {};
+            return function (callback, ms, uniqueId) {
+                if (!uniqueId) {
+                    uniqueId = "Don't call this twice without a uniqueId";
+                }
+                if (timers[uniqueId]) {
+                    clearTimeout(timers[uniqueId]);
+                }
+                timers[uniqueId] = setTimeout(callback, ms);
+            };
+        })();
+
+        function scrollToSolutions() {
+            var selectorString = '#solutions-wrapper';
+            var scrollTo = $(selectorString).offset().top;
+
+            $('html, body').delay(200).animate({
+                scrollTop: scrollTo
+            }, 500)
+        }
+
+        function scrollToIssues() {
+            var selectorString = '#issues-wrapper';
+            var scrollTo = $(selectorString).offset().top;
+
+            $('html, body').delay(200).animate({
+                scrollTop: scrollTo
+            }, 500)
+        }
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function resizeHeroBg() {
+            if ($('#hero-wrapper').length > 0) {
+                var heroBottom = $('#hero-bottom').position().top;
+                $('.hero-banner-image').css("height", heroBottom - 20);
+            }
+        }
+
+        $('.issue-link').on('click', function () {
+            scrollToSolutions();
+        });
+
+        $('.back-to-top').on('click', function () {
+            scrollToIssues();
+        });
+
+        $(document).ready(function () {
+
+            var solutionNumber = parseInt(getParameterByName('solutionID'));
+
+            if (solutionNumber > -1) {
+                $('#carousel-solutions').carousel(solutionNumber);
+
+                setTimeout(function () { scrollToSolutions() }, 500);
+            }
+
+            setTimeout(function () {
+                resizeHeroBg();
+            }, 100);
+
+            $(window).resize(function () {
+                waitForFinalEvent(function () {
+                    resizeHeroBg();
+                }, 150, "herobgresize");
+            });
+
+        });
+
+
+
+    </script>
+    <script language="javascript">
+        var bvLanguage = '@ViewBag.Language';
+    </script>
+    @if (ViewBag.Language == "fr-FR") { 
+        <noscript>
+        <a href="//policy.merck.sitemorse.com/e0adce0b-fr.html" style="z-index: 32001; background: #fff none no-repeat scroll 0 0; text-decoration: none; display: block; position: fixed; bottom: 0; right: 20px; font: normal normal normal 10pt Verdana,Geneva,sans-serif; color: #000000; border: 1px solid #b202c2; border-bottom: 0; border-radius: 5px 5px 0 0; padding: 4px 20px; cursor: pointer; opacity: 0.8">cookies</a>
+    </noscript>
+    <script type="text/javascript" src="//policy.merck.sitemorse.com/e0adce0b_panel-fr.js"></script>
+    }
+</body>
+
+</html>

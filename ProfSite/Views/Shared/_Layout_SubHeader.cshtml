@@ -1,0 +1,22 @@
+﻿@using bvResources = ProfSite.Resources.Resource
+<div class="user-info-wrapper">
+    <div class="container">
+        <hr class="diagonal">
+        <div class="row user-info">
+            <div class="col-sm-8"><h2><span class="welcome">@bvResources.Shared_Layout_SubHeaderWelcome,</span> @ViewData["CurrentVetPractice"]</h2></div>
+            <div class="col-sm-4">
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav navbar-userinfo navbar-right">
+                        <li>
+                            <a href="/EditProfileAndFacility/">@bvResources.Shared_Layout_SubHeaderEditProfile</a>
+                        </li>
+                        <li>
+                            <a href="/lfw20/pages/logout.aspx" class="arrow-right">@bvResources.Shared_Layout_SubHeaderSignOut</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr class="diagonal plus">
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+
+@using bvResources = ProfSite.Resources.Resource
+
+@model BravoVets.DomainObject.VeterinarianFacility
+    
+@Html.ValueFor(model => model.FacilityName)<br />
+@Html.ValueFor(model => model.StreetAddress1)<br />
+@Html.ValueFor(model => model.StreetAddress2)<br />
+@Html.ValueFor(model => model.City)<br />
+@Html.ValueFor(model => model.Country)<br />
+@Html.ValueFor(model => model.PostalCode)<br />
+
+

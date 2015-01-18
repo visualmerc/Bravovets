@@ -1,0 +1,27 @@
+﻿@using bvResources = ProfSite.Resources.Resource
+@model  TweetModel
+            
+<li class="social-post" role="twitter">
+    <div class="avatar-wrapper">
+        <img class="avatar" src="@Model.profile_image_url_https" alt="@Model.author_screen_name">
+    </div>
+    <div class="post-content">
+        <p class="person-name"><a target="_blank" href="http://twitter.com/@Model.author_screen_name">@Model.author_screen_name</a></p>
+        <div class="share-wrapper">
+            @Html.Raw(Model.formatted_text)
+        </div>
+    </div>
+    <div class="social-feed-icons">
+        <a href="@Model.id" class="btn-social btn-twitter-reply" role="reply"><span>@bvResources.Twitter_Tweet_Reply</span></a>
+        @if (Model.CanRetweet)
+        {
+            <a href="@Model.id" class="btn-social btn-twitter-retweet @Model.GetRetweetClass" role="retweet"><span>@bvResources.Twitter_Tweet_Retweet</span></a>
+        }
+    </div>
+    <div id="post-reply-@Model.id" class="post-reply collapsed">
+        <form action="#0" role="form" class="form-reply form-inline">
+            <textarea name="message" id="post-reply-text-@Model.id" rows="5" class="form-control">@@@Model.author_screen_name</textarea>
+            <button id="post-reply-button-@Model.id" type="button" class="form-control btn-primary">@bvResources.Twitter_Tweet_tweet</button>
+        </form>
+    </div>
+</li>

@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BravoVetsDbEntitiesStoreContainer" CdmEntityContainer="BravoVets2005Entities">
+    <EntitySetMapping Name="ActivityTypes">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.ActivityType">
+        <MappingFragment StoreEntitySet="ActivityType">
+          <ScalarProperty Name="ActivityTypeId" ColumnName="ActivityTypeId" />
+          <ScalarProperty Name="ActivityTypeName" ColumnName="ActivityTypeName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BravoVetsCountries">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.BravoVetsCountry">
+        <MappingFragment StoreEntitySet="BravoVetsCountry">
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryNameResourceKey" ColumnName="CountryNameResourceKey" />
+          <ScalarProperty Name="CountryIsoCode" ColumnName="CountryIsoCode" />
+          <ScalarProperty Name="BravoVetsLanguageId" ColumnName="BravoVetsLanguageId" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BravoVetsLanguages">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.BravoVetsLanguage">
+        <MappingFragment StoreEntitySet="BravoVetsLanguage">
+          <ScalarProperty Name="BravoVetsLanguageId" ColumnName="BravoVetsLanguageId" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BravoVetsStatus">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.BravoVetsStatu">
+        <MappingFragment StoreEntitySet="BravoVetsStatus">
+          <ScalarProperty Name="BravoVetsStatusId" ColumnName="BravoVetsStatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BravoVetsUsers">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.BravoVetsUser">
+        <MappingFragment StoreEntitySet="BravoVetsUser">
+          <ScalarProperty Name="BravoVetsUserId" ColumnName="BravoVetsUserId" />
+          <ScalarProperty Name="VeterinarianId" ColumnName="VeterinarianId" />
+          <ScalarProperty Name="MerckId" ColumnName="MerckId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="CultureName" ColumnName="CultureName" />
+          <ScalarProperty Name="RepContactId" ColumnName="RepContactId" />
+          <ScalarProperty Name="EmailOptIn" ColumnName="EmailOptIn" />
+          <ScalarProperty Name="AcceptedTandC" ColumnName="AcceptedTandC" />
+          <ScalarProperty Name="BravoVetsStatusId" ColumnName="BravoVetsStatusId" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BravoVetsUserActivities">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.BravoVetsUserActivity">
+        <MappingFragment StoreEntitySet="BravoVetsUserActivity">
+          <ScalarProperty Name="BravoVetsUserActivityId" ColumnName="BravoVetsUserActivityId" />
+          <ScalarProperty Name="BravoVetsUserId" ColumnName="BravoVetsUserId" />
+          <ScalarProperty Name="ActivityTypeId" ColumnName="ActivityTypeId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChannelTypes">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.ChannelType">
+        <MappingFragment StoreEntitySet="ChannelType">
+          <ScalarProperty Name="ChannelTypeId" ColumnName="ChannelTypeId" />
+          <ScalarProperty Name="ChannelTypeName" ColumnName="ChannelTypeName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="VeterinarianId" ColumnName="VeterinarianId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MerckLfwUsers">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.MerckLfwUser">
+        <MappingFragment StoreEntitySet="MerckLfwUser">
+          <ScalarProperty Name="MerckLfwUserId" ColumnName="MerckLfwUserId" />
+          <ScalarProperty Name="MerckId" ColumnName="MerckId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CountryOriginIso" ColumnName="CountryOriginIso" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LanguageIsoCode" ColumnName="LanguageIsoCode" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="UA" ColumnName="UA" />
+          <ScalarProperty Name="LoginGUID" ColumnName="LoginGUID" />
+          <ScalarProperty Name="ForgeryID" ColumnName="ForgeryID" />
+          <ScalarProperty Name="WebsiteProperties" ColumnName="WebsiteProperties" />
+          <ScalarProperty Name="AccessOnGroups" ColumnName="AccessOnGroups" />
+          <ScalarProperty Name="CookiesEnabled" ColumnName="CookiesEnabled" />
+          <ScalarProperty Name="LfwMessage" ColumnName="LfwMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QueueContents">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.QueueContent">
+        <MappingFragment StoreEntitySet="QueueContent">
+          <ScalarProperty Name="QueueContentId" ColumnName="QueueContentId" />
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="BravoVetsUserId" ColumnName="BravoVetsUserId" />
+          <ScalarProperty Name="SyndicatedContentPostTypeId" ColumnName="SyndicatedContentPostTypeId" />
+          <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="BravoVetsStatusId" ColumnName="BravoVetsStatusId" />
+          <ScalarProperty Name="PublishDateUtc" ColumnName="PublishDateUtc" />
+          <ScalarProperty Name="PlatformPublishId" ColumnName="PlatformPublishId" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccessCode" ColumnName="AccessCode" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="PublishError" ColumnName="PublishError" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QueueContentAttachments">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.QueueContentAttachment">
+        <MappingFragment StoreEntitySet="QueueContentAttachment">
+          <ScalarProperty Name="QueueContentAttachmentId" ColumnName="QueueContentAttachmentId" />
+          <ScalarProperty Name="QueueContentId" ColumnName="QueueContentId" />
+          <ScalarProperty Name="SyndicatedContentAttachmentId" ColumnName="SyndicatedContentAttachmentId" />
+          <ScalarProperty Name="AttachmentFileName" ColumnName="AttachmentFileName" />
+          <ScalarProperty Name="AttachmentExtension" ColumnName="AttachmentExtension" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialPlatforms">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SocialPlatform">
+        <MappingFragment StoreEntitySet="SocialPlatform">
+          <ScalarProperty Name="SocialPlatformId" ColumnName="SocialPlatformId" />
+          <ScalarProperty Name="SocialPlatformName" ColumnName="SocialPlatformName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContents">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContent">
+        <MappingFragment StoreEntitySet="SyndicatedContent">
+          <ScalarProperty Name="LinkUrlName" ColumnName="LinkUrlName" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="SyndicatedContentTypeId" ColumnName="SyndicatedContentTypeId" />
+          <ScalarProperty Name="SyndicatedContentPostTypeId" ColumnName="SyndicatedContentPostTypeId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="BravoVetsStatusId" ColumnName="BravoVetsStatusId" />
+          <ScalarProperty Name="NumberOfFavorites" ColumnName="NumberOfFavorites" />
+          <ScalarProperty Name="NumberOfShares" ColumnName="NumberOfShares" />
+          <ScalarProperty Name="NumberOfViews" ColumnName="NumberOfViews" />
+          <ScalarProperty Name="PublishDateUtc" ColumnName="PublishDateUtc" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentAttachments">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentAttachment">
+        <MappingFragment StoreEntitySet="SyndicatedContentAttachment">
+          <ScalarProperty Name="DisplayInUi" ColumnName="DisplayInUi" />
+          <ScalarProperty Name="SyndicatedContentAttachmentId" ColumnName="SyndicatedContentAttachmentId" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="AttachmentFileName" ColumnName="AttachmentFileName" />
+          <ScalarProperty Name="AttachmentExtension" ColumnName="AttachmentExtension" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentPostTypes">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentPostType">
+        <MappingFragment StoreEntitySet="SyndicatedContentPostType">
+          <ScalarProperty Name="SyndicatedContentPostTypeId" ColumnName="SyndicatedContentPostTypeId" />
+          <ScalarProperty Name="SyndicatedContentPostTypeName" ColumnName="SyndicatedContentPostTypeName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentTags">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentTag">
+        <MappingFragment StoreEntitySet="SyndicatedContentTag">
+          <ScalarProperty Name="SyndicatedContentTagId" ColumnName="SyndicatedContentTagId" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentTypes">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentType">
+        <MappingFragment StoreEntitySet="SyndicatedContentType">
+          <ScalarProperty Name="SyndicatedContentTypeId" ColumnName="SyndicatedContentTypeId" />
+          <ScalarProperty Name="SyndicatedContentTypeName" ColumnName="SyndicatedContentTypeName" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentUsers">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentUser">
+        <MappingFragment StoreEntitySet="SyndicatedContentUser">
+          <ScalarProperty Name="SyndicatedContentUserId" ColumnName="SyndicatedContentUserId" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="BravoVetsUserId" ColumnName="BravoVetsUserId" />
+          <ScalarProperty Name="ActivityTypeId" ColumnName="ActivityTypeId" />
+          <ScalarProperty Name="AddtionalText" ColumnName="AddtionalText" />
+          <ScalarProperty Name="BravoVetsStatusId" ColumnName="BravoVetsStatusId" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veterinarians">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.Veterinarian">
+        <MappingFragment StoreEntitySet="Veterinarian">
+          <ScalarProperty Name="VeterinarianId" ColumnName="VeterinarianId" />
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeterinarianFacilities">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.VeterinarianFacility">
+        <MappingFragment StoreEntitySet="VeterinarianFacility">
+          <ScalarProperty Name="VeterinarianFacilityId" ColumnName="VeterinarianFacilityId" />
+          <ScalarProperty Name="VeterinarianId" ColumnName="VeterinarianId" />
+          <ScalarProperty Name="FacilityName" ColumnName="FacilityName" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="PrimaryPhoneNumber" ColumnName="PrimaryPhoneNumber" />
+          <ScalarProperty Name="SecondaryPhoneNumber" ColumnName="SecondaryPhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="IsEditable" ColumnName="IsEditable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeterinarianFacilityChannels">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.VeterinarianFacilityChannel">
+        <MappingFragment StoreEntitySet="VeterinarianFacilityChannel">
+          <ScalarProperty Name="VeterinarianFacilityChannelId" ColumnName="VeterinarianFacilityChannelId" />
+          <ScalarProperty Name="VeterinarianFacilityId" ColumnName="VeterinarianFacilityId" />
+          <ScalarProperty Name="ChannelTypeId" ColumnName="ChannelTypeId" />
+          <ScalarProperty Name="ChannelValue" ColumnName="ChannelValue" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeterinarianSocialIntegrations">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.VeterinarianSocialIntegration">
+        <MappingFragment StoreEntitySet="VeterinarianSocialIntegration">
+          <ScalarProperty Name="VeterinarianSocialIntegrationId" ColumnName="VeterinarianSocialIntegrationId" />
+          <ScalarProperty Name="VeterinarianId" ColumnName="VeterinarianId" />
+          <ScalarProperty Name="SocialPlatformId" ColumnName="SocialPlatformId" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="AccountPassword" ColumnName="AccountPassword" />
+          <ScalarProperty Name="AccessToken" ColumnName="AccessToken" />
+          <ScalarProperty Name="AccessCode" ColumnName="AccessCode" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="PageAccessToken" ColumnName="PageAccessToken" />
+          <ScalarProperty Name="NumberOfFollowers" ColumnName="NumberOfFollowers" />
+          <ScalarProperty Name="FollowerDiff" ColumnName="FollowerDiff" />
+          <ScalarProperty Name="LastFeed" ColumnName="LastFeed" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QueueContentDeliveryLogs">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.QueueContentDeliveryLog">
+        <MappingFragment StoreEntitySet="QueueContentDeliveryLog">
+          <ScalarProperty Name="PublishError" ColumnName="PublishError" />
+          <ScalarProperty Name="DeliverySessionTimeUtc" ColumnName="DeliverySessionTimeUtc" />
+          <ScalarProperty Name="WasDelivered" ColumnName="WasDelivered" />
+          <ScalarProperty Name="QueueContentId" ColumnName="QueueContentId" />
+          <ScalarProperty Name="DeliverySessionStartTimeUtc" ColumnName="DeliverySessionStartTimeUtc" />
+          <ScalarProperty Name="DeliverySessionId" ColumnName="DeliverySessionId" />
+          <ScalarProperty Name="QueueContentDeliveryLogId" ColumnName="QueueContentDeliveryLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeaturedContents">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.FeaturedContent">
+        <MappingFragment StoreEntitySet="FeaturedContent">
+          <ScalarProperty Name="BravoVetsCountryId" ColumnName="BravoVetsCountryId" />
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="ContentFile" ColumnName="ContentFile" />
+          <ScalarProperty Name="ContentThumbnail" ColumnName="ContentThumbnail" />
+          <ScalarProperty Name="ContentExtension" ColumnName="ContentExtension" />
+          <ScalarProperty Name="ContentFileName" ColumnName="ContentFileName" />
+          <ScalarProperty Name="SyndicatedContentTypeId" ColumnName="SyndicatedContentTypeId" />
+          <ScalarProperty Name="FeaturedContentId" ColumnName="FeaturedContentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SyndicatedContentLinks">
+      <EntityTypeMapping TypeName="BravoVetsDbEntities.SyndicatedContentLink">
+        <MappingFragment StoreEntitySet="SyndicatedContentLink">
+          <ScalarProperty Name="ModifiedDateUtc" ColumnName="ModifiedDateUtc" />
+          <ScalarProperty Name="CreateDateUtc" ColumnName="CreateDateUtc" />
+          <ScalarProperty Name="SyndicatedContentAttachmentId" ColumnName="SyndicatedContentAttachmentId" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="LinkTitle" ColumnName="LinkTitle" />
+          <ScalarProperty Name="SyndicatedContentId" ColumnName="SyndicatedContentId" />
+          <ScalarProperty Name="SyndicatedContentLinkId" ColumnName="SyndicatedContentLinkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

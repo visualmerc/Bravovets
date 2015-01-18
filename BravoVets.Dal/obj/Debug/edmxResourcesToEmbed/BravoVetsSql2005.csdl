@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BravoVetsDbEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActivityType">
+    <Key>
+      <PropertyRef Name="ActivityTypeId" />
+    </Key>
+    <Property Name="ActivityTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityTypeName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsUserActivities" Relationship="Self.FK_BravoVetsUserActivity_ActivityType" FromRole="ActivityType" ToRole="BravoVetsUserActivity" />
+    <NavigationProperty Name="SyndicatedContentUsers" Relationship="Self.FK_SyndicatedContentUser_ActivityType" FromRole="ActivityType" ToRole="SyndicatedContentUser" />
+  </EntityType>
+  <EntityType Name="BravoVetsCountry">
+    <Key>
+      <PropertyRef Name="BravoVetsCountryId" />
+    </Key>
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryNameResourceKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryIsoCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BravoVetsLanguageId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CultureName" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsUsers" Relationship="Self.FK_BravoVetsUser_BravoVetsCountry" FromRole="BravoVetsCountry" ToRole="BravoVetsUser" />
+    <NavigationProperty Name="QueueContents" Relationship="Self.FK_QueueContent_ToCountry" FromRole="BravoVetsCountry" ToRole="QueueContent" />
+    <NavigationProperty Name="BravoVetsLanguage" Relationship="Self.FK_Region_Language" FromRole="BravoVetsCountry" ToRole="BravoVetsLanguage" />
+    <NavigationProperty Name="SyndicatedContents" Relationship="Self.FK_SyndicatedContent_Region" FromRole="BravoVetsCountry" ToRole="SyndicatedContent" />
+    <NavigationProperty Name="Veterinarians" Relationship="Self.FK_Veterinarian_ToTable" FromRole="BravoVetsCountry" ToRole="Veterinarian" />
+    <NavigationProperty Name="FeaturedContents" Relationship="BravoVetsDbEntities.FK_FeaturedContent_ToCountry" FromRole="BravoVetsCountry" ToRole="FeaturedContent" />
+  </EntityType>
+  <EntityType Name="BravoVetsLanguage">
+    <Key>
+      <PropertyRef Name="BravoVetsLanguageId" />
+    </Key>
+    <Property Name="BravoVetsLanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountries" Relationship="Self.FK_Region_Language" FromRole="BravoVetsLanguage" ToRole="BravoVetsCountry" />
+  </EntityType>
+  <EntityType Name="BravoVetsStatu">
+    <Key>
+      <PropertyRef Name="BravoVetsStatusId" />
+    </Key>
+    <Property Name="BravoVetsStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsUsers" Relationship="Self.FK_BravoVetsUser_Status" FromRole="BravoVetsStatus" ToRole="BravoVetsUser" />
+    <NavigationProperty Name="QueueContents" Relationship="Self.FK_QueueContent_ToBravoVetsStatus" FromRole="BravoVetsStatus" ToRole="QueueContent" />
+    <NavigationProperty Name="SyndicatedContents" Relationship="Self.FK_SyndicatedContent_Status" FromRole="BravoVetsStatus" ToRole="SyndicatedContent" />
+    <NavigationProperty Name="SyndicatedContentUsers" Relationship="Self.FK_SyndicatedContentUser_Status" FromRole="BravoVetsStatus" ToRole="SyndicatedContentUser" />
+  </EntityType>
+  <EntityType Name="BravoVetsUser">
+    <Key>
+      <PropertyRef Name="BravoVetsUserId" />
+    </Key>
+    <Property Name="BravoVetsUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <Property Name="MerckId" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" />
+    <Property Name="CultureName" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RepContactId" Type="Int32" />
+    <Property Name="EmailOptIn" Type="Boolean" Nullable="false" />
+    <Property Name="AcceptedTandC" Type="Boolean" Nullable="false" />
+    <Property Name="BravoVetsStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountry" Relationship="Self.FK_BravoVetsUser_BravoVetsCountry" FromRole="BravoVetsUser" ToRole="BravoVetsCountry" />
+    <NavigationProperty Name="BravoVetsStatu" Relationship="Self.FK_BravoVetsUser_Status" FromRole="BravoVetsUser" ToRole="BravoVetsStatus" />
+    <NavigationProperty Name="Veterinarian" Relationship="Self.FK_BravoVetsUser_Veterinarian" FromRole="BravoVetsUser" ToRole="Veterinarian" />
+    <NavigationProperty Name="BravoVetsUserActivities" Relationship="Self.FK_BravoVetsUserActivity_BravoVetsUser" FromRole="BravoVetsUser" ToRole="BravoVetsUserActivity" />
+    <NavigationProperty Name="QueueContents" Relationship="Self.FK_QueueContent_ToUser" FromRole="BravoVetsUser" ToRole="QueueContent" />
+    <NavigationProperty Name="SyndicatedContentUsers" Relationship="Self.FK_SyndicatedContentUser_BravoVetsUser" FromRole="BravoVetsUser" ToRole="SyndicatedContentUser" />
+  </EntityType>
+  <EntityType Name="BravoVetsUserActivity">
+    <Key>
+      <PropertyRef Name="BravoVetsUserActivityId" />
+    </Key>
+    <Property Name="BravoVetsUserActivityId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BravoVetsUserId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ActivityType" Relationship="Self.FK_BravoVetsUserActivity_ActivityType" FromRole="BravoVetsUserActivity" ToRole="ActivityType" />
+    <NavigationProperty Name="BravoVetsUser" Relationship="Self.FK_BravoVetsUserActivity_BravoVetsUser" FromRole="BravoVetsUserActivity" ToRole="BravoVetsUser" />
+  </EntityType>
+  <EntityType Name="ChannelType">
+    <Key>
+      <PropertyRef Name="ChannelTypeId" />
+    </Key>
+    <Property Name="ChannelTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChannelTypeName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="VeterinarianFacilityChannels" Relationship="Self.FK_VeterinarianFacilityChannel_ChannelType" FromRole="ChannelType" ToRole="VeterinarianFacilityChannel" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Veterinarian" Relationship="Self.FK_Contact_Veterinarian" FromRole="Contact" ToRole="Veterinarian" />
+  </EntityType>
+  <EntityType Name="MerckLfwUser">
+    <Key>
+      <PropertyRef Name="MerckLfwUserId" />
+    </Key>
+    <Property Name="MerckLfwUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MerckId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryOriginIso" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageIsoCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginGUID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ForgeryID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteProperties" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccessOnGroups" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CookiesEnabled" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LfwMessage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QueueContent">
+    <Key>
+      <PropertyRef Name="QueueContentId" />
+    </Key>
+    <Property Name="QueueContentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" />
+    <Property Name="BravoVetsUserId" Type="Int32" Nullable="false" />
+    <Property Name="SyndicatedContentPostTypeId" Type="Int32" />
+    <Property Name="ContentText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SyndicatedContentId" Type="Int32" />
+    <Property Name="LinkUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BravoVetsStatusId" Type="Int32" Nullable="false" />
+    <Property Name="PublishDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PlatformPublishId" Type="Int32" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AccessCode" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+    <Property Name="PublishError" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountry" Relationship="Self.FK_QueueContent_ToCountry" FromRole="QueueContent" ToRole="BravoVetsCountry" />
+    <NavigationProperty Name="BravoVetsStatu" Relationship="Self.FK_QueueContent_ToBravoVetsStatus" FromRole="QueueContent" ToRole="BravoVetsStatus" />
+    <NavigationProperty Name="BravoVetsUser" Relationship="Self.FK_QueueContent_ToUser" FromRole="QueueContent" ToRole="BravoVetsUser" />
+    <NavigationProperty Name="SocialPlatform" Relationship="Self.FK_QueueContent_ToPlatform" FromRole="QueueContent" ToRole="SocialPlatform" />
+    <NavigationProperty Name="SyndicatedContentPostType" Relationship="Self.FK_QueueContent_ToSyndicatedContentPostType" FromRole="QueueContent" ToRole="SyndicatedContentPostType" />
+  </EntityType>
+  <EntityType Name="QueueContentAttachment">
+    <Key>
+      <PropertyRef Name="QueueContentAttachmentId" />
+    </Key>
+    <Property Name="QueueContentAttachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QueueContentId" Type="Int32" Nullable="false" />
+    <Property Name="SyndicatedContentAttachmentId" Type="Int32" />
+    <Property Name="AttachmentFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AttachmentExtension" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="AttachmentFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SocialPlatform">
+    <Key>
+      <PropertyRef Name="SocialPlatformId" />
+    </Key>
+    <Property Name="SocialPlatformId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialPlatformName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="QueueContents" Relationship="Self.FK_QueueContent_ToPlatform" FromRole="SocialPlatform" ToRole="QueueContent" />
+    <NavigationProperty Name="VeterinarianSocialIntegrations" Relationship="Self.FK_VeterinarianSocialIntegration_SocialPlatform" FromRole="SocialPlatform" ToRole="VeterinarianSocialIntegration" />
+  </EntityType>
+  <EntityType Name="SyndicatedContent">
+    <Key>
+      <PropertyRef Name="SyndicatedContentId" />
+    </Key>
+    <Property Name="SyndicatedContentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" />
+    <Property Name="SyndicatedContentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="SyndicatedContentPostTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Author" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Summary" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContentText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="BravoVetsStatusId" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfFavorites" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfShares" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfViews" Type="Int32" Nullable="false" />
+    <Property Name="PublishDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountry" Relationship="Self.FK_SyndicatedContent_Region" FromRole="SyndicatedContent" ToRole="BravoVetsCountry" />
+    <NavigationProperty Name="BravoVetsStatu" Relationship="Self.FK_SyndicatedContent_Status" FromRole="SyndicatedContent" ToRole="BravoVetsStatus" />
+    <NavigationProperty Name="SyndicatedContentType" Relationship="Self.FK_SyndicatedContent_ContentType" FromRole="SyndicatedContent" ToRole="SyndicatedContentType" />
+    <NavigationProperty Name="SyndicatedContentPostType" Relationship="Self.FK_SyndicatedContent_PostType" FromRole="SyndicatedContent" ToRole="SyndicatedContentPostType" />
+    <NavigationProperty Name="SyndicatedContentTags" Relationship="Self.FK_SyndicatedContentTag_SyndicatedContent" FromRole="SyndicatedContent" ToRole="SyndicatedContentTag" />
+    <NavigationProperty Name="SyndicatedContentUsers" Relationship="Self.FK_SyndicatedContentUser_SyndicatedContent" FromRole="SyndicatedContent" ToRole="SyndicatedContentUser" />
+    <NavigationProperty Name="SyndicatedContentLinks" Relationship="BravoVetsDbEntities.FK_SyndicatedContentLink_ToSyndicatedContent" FromRole="SyndicatedContent" ToRole="SyndicatedContentLink" />
+    <Property Name="LinkUrlName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentAttachment">
+    <Key>
+      <PropertyRef Name="SyndicatedContentAttachmentId" />
+    </Key>
+    <Property Name="SyndicatedContentAttachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentId" Type="Int32" Nullable="false" />
+    <Property Name="AttachmentFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentExtension" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentFile" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DisplayInUi" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentPostType">
+    <Key>
+      <PropertyRef Name="SyndicatedContentPostTypeId" />
+    </Key>
+    <Property Name="SyndicatedContentPostTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentPostTypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="QueueContents" Relationship="Self.FK_QueueContent_ToSyndicatedContentPostType" FromRole="SyndicatedContentPostType" ToRole="QueueContent" />
+    <NavigationProperty Name="SyndicatedContents" Relationship="Self.FK_SyndicatedContent_PostType" FromRole="SyndicatedContentPostType" ToRole="SyndicatedContent" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentTag">
+    <Key>
+      <PropertyRef Name="SyndicatedContentTagId" />
+    </Key>
+    <Property Name="SyndicatedContentTagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentId" Type="Int32" Nullable="false" />
+    <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SyndicatedContent" Relationship="Self.FK_SyndicatedContentTag_SyndicatedContent" FromRole="SyndicatedContentTag" ToRole="SyndicatedContent" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentType">
+    <Key>
+      <PropertyRef Name="SyndicatedContentTypeId" />
+    </Key>
+    <Property Name="SyndicatedContentTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentTypeName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SyndicatedContents" Relationship="Self.FK_SyndicatedContent_ContentType" FromRole="SyndicatedContentType" ToRole="SyndicatedContent" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentUser">
+    <Key>
+      <PropertyRef Name="SyndicatedContentUserId" />
+    </Key>
+    <Property Name="SyndicatedContentUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentId" Type="Int32" Nullable="false" />
+    <Property Name="BravoVetsUserId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityTypeId" Type="Int32" Nullable="false" />
+    <Property Name="AddtionalText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BravoVetsStatusId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ActivityType" Relationship="Self.FK_SyndicatedContentUser_ActivityType" FromRole="SyndicatedContentUser" ToRole="ActivityType" />
+    <NavigationProperty Name="BravoVetsStatu" Relationship="Self.FK_SyndicatedContentUser_Status" FromRole="SyndicatedContentUser" ToRole="BravoVetsStatus" />
+    <NavigationProperty Name="BravoVetsUser" Relationship="Self.FK_SyndicatedContentUser_BravoVetsUser" FromRole="SyndicatedContentUser" ToRole="BravoVetsUser" />
+    <NavigationProperty Name="SyndicatedContent" Relationship="Self.FK_SyndicatedContentUser_SyndicatedContent" FromRole="SyndicatedContentUser" ToRole="SyndicatedContent" />
+  </EntityType>
+  <EntityType Name="Veterinarian">
+    <Key>
+      <PropertyRef Name="VeterinarianId" />
+    </Key>
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountry" Relationship="Self.FK_Veterinarian_ToTable" FromRole="Veterinarian" ToRole="BravoVetsCountry" />
+    <NavigationProperty Name="BravoVetsUsers" Relationship="Self.FK_BravoVetsUser_Veterinarian" FromRole="Veterinarian" ToRole="BravoVetsUser" />
+    <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_Veterinarian" FromRole="Veterinarian" ToRole="Contact" />
+    <NavigationProperty Name="VeterinarianFacilities" Relationship="Self.FK_VeterinarianFacility_Veterinarian" FromRole="Veterinarian" ToRole="VeterinarianFacility" />
+    <NavigationProperty Name="VeterinarianSocialIntegrations" Relationship="Self.FK_VeterinarianSocialIntegration_Veterinarian" FromRole="Veterinarian" ToRole="VeterinarianSocialIntegration" />
+  </EntityType>
+  <EntityType Name="VeterinarianFacility">
+    <Key>
+      <PropertyRef Name="VeterinarianFacilityId" />
+    </Key>
+    <Property Name="VeterinarianFacilityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <Property Name="FacilityName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StreetAddress1" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="StreetAddress2" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StateProvince" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryPhoneNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryPhoneNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="FaxNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsEditable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Veterinarian" Relationship="Self.FK_VeterinarianFacility_Veterinarian" FromRole="VeterinarianFacility" ToRole="Veterinarian" />
+    <NavigationProperty Name="VeterinarianFacilityChannels" Relationship="Self.FK_VeterinarianFacilityChannel_ToTable" FromRole="VeterinarianFacility" ToRole="VeterinarianFacilityChannel" />
+  </EntityType>
+  <EntityType Name="VeterinarianFacilityChannel">
+    <Key>
+      <PropertyRef Name="VeterinarianFacilityChannelId" />
+    </Key>
+    <Property Name="VeterinarianFacilityChannelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VeterinarianFacilityId" Type="Int32" Nullable="false" />
+    <Property Name="ChannelTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ChannelValue" Type="String" MaxLength="24" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ChannelType" Relationship="Self.FK_VeterinarianFacilityChannel_ChannelType" FromRole="VeterinarianFacilityChannel" ToRole="ChannelType" />
+    <NavigationProperty Name="VeterinarianFacility" Relationship="Self.FK_VeterinarianFacilityChannel_ToTable" FromRole="VeterinarianFacilityChannel" ToRole="VeterinarianFacility" />
+  </EntityType>
+  <EntityType Name="VeterinarianSocialIntegration">
+    <Key>
+      <PropertyRef Name="VeterinarianSocialIntegrationId" />
+    </Key>
+    <Property Name="VeterinarianSocialIntegrationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VeterinarianId" Type="Int32" Nullable="false" />
+    <Property Name="SocialPlatformId" Type="Int32" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AccountPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AccessToken" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AccessCode" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PageId" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PageAccessToken" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NumberOfFollowers" Type="Int32" Nullable="false" />
+    <Property Name="FollowerDiff" Type="Int32" Nullable="false" />
+    <Property Name="LastFeed" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SocialPlatform" Relationship="Self.FK_VeterinarianSocialIntegration_SocialPlatform" FromRole="VeterinarianSocialIntegration" ToRole="SocialPlatform" />
+    <NavigationProperty Name="Veterinarian" Relationship="Self.FK_VeterinarianSocialIntegration_Veterinarian" FromRole="VeterinarianSocialIntegration" ToRole="Veterinarian" />
+  </EntityType>
+  <Association Name="FK_BravoVetsUserActivity_ActivityType">
+    <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="1" />
+    <End Role="BravoVetsUserActivity" Type="Self.BravoVetsUserActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityType">
+        <PropertyRef Name="ActivityTypeId" />
+      </Principal>
+      <Dependent Role="BravoVetsUserActivity">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContentUser_ActivityType">
+    <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="1" />
+    <End Role="SyndicatedContentUser" Type="Self.SyndicatedContentUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivityType">
+        <PropertyRef Name="ActivityTypeId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentUser">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BravoVetsUser_BravoVetsCountry">
+    <End Role="BravoVetsCountry" Type="Self.BravoVetsCountry" Multiplicity="1" />
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Principal>
+      <Dependent Role="BravoVetsUser">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QueueContent_ToCountry">
+    <End Role="BravoVetsCountry" Type="Self.BravoVetsCountry" Multiplicity="1" />
+    <End Role="QueueContent" Type="Self.QueueContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Principal>
+      <Dependent Role="QueueContent">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Region_Language">
+    <End Role="BravoVetsLanguage" Type="Self.BravoVetsLanguage" Multiplicity="1" />
+    <End Role="BravoVetsCountry" Type="Self.BravoVetsCountry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsLanguage">
+        <PropertyRef Name="BravoVetsLanguageId" />
+      </Principal>
+      <Dependent Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsLanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContent_Region">
+    <End Role="BravoVetsCountry" Type="Self.BravoVetsCountry" Multiplicity="1" />
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Principal>
+      <Dependent Role="SyndicatedContent">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Veterinarian_ToTable">
+    <End Role="BravoVetsCountry" Type="Self.BravoVetsCountry" Multiplicity="1" />
+    <End Role="Veterinarian" Type="Self.Veterinarian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Principal>
+      <Dependent Role="Veterinarian">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BravoVetsUser_Status">
+    <End Role="BravoVetsStatus" Type="Self.BravoVetsStatu" Multiplicity="1" />
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsStatus">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Principal>
+      <Dependent Role="BravoVetsUser">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QueueContent_ToBravoVetsStatus">
+    <End Role="BravoVetsStatus" Type="Self.BravoVetsStatu" Multiplicity="1" />
+    <End Role="QueueContent" Type="Self.QueueContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsStatus">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Principal>
+      <Dependent Role="QueueContent">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContent_Status">
+    <End Role="BravoVetsStatus" Type="Self.BravoVetsStatu" Multiplicity="1" />
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsStatus">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Principal>
+      <Dependent Role="SyndicatedContent">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContentUser_Status">
+    <End Role="BravoVetsStatus" Type="Self.BravoVetsStatu" Multiplicity="1" />
+    <End Role="SyndicatedContentUser" Type="Self.SyndicatedContentUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsStatus">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentUser">
+        <PropertyRef Name="BravoVetsStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BravoVetsUser_Veterinarian">
+    <End Role="Veterinarian" Type="Self.Veterinarian" Multiplicity="1" />
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="VeterinarianId" />
+      </Principal>
+      <Dependent Role="BravoVetsUser">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BravoVetsUserActivity_BravoVetsUser">
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="1" />
+    <End Role="BravoVetsUserActivity" Type="Self.BravoVetsUserActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsUser">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Principal>
+      <Dependent Role="BravoVetsUserActivity">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QueueContent_ToUser">
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="1" />
+    <End Role="QueueContent" Type="Self.QueueContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsUser">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Principal>
+      <Dependent Role="QueueContent">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContentUser_BravoVetsUser">
+    <End Role="BravoVetsUser" Type="Self.BravoVetsUser" Multiplicity="1" />
+    <End Role="SyndicatedContentUser" Type="Self.SyndicatedContentUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsUser">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentUser">
+        <PropertyRef Name="BravoVetsUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianFacilityChannel_ChannelType">
+    <End Role="ChannelType" Type="Self.ChannelType" Multiplicity="1" />
+    <End Role="VeterinarianFacilityChannel" Type="Self.VeterinarianFacilityChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChannelType">
+        <PropertyRef Name="ChannelTypeId" />
+      </Principal>
+      <Dependent Role="VeterinarianFacilityChannel">
+        <PropertyRef Name="ChannelTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_Veterinarian">
+    <End Role="Veterinarian" Type="Self.Veterinarian" Multiplicity="1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="VeterinarianId" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QueueContent_ToPlatform">
+    <End Role="SocialPlatform" Type="Self.SocialPlatform" Multiplicity="1" />
+    <End Role="QueueContent" Type="Self.QueueContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SocialPlatform">
+        <PropertyRef Name="SocialPlatformId" />
+      </Principal>
+      <Dependent Role="QueueContent">
+        <PropertyRef Name="PlatformPublishId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QueueContent_ToSyndicatedContentPostType">
+    <End Role="SyndicatedContentPostType" Type="Self.SyndicatedContentPostType" Multiplicity="0..1" />
+    <End Role="QueueContent" Type="Self.QueueContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContentPostType">
+        <PropertyRef Name="SyndicatedContentPostTypeId" />
+      </Principal>
+      <Dependent Role="QueueContent">
+        <PropertyRef Name="SyndicatedContentPostTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianSocialIntegration_SocialPlatform">
+    <End Role="SocialPlatform" Type="Self.SocialPlatform" Multiplicity="1" />
+    <End Role="VeterinarianSocialIntegration" Type="Self.VeterinarianSocialIntegration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SocialPlatform">
+        <PropertyRef Name="SocialPlatformId" />
+      </Principal>
+      <Dependent Role="VeterinarianSocialIntegration">
+        <PropertyRef Name="SocialPlatformId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContent_ContentType">
+    <End Role="SyndicatedContentType" Type="Self.SyndicatedContentType" Multiplicity="1" />
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContentType">
+        <PropertyRef Name="SyndicatedContentTypeId" />
+      </Principal>
+      <Dependent Role="SyndicatedContent">
+        <PropertyRef Name="SyndicatedContentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContent_PostType">
+    <End Role="SyndicatedContentPostType" Type="Self.SyndicatedContentPostType" Multiplicity="1" />
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContentPostType">
+        <PropertyRef Name="SyndicatedContentPostTypeId" />
+      </Principal>
+      <Dependent Role="SyndicatedContent">
+        <PropertyRef Name="SyndicatedContentPostTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContentTag_SyndicatedContent">
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="1" />
+    <End Role="SyndicatedContentTag" Type="Self.SyndicatedContentTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContent">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentTag">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SyndicatedContentUser_SyndicatedContent">
+    <End Role="SyndicatedContent" Type="Self.SyndicatedContent" Multiplicity="1" />
+    <End Role="SyndicatedContentUser" Type="Self.SyndicatedContentUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContent">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentUser">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianFacility_Veterinarian">
+    <End Role="Veterinarian" Type="Self.Veterinarian" Multiplicity="1" />
+    <End Role="VeterinarianFacility" Type="Self.VeterinarianFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="VeterinarianId" />
+      </Principal>
+      <Dependent Role="VeterinarianFacility">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianSocialIntegration_Veterinarian">
+    <End Role="Veterinarian" Type="Self.Veterinarian" Multiplicity="1" />
+    <End Role="VeterinarianSocialIntegration" Type="Self.VeterinarianSocialIntegration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinarian">
+        <PropertyRef Name="VeterinarianId" />
+      </Principal>
+      <Dependent Role="VeterinarianSocialIntegration">
+        <PropertyRef Name="VeterinarianId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeterinarianFacilityChannel_ToTable">
+    <End Role="VeterinarianFacility" Type="Self.VeterinarianFacility" Multiplicity="1" />
+    <End Role="VeterinarianFacilityChannel" Type="Self.VeterinarianFacilityChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VeterinarianFacility">
+        <PropertyRef Name="VeterinarianFacilityId" />
+      </Principal>
+      <Dependent Role="VeterinarianFacilityChannel">
+        <PropertyRef Name="VeterinarianFacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BravoVets2005Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActivityTypes" EntityType="Self.ActivityType" />
+    <EntitySet Name="BravoVetsCountries" EntityType="Self.BravoVetsCountry" />
+    <EntitySet Name="BravoVetsLanguages" EntityType="Self.BravoVetsLanguage" />
+    <EntitySet Name="BravoVetsStatus" EntityType="Self.BravoVetsStatu" />
+    <EntitySet Name="BravoVetsUsers" EntityType="Self.BravoVetsUser" />
+    <EntitySet Name="BravoVetsUserActivities" EntityType="Self.BravoVetsUserActivity" />
+    <EntitySet Name="ChannelTypes" EntityType="Self.ChannelType" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="MerckLfwUsers" EntityType="Self.MerckLfwUser" />
+    <EntitySet Name="QueueContents" EntityType="Self.QueueContent" />
+    <EntitySet Name="QueueContentAttachments" EntityType="Self.QueueContentAttachment" />
+    <EntitySet Name="SocialPlatforms" EntityType="Self.SocialPlatform" />
+    <EntitySet Name="SyndicatedContents" EntityType="Self.SyndicatedContent" />
+    <EntitySet Name="SyndicatedContentAttachments" EntityType="Self.SyndicatedContentAttachment" />
+    <EntitySet Name="SyndicatedContentPostTypes" EntityType="Self.SyndicatedContentPostType" />
+    <EntitySet Name="SyndicatedContentTags" EntityType="Self.SyndicatedContentTag" />
+    <EntitySet Name="SyndicatedContentTypes" EntityType="Self.SyndicatedContentType" />
+    <EntitySet Name="SyndicatedContentUsers" EntityType="Self.SyndicatedContentUser" />
+    <EntitySet Name="Veterinarians" EntityType="Self.Veterinarian" />
+    <EntitySet Name="VeterinarianFacilities" EntityType="Self.VeterinarianFacility" />
+    <EntitySet Name="VeterinarianFacilityChannels" EntityType="Self.VeterinarianFacilityChannel" />
+    <EntitySet Name="VeterinarianSocialIntegrations" EntityType="Self.VeterinarianSocialIntegration" />
+    <AssociationSet Name="FK_BravoVetsUserActivity_ActivityType" Association="Self.FK_BravoVetsUserActivity_ActivityType">
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+      <End Role="BravoVetsUserActivity" EntitySet="BravoVetsUserActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContentUser_ActivityType" Association="Self.FK_SyndicatedContentUser_ActivityType">
+      <End Role="ActivityType" EntitySet="ActivityTypes" />
+      <End Role="SyndicatedContentUser" EntitySet="SyndicatedContentUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BravoVetsUser_BravoVetsCountry" Association="Self.FK_BravoVetsUser_BravoVetsCountry">
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QueueContent_ToCountry" Association="Self.FK_QueueContent_ToCountry">
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+      <End Role="QueueContent" EntitySet="QueueContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Region_Language" Association="Self.FK_Region_Language">
+      <End Role="BravoVetsLanguage" EntitySet="BravoVetsLanguages" />
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContent_Region" Association="Self.FK_SyndicatedContent_Region">
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Veterinarian_ToTable" Association="Self.FK_Veterinarian_ToTable">
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BravoVetsUser_Status" Association="Self.FK_BravoVetsUser_Status">
+      <End Role="BravoVetsStatus" EntitySet="BravoVetsStatus" />
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QueueContent_ToBravoVetsStatus" Association="Self.FK_QueueContent_ToBravoVetsStatus">
+      <End Role="BravoVetsStatus" EntitySet="BravoVetsStatus" />
+      <End Role="QueueContent" EntitySet="QueueContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContent_Status" Association="Self.FK_SyndicatedContent_Status">
+      <End Role="BravoVetsStatus" EntitySet="BravoVetsStatus" />
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContentUser_Status" Association="Self.FK_SyndicatedContentUser_Status">
+      <End Role="BravoVetsStatus" EntitySet="BravoVetsStatus" />
+      <End Role="SyndicatedContentUser" EntitySet="SyndicatedContentUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BravoVetsUser_Veterinarian" Association="Self.FK_BravoVetsUser_Veterinarian">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BravoVetsUserActivity_BravoVetsUser" Association="Self.FK_BravoVetsUserActivity_BravoVetsUser">
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+      <End Role="BravoVetsUserActivity" EntitySet="BravoVetsUserActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QueueContent_ToUser" Association="Self.FK_QueueContent_ToUser">
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+      <End Role="QueueContent" EntitySet="QueueContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContentUser_BravoVetsUser" Association="Self.FK_SyndicatedContentUser_BravoVetsUser">
+      <End Role="BravoVetsUser" EntitySet="BravoVetsUsers" />
+      <End Role="SyndicatedContentUser" EntitySet="SyndicatedContentUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianFacilityChannel_ChannelType" Association="Self.FK_VeterinarianFacilityChannel_ChannelType">
+      <End Role="ChannelType" EntitySet="ChannelTypes" />
+      <End Role="VeterinarianFacilityChannel" EntitySet="VeterinarianFacilityChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_Veterinarian" Association="Self.FK_Contact_Veterinarian">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QueueContent_ToPlatform" Association="Self.FK_QueueContent_ToPlatform">
+      <End Role="SocialPlatform" EntitySet="SocialPlatforms" />
+      <End Role="QueueContent" EntitySet="QueueContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QueueContent_ToSyndicatedContentPostType" Association="Self.FK_QueueContent_ToSyndicatedContentPostType">
+      <End Role="SyndicatedContentPostType" EntitySet="SyndicatedContentPostTypes" />
+      <End Role="QueueContent" EntitySet="QueueContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianSocialIntegration_SocialPlatform" Association="Self.FK_VeterinarianSocialIntegration_SocialPlatform">
+      <End Role="SocialPlatform" EntitySet="SocialPlatforms" />
+      <End Role="VeterinarianSocialIntegration" EntitySet="VeterinarianSocialIntegrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContent_ContentType" Association="Self.FK_SyndicatedContent_ContentType">
+      <End Role="SyndicatedContentType" EntitySet="SyndicatedContentTypes" />
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContent_PostType" Association="Self.FK_SyndicatedContent_PostType">
+      <End Role="SyndicatedContentPostType" EntitySet="SyndicatedContentPostTypes" />
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContentTag_SyndicatedContent" Association="Self.FK_SyndicatedContentTag_SyndicatedContent">
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+      <End Role="SyndicatedContentTag" EntitySet="SyndicatedContentTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SyndicatedContentUser_SyndicatedContent" Association="Self.FK_SyndicatedContentUser_SyndicatedContent">
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+      <End Role="SyndicatedContentUser" EntitySet="SyndicatedContentUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianFacility_Veterinarian" Association="Self.FK_VeterinarianFacility_Veterinarian">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="VeterinarianFacility" EntitySet="VeterinarianFacilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianSocialIntegration_Veterinarian" Association="Self.FK_VeterinarianSocialIntegration_Veterinarian">
+      <End Role="Veterinarian" EntitySet="Veterinarians" />
+      <End Role="VeterinarianSocialIntegration" EntitySet="VeterinarianSocialIntegrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeterinarianFacilityChannel_ToTable" Association="Self.FK_VeterinarianFacilityChannel_ToTable">
+      <End Role="VeterinarianFacility" EntitySet="VeterinarianFacilities" />
+      <End Role="VeterinarianFacilityChannel" EntitySet="VeterinarianFacilityChannels" />
+    </AssociationSet>
+    <EntitySet Name="QueueContentDeliveryLogs" EntityType="BravoVetsDbEntities.QueueContentDeliveryLog" />
+    <EntitySet Name="FeaturedContents" EntityType="BravoVetsDbEntities.FeaturedContent" />
+    <EntitySet Name="SyndicatedContentLinks" EntityType="BravoVetsDbEntities.SyndicatedContentLink" />
+    <AssociationSet Name="FK_SyndicatedContentLink_ToSyndicatedContent" Association="BravoVetsDbEntities.FK_SyndicatedContentLink_ToSyndicatedContent">
+      <End Role="SyndicatedContent" EntitySet="SyndicatedContents" />
+      <End Role="SyndicatedContentLink" EntitySet="SyndicatedContentLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeaturedContent_ToCountry" Association="BravoVetsDbEntities.FK_FeaturedContent_ToCountry">
+      <End Role="BravoVetsCountry" EntitySet="BravoVetsCountries" />
+      <End Role="FeaturedContent" EntitySet="FeaturedContents" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="QueueContentDeliveryLog">
+    <Key>
+      <PropertyRef Name="QueueContentDeliveryLogId" />
+    </Key>
+    <Property Name="QueueContentDeliveryLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeliverySessionId" Type="Guid" Nullable="false" />
+    <Property Name="DeliverySessionStartTimeUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QueueContentId" Type="Int32" Nullable="false" />
+    <Property Name="WasDelivered" Type="Boolean" Nullable="false" />
+    <Property Name="DeliverySessionTimeUtc" Type="DateTime" Precision="3" />
+    <Property Name="PublishError" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FeaturedContent">
+    <Key>
+      <PropertyRef Name="FeaturedContentId" />
+    </Key>
+    <Property Name="FeaturedContentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ContentFileName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContentExtension" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ContentThumbnail" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ContentFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BravoVetsCountryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BravoVetsCountry" Relationship="BravoVetsDbEntities.FK_FeaturedContent_ToCountry" FromRole="FeaturedContent" ToRole="BravoVetsCountry" />
+  </EntityType>
+  <EntityType Name="SyndicatedContentLink">
+    <Key>
+      <PropertyRef Name="SyndicatedContentLinkId" />
+    </Key>
+    <Property Name="SyndicatedContentLinkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SyndicatedContentId" Type="Int32" Nullable="false" />
+    <Property Name="LinkTitle" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="SyndicatedContentAttachmentId" Type="Int32" />
+    <Property Name="CreateDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDateUtc" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SyndicatedContent" Relationship="BravoVetsDbEntities.FK_SyndicatedContentLink_ToSyndicatedContent" FromRole="SyndicatedContentLink" ToRole="SyndicatedContent" />
+  </EntityType>
+  <Association Name="FK_SyndicatedContentLink_ToSyndicatedContent">
+    <End Type="BravoVetsDbEntities.SyndicatedContent" Role="SyndicatedContent" Multiplicity="1" />
+    <End Type="BravoVetsDbEntities.SyndicatedContentLink" Role="SyndicatedContentLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SyndicatedContent">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Principal>
+      <Dependent Role="SyndicatedContentLink">
+        <PropertyRef Name="SyndicatedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeaturedContent_ToCountry">
+    <End Type="BravoVetsDbEntities.BravoVetsCountry" Role="BravoVetsCountry" Multiplicity="1" />
+    <End Type="BravoVetsDbEntities.FeaturedContent" Role="FeaturedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BravoVetsCountry">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Principal>
+      <Dependent Role="FeaturedContent">
+        <PropertyRef Name="BravoVetsCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
