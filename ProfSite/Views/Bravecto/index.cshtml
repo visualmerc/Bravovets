@@ -42,6 +42,7 @@
 
         .header {
             margin-bottom: 0;
+            position: relative;
         }
 
             .header nav ul li {
@@ -55,11 +56,27 @@
                         background: none;
                     }
 
+            .header .logo-bravecto {
+                margin: 0 0 30px 0;
+            }
+
+            .header #top-nav.nav.nav-pills {
+                position: absolute;
+                right: 15px;
+                top: 70px;
+            }
+
+                .header #top-nav.nav.nav-pills > li > a:hover,
+                .header #top-nav.nav.nav-pills > li > a:focus {
+                    background-color: none;
+                }
+
         #subheader {
             min-height: 30px;
             padding: 5px 0;
             background-color: #EEE;
         }
+
 
             #subheader span {
                 font-size: 16px;
@@ -80,30 +97,38 @@
             }
 
             #subheader .dropdown-menu {
-                left:auto;
-                right:0;
+                left: auto;
+                right: 0;
+                padding: 0;
             }
 
             #subheader ul.social-media-list {
-               float:right;
+                float: right;
+                margin: 5px 0 0;
             }
 
-            #subheader ul.social-media-list li {
-                float:left;
-                display:inline-block;
-                padding:0 2px;
+                #subheader ul.social-media-list li {
+                    float: left;
+                    display: inline-block;
+                    padding: 0 2px;
+                }
+
+            #subheader .social-media-col {
+                padding-right: 0;
             }
 
         #login-wrapper {
             padding: 5px 20px;
             width: 300px;
+            background-color: #009994;
+            color: #FFF;
         }
 
             #login-wrapper form button {
-                display:block;
-                margin:5px 0 0 0;
-                width:100%;
-                line-height:32px;
+                display: block;
+                margin: 5px 0 0 0;
+                width: 100%;
+                line-height: 32px;
             }
 
         .jumbotron {
@@ -205,17 +230,17 @@
 
             .static-section.support {
                 background: url(/Content/img/support.jpg) no-repeat center;
-                background-size: cover;
+                background-size: 100% auto;
             }
 
             .static-section.innovation {
                 background: url(/Content/img/innovation.jpg) no-repeat center;
-                background-size: cover;
+                background-size: 100% auto;
             }
 
             .static-section.adherence {
                 background: url(/Content/img/adherence.jpg) no-repeat center;
-                background-size: cover;
+                background-size: 100% auto;
             }
 
             .static-section div.static-overlay {
@@ -286,6 +311,67 @@
         .red {
             color: #dd042b;
         }
+
+        #side-nav {
+            position: absolute;
+            top: 400px;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 50px;
+        }
+            #side-nav ul {
+                margin-left:10px;
+            }
+            #side-nav ul li {
+                margin: 10px 0;
+            }
+
+                #side-nav ul li a {
+                    background-color: #f28c00;
+                    border-radius: 50%;
+                    height: 15px;
+                    width: 15px;
+                    display: inline-block;
+                    text-decoration:none;
+                }
+                    #side-nav ul li a:hover {
+                        text-decoration:none;
+                    }
+                #side-nav ul li.active a {
+                    background-color:rgba(0, 153, 148, 0.8);
+                     height: 18px;
+                    width: 18px;
+                }
+
+        #side-nav ul li a {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-transition-duration: 0.3s;
+            -moz-transition-duration: 0.3s;
+            -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            -moz-transition-property: transform;
+            -o-transition-property: transform;
+            transition-property: transform;
+        }
+            #side-nav ul li a:hover, #side-nav ul li a:focus, #side-nav ul li a:active {
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+            }
     </style>
 
 </head>
@@ -294,7 +380,7 @@
     <div class="container">
         <div class="header clearfix">
             <nav>
-                <ul class="nav nav-pills pull-right">
+                <ul id="top-nav" class="nav nav-pills">
                     <li role="presentation"><a href="#">ABOUT US</a></li>
                     <li role="presentation"><a href="#">CONTACT US</a></li>
                 </ul>
@@ -313,16 +399,16 @@
                 <div class="col-sm-5">
                     Flying through flea and tick treatments too fast? Find out how you can extend protection to 12 full weeks.
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 social-media-col">
                     <ul class="list-unstyled social-media-list">
                         <li>
-                            <a href="https://www.facebook.com/bravovets">
-                                <img src="~/Content/img/FB-icon.jpg" />
+                            <a href="https://www.facebook.com/bravovets" target="_blank">
+                                <img src="~/Content/img/FB-icon.png" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.twitter.com/bravovets">
-                                <img src="~/Content/img/twitter-icon.jpg" />
+                            <a href="https://www.twitter.com/bravovets" target="_blank">
+                                <img src="~/Content/img/twitter-icon.png" />
                             </a>
                         </li>
                     </ul>
@@ -360,6 +446,22 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="side-nav">
+        <ul class="list-unstyled">
+            <li class="active">
+                <a href="#top">&nbsp;</a>
+            </li>
+            <li class="">
+                <a href="#support">&nbsp;</a>
+            </li>
+            <li class="">
+                <a href="#innovation">&nbsp;</a>
+            </li>
+            <li class="adherence">
+                <a href="#adherence">&nbsp;</a>
+            </li>
+        </ul>
     </div>
     <div class="jumbotron">
         <div class="container">
@@ -496,7 +598,7 @@
             </a>
         </p>
     </div>
-    <div class="static-section adherence">
+    <div id="adherence" class="static-section adherence">
         <div class="container">
             <div class="static-overlay bgred">
                 <h2>ADHERENCE</h2>
@@ -524,10 +626,10 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/bravecto/privacypolicy">PRIVACY</a>
+                    <a href="http://www.merck.com/about/how-we-operate/privacy/internet-privacy-policy.html?utm_source=Bravovets">PRIVACY</a>
                 </li>
                 <li>
-                    <a href="/bravecto/termsconditions">TERMS + CONDITIONS</a>
+                    <a href="http://www.bravovets.com/termsandconditions">TERMS + CONDITIONS</a>
                 </li>
                 <li>
                     <a href="/bravecto/sitemap">SITE MAP</a>
