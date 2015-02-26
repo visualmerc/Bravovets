@@ -150,6 +150,9 @@
   <data name="Netherlands" xml:space="preserve">
     <value>Niederlande</value>
   </data>
+  <data name="PasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="Russia" xml:space="preserve">
     <value>Russland</value>
   </data>

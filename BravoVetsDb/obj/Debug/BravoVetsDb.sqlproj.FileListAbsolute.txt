@@ -3,3 +3,8 @@ C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\bin\Debug\BravoVe
 C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\bin\Debug\BravoVetsDb.pdb
 C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\obj\Debug\BravoVetsDb.dll
 C:\Users\darenmay\Source\Repos\BravoVets\BravoVets\BravoVetsDb\obj\Debug\BravoVetsDb.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVetsDb\bin\Output\BravoVetsDb.dacpac
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVetsDb\bin\Output\BravoVetsDb.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVetsDb\bin\Output\BravoVetsDb.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVetsDb\obj\Debug\BravoVetsDb.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVetsDb\obj\Debug\BravoVetsDb.pdb

@@ -35,6 +35,8 @@ namespace ProfSite.Controllers
 
         protected int GetCurrentUserId()
         {
+            //TEMP
+            return 2;
             var firstOrDefault = ClaimsPrincipal.Current.Claims.FirstOrDefault(c => c.Type == "BravoVetsUserId");
             if (firstOrDefault == null) return 0;
             var bvuserId = firstOrDefault.Value;
@@ -47,6 +49,8 @@ namespace ProfSite.Controllers
 
         public string GetCurrentUserName()
         {
+            //TEMP
+            return "boulderqa7@yahoo.com";
             var userName = ClaimsPrincipal.Current.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
             if (userName == null)
             {

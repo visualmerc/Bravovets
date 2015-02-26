@@ -11,3 +11,16 @@ Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\bin\Debug\Enti
 Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.csprojResolveAssemblyReference.cache
 Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.dll
 Y:\General\USERS\Bert\BravoVets\BravoVets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\SqlCe\bravovets.sdf
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.DomainService.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.DomainService.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.Dal.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.DomainObject.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\EntityFramework.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\log4net.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.Dal.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\BravoVets.DomainObject.pdb
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\bin\Debug\EntityFramework.xml
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.csprojResolveAssemblyReference.cache
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.dll
+C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\BravoVets.DomainService\obj\Debug\BravoVets.DomainService.pdb

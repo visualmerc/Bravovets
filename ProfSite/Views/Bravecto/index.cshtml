@@ -1,0 +1,552 @@
+﻿@model LoginViewModel
+@{ Layout = null;}
+@using bvResources = ProfSite.Resources.Resource
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@bvResources.Bravecto_Homepage_Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/favicon.png" />
+
+    <!-- Typekit font is a close helvetica alternative. Replace with helvetica when available. -->
+    <!--
+    <script type="text/javascript" src="//use.typekit.net/nhs7hxx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+        body {
+            background: none;
+            background-color: #FFF;
+        }
+
+        .btn.btn-default:hover,
+        .btn.btn-default:active,
+        .btn.btn-default {
+            background-color: #f28c00;
+            color: #FFF;
+        }
+
+        .btn .arrow-wrapper {
+            background-color: #ff9400;
+            display: inline-block;
+            margin-right: -20px;
+            margin-left: 5px;
+            width: 40px;
+        }
+
+        .header {
+            margin-bottom: 0;
+        }
+
+            .header nav ul li {
+            }
+
+                .header nav ul li a {
+                    color: #394147;
+                }
+
+                    .header nav ul li a:hover {
+                        background: none;
+                    }
+
+        #subheader {
+            min-height: 30px;
+            padding: 5px 0;
+            background-color: #EEE;
+        }
+
+            #subheader span {
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 13px;
+                color: #009994;
+            }
+
+            #subheader a.dropdown-toggle {
+                background-color: #009994;
+                color: #fff;
+                display: inline-block;
+                font-size: 1.2em;
+                font-weight: bold;
+                height: 100%;
+                margin: -5px 0;
+                padding: 15px;
+            }
+
+            #subheader .dropdown-menu {
+                left:auto;
+                right:0;
+            }
+
+            #subheader ul.social-media-list {
+               float:right;
+            }
+
+            #subheader ul.social-media-list li {
+                float:left;
+                display:inline-block;
+                padding:0 2px;
+            }
+
+        #login-wrapper {
+            padding: 5px 20px;
+            width: 300px;
+        }
+
+            #login-wrapper form button {
+                display:block;
+                margin:5px 0 0 0;
+                width:100%;
+                line-height:32px;
+            }
+
+        .jumbotron {
+            padding: 0;
+            height: 500px;
+            background: url(/Content/img/header.jpg) no-repeat center;
+            background-position: 100% 40%;
+            background-size: cover;
+            color: #FFF;
+        }
+
+            .jumbotron h1 {
+                font-size: 48px;
+                line-height: 1.3em;
+            }
+
+        .jumbo-home-overlay {
+            background-color: rgba(0, 153, 148, 0.5);
+            position: relative;
+            top: 217px;
+        }
+
+            .jumbo-home-overlay .top-jumbo-overlay {
+                padding: 20px 0;
+                margin: 0;
+            }
+
+        .top-jumbo-overlay h3.weeks {
+            color: #fff;
+            font-size: 50px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .bottom-jumbo-overlay {
+            border-top: 1px solid #fff;
+            padding: 20px 0;
+            margin: 25px 25px 0 25px;
+        }
+
+        .marketing-row {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+            .marketing-row p {
+                font-size: 18px;
+            }
+
+            .marketing-row img {
+                display: inline-block;
+            }
+
+            .marketing-row h2 {
+                font-family: 28px;
+            }
+
+                .marketing-row h2.support {
+                    color: #0098d8;
+                }
+
+                .marketing-row h2.innovation {
+                    color: #512178;
+                }
+
+                .marketing-row h2.adherence {
+                    color: #dd042b;
+                }
+
+        .full-container {
+            text-align: center;
+            color: #FFF;
+            background-color: #009994;
+            padding: 40px 0;
+        }
+
+            .full-container h2 {
+                font-size: 36px;
+            }
+
+            .full-container p {
+                font-size: 18px;
+            }
+
+        .video-wrapper {
+            height: 850px;
+            background-color: rgba(0, 0, 0, 0.4);
+            background: url(/Content/img/video.jpg) no-repeat center;
+            background-size: cover;
+        }
+
+        .static-section {
+            margin-top: 10px;
+            color: #FFF;
+            text-align: center;
+            height: 350px;
+        }
+
+            .static-section.support {
+                background: url(/Content/img/support.jpg) no-repeat center;
+                background-size: cover;
+            }
+
+            .static-section.innovation {
+                background: url(/Content/img/innovation.jpg) no-repeat center;
+                background-size: cover;
+            }
+
+            .static-section.adherence {
+                background: url(/Content/img/adherence.jpg) no-repeat center;
+                background-size: cover;
+            }
+
+            .static-section div.static-overlay {
+                padding: 20px 0;
+                margin-top: 247px;
+            }
+
+                .static-section div.static-overlay.bgblue {
+                    background-color: rgba(0, 152, 216, 0.6);
+                }
+
+                .static-section div.static-overlay.bgpurple {
+                    background-color: rgba(81, 33, 120, 0.6);
+                }
+
+                .static-section div.static-overlay.bgred {
+                    background-color: rgba(221, 4, 43, 0.6);
+                }
+
+        .static-body {
+            padding-top: 30px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+            .static-body a {
+                color: #f28c00;
+                font-weight: bold;
+            }
+
+            .static-body p {
+                font-size: 18px;
+            }
+
+        .bottom-nav {
+            float: right;
+            margin: 20px 0;
+        }
+
+            .bottom-nav li {
+                display: inline-block;
+                position: relative;
+            }
+
+        footer .bottom-nav li a {
+            color: #394147;
+            font-size: 16px;
+            padding: 10px 15px;
+            text-transform: uppercase;
+        }
+
+        .green {
+            /*color:#009994;*/
+        }
+
+        .blue {
+            color: #0098d8;
+        }
+
+        .orange {
+            color: #f28c00;
+        }
+
+        .purple {
+            color: #512178;
+        }
+
+        .red {
+            color: #dd042b;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="circles-header"></div>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href="#">ABOUT US</a></li>
+                    <li role="presentation"><a href="#">CONTACT US</a></li>
+                </ul>
+            </nav>
+            <a href="/bravecto" class="navbar-brand bravovets">
+                <img src="/images/logo-bravecto@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+            </a>
+        </div>
+    </div>
+    <div id="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <span class="green">LOGIN TO SHARE THIS POST ON<br /> YOUR TWITTER OR FACEBOOK</span>
+                </div>
+                <div class="col-sm-5">
+                    Flying through flea and tick treatments too fast? Find out how you can extend protection to 12 full weeks.
+                </div>
+                <div class="col-sm-2">
+                    <ul class="list-unstyled social-media-list">
+                        <li>
+                            <a href="https://www.facebook.com/bravovets">
+                                <img src="~/Content/img/FB-icon.jpg" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/bravovets">
+                                <img src="~/Content/img/twitter-icon.jpg" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                        VET LOGIN
+                    </a>
+                    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                        <li>
+                            <div id="login-wrapper">
+                                <div class="row">
+                                    @using (Html.BeginForm())
+                                    {
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label for="Email">@bvResources.Email</label>
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = bvResources.Email })
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label for="Password">@bvResources.PasswordText</label>
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = bvResources.PasswordText })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-default">@bvResources.BravoVets_Footer_Login</button>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="jumbo-home-overlay">
+                <div class="row top-jumbo-overlay">
+                    <div class="col-md-3">
+                        <img src="http://placehold.it/200x150" />
+                        <h3 class="weeks">WEEKS</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <h1>Extend a game plan for the world's longest-lasting, chewable flea and tick protection.</h1>
+                    </div>
+                </div>
+                <div class="bottom-jumbo-overlay">
+                    <h4>
+                        Provide the best care available with an innovative flea and tick treatment that lasts up to 12 weeks - longer than any other
+                        chew available. And let pet owners and their dogs enjoy more time closer together, doing the things they love.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row marketing-row">
+            <div class="col-md-4">
+                <img src="~/Content/img/support-icon.jpg" />
+                <h2 class="support">
+                    SUPPORT
+                </h2>
+                <p>Get access to exclusive tools and resources to help you connect with and educate your customers.</p>
+                <p>
+                    <a class="btn btn-default" href="#" role="button">
+                        READ MORE
+                        <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/img/innovation-icon.jpg" />
+                <h2 class="innovation">
+                    INNOVATION
+                </h2>
+                <p>Learn about the breakthrough treatment that extends flea and tick protection up to 12 weeks.</p>
+                <p>
+                    <a class="btn btn-default" href="#" role="button">
+                        READ MORE
+                        <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/img/adherence-icon.jpg" />
+                <h2 class="adherence">
+                    ADHERENCE
+                </h2>
+                <p>Close adherence gaps with extended protection, so there are fewer chances for pet owners to forget.</p>
+                <p>
+                    <a class="btn btn-default" href="#" role="button">
+                        READ MORE
+                        <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="full-container green">
+        <div class="container">
+            <h2>Extend a faster-acting treatment</h2>
+            <p>
+                While other agents can take anywhere from 8 to 18 hours to kick in, now you can prescribe a treatment that starts working within 2 hours
+                - and reaches 100% efficacy in just 24 hours.
+            </p>
+            <p>
+                Learn more about this faster-acting, longer-lasting chewable treatment now.
+            </p>
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-3">
+                    <a class="btn btn-default" href="#" role="button">
+                        SCHEDULE A MEETING
+                        <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-default" href="#" role="button">
+                        REGISTER NOW
+                        <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-wrapper">
+
+    </div>
+    <div class="static-section support">
+        <div class="container">
+            <div class="static-overlay bgblue">
+                <h2>SUPPORT</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container static-body">
+        <h2 class="blue">IMPROVE COMMUNICATION WITH CUSTOMERS AND ENHANCE YOUR PRACTICE.</h2>
+        <p>
+            Stay up to date with clinical research, expand your social media visibility, and create new and stronger customer
+            relationships when you partner with us. <span class="orange">Contact your sales representative</span> today to learn
+            how you can grow your relationship with new and existing customers or log in now.
+        </p>
+        <p>
+            <a href="/account/login">
+                LOG IN TO LEARN MORE
+                <i class="icon icon-arrow-right"></i>
+            </a>
+        </p>
+    </div>
+    <div class="static-section innovation">
+        <div class="container">
+            <div class="static-overlay bgpurple">
+                <h2>INNOVATION</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container static-body">
+        <h2 class="purple">TAKE EFFICACY FURTHER THAN EVER BEFORE WITH THE LATEST INNOVATION IN TREATMENT</h2>
+        <p>
+            Now it's possible to effectively protect against fleas and ticks for a full 12 weeks with a single chew.
+            That's about 3X longer than any other chew ever developed. <span class="orange">Contact your sales representative</span> today to learn
+            more about this innovative alternative to monthly OTC treatments or log in now.
+        </p>
+        <p>
+            <a href="/account/login">
+                LOG IN TO LEARN MORE
+                <i class="icon icon-arrow-right"></i>
+            </a>
+        </p>
+    </div>
+    <div class="static-section adherence">
+        <div class="container">
+            <div class="static-overlay bgred">
+                <h2>ADHERENCE</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container static-body">
+        <h2 class="red">PREVENT GAPS IN COMPLIANCE WITH FEWER TREATMENTS TO FORGET</h2>
+        <p>
+            The average dog is treated for fleas and ticks only 2.8 months out of the year. Help improve compliance by giving
+            pet owners fewer chances to forget with a treatment that lasts 12 full weeks. <span class="orange">Contact your sales representative</span> today to learn
+            today to learn more about preventing gaps in protection for every dog you treat or log in now.
+        </p>
+        <p>
+            <a href="/account/login">
+                LOG IN TO LEARN MORE
+                <i class="icon icon-arrow-right"></i>
+            </a>
+        </p>
+    </div>
+    <footer>
+        <div class="container">
+            <ul class="bottom-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/bravecto/privacypolicy">PRIVACY</a>
+                </li>
+                <li>
+                    <a href="/bravecto/termsconditions">TERMS + CONDITIONS</a>
+                </li>
+                <li>
+                    <a href="/bravecto/sitemap">SITE MAP</a>
+                </li>
+                <li>
+                    <a href="/">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap", "~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+
+            $('.dropdown-menu input, .dropdown-menu label, .dropdown-menu button').click(function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>

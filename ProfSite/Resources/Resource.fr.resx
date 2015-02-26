@@ -1044,4 +1044,7 @@
   <data name="Latam" xml:space="preserve">
     <value>LATAM</value>
   </data>
+  <data name="PasswordText" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
 </root>

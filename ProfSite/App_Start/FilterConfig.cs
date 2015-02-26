@@ -8,7 +8,8 @@ namespace ProfSite
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            IBravoVetsAuthManager authManager = new BravoVetsAuthManager();
+            //IBravoVetsAuthManager authManager = new BravoVetsAuthManager();
+            IBravoVetsAuthManager authManager = new BravoVetsTestableAuthManager();
 
             // TODO: Make a custom error filter
             filters.Add(new HandleErrorAttribute());

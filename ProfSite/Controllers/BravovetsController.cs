@@ -44,7 +44,6 @@ namespace ProfSite.Controllers
             ViewBag.Language = this.GetSiteFullLanguage();
         }
 
-
         public ActionResult SelectCountry(string subdomain)
         {
             SetUserLanguage();
@@ -381,10 +380,6 @@ namespace ProfSite.Controllers
 
             return model;
         }
-
-
-
-
 
         public ActionResult EditProfile()
         {

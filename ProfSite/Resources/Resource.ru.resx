@@ -1044,4 +1044,7 @@
   <data name="BravoVets_Profile_Start" xml:space="preserve">
     <value>Get started</value>
   </data>
+  <data name="PasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
 </root>

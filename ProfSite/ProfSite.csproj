@@ -264,6 +264,7 @@
     <Compile Include="Models\AdminManagePostsModel.cs" />
     <Compile Include="Models\FacebookResponseModel.cs" />
     <Compile Include="Models\FacebookTimeline.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\ShowSocialDialogModel.cs" />
     <Compile Include="Models\SocialCalendarPostsModel.cs" />
     <Compile Include="Models\SocialIntegrationModel.cs" />
@@ -408,10 +409,18 @@
     <Content Include="Content\fonts\bravoicons.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\rotis_sansserif_std_light.svg" />
+    <Content Include="Content\img\adherence-icon.jpg" />
+    <Content Include="Content\img\adherence.jpg" />
     <Content Include="Content\img\generalFile.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\header.jpg" />
+    <Content Include="Content\img\innovation-icon.jpg" />
+    <Content Include="Content\img\innovation.jpg" />
     <Content Include="Content\img\loading.gif" />
     <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\img\support-icon.jpg" />
+    <Content Include="Content\img\support.jpg" />
+    <Content Include="Content\img\video.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\main2.css" />
     <Content Include="Content\modal_bullet_format.css" />
@@ -630,6 +639,8 @@
     <Content Include="docs\Bravecto_SPC-PIL_es.pdf" />
     <Content Include="docs\Bravecto_SPC-PIL_fr.pdf" />
     <Content Include="docs\Bravecto_SPC-PIL_pt.pdf" />
+    <None Include="Properties\PublishProfiles\bravovets - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bravovets - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Dev.pubxml" />
     <None Include="Properties\PublishProfiles\Stage.pubxml" />
     <None Include="Properties\PublishProfiles\staging.pubxml" />
@@ -856,6 +867,7 @@
     <Content Include="Views\Globalization\es-ES\Twitter\Timeline.cshtml" />
     <Content Include="Views\Globalization\es-ES\Twitter\TimelineError.cshtml" />
     <Content Include="Views\Globalization\es-ES\Twitter\Tweet.cshtml" />
+    <Content Include="Views\Bravecto\index.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -25,6 +25,23 @@ namespace ProfSite.Controllers
             ViewBag.Language = this.GetSiteFullLanguage();
         }
 
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var model = new LoginViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View();
+        }
+
         public ActionResult Home()
         {
             ViewBag.Title = Resource.Bravecto_Homepage_Title;
