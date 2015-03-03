@@ -8,6 +8,7 @@ namespace ProfSite
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            //TODO: temp
             //IBravoVetsAuthManager authManager = new BravoVetsAuthManager();
             IBravoVetsAuthManager authManager = new BravoVetsTestableAuthManager();
 
