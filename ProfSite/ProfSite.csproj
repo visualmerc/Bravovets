@@ -369,6 +369,7 @@
     <Content Include="components\userprofile.html" />
     <Content Include="Content\admin.css" />
     <Content Include="Content\blocks-custom.css" />
+    <Content Include="Content\bravectohome.css" />
     <Content Include="Content\calendartemplate\day.html" />
     <Content Include="Content\fileupload\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\fileupload\jquery.fileupload-ui.css" />
@@ -386,6 +387,7 @@
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
     <Content Include="Content\img\FB-icon.png" />
+    <Content Include="Content\img\flipclock.png" />
     <Content Include="Content\img\generalFile.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\header.jpg" />
