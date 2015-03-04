@@ -42,6 +42,13 @@ namespace ProfSite.Controllers
             return View();
         }
 
+        [HttpGet]
+        [ActionName("about-us")]
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
         public ActionResult Home()
         {
             ViewBag.Title = Resource.Bravecto_Homepage_Title;

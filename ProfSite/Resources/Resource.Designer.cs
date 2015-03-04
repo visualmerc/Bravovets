@@ -61,6 +61,15 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        public static string AboutUsText {
+            get {
+                return ResourceManager.GetString("AboutUsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acceptable uploadable file types are JPG, GIF, PNG, TIFF or PDF under 25MB..
         /// </summary>
         public static string Admin_EditPost_AllowedAttachmentTypes {

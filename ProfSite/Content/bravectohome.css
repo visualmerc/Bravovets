@@ -49,7 +49,7 @@
         }
 
     .header .logo-bravecto {
-        margin: 0 0 30px 0;
+        margin: 0 0 20px 0;
     }
 
     .header #top-nav.nav.nav-pills {
@@ -60,7 +60,8 @@
 
         .header #top-nav.nav.nav-pills > li > a:hover,
         .header #top-nav.nav.nav-pills > li > a:focus {
-            background-color: none;
+            background-color: #009994;
+            color: #FFF;
         }
 
 #subheader {
@@ -108,6 +109,31 @@
         padding-right: 0;
     }
 
+    #subheader ul.subnavigation {
+        margin: 0;
+    }
+
+        #subheader ul.subnavigation li {
+            float: left;
+            display: inline-block;
+        }
+
+        #subheader ul.subnavigation.subnavigation-right {
+            float: right;
+        }
+
+            #subheader ul.subnavigation.subnavigation-right li:first-child {
+                border-right: 1px solid #DDD;
+            }
+
+        #subheader ul.subnavigation li > a {
+            color: #394147;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: block;
+            padding: 10px 15px;
+        }
+
 #login-wrapper {
     padding: 5px 20px;
     width: 300px;
@@ -136,20 +162,37 @@
         line-height: 1.2em;
     }
 
+    .jumbotron.aboutus {
+        height: 300px;
+        background: url(/Content/img/aboutusheader.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+        .jumbotron.aboutus h1 {
+            font-size: 38px;
+            line-height: 1.1em;
+            text-align: center;
+            margin: 0;
+        }
+
 .jumbo-home-overlay {
     background-color: rgba(0, 153, 148, 0.5);
     position: relative;
     top: 214px;
 }
 
-    .jumbo-home-overlay .top-jumbo-overlay {
-        padding: 20px 0;
-        margin: 0;
-    }
+.jumbotron.aboutus .jumbo-home-overlay {
+    top: 217px;
+}
 
-    .jumbo-home-overlay .flipclock {
-        margin-left: 20px;
-    }
+.jumbo-home-overlay .top-jumbo-overlay {
+    padding: 20px 0;
+    margin: 0;
+}
+
+.jumbo-home-overlay .flipclock {
+    margin-left: 20px;
+}
 
 .top-jumbo-overlay h3.weeks {
     color: #fff;
@@ -163,6 +206,47 @@
     padding: 20px 0;
     margin: 25px 25px 0 25px;
 }
+
+.jumbotron.aboutus .bottom-jumbo-overlay {
+    margin: 0 25px 0 25px;
+}
+
+.aboutusheaderrow h2 {
+    text-align: center;
+    color: #009994;
+    margin: 20px;
+}
+
+/* About Us*/
+.aboutus-content {
+    margin-top: 150px;
+    text-align: center;
+}
+
+    .aboutus-content .aboutus-content-bottom-row {
+        margin-top:40px;
+        text-align:left;
+    }
+        .aboutus-content .aboutus-content-bottom-row img {
+            width:60%;
+            margin-bottom:20px;
+        }
+
+    .aboutus-content p {
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+    .aboutus-content .aboutus-content-bottom-right p {
+        text-align: left;
+    }
+    .aboutus-content p.our-aim {
+        color:#009994;
+        font-size:32px;
+        font-weight:bold;
+        text-align:left;
+    }
+/* End*/
 
 .marketing-row {
     text-align: center;

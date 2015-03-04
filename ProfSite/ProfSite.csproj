@@ -845,6 +845,8 @@
     <Content Include="Views\Globalization\es-ES\Twitter\TimelineError.cshtml" />
     <Content Include="Views\Globalization\es-ES\Twitter\Tweet.cshtml" />
     <Content Include="Views\Bravecto\index.cshtml" />
+    <Content Include="Views\Bravecto\about-us.cshtml" />
+    <Content Include="Views\Shared\_LayoutBravecto.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
