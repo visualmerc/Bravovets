@@ -49,6 +49,31 @@ namespace ProfSite.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Facebook()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Twitter()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("social-content")]
+        public ActionResult SocialContent()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Products()
+        {
+            return View();
+        }
+
         public ActionResult Home()
         {
             ViewBag.Title = Resource.Bravecto_Homepage_Title;

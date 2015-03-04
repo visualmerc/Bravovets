@@ -384,6 +384,7 @@
     <Content Include="Content\fonts\bravoicons.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\rotis_sansserif_std_light.svg" />
+    <Content Include="Content\img\aboutusheader.jpg" />
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
     <Content Include="Content\img\FB-icon.png" />
@@ -847,6 +848,10 @@
     <Content Include="Views\Bravecto\index.cshtml" />
     <Content Include="Views\Bravecto\about-us.cshtml" />
     <Content Include="Views\Shared\_LayoutBravecto.cshtml" />
+    <Content Include="Views\Bravecto\facebook.cshtml" />
+    <Content Include="Views\Bravecto\twitter.cshtml" />
+    <Content Include="Views\Bravecto\social-content.cshtml" />
+    <Content Include="Views\Bravecto\products.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -42,6 +42,7 @@
 
     .header nav ul li a {
         color: #394147;
+        text-transform: uppercase;
     }
 
         .header nav ul li a:hover {
@@ -63,6 +64,10 @@
             background-color: #009994;
             color: #FFF;
         }
+
+    .header #top-nav li.rightborder a {
+        border-right: 1px solid #DDD;
+    }
 
 #subheader {
     min-height: 30px;
@@ -168,12 +173,26 @@
         background-size: cover;
     }
 
-        .jumbotron.aboutus h1 {
+    .jumbotron.products {
+        height: 300px;
+        background: url(/Content/img/productsheader.jpg) no-repeat center;
+        background-position: 100% 30%;
+        background-size: cover;
+    }
+
+        .jumbotron.products h1 {
             font-size: 38px;
             line-height: 1.1em;
             text-align: center;
             margin: 0;
         }
+
+    .jumbotron.aboutus h1 {
+        font-size: 38px;
+        line-height: 1.1em;
+        text-align: center;
+        margin: 0;
+    }
 
 .jumbo-home-overlay {
     background-color: rgba(0, 153, 148, 0.5);
@@ -207,16 +226,20 @@
     margin: 25px 25px 0 25px;
 }
 
+.jumbotron.products .bottom-jumbo-overlay,
 .jumbotron.aboutus .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
 }
 
-.aboutusheaderrow h2 {
+.simpleheaderrow h2 {
     text-align: center;
     color: #009994;
     margin: 20px;
 }
 
+.simpleheaderrow p a.btn {
+    margin-top: 20px;
+}
 /* About Us*/
 .aboutus-content {
     margin-top: 150px;
@@ -224,28 +247,100 @@
 }
 
     .aboutus-content .aboutus-content-bottom-row {
-        margin-top:40px;
-        text-align:left;
+        margin-top: 40px;
+        text-align: left;
     }
+
         .aboutus-content .aboutus-content-bottom-row img {
-            width:60%;
-            margin-bottom:20px;
+            width: 60%;
+            margin-bottom: 20px;
         }
 
     .aboutus-content p {
-        font-size: 1.2em;
+        font-size: 18px;
         line-height: 1.2em;
     }
 
     .aboutus-content .aboutus-content-bottom-right p {
         text-align: left;
     }
+
     .aboutus-content p.our-aim {
-        color:#009994;
-        font-size:32px;
-        font-weight:bold;
-        text-align:left;
+        color: #009994;
+        font-size: 32px;
+        font-weight: bold;
+        text-align: left;
     }
+/* End*/
+
+/* Products */
+.products .jumbo-home-overlay {
+    top:217px;
+}
+.products-content {
+    margin-top: 150px;
+    text-align: center;
+}
+
+    .products-content h3 {
+        color: #009994;
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+        .products-content h3 span {
+            color: #009994;
+            font-size: 32px;
+            display: block;
+            text-align: center;
+        }
+
+    .products-content p {
+        font-size: 18px;
+        line-height: 1.2em;
+    }
+
+    .products-content img {
+        width: 110px;
+        height: 240px;
+    }
+
+    .products-content table.table {
+        margin-top: 20px;
+    }
+
+        .products-content table.table tr:first-child td {
+            border-top: none;
+        }
+        .products-content table.table tr:last-child td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .products-content table.table tr:nth-child(2) td {
+            border-top: none;
+        }
+
+        .products-content table.table tr td.bglightorange {
+            background-color: #FDB523;
+        }
+
+        .products-content table.table tr td.bgdarkorange {
+            background-color: #F28D01;
+        }
+
+        .products-content table.table tr td.bgblue {
+            background-color: #1E9CD7;
+        }
+
+        .products-content table.table tr td.bggreen {
+            background-color: #7BC145;
+        }
+
+        .products-content table.table tr td.bgpink {
+            background-color: #E3328C;
+        }
 /* End*/
 
 .marketing-row {
