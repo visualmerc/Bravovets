@@ -11,10 +11,44 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
+            <ul class="nav nav-tabs social-tabs facebook">
+                <li role="presentation" class="active"><a href="#feed">NEWSFEED</a></li>
+                <li role="presentation"><a href="#messages">MESSAGES</a></li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="feed">
+                    <div class="social-container withtabs facebook">
+                        <h2>
+                            <img src="~/Content/img/fb-icon-lg.png" />
+                            @Model
+                        </h2>
+                        <div class="social-content">
 
+                        </div>
+                        <a class="btn btn-default" href="https://www.facebook.com/@Model" target="_blank">
+                            VIEW FULL TIMELINE
+                            <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="social-container withtabs facebook">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-4">
-
+            <h3>LATEST SOCIAL CONTENT</h3>
         </div>
     </div>
 </div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav-tabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        });
+    </script>
+}

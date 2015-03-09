@@ -385,15 +385,15 @@
 .social-container {
     min-height: 600px;
     background-color: #EEE;
-    padding:10px 10px 20px;
-    margin:20px 0 50px;
+    padding: 10px 10px 20px;
+    margin: 20px 0 50px;
 }
 
     .social-container .social-content {
         height: 400px;
-        background-color:#FFF;
-        border-radius:3px;
-        margin-bottom:20px;
+        background-color: #FFF;
+        border-radius: 3px;
+        margin-bottom: 20px;
     }
 
     .social-container h2 {
@@ -459,6 +459,36 @@
 }
 
 /*end*/
+
+/* Social Content Page*/
+ul.social-tabs {
+    margin: 0;
+}
+
+    ul.social-tabs.nav li.active > a {
+        background-color: #67c9ed;
+        border: medium none;
+        color: #fff;
+        margin: 0;
+    }
+
+    ul.social-tabs.nav.facebook li.active > a {
+        background-color: #517bbd;
+    }
+
+    ul.social-tabs.nav li > a {
+        color: #333;
+        background-color: #EEE;
+    }
+
+    ul.social-tabs.nav-tabs > li {
+        margin: 0;
+    }
+
+.social-container.withtabs {
+    margin-top: 0;
+}
+/* */
 
 .marketing-row {
     text-align: center;
