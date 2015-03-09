@@ -84,21 +84,21 @@
                                 <div class="row">
                                     @using (Html.BeginForm())
                                     {
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <label for="Email">@bvResources.Email</label>
-                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = bvResources.Email })
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label for="Email">@bvResources.Email</label>
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = bvResources.Email })
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <label for="Password">@bvResources.PasswordText</label>
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = bvResources.PasswordText })
+                                            </div>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <label for="Password">@bvResources.PasswordText</label>
-                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = bvResources.PasswordText })
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-default">@bvResources.BravoVets_Footer_Login</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <button type="submit" class="btn btn-default">@bvResources.BravoVets_Footer_Login</button>
-                                        </div>
-                                    </div>
                                     }
                                 </div>
                             </div>
@@ -115,7 +115,9 @@
                 <div class="jumbo-home-overlay">
                     <div class="row top-jumbo-overlay">
                         <div class="col-md-3">
-                            <img src="~/Content/img/flipclock.png" class="flipclock" />
+                            <div id="tweleveweeks_container">
+                                <ul style="list-style:none;"></ul>
+                            </div>
                             <h3 class="weeks">WEEKS</h3>
                         </div>
                         <div class="col-md-9">
@@ -302,6 +304,97 @@
                 e.stopPropagation();
             });
             $('body').scrollspy({ target: '#side-nav' });
+
+            var imagePATH = "/Content/img/"
+
+            var clockImgArr = [];
+            var clockImgPNGArr = [];
+            var clockArr = [];
+            var clockCount = 0;
+
+            //images and li class names
+            clockImgArr[0] = 'clock_anim_00';
+            clockImgArr[1] = 'clock_anim_01';
+            clockImgArr[2] = 'clock_anim_02';
+            clockImgArr[3] = 'clock_anim_03';
+            clockImgArr[4] = 'clock_anim_04';
+            clockImgArr[5] = 'clock_anim_05';
+            clockImgArr[6] = 'clock_anim_06';
+            clockImgArr[7] = 'clock_anim_07';
+            clockImgArr[8] = 'clock_anim_08';
+            clockImgArr[9] = 'clock_anim_09';
+            clockImgArr[10] = 'clock_anim_10';
+            clockImgArr[11] = 'clock_anim_11';
+            clockImgArr[12] = 'clock_anim_12';
+            clockImgArr[13] = 'clock_anim_blur01';
+            clockImgArr[14] = 'clock_anim_blur10';
+            clockImgArr[15] = 'clock_anim_blur11';
+
+
+            //make names into images links
+            $.each(clockImgArr,function(key,val){
+                clockImgPNGArr[key] = imagePATH+val+'.png';
+            })
+
+            //load the first image
+            $('#tweleveweeks_container ul').append('<li class="'+clockImgArr[0]+' clockface" style="display:block"><img src="'+clockImgPNGArr[0]+'" ></li>');
+
+            //create animation order array
+            var n = 0;
+            for(var i=0;i<25;i++){
+                if(i%2 == 0){
+                    clockArr[i] = clockImgArr[n];
+                    n++;
+                }else if(i < 19 && i%2 != 0){
+                    clockArr[i] = clockImgArr[13];
+                }else if(i== 19){
+                    clockArr[i] = clockImgArr[15];
+                }else if(i > 19 && i%2 != 0){
+                    clockArr[i] = clockImgArr[14];
+                }
+            }
+
+            function preloadImages(images, callback) {
+                var count = images.length;
+                if(count === 0) {
+                    callback();
+                }
+                var loaded = 0;
+                $(images).each(function() {
+                    $('<img>').attr('src', this).load(function() {
+                        loaded++;
+                        if (loaded === count) {
+                            callback();
+                        }
+                    });
+                });
+            };
+            preloadImages(clockImgPNGArr, function() {
+                console.log("Load them bitches");
+                aferLoaded()
+            });
+
+
+            function aferLoaded(){
+                $.each(clockImgArr,function(key,val){
+                    if(key > 0){
+                        $('#tweleveweeks_container ul').append('<li class="'+val+' clockface" style="display:none"><img src="'+clockImgPNGArr[key]+'" ></li>');
+                    }
+
+                })
+                $('#tweleveweeks_container img').ready(function(){
+                    setTimeout(function(){
+                        var clockAnim = setInterval(function(){
+                            $('.clockface').hide();
+                            $('.'+clockArr[clockCount]).show();
+                            if(clockCount >= clockArr.length-1){
+                                clearInterval(clockAnim);
+                            }
+                            clockCount++;
+                        },40);
+                    },1000)
+                })
+            }
         });
     </script>
 </body>

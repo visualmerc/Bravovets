@@ -74,6 +74,13 @@ namespace ProfSite.Controllers
             return View();
         }
 
+        [HttpGet]
+        [ActionName("linked-accounts")]
+        public ActionResult LinkedAccounts()
+        {
+            return View();
+        }
+
         public ActionResult Home()
         {
             ViewBag.Title = Resource.Bravecto_Homepage_Title;

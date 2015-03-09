@@ -387,6 +387,10 @@
     <Content Include="Content\img\aboutusheader.jpg" />
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
+    <Content Include="Content\img\extralargedogs.png" />
+    <Content Include="Content\img\largedogs.png" />
+    <Content Include="Content\img\mediumsizeddogs.png" />
+    <Content Include="Content\img\productsheader.jpg" />
     <Content Include="Content\img\FB-icon.png" />
     <Content Include="Content\img\flipclock.png" />
     <Content Include="Content\img\generalFile.png" />
@@ -396,8 +400,10 @@
     <Content Include="Content\img\innovation.jpg" />
     <Content Include="Content\img\loading.gif" />
     <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\img\smalldogs.jpg" />
     <Content Include="Content\img\support-icon.jpg" />
     <Content Include="Content\img\support.jpg" />
+    <Content Include="Content\img\toydogs.jpg" />
     <Content Include="Content\img\twitter-icon.jpg" />
     <Content Include="Content\img\twitter-icon.png" />
     <Content Include="Content\img\video.jpg" />
@@ -852,6 +858,7 @@
     <Content Include="Views\Bravecto\twitter.cshtml" />
     <Content Include="Views\Bravecto\social-content.cshtml" />
     <Content Include="Views\Bravecto\products.cshtml" />
+    <Content Include="Views\Bravecto\linked-accounts.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

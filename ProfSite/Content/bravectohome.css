@@ -35,6 +35,21 @@
     color: #dd042b;
 }
 
+.label {
+    background-color: #009994;
+    border-radius: 13px;
+    color: #fff;
+    display: inline-table;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 10px;
+    padding: 6px 10px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
 .header {
     margin-bottom: 0;
     position: relative;
@@ -209,9 +224,13 @@
     margin: 0;
 }
 
-.jumbo-home-overlay .flipclock {
+.jumbo-home-overlay #tweleveweeks_container {
     margin-left: 20px;
 }
+
+    .jumbo-home-overlay #tweleveweeks_container ul {
+        margin-bottom: 0;
+    }
 
 .top-jumbo-overlay h3.weeks {
     color: #fff;
@@ -275,8 +294,9 @@
 
 /* Products */
 .products .jumbo-home-overlay {
-    top:217px;
+    top: 217px;
 }
+
 .products-content {
     margin-top: 150px;
     text-align: center;
@@ -285,7 +305,7 @@
     .products-content h3 {
         color: #009994;
         text-transform: uppercase;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: bold;
         text-align: center;
     }
@@ -314,6 +334,7 @@
         .products-content table.table tr:first-child td {
             border-top: none;
         }
+
         .products-content table.table tr:last-child td {
             border-bottom: 1px solid #ddd;
         }
@@ -342,6 +363,102 @@
             background-color: #E3328C;
         }
 /* End*/
+
+/* Linked accounts*/
+.static-section.linkedaccounttop {
+    background: url(/Content/img/linkedaccounts-top.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 0%;
+}
+
+    .static-section.linkedaccounttop div.static-overlay,
+    .static-section.linkedaccountbottom div.static-overlay {
+        margin-top: 214px;
+    }
+
+.static-section.linkedaccountbottom {
+    background: url(/Content/img/linkedaccounts-bottom.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 30%;
+}
+
+.social-container {
+    min-height: 600px;
+    background-color: #EEE;
+    padding:10px 10px 20px;
+    margin:20px 0 50px;
+}
+
+    .social-container .social-content {
+        height: 400px;
+        background-color:#FFF;
+        border-radius:3px;
+        margin-bottom:20px;
+    }
+
+    .social-container h2 {
+        padding-left: 20px;
+        color: #009994;
+    }
+
+        .social-container h2 img {
+            margin-right: 20px;
+        }
+
+    .social-container.facebook {
+        border-top: 20px solid #517BBD;
+    }
+
+    .social-container.twitter {
+        border-top: 20px solid #67C9ED;
+    }
+
+.facebook-details-row,
+.twitter-details-row {
+    text-align: left;
+    margin: 60px 0;
+    padding: 30px 0;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+    .twitter-details-row.last {
+        border-top: none;
+        padding-top: 0;
+        margin-top: -30px;
+    }
+
+    .facebook-details-row ul li,
+    .twitter-details-row ul li {
+        display: table;
+        padding: 10px 0;
+        border-bottom: 1px solid #DDD;
+    }
+
+        .facebook-details-row ul li:last-child,
+        .twitter-details-row ul li:last-child {
+            border-bottom: none;
+        }
+
+        .facebook-details-row ul li p,
+        .twitter-details-row ul li p {
+            display: table-cell;
+            padding-left: 20px;
+        }
+
+            .facebook-details-row ul li p span.header {
+                display: block;
+                font-family: 20px;
+                font-weight: bold;
+            }
+
+.static-body h2.linkedaccountmainheader {
+    color: #009994;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/*end*/
 
 .marketing-row {
     text-align: center;
@@ -432,6 +549,10 @@
 
         .static-section div.static-overlay.bgred {
             background-color: rgba(221, 4, 43, 0.6);
+        }
+
+        .static-section div.static-overlay.bggreen {
+            background-color: rgba(0, 153, 148, 0.6);
         }
 
 .static-body {
