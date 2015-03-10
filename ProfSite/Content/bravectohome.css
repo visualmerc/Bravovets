@@ -391,6 +391,7 @@
 
     .social-container .social-content {
         height: 400px;
+        overflow-y:scroll;
         background-color: #FFF;
         border-radius: 3px;
         margin-bottom: 20px;

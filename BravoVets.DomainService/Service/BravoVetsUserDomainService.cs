@@ -396,12 +396,16 @@ namespace BravoVets.DomainService.Service
                         if (!string.IsNullOrEmpty(vsi.AccessToken))
                         {
                             user.Veterinarian.IsFacebookLinked = true;
+                            user.Veterinarian.AccessToken = vsi.AccessToken;
+                            user.Veterinarian.AccessTokenSecret = vsi.AccessCode;
                         }
                         break;
                     case (int)SocialPlatformEnum.Twitter:
                         if (!string.IsNullOrEmpty(vsi.AccessToken))
                         {
                             user.Veterinarian.IsTwitterLinked = true;
+                            user.Veterinarian.AccessToken = vsi.AccessToken;
+                            user.Veterinarian.AccessTokenSecret = vsi.AccessCode;
                         }
                         break;
                 }

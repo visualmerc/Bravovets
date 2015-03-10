@@ -264,6 +264,8 @@
     <Compile Include="Models\AdminManagePostsModel.cs" />
     <Compile Include="Models\FacebookResponseModel.cs" />
     <Compile Include="Models\FacebookTimeline.cs" />
+    <Compile Include="Models\FacebookViewModel.cs" />
+    <Compile Include="Models\LinkedAccountsViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\ShowSocialDialogModel.cs" />
     <Compile Include="Models\SocialCalendarPostsModel.cs" />
@@ -276,6 +278,7 @@
     <Compile Include="Models\TweetModel.cs" />
     <Compile Include="Models\TwitterAccess.cs" />
     <Compile Include="Models\TwitterResponseModel.cs" />
+    <Compile Include="Models\TwitterViewModel.cs" />
     <Compile Include="Models\ViewDataUploadFilesResult.cs" />
     <Compile Include="Utils\MultipartWriter.cs" />
     <Compile Include="Utils\QueueContentHelper.cs" />
@@ -879,6 +882,14 @@
     <Content Include="Views\Bravecto\social-content.cshtml" />
     <Content Include="Views\Bravecto\products.cshtml" />
     <Content Include="Views\Bravecto\linked-accounts.cshtml" />
+    <Content Include="Views\Bravecto\Partials\_Tweet.cshtml" />
+    <Content Include="Views\Bravecto\Partials\_TimelineItem.cshtml" />
+    <Content Include="Views\Bravecto\Partials\StatusUpdate.cshtml" />
+    <Content Include="Views\Bravecto\Partials\LinkUpdate.cshtml" />
+    <Content Include="Views\Bravecto\Partials\PhotoUpdate.cshtml" />
+    <Content Include="Views\Bravecto\Partials\VideoUpdate.cshtml" />
+    <Content Include="Views\Bravecto\Partials\Comment.cshtml" />
+    <Content Include="Views\Bravecto\Partials\Comments.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

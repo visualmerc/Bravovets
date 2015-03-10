@@ -11,6 +11,8 @@ namespace BravoVets.DomainObject
         public bool CanEditFacilities { get; set; }
 
         public bool IsFacebookLinked { get; set; }
+        public string AccessToken { get; set; }
+        public string AccessTokenSecret { get; set; }
 
         public bool IsTwitterLinked { get; set; }
 

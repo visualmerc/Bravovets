@@ -15,6 +15,7 @@ namespace ProfSite.Models
     }
     public class TwitterProfile
     {
+        public string screen_name { get; set; }
         public int difference { get; set; }
         public int followers_count { get; set; }
     }

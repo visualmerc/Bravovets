@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LinkedAccountsViewModel
+@{
     ViewBag.Title = "Linked Accounts";
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
@@ -16,7 +17,12 @@
                     FACEBOOK
                 </h2>
                 <div class="social-content">
-
+                    <ul class="facebook-timeline social-feed list-unstyled">
+                        @foreach (var item in Model.Posts)
+                        {
+                            Html.RenderPartial("Partials/_TimelineItem", item);
+                        }
+                    </ul>
                 </div>
                 <a class="btn btn-default" href="/bravecto/facebook" role="button">
                     VIEW FULL NEWSFEED
@@ -31,7 +37,12 @@
                     TWITTER
                 </h2>
                 <div class="social-content">
-
+                    <ul class="twitter-timeline social-feed list-unstyled">
+                        @foreach (var tweet in Model.Tweets)
+                        {
+                            Html.RenderPartial("Partials/_Tweet", tweet);
+                        }
+                    </ul>
                 </div>
                 <a class="btn btn-default" href="/bravecto/twitter" role="button">
                     VIEW FULL NEWSFEED

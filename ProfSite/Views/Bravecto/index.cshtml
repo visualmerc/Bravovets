@@ -305,12 +305,10 @@
             });
             $('body').scrollspy({ target: '#side-nav' });
 
-            var imagePATH = "/Content/img/"
-
-            var clockImgArr = [];
-            var clockImgPNGArr = [];
-            var clockArr = [];
-            var clockCount = 0;
+            var imagePATH = "/Content/img/", clockImgArr = [],
+                clockImgPNGArr = [],
+                clockArr = [],
+                clockCount = 0;
 
             //images and li class names
             clockImgArr[0] = 'clock_anim_00';
@@ -332,36 +330,36 @@
 
 
             //make names into images links
-            $.each(clockImgArr,function(key,val){
-                clockImgPNGArr[key] = imagePATH+val+'.png';
+            $.each(clockImgArr, function (key, val) {
+                clockImgPNGArr[key] = imagePATH + val + '.png';
             })
 
             //load the first image
-            $('#tweleveweeks_container ul').append('<li class="'+clockImgArr[0]+' clockface" style="display:block"><img src="'+clockImgPNGArr[0]+'" ></li>');
+            $('#tweleveweeks_container ul').append('<li class="' + clockImgArr[0] + ' clockface" style="display:block"><img src="' + clockImgPNGArr[0] + '" ></li>');
 
             //create animation order array
             var n = 0;
-            for(var i=0;i<25;i++){
-                if(i%2 == 0){
+            for (var i = 0; i < 25; i++) {
+                if (i % 2 == 0) {
                     clockArr[i] = clockImgArr[n];
                     n++;
-                }else if(i < 19 && i%2 != 0){
+                } else if (i < 19 && i % 2 != 0) {
                     clockArr[i] = clockImgArr[13];
-                }else if(i== 19){
+                } else if (i == 19) {
                     clockArr[i] = clockImgArr[15];
-                }else if(i > 19 && i%2 != 0){
+                } else if (i > 19 && i % 2 != 0) {
                     clockArr[i] = clockImgArr[14];
                 }
             }
 
             function preloadImages(images, callback) {
                 var count = images.length;
-                if(count === 0) {
+                if (count === 0) {
                     callback();
                 }
                 var loaded = 0;
-                $(images).each(function() {
-                    $('<img>').attr('src', this).load(function() {
+                $(images).each(function () {
+                    $('<img>').attr('src', this).load(function () {
                         loaded++;
                         if (loaded === count) {
                             callback();
@@ -369,31 +367,29 @@
                     });
                 });
             };
-            preloadImages(clockImgPNGArr, function() {
-                console.log("Load them bitches");
+            preloadImages(clockImgPNGArr, function () {
                 aferLoaded()
             });
 
-
-            function aferLoaded(){
-                $.each(clockImgArr,function(key,val){
-                    if(key > 0){
-                        $('#tweleveweeks_container ul').append('<li class="'+val+' clockface" style="display:none"><img src="'+clockImgPNGArr[key]+'" ></li>');
+            function aferLoaded() {
+                $.each(clockImgArr, function (key, val) {
+                    if (key > 0) {
+                        $('#tweleveweeks_container ul').append('<li class="' + val + ' clockface" style="display:none"><img src="' + clockImgPNGArr[key] + '" ></li>');
                     }
 
-                })
-                $('#tweleveweeks_container img').ready(function(){
-                    setTimeout(function(){
-                        var clockAnim = setInterval(function(){
+                });
+                $('#tweleveweeks_container img').ready(function () {
+                    setTimeout(function () {
+                        var clockAnim = setInterval(function () {
                             $('.clockface').hide();
-                            $('.'+clockArr[clockCount]).show();
-                            if(clockCount >= clockArr.length-1){
+                            $('.' + clockArr[clockCount]).show();
+                            if (clockCount >= clockArr.length - 1) {
                                 clearInterval(clockAnim);
                             }
                             clockCount++;
-                        },40);
-                    },1000)
-                })
+                        }, 40);
+                    }, 1000)
+                });
             }
         });
     </script>

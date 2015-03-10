@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TwitterViewModel
+@{
     ViewBag.Title = "Twitter";
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
@@ -20,10 +21,10 @@
                     <div class="social-container withtabs twitter">
                         <h2>
                             <img src="~/Content/img/twitter-icon-lg.png" />
-                            @@Model
+                            @@@Model.UserName
                         </h2>
                         <div class="social-content">
-
+                            @{Html.RenderAction("timeline", "twitter");}
                         </div>
                         <a class="btn btn-default" href="https://www.twitter.com/@Model" target="_blank">
                             VIEW FULL TIMELINE
