@@ -189,14 +189,17 @@
         background-size: cover;
     }
 
-    .jumbotron.support {
+    .jumbotron.support-page {
         background: url(/Content/img/support_header.jpg) no-repeat center;
         background-size: cover;
         background-position: 100% 26%;
         height: 300px;
     }
 
-        .jumbotron.support h1 {
+        .jumbotron.contactus-page h1,
+        .jumbotron.aboutus h1,
+        .jumbotron.products h1,
+        .jumbotron.support-page h1 {
             font-size: 38px;
             line-height: 1.1em;
             text-align: center;
@@ -210,27 +213,14 @@
         background-size: cover;
     }
 
-        .jumbotron.products h1 {
-            font-size: 38px;
-            line-height: 1.1em;
-            text-align: center;
-            margin: 0;
-        }
-
-    .jumbotron.aboutus h1 {
-        font-size: 38px;
-        line-height: 1.1em;
-        text-align: center;
-        margin: 0;
-    }
-
 .jumbo-home-overlay {
     background-color: rgba(0, 153, 148, 0.5);
     position: relative;
     top: 214px;
 }
 
-.jumbotron.support .jumbo-home-overlay,
+.jumbotron.contactus-page .jumbo-home-overlay,
+.jumbotron.support-page .jumbo-home-overlay,
 .jumbotron.aboutus .jumbo-home-overlay {
     top: 217px;
 }
@@ -261,7 +251,8 @@
     margin: 25px 25px 0 25px;
 }
 
-.jumbotron.support .bottom-jumbo-overlay,
+.jumbotron.contactus-page .bottom-jumbo-overlay,
+.jumbotron.support-page .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay,
 .jumbotron.aboutus .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
@@ -276,6 +267,33 @@
 .simpleheaderrow p a.btn {
     margin-top: 20px;
 }
+/* Contact Us Page */
+.jumbotron.contactus-page {
+    background: url(/Content/img/Bravecto_ContactUs_header.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 0%;
+    height: 300px;
+}
+
+    .jumbotron.contactus-page h1 {
+        font-size: 38px;
+        line-height: 1.1em;
+        margin: 0;
+        text-align: center;
+    }
+
+    .jumbotron.contactus-page h4 {
+        text-align: center;
+    }
+
+.static-body.contactus-body h2 {
+    color: #009994;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/**/
 /* About Us*/
 .aboutus-content {
     margin-top: 150px;
@@ -479,7 +497,7 @@
 /*end*/
 
 /* Support */
-.static-section.support {
+.static-section.support-page {
     background: url(/Content/img/support_header.jpg) no-repeat center;
     background-size: 100% auto;
     background-position: 100% 0%;
@@ -488,7 +506,6 @@
 
 .static-body.support-body h2 {
     color: #009994;
-    font-size: 32px;
     margin-top: 70px;
     margin-bottom: 20px;
     text-align: center;

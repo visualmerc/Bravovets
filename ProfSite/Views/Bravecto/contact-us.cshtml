@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+    ViewBag.SelectedNode = "contactus";
+    Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
+}
+
+<div class="container">
+    <div class="row simpleheaderrow">
+        <h2>CONTACT US</h2>
+    </div>
+</div>
+<div class="jumbotron contactus-page">
+    <div class="container">
+        <div class="jumbo-home-overlay">
+            <div class="row top-jumbo-overlay">
+                <h1>Extend a call to your sales representative.</h1>
+            </div>
+            <div class="bottom-jumbo-overlay">
+                <h4>
+                    Discover how offering Bravecto can help you grow your practice and provide
+                    the best care to every dog you treat.
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container static-body contactus-body">
+    <div class="static-overlay bggreen">
+        <h2>CONTACT YOUR MERCK SALES REPRESENTATIVE <br /> ABOUT BRAVECTO TODAY.</h2>
+    </div>
+</div>
+<div class="static-body support-body grey">
+    <div class="container">
+        <div class="row">
+            <h2>YOUR REGION</h2>
+            <p>
+                Contact one of our sales representatives listed below,<br />
+                or select an alternative region from the dropdown menu.
+            </p>
+            <div class="col-md-6 col-md-offset-3">
+                @Html.DropDownList("Region", new List<SelectListItem>(), "SELECT YOUR REGION", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+</div>
+

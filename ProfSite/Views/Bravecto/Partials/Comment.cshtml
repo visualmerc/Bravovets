@@ -1,0 +1,19 @@
+﻿@model  FacebookTimelineComment
+@using bvResources = ProfSite.Resources.Resource
+
+<li class="comment">
+    <p class="person-name"><a target="_blank" href="https://www.facebook.com/profile.php?id=@Model.FromId">@Model.From</a></p>
+    @Model.Message
+    @if (Model.UserLikes)
+    {
+        <div class="comment-like fb-like-post liked">
+            <span class="msg-liked">@bvResources.Facebook_Comment_YouLike</span>
+        </div>
+    }
+    else
+    {
+        <a href="@Model.Id" class="comment-like fb-like-post">
+            <span class="msg-notliked">@bvResources.Facebook_Comment_LikeComment</span>
+        </a>
+    }
+</li>
