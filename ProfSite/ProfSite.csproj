@@ -390,6 +390,13 @@
     <Content Include="Content\img\aboutusheader.jpg" />
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
+    <Content Include="Content\img\Bravecto_FB Message_sidebarimg1.jpg" />
+    <Content Include="Content\img\Bravecto_Support_greenbgimg.jpg" />
+    <Content Include="Content\img\Bravecto_Support_img2.jpg" />
+    <Content Include="Content\img\Bravecto_Support_img3.jpg" />
+    <Content Include="Content\img\Bravecto_Support_img4.jpg" />
+    <Content Include="Content\img\Bravecto_Support_img7.jpg" />
+    <Content Include="Content\img\Bravecto_Support_rolethumbnail.jpg" />
     <Content Include="Content\img\clock_anim_00.png" />
     <Content Include="Content\img\clock_anim_01.png" />
     <Content Include="Content\img\clock_anim_02.png" />
@@ -425,6 +432,8 @@
     <Content Include="Content\img\smalldogs.jpg" />
     <Content Include="Content\img\support-icon.jpg" />
     <Content Include="Content\img\support.jpg" />
+    <Content Include="Content\img\support_header.jpg" />
+    <Content Include="Content\img\support_screen.png" />
     <Content Include="Content\img\toydogs.jpg" />
     <Content Include="Content\img\twitter-icon-lg.png" />
     <Content Include="Content\img\twitter-icon.jpg" />
@@ -890,6 +899,10 @@
     <Content Include="Views\Bravecto\Partials\VideoUpdate.cshtml" />
     <Content Include="Views\Bravecto\Partials\Comment.cshtml" />
     <Content Include="Views\Bravecto\Partials\Comments.cshtml" />
+    <Content Include="Views\Bravecto\contact-us.cshtml" />
+    <Content Include="Views\Bravecto\unlinked-accounts.cshtml" />
+    <Content Include="Views\Bravecto\support.cshtml" />
+    <Content Include="Views\Bravecto\resources.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

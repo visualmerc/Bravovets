@@ -74,6 +74,7 @@
         top: 70px;
     }
 
+        .header #top-nav.nav.nav-pills > li.active > a,
         .header #top-nav.nav.nav-pills > li > a:hover,
         .header #top-nav.nav.nav-pills > li > a:focus {
             background-color: #009994;
@@ -188,6 +189,20 @@
         background-size: cover;
     }
 
+    .jumbotron.support {
+        background: url(/Content/img/support_header.jpg) no-repeat center;
+        background-size: cover;
+        background-position: 100% 26%;
+        height: 300px;
+    }
+
+        .jumbotron.support h1 {
+            font-size: 38px;
+            line-height: 1.1em;
+            text-align: center;
+            margin: 0;
+        }
+
     .jumbotron.products {
         height: 300px;
         background: url(/Content/img/productsheader.jpg) no-repeat center;
@@ -215,6 +230,7 @@
     top: 214px;
 }
 
+.jumbotron.support .jumbo-home-overlay,
 .jumbotron.aboutus .jumbo-home-overlay {
     top: 217px;
 }
@@ -245,6 +261,7 @@
     margin: 25px 25px 0 25px;
 }
 
+.jumbotron.support .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay,
 .jumbotron.aboutus .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
@@ -391,7 +408,7 @@
 
     .social-container .social-content {
         height: 400px;
-        overflow-y:scroll;
+        overflow-y: scroll;
         background-color: #FFF;
         border-radius: 3px;
         margin-bottom: 20px;
@@ -460,6 +477,142 @@
 }
 
 /*end*/
+
+/* Support */
+.static-section.support {
+    background: url(/Content/img/support_header.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 0%;
+    height: 300px;
+}
+
+.static-body.support-body h2 {
+    color: #009994;
+    font-size: 32px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.static-body.support-body {
+    padding-bottom: 70px;
+    margin-bottom: 30px;
+}
+
+    .static-body.support-body.grey {
+        background-color: #EFEFEF;
+    }
+
+    .static-body.support-body h3 {
+        color: #009994;
+        text-align: center;
+    }
+
+    .static-body.support-body p {
+        text-align: center;
+    }
+
+.static-body .support-screen-image {
+    margin-top: 30px;
+}
+
+.static-body .support-screen-text p {
+    text-align: left;
+}
+
+.support-items {
+    margin-top: 50px;
+}
+
+    .support-items ul li {
+        border-top: 1px solid #ddd;
+        padding-bottom: 30px;
+        text-align: left;
+    }
+
+        .support-items ul li img {
+            float: left;
+            width: 200px;
+        }
+
+        .support-items ul li p {
+            margin-left: 220px;
+            text-align: left !important;
+        }
+
+        .support-items ul li span.header {
+            display: block;
+            font-weight: bold;
+        }
+
+.bottom-support-download-row img {
+    float: left;
+    width: 140px;
+}
+
+.bottom-support-download {
+    margin-left: 160px;
+    text-align: left !important;
+}
+
+    .bottom-support-download p {
+        text-align: left !important;
+        margin-bottom: 20px;
+    }
+
+    .bottom-support-download h3 {
+        margin-top: 0;
+        text-align: left !important;
+    }
+
+    .bottom-support-download a {
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+.support-benefits {
+    background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 0%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+}
+
+    .support-benefits h2 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    .support-benefits h2,
+    .support-benefits p,
+    .support-benefits h3 {
+        color: #FFF;
+    }
+
+    .support-benefits div h3 {
+        border-bottom: 2px solid #FFF;
+        padding-bottom: 20px;
+        text-align: left;
+        font-size: 24px;
+    }
+
+    .support-benefits div p {
+        text-align: left;
+        font-size: 1.4em;
+    }
+
+.supportbottom {
+    background: url(/Content/img/Bravecto_Support_img7.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 30%;
+    height: 300px;
+    text-align: center;
+}
+
+
+/* end*/
 
 /* Social Content Page*/
 ul.social-tabs {
@@ -599,6 +752,10 @@ ul.social-tabs {
 
     .static-body p {
         font-size: 18px;
+    }
+
+    .static-body .static-body-content {
+        margin-bottom: 60px;
     }
 
 .bottom-nav {

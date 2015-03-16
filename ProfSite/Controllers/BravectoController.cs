@@ -148,16 +148,18 @@ namespace ProfSite.Controllers
                 var timelineResponse = JsonConvert.DeserializeObject<List<TwitterStatusModel>>(response);
                 var tweets = new List<TweetModel>();
                 var lastId = string.Empty;
-
-                foreach (var twitterStatusModel in timelineResponse)
+                if (timelineResponse != null)
                 {
-                    var item = new TweetModel(twitterStatusModel);
-                    if (twitterInfo.AccountName == item.user.id)
+                    foreach (var twitterStatusModel in timelineResponse)
                     {
-                        item.CanRetweet = false;
+                        var item = new TweetModel(twitterStatusModel);
+                        if (twitterInfo.AccountName == item.user.id)
+                        {
+                            item.CanRetweet = false;
+                        }
+                        tweets.Add(item);
+                        lastId = twitterStatusModel.id;
                     }
-                    tweets.Add(item);
-                    lastId = twitterStatusModel.id;
                 }
                 model.Tweets = tweets;
             }
@@ -181,6 +183,32 @@ namespace ProfSite.Controllers
                 model.Posts = posts;
             }
             return View(model);
+        }
+
+        [HttpGet]
+        [ActionName("unlinked-accounts")]
+        public ActionResult UnLinkedAccounts()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("contact-us")]
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Support()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Resources()
+        {
+            return View();
         }
 
         public ActionResult Home()

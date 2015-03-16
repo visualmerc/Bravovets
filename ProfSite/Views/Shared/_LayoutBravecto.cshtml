@@ -26,33 +26,33 @@
         <div class="header clearfix">
             <nav>
                 <ul id="top-nav" class="nav nav-pills">
-                    <li>
+                    <li class="@(ViewBag.SelectedNode == "support" ? "active" : "")">
                         <a href="/bravecto/support">
                             Support
                         </a>
                     </li>
-                    <li>
+                    <li class="@(ViewBag.SelectedNode == "innovation" ? "active" : "")">
                         <a href="/bravecto/innovation">
                             Innovation
                         </a>
                     </li>
-                    <li>
+                    <li class="@(ViewBag.SelectedNode == "adherence" ? "active" : "")">
                         <a href="/bravecto/adherence">
                             Adherence
                         </a>
                     </li>
-                    <li>
+                    <li class="@(ViewBag.SelectedNode == "resources" ? "active" : "")">
                         <a href="/bravecto/resources">
                             Resources
                         </a>
                     </li>
-                    <li class="rightborder">
+                    <li class="rightborder @(ViewBag.SelectedNode == "products" ? "active" : "")">
                         <a href="/bravecto/products">
                             Products
                         </a>
                     </li>
-                    <li role="presentation"><a href="/bravecto/about-us">ABOUT US</a></li>
-                    <li role="presentation"><a href="#">CONTACT US</a></li>
+                    <li class="@(ViewBag.SelectedNode == "aboutus" ? "active" : "")" role="presentation"><a href="/bravecto/about-us">ABOUT US</a></li>
+                    <li class="@(ViewBag.SelectedNode == "contactus" ? "active" : "")" role="presentation"><a href="/bravecto/contact-us">CONTACT US</a></li>
                 </ul>
             </nav>
             <a href="/bravecto" class="navbar-brand bravovets">
@@ -93,12 +93,12 @@
                     </p>
                     <ul class="list-unstyled subnavigation subnavigation-right">
                         <li>
-                            <a href="/bravecto/profile">
+                            <a href="/editprofile">
                                 PROFILE
                             </a>
                         </li>
                         <li>
-                            <a href="/bravecto/logout">
+                            <a href="/account/logout">
                                 LOGOUT
                             </a>
                         </li>
@@ -116,7 +116,7 @@
         <div class="container">
             <ul class="bottom-nav">
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/bravecto/index">Home</a>
                 </li>
                 <li>
                     <a href="http://www.merck.com/about/how-we-operate/privacy/internet-privacy-policy.html?utm_source=Bravovets">PRIVACY</a>
@@ -128,7 +128,7 @@
                     <a href="/bravecto/sitemap">SITE MAP</a>
                 </li>
                 <li>
-                    <a href="/">CONTACT US</a>
+                    <a href="/bravecto/contact-us">CONTACT US</a>
                 </li>
             </ul>
         </div>

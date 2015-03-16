@@ -43,7 +43,7 @@
             <nav>
                 <ul id="top-nav" class="nav nav-pills">
                     <li role="presentation"><a href="/bravecto/about-us">ABOUT US</a></li>
-                    <li role="presentation"><a href="#">CONTACT US</a></li>
+                    <li role="presentation"><a href="/bravecto/contact-us">CONTACT US</a></li>
                 </ul>
             </nav>
             <a href="/bravecto" class="navbar-brand bravovets">
@@ -278,7 +278,7 @@
         <div class="container">
             <ul class="bottom-nav">
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/bravecto/index">Home</a>
                 </li>
                 <li>
                     <a href="http://www.merck.com/about/how-we-operate/privacy/internet-privacy-policy.html?utm_source=Bravovets">PRIVACY</a>
@@ -290,7 +290,7 @@
                     <a href="/bravecto/sitemap">SITE MAP</a>
                 </li>
                 <li>
-                    <a href="/">CONTACT US</a>
+                    <a href="/bravecto/contact-us">CONTACT US</a>
                 </li>
             </ul>
         </div>
@@ -311,23 +311,18 @@
                 clockCount = 0;
 
             //images and li class names
-            clockImgArr[0] = 'clock_anim_00';
-            clockImgArr[1] = 'clock_anim_01';
-            clockImgArr[2] = 'clock_anim_02';
-            clockImgArr[3] = 'clock_anim_03';
-            clockImgArr[4] = 'clock_anim_04';
-            clockImgArr[5] = 'clock_anim_05';
-            clockImgArr[6] = 'clock_anim_06';
-            clockImgArr[7] = 'clock_anim_07';
-            clockImgArr[8] = 'clock_anim_08';
-            clockImgArr[9] = 'clock_anim_09';
-            clockImgArr[10] = 'clock_anim_10';
-            clockImgArr[11] = 'clock_anim_11';
-            clockImgArr[12] = 'clock_anim_12';
-            clockImgArr[13] = 'clock_anim_blur01';
-            clockImgArr[14] = 'clock_anim_blur10';
-            clockImgArr[15] = 'clock_anim_blur11';
-
+            clockImgArr[0] = 'clock_anim_04';
+            clockImgArr[1] = 'clock_anim_05';
+            clockImgArr[2] = 'clock_anim_06';
+            clockImgArr[3] = 'clock_anim_07';
+            clockImgArr[4] = 'clock_anim_08';
+            clockImgArr[5] = 'clock_anim_09';
+            clockImgArr[6] = 'clock_anim_10';
+            clockImgArr[7] = 'clock_anim_11';
+            clockImgArr[8] = 'clock_anim_12';
+            clockImgArr[9] = 'clock_anim_blur01';
+            clockImgArr[10] = 'clock_anim_blur10';
+            clockImgArr[11] = 'clock_anim_blur11';
 
             //make names into images links
             $.each(clockImgArr, function (key, val) {
@@ -339,19 +334,20 @@
 
             //create animation order array
             var n = 0;
-            for (var i = 0; i < 25; i++) {
+            for (var i = 0; i < 17; i++) {
                 if (i % 2 == 0) {
                     clockArr[i] = clockImgArr[n];
                     n++;
-                } else if (i < 19 && i % 2 != 0) {
-                    clockArr[i] = clockImgArr[13];
-                } else if (i == 19) {
-                    clockArr[i] = clockImgArr[15];
-                } else if (i > 19 && i % 2 != 0) {
-                    clockArr[i] = clockImgArr[14];
+                } else if (i < 11 && i % 2 != 0) {
+                    clockArr[i] = clockImgArr[9];
+                } else if (i == 11) {
+                    clockArr[i] = clockImgArr[11];
+                } else if (i > 11 && i % 2 != 0) {
+                    clockArr[i] = clockImgArr[10];
                 }
             }
 
+            //preloading functions
             function preloadImages(images, callback) {
                 var count = images.length;
                 if (count === 0) {
@@ -371,13 +367,17 @@
                 aferLoaded()
             });
 
+            // do all this crap after its loaded
             function aferLoaded() {
+                console.log('They loaded!');
+
                 $.each(clockImgArr, function (key, val) {
                     if (key > 0) {
                         $('#tweleveweeks_container ul').append('<li class="' + val + ' clockface" style="display:none"><img src="' + clockImgPNGArr[key] + '" ></li>');
                     }
 
-                });
+                })
+                //ANIMATE
                 $('#tweleveweeks_container img').ready(function () {
                     setTimeout(function () {
                         var clockAnim = setInterval(function () {
@@ -387,9 +387,9 @@
                                 clearInterval(clockAnim);
                             }
                             clockCount++;
-                        }, 40);
+                        }, 50);
                     }, 1000)
-                });
+                })
             }
         });
     </script>
