@@ -65,22 +65,22 @@
             <div class="row">
                 <div class="col-sm-6">
                     <ul class="list-unstyled subnavigation clearfix">
-                        <li>
+                        <li class="@(ViewBag.SelectedNode == "facebook" ? "active" : "")">
                             <a href="/bravecto/facebook">
                                 Facebook
                             </a>
                         </li>
-                        <li>
+                        <li class="@(ViewBag.SelectedNode == "twitter" ? "active" : "")">
                             <a href="/bravecto/twitter">
                                 Twitter
                             </a>
                         </li>
-                        <li>
+                        <li class="@(ViewBag.SelectedNode == "social-content" ? "active" : "")">
                             <a href="/bravecto/social-content">
                                 Social Content
                             </a>
                         </li>
-                        <li>
+                        <li class="@(ViewBag.SelectedNode == "social-tips" ? "active" : "")">
                             <a href="/bravecto/social-tips">
                                 Social Tips
                             </a>

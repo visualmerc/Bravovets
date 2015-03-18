@@ -74,6 +74,7 @@
         top: 70px;
     }
 
+        #subheader .subnavigation > li.active a,
         .header #top-nav.nav.nav-pills > li.active > a,
         .header #top-nav.nav.nav-pills > li > a:hover,
         .header #top-nav.nav.nav-pills > li > a:focus {
@@ -87,7 +88,6 @@
 
 #subheader {
     min-height: 30px;
-    padding: 5px 0;
     background-color: #EEE;
 }
 
@@ -203,7 +203,14 @@
         height: 300px;
     }
 
+    .jumbotron.unlinkedaccounts-page {
+        background: url(/Content/img/Bravecto_HP_UnlinkedAccounts_img1.jpg) no-repeat center;
+        background-size: cover;
+        background-position: 100% 0;
+        height: 300px;
+    }
 
+        .jumbotron.unlinkedaccounts-page h1,
         .jumbotron.resources-page h1,
         .jumbotron.contactus-page h1,
         .jumbotron.aboutus h1,
@@ -228,6 +235,7 @@
     top: 214px;
 }
 
+.jumbotron.unlinkedaccounts-page .jumbo-home-overlay,
 .jumbotron.resources-page .jumbo-home-overlay,
 .jumbotron.contactus-page .jumbo-home-overlay,
 .jumbotron.support-page .jumbo-home-overlay,
@@ -261,6 +269,7 @@
     margin: 25px 25px 0 25px;
 }
 
+.jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,
 .jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
 .jumbotron.support-page .bottom-jumbo-overlay,
@@ -328,7 +337,7 @@
     padding: 0;
     margin-bottom: 20px;
     text-align: left;
-    width:48%;
+    width: 48%;
 }
 
     .contacts-list .contact-item:nth-child(2n+1) {
@@ -814,6 +823,54 @@
 
 
 /* end*/
+
+/* Unlinked accounts */
+
+.static-body.unlinkedaccounts-body {
+    padding-bottom: 70px;
+    margin-bottom: 30px;
+}
+
+    .static-body.unlinkedaccounts-body.top {
+        margin-top: 90px;
+    }
+
+.unlinkedaccountbottom {
+    background: url(/Content/img/linkedaccounts-bottom.jpg) no-repeat center;
+    background-size: 100% auto;
+    background-position: 100% 30%;
+}
+
+.static-section.unlinkedaccountbottom div.static-overlay {
+    margin-top: 214px;
+}
+
+.static-body.unlinkedaccounts-body.grey {
+    background-color: #EFEFEF;
+}
+.static-body.unlinkedaccounts-body h2 {
+    color: #009994;
+    text-align: center;
+}
+.static-body.unlinkedaccounts-body img {
+    width:51px;
+    height:51px;
+}
+.static-body.unlinkedaccounts-body h3 {
+    color: #009994;
+    text-align: center;
+}
+
+.static-body.unlinkedaccounts-body p.header {
+    font-size:18px;
+    text-align: left;
+}
+
+.static-body.unlinkedaccounts-body p {
+    text-align: left;
+}
+
+/*end*/
 
 /* Social Content Page*/
 ul.social-tabs {
