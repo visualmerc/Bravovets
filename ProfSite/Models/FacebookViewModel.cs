@@ -9,5 +9,6 @@ namespace ProfSite.Models
     {
         public bool IsFacebookLinked { get; set; }
         public List<FacebookTimelinePost> Posts { get; set; }
+        public string UserName { get; set; }
     }
 }

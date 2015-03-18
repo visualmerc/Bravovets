@@ -68,6 +68,7 @@ namespace ProfSite.Controllers
             {
                 var facebookInfo = userDomainService.GetFacebookSocialIntegration(user);
                 var timeline = FacebookHelper.GetTimeline(facebookInfo, "");
+                model.UserName = facebookInfo.AccountName;
 
                 var posts = new List<FacebookTimelinePost>();
                 if (timeline.data != null)
@@ -196,6 +197,11 @@ namespace ProfSite.Controllers
         [ActionName("contact-us")]
         public ActionResult ContactUs()
         {
+            ViewBag.Countries = LanguageHelper.SupportedCountries().Select(c => new SelectListItem
+            {
+                Value = c.Code,
+                Text = c.DisplayName
+            });
             return View();
         }
 

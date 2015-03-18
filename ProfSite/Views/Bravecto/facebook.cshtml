@@ -1,4 +1,5 @@
-﻿@{
+﻿@model FacebookViewModel
+@{
     ViewBag.Title = "Facebook";
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
@@ -20,12 +21,12 @@
                     <div class="social-container withtabs facebook">
                         <h2>
                             <img src="~/Content/img/fb-icon-lg.png" />
-                            @Model
+                            @Model.UserName
                         </h2>
                         <div class="social-content">
 
                         </div>
-                        <a class="btn btn-default" href="https://www.facebook.com/@Model" target="_blank">
+                        <a class="btn btn-default" href="https://www.facebook.com/@Model.UserName" target="_blank">
                             VIEW FULL TIMELINE
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>

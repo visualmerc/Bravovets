@@ -196,6 +196,15 @@
         height: 300px;
     }
 
+    .jumbotron.resources-page {
+        background: url(/Content/img/support.jpg) no-repeat center;
+        background-size: cover;
+        background-position: 100% auto;
+        height: 300px;
+    }
+
+
+        .jumbotron.resources-page h1,
         .jumbotron.contactus-page h1,
         .jumbotron.aboutus h1,
         .jumbotron.products h1,
@@ -219,6 +228,7 @@
     top: 214px;
 }
 
+.jumbotron.resources-page .jumbo-home-overlay,
 .jumbotron.contactus-page .jumbo-home-overlay,
 .jumbotron.support-page .jumbo-home-overlay,
 .jumbotron.aboutus .jumbo-home-overlay {
@@ -251,6 +261,7 @@
     margin: 25px 25px 0 25px;
 }
 
+.jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
 .jumbotron.support-page .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay,
@@ -293,6 +304,81 @@
     text-align: center;
 }
 
+.contacts-container.static-body div.region-header {
+    margin-bottom: 30px;
+}
+
+    .contacts-container.static-body div.region-header h3 {
+        color: #009994;
+        margin: 5px 0;
+    }
+
+.contacts-container.static-body address {
+    margin-bottom: 30px;
+}
+
+    .contacts-container.static-body address em {
+        color: #394147;
+        display: block;
+        font-size: 16px;
+    }
+
+.contacts-list .contact-item {
+    background-color: #EFEFEF;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    width:48%;
+}
+
+    .contacts-list .contact-item:nth-child(2n+1) {
+        margin: 0 15px 20px 0;
+    }
+
+    .contacts-list .contact-item p {
+        margin: 3px 0;
+        font-size: 16px;
+    }
+
+        .contacts-list .contact-item p.title {
+            font-weight: bold;
+        }
+
+    .contacts-list .contact-item h4 {
+        background-color: #009994;
+        color: #FFF;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .contacts-list .contact-item h5 {
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+    .contacts-list .contact-item .contact-item-body {
+        padding: 20px 10px;
+    }
+
+    .contacts-list .contact-item .contact-detail-list span.contact-detail-label {
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+    }
+
+    .contacts-list .contact-item .contact-detail-list li {
+        border-bottom: 1px solid #DDD;
+        padding: 5px 0;
+    }
+
+        .contacts-list .contact-item .contact-detail-list li:last-child {
+            border-bottom: none;
+        }
+
+.load-more-row a.load-more {
+    font-size: 1.2em;
+}
 /**/
 /* About Us*/
 .aboutus-content {
@@ -495,6 +581,104 @@
 }
 
 /*end*/
+
+/* Resource page*/
+
+.static-body.resources-body {
+    text-align: left;
+    margin-top: 100px;
+}
+
+    .static-body.resources-body.grey {
+        background-color: #efefef;
+    }
+
+    .static-body.resources-body p {
+        text-align: left;
+    }
+
+    .static-body.resources-body h2 {
+        color: #009994;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .static-body.resources-body h3 {
+        color: #009994;
+    }
+
+.resources-body .checkbox-wrapper {
+    margin: 5px 0;
+}
+
+.resources-list .resource-item {
+    background-color: #EFEFEF;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 48%;
+}
+
+    .resources-list .resource-item:nth-child(2n+1) {
+        margin: 0 15px 20px 0;
+    }
+
+    .resources-list .resource-item p {
+        margin: 3px 0;
+        font-size: 16px;
+    }
+
+    .resources-list .resource-item h4 {
+        background-color: #009994;
+        color: #FFF;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .resources-list .resource-item h5 {
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+.resources-list .resource-item-body:after, .resources-list .resource-item-body:before {
+    content: " ";
+    display: table;
+}
+
+.resources-list .resource-item-body:after {
+    clear: both;
+}
+
+.resources-list .resource-item .resource-content {
+    float: left;
+    min-height: 220px;
+    position: relative;
+}
+
+    .resources-list .resource-item .resource-content .action-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .resources-list .resource-item .resource-content a.btn {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+.resources-list .resource-item .resource-media-item {
+    float: right;
+    margin-left: 20px;
+    width: 150px;
+    min-height: 220px;
+}
+
+.resources-list .resource-item .resource-item-body {
+    padding: 20px 10px;
+}
+
+/* end*/
 
 /* Support */
 .static-section.support-page {
