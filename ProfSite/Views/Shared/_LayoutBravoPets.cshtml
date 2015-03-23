@@ -1,0 +1,100 @@
+﻿@{ Layout = null;}
+@using bvResources = ProfSite.Resources.Resource
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/favicon.png" />
+
+    <!-- Typekit font is a close helvetica alternative. Replace with helvetica when available. -->
+    <!--
+    <script type="text/javascript" src="//use.typekit.net/nhs7hxx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bravectohome.css" rel="stylesheet" />
+    <link href="~/Content/bravopets.css" rel="stylesheet" />
+    @RenderSection("head", false)
+</head>
+<body>
+    <div class="circles-header"></div>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul id="top-nav" class="nav nav-pills">
+                    <li class="@(ViewBag.SelectedNode == "protection" ? "active" : "")">
+                        <a href="#protection">
+                            Protection
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#health">
+                            Health
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#safety">
+                            Safety
+                        </a>
+                    </li>
+                    <li class="faq">
+                        <a href="#faq">
+                            FAQs
+                        </a>
+                    </li>
+                    <li class="@(ViewBag.SelectedNode == "aboutus" ? "active" : "")" role="presentation"><a href="/bravecto/about-us">ABOUT US</a></li>
+                    <li class="@(ViewBag.SelectedNode == "contactus" ? "active" : "")" role="presentation"><a href="/bravecto/contact-us">CONTACT US</a></li>
+                </ul>
+            </nav>
+            <a href="/bravopets/index" class="navbar-brand bravovets">
+                <img src="~/images/logo-bravecto@2x.png" alt="BravoPets Logo" class="logo-bravecto">
+            </a>
+        </div>
+    </div>
+    <div id="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                   
+                </div>
+                <div class="col-sm-6 subheaderright">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="@ViewBag.ContainerClass">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <ul class="bottom-nav">
+                <li>
+                    <a href="/bravecto/index">Home</a>
+                </li>
+                <li>
+                    <a href="http://www.merck.com/about/how-we-operate/privacy/internet-privacy-policy.html?utm_source=Bravovets">PRIVACY</a>
+                </li>
+                <li>
+                    <a href="http://www.bravovets.com/termsandconditions">TERMS + CONDITIONS</a>
+                </li>
+                <li>
+                    <a href="/bravecto/sitemap">SITE MAP</a>
+                </li>
+                <li>
+                    <a href="/bravecto/contact-us">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
+    @RenderSection("scripts", false)
+</body>
+</html>

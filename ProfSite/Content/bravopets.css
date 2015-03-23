@@ -1,0 +1,104 @@
+﻿#subheader .subnavigation > li.active a,
+.header #top-nav.nav.nav-pills > li.active > a,
+.header #top-nav.nav.nav-pills > li > a:hover,
+.header #top-nav.nav.nav-pills > li > a:focus {
+    background-color: #712031;
+    color: #FFF;
+}
+
+#top-nav li.faq {
+    border-right: 1px solid #EEE;
+}
+
+.jumbo-home-overlay {
+    top: 238px;
+    background-color: rgba(113, 32, 49, 0.5);
+}
+
+.top-jumbo-overlay .right-clock-text {
+    position: relative;
+    height: 220px;
+}
+
+    .top-jumbo-overlay .right-clock-text h1 {
+        position: absolute;
+        top: 25%;
+    }
+
+.bottom-jumbo-overlay {
+    margin-top: 0;
+}
+
+    .bottom-jumbo-overlay h4 {
+        text-align: center;
+    }
+
+.jumbotron.bravopets-home {
+    background: url(/Content/img/Bravecto_BravoPets_header.jpg) no-repeat center;
+    background-size: cover;
+    background-position: 100% 26%;
+}
+
+#side-nav ul.nav li.active a {
+    background-color: rgba(113, 32, 49, 0.8);
+}
+
+.static-section.protection {
+    background: url(/Content/img/support.jpg) no-repeat center;
+    background-size: 100% auto;
+    margin-top: 0;
+}
+
+.static-section div.static-overlay.bgbordeaux {
+    background-color: rgba(113, 32, 49, 0.6);
+}
+
+.static-body.bravopets-advantage-body {
+    margin-bottom: 0;
+    padding-bottom: 70px;
+    padding-top: 50px;
+}
+
+    .static-body.bravopets-advantage-body.grey {
+        background-color: #efefef;
+    }
+
+.static-body.protection h2 {
+    color: #712031;
+}
+
+.bravopets-advantage-body .items h4 {
+    color: #712031;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.bottom-bravopets-watch-row {
+    margin-top: 50px;
+}
+
+    .bottom-bravopets-watch-row img {
+        float: left;
+        width: 280px;
+    }
+
+.bottom-bravopets-watch {
+    margin-left: 310px;
+    text-align: left !important;
+}
+
+    .bottom-bravopets-watch p {
+        text-align: left !important;
+        margin-bottom: 20px;
+    }
+
+    .bottom-bravopets-watch h3 {
+        margin-top: 0;
+        color: #712031;
+        text-align: left !important;
+    }
+
+    .bottom-bravopets-watch a {
+        margin-bottom: 20px;
+        display: inline-block;
+    }

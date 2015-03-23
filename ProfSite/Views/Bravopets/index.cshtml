@@ -1,0 +1,251 @@
+﻿@{
+    ViewBag.Title = "BravoPets";
+    ViewBag.SelectedNode = "protection";
+    Layout = "~/Views/Shared/_LayoutBravoPets.cshtml";
+}
+<div id="side-nav">
+    <ul class="nav list-unstyled">
+        <li class="active">
+            <a href="#home">&nbsp;</a>
+        </li>
+        <li class="">
+            <a href="#protection">&nbsp;</a>
+        </li>
+        <li class="">
+            <a href="#health">&nbsp;</a>
+        </li>
+        <li class="adherence">
+            <a href="#adherence">&nbsp;</a>
+        </li>
+    </ul>
+</div>
+
+<div id="home" class="bravopets-home">
+    <div class="jumbotron bravopets-home">
+        <div class="container">
+            <div class="jumbo-home-overlay">
+                <div class="row top-jumbo-overlay">
+                    <div class="col-md-3">
+                        <div id="tweleveweeks_container">
+                            <ul style="list-style:none;"></ul>
+                        </div>
+                        <h3 class="weeks">WEEKS</h3>
+                    </div>
+                    <div class="col-md-9 right-clock-text">
+                        <h1>Extend the picture of health.</h1>
+                    </div>
+                </div>
+                <div class="bottom-jumbo-overlay">
+                    <h4>
+                        Extend flea and tick protection up to 12 weeks with a single chew.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row marketing-row">
+            <p>
+                Tired of having to wait for traditional topical flea and tick treatments to dry before getting up close
+                to your dog? Accidentally miss treatments for months? Ask your vet today about the first and only
+                chewable flea and tick protection that tastes like a treat and lasts for up to 12 full weeks. Now, with
+                protection that works from the inside out, you never have to wait to snap the perfect selfie.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="protection">
+    <div class="static-section protection">
+        <div class="container">
+            <div class="static-overlay bgbordeaux">
+                <h2>PROTECTION</h2>
+            </div>
+        </div>
+    </div>
+    <div class="static-body protection">
+        <div class="container">
+            <h2>EXTEND A FAST-ACTING TREATMENT FOR MORE TIME TOGETHER.</h2>
+            <p>
+                Monthly topical flea and tick solutions require your dog to stay away from you and your family
+                while the traditional treatment dries and takes effect. But, with some treatments, this can take anywhere
+                from 8 to 18 hours. And, monthly treatments can leave gaps where your dog is unprotected. Cut out
+                the waiting and keep on playing. Ask your vet about the first and only chew to kill fleas and ticks
+                within 2 hours of administration and keep working for up to 12 weeks.
+            </p>
+            <div class="row">
+                <div class="bottom-bravopets-watch-row col-md-8 col-md-offset-2">
+                    <img src="/Content/img/Bravecto_BravoPets_videothumb.jpg">
+                    <div class="bottom-bravopets-watch">
+                        <h3>BRAVECTO OVERVIEW VIDEO</h3>
+                        <p>
+                            Lorem
+                        </p>
+                        <a href="#" class="btn btn-default">
+                            WATCH THE VIDEO
+                            <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                        </a>
+                        <br>
+                        <a href="#">
+                            Share this
+                            <i class="icon icon-share"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="static-body bravopets-advantage-body grey">
+    <div class="container items">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>THE LONGEST-LASTING<BR />CHEW EVER</h4>
+                <p>
+                    Keeps dogs protected for up to 12 weeks.*
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>RAPIDLY KILLS AND <br />CONTINUOUSLY PROTECTS</h4>
+                <p>
+                    Protects dogs from a wide range of fleas and ticks.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>WON'T<br />RINSE OFF</h4>
+                <p>
+                    Stays on while grooming washing or swimming.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>CLEAN AND<br /> EASY DOSING</h4>
+                <p>
+                    This means you can treat and hug.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>FEWER CHANCES<br /> TO FORGET</h4>
+                <p>
+                    Only 4 doses are required for full-year protection.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="http://placehold.it/50x50" />
+                <h4>POWERFUL PROTECTION<br />FROM BOTH</h4>
+                <p>
+                    Protection against both fleas and ticks in one tasty chews.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="health">
+    <div class="static-section protection">
+        <div class="container">
+            <div class="static-overlay bgbordeaux">
+                <h2>HEALTH</h2>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').scrollspy({ target: '#side-nav' });
+
+            var imagePATH = "/Content/img/", clockImgArr = [],
+                clockImgPNGArr = [],
+                clockArr = [],
+                clockCount = 0;
+
+            //images and li class names
+            clockImgArr[0] = 'clock_anim_04';
+            clockImgArr[1] = 'clock_anim_05';
+            clockImgArr[2] = 'clock_anim_06';
+            clockImgArr[3] = 'clock_anim_07';
+            clockImgArr[4] = 'clock_anim_08';
+            clockImgArr[5] = 'clock_anim_09';
+            clockImgArr[6] = 'clock_anim_10';
+            clockImgArr[7] = 'clock_anim_11';
+            clockImgArr[8] = 'clock_anim_12';
+            clockImgArr[9] = 'clock_anim_blur01';
+            clockImgArr[10] = 'clock_anim_blur10';
+            clockImgArr[11] = 'clock_anim_blur11';
+
+            //make names into images links
+            $.each(clockImgArr, function (key, val) {
+                clockImgPNGArr[key] = imagePATH + val + '.png';
+            })
+
+            //load the first image
+            $('#tweleveweeks_container ul').append('<li class="' + clockImgArr[0] + ' clockface" style="display:block"><img src="' + clockImgPNGArr[0] + '" ></li>');
+
+            //create animation order array
+            var n = 0;
+            for (var i = 0; i < 17; i++) {
+                if (i % 2 == 0) {
+                    clockArr[i] = clockImgArr[n];
+                    n++;
+                } else if (i < 11 && i % 2 != 0) {
+                    clockArr[i] = clockImgArr[9];
+                } else if (i == 11) {
+                    clockArr[i] = clockImgArr[11];
+                } else if (i > 11 && i % 2 != 0) {
+                    clockArr[i] = clockImgArr[10];
+                }
+            }
+
+            //preloading functions
+            function preloadImages(images, callback) {
+                var count = images.length;
+                if (count === 0) {
+                    callback();
+                }
+                var loaded = 0;
+                $(images).each(function () {
+                    $('<img>').attr('src', this).load(function () {
+                        loaded++;
+                        if (loaded === count) {
+                            callback();
+                        }
+                    });
+                });
+            };
+            preloadImages(clockImgPNGArr, function () {
+                aferLoaded()
+            });
+
+            // do all this crap after its loaded
+            function aferLoaded() {
+                console.log('They loaded!');
+
+                $.each(clockImgArr, function (key, val) {
+                    if (key > 0) {
+                        $('#tweleveweeks_container ul').append('<li class="' + val + ' clockface" style="display:none"><img src="' + clockImgPNGArr[key] + '" ></li>');
+                    }
+
+                })
+                //ANIMATE
+                $('#tweleveweeks_container img').ready(function () {
+                    setTimeout(function () {
+                        var clockAnim = setInterval(function () {
+                            $('.clockface').hide();
+                            $('.' + clockArr[clockCount]).show();
+                            if (clockCount >= clockArr.length - 1) {
+                                clearInterval(clockAnim);
+                            }
+                            clockCount++;
+                        }, 50);
+                    }, 1000)
+                })
+            }
+        });
+    </script>
+}
