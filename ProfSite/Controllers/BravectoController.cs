@@ -12,8 +12,6 @@ namespace ProfSite.Controllers
 {
     public class BravectoController : AbstractBaseController
     {
-
-
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var menu = BravectoMenu.CreateBravectoMenu(filterContext.ActionDescriptor.ActionName);
@@ -190,7 +188,16 @@ namespace ProfSite.Controllers
         [ActionName("unlinked-accounts")]
         public ActionResult UnLinkedAccounts()
         {
-            return View();
+            var model = new LinkedAccountsViewModel();
+
+            //TODO: Check for authentication
+            var userId = this.GetCurrentUserId();
+            var userDomainService = new BravoVetsUserDomainService();
+            var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
+
+            model.IsFacebookLinked = user.Veterinarian.IsFacebookLinked;
+            model.IsTwitterLinked = user.Veterinarian.IsTwitterLinked;
+            return View(model);
         }
 
         [HttpGet]

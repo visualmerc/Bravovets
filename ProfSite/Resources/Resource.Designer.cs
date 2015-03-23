@@ -1966,11 +1966,29 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Link your Facebook.
+        /// </summary>
+        public static string LinkYourFacebook {
+            get {
+                return ResourceManager.GetString("LinkYourFacebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Link Your Facebook Account.
         /// </summary>
         public static string LinkYourFacebookAccount {
             get {
                 return ResourceManager.GetString("LinkYourFacebookAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link your Twitter.
+        /// </summary>
+        public static string LinkYourTwitter {
+            get {
+                return ResourceManager.GetString("LinkYourTwitter", resourceCulture);
             }
         }
         
@@ -2668,11 +2686,29 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlink your Facebook.
+        /// </summary>
+        public static string UnlinkYourFacebook {
+            get {
+                return ResourceManager.GetString("UnlinkYourFacebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unlink Your Facebook Account.
         /// </summary>
         public static string UnlinkYourFacebookAccount {
             get {
                 return ResourceManager.GetString("UnlinkYourFacebookAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlink your Twitter.
+        /// </summary>
+        public static string UnlinkYourTwitter {
+            get {
+                return ResourceManager.GetString("UnlinkYourTwitter", resourceCulture);
             }
         }
         

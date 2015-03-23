@@ -55,6 +55,11 @@ namespace ProfSite.Controllers
             return View(new SelectCountry { ButtonText = Resource.SelectCountryButton, Info = Resource.SelectCountryInfo, BaseUrl = baseUrl, SupportedCountries = selectList });
         }
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // [ClaimsPrincipalPermission(SecurityAction.Demand, Operation = "AcceptedToc", Resource = "BravoVets")]
         public ActionResult Dashboard()
         {

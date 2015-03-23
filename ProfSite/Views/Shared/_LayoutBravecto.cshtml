@@ -135,5 +135,44 @@
     </footer>
     @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
     @RenderSection("scripts", false)
+    @if (ViewBag.IncludeSocialScript != null && (bool)ViewBag.IncludeSocialScript == true)
+    {
+        <script type="text/javascript">
+        function toggleFacebook(isLinked) {
+            if (isLinked) {
+                if (confirm('@bvResources.ConfirmDelete')) {
+                    window.location.href = "/facebook/delete";
+                }
+            } else {
+                window.location.href = "/facebook/oauthredirect";
+            }
+        }
+
+        function toggleTwitter(isLinked) {
+            if (isLinked) {
+                if (confirm('@bvResources.ConfirmDelete')) {
+                    window.location.href = "/twitter/delete";
+                }
+            } else {
+                window.location.href = "/twitter/oauthredirect";
+            }
+        }
+        $(document).ready(function () {
+            $('a.link-socialaccount').on('click', function (e) {
+                e.preventDefault();
+                var $this = $(this);
+                switch ($this.data('type')) {
+                    case 'twitter':
+                        toggleTwitter($this.data('islinked'));
+                        break;
+                    case 'facebook':
+                        toggleFacebook($this.data('islinked'));
+                        break;
+                }
+            });
+
+        });
+        </script>
+    }
 </body>
 </html>

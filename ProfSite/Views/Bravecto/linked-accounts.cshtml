@@ -1,6 +1,9 @@
 ﻿@model LinkedAccountsViewModel
+@using bvResources = ProfSite.Resources.Resource
+
 @{
     ViewBag.Title = "Linked Accounts";
+    ViewBag.IncludeSocialScript = true;
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
 <div class="container">
@@ -107,8 +110,15 @@
     <div class="row simpleheaderrow">
         <h3>Now you're ready to connect your Facebook page to BravoVets!</h3>
         <p>
-            <a class="btn btn-default" href="#" role="button">
-                LINK YOUR FACEBOOK
+            <a class="btn btn-default link-socialaccount" href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsFacebookLinked)
+                {
+                    <text>@Resource.UnlinkYourFacebook</text>
+                }
+                else
+                {
+                    <text>@Resource.LinkYourFacebook</text>
+                }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
         </p>
@@ -193,8 +203,15 @@
     <div class="row simpleheaderrow">
         <h3>Now you're ready to connect your Twitter to BravoVets!</h3>
         <p>
-            <a class="btn btn-default" href="#" role="button">
-                LINK YOUR TWITTER
+            <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsTwitterLinked)
+                {
+                    <text>@Resource.UnlinkYourTwitter</text>
+                }
+                else
+                {
+                    <text>@Resource.LinkYourTwitter</text>
+                }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
         </p>

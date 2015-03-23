@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "unlinkedaccounts";
+﻿@model LinkedAccountsViewModel
+
+@{
+    ViewBag.Title = "Bravecto";
+    ViewBag.IncludeSocialScript = true;
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
 
@@ -42,7 +45,7 @@
             <h2>EXPAND YOUR SOCIAL VISIBILITY</h2>
         </div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 link-youraccount-border">
                 <div class="row">
                     <div class="col-md-2">
                         <img src="~/Content/img/fb-icon-lg.png" />
@@ -52,7 +55,7 @@
                         <p>
                             The key to reaching pet owners in your community is to be present where they are.
                             Facebook, with its more than 1.25 billion members, makes that a high probability.
-                            <a href="/">Link your Facebook</a> to share content that can help you grow relationships with your customers
+                            <a href="#" class="link-socialaccount" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">Link your Facebook</a> to share content that can help you grow relationships with your customers
                             by demonstrating your clinic's expertise, knowledge and caring on a personal level.
                         </p>
                     </div>
@@ -65,7 +68,7 @@
                         <p class="header">LEAD THE DISCUSSION</p>
                         <p>
                             Twitter can be an excellent platform to establish yourself and your clinic as an
-                            authority in leading-edge veterinary treatments. <a href="/">Link your Twitter</a>
+                            authority in leading-edge veterinary treatments. <a href="#" class="link-socialaccount" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">Link your Twitter</a>
                             to build and reach an audience of followers - of both your customers and others around the world
                             - with the latest news and trends relevant to animal health.
                         </p>
@@ -78,15 +81,27 @@
                     <div class="col-md-10">
                         <p class="header">UPDATE YOUR PROFILE</p>
                         <p>
-                            <a href="/">Update your profile</a> and allow Facebook and Twitter to link
+                            <a href="/editprofile">Update your profile</a> and allow Facebook and Twitter to link
                             your business pages with previous social information on BravoVets. None of the content
                             of your personal accounts will be seen by fans/followers of your business pages.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 link-youraccount">
                 <h3>LINK YOUR SOCIAL<br /> ACCOUNTS HERE</h3>
+                <a class="btn btn-default link-socialaccount" href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+                    LINK YOUR FACEBOOK
+                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                </a>
+                <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+                    LINK YOUR TWITTER
+                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                </a>
+                <a class="btn btn-default" href="/editprofile">
+                    UPDATE YOUR PROFILE
+                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </div>
@@ -165,8 +180,15 @@
     <div class="row simpleheaderrow">
         <h3>Now you're ready to connect your Facebook page to BravoVets!</h3>
         <p>
-            <a class="btn btn-default" href="#" role="button">
-                LINK YOUR FACEBOOK
+            <a class="btn btn-default link-socialaccount" href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsFacebookLinked)
+                {
+                    <text>@Resource.UnlinkYourFacebook</text>
+                }
+                else
+                {
+                    <text>@Resource.LinkYourFacebook</text>
+                }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
         </p>
@@ -251,8 +273,15 @@
     <div class="row simpleheaderrow">
         <h3>Now you're ready to connect your Twitter to BravoVets!</h3>
         <p>
-            <a class="btn btn-default" href="#" role="button">
-                LINK YOUR TWITTER
+            <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsTwitterLinked)
+                {
+                    <text>@Resource.UnlinkYourTwitter</text>
+                }
+                else
+                {
+                    <text>@Resource.LinkYourTwitter</text>
+                }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
         </p>

@@ -248,6 +248,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BravectoController.cs" />
+    <Compile Include="Controllers\BravopetsController.cs" />
     <Compile Include="Controllers\BravovetsController.cs" />
     <Compile Include="Controllers\BravovetsWidgetsController.cs" />
     <Compile Include="Controllers\FacebookController.cs" />
@@ -392,6 +393,8 @@
     <Content Include="Content\img\adherence.jpg" />
     <Content Include="Content\img\Bravecto_ContactUs_header.jpg" />
     <Content Include="Content\img\Bravecto_FB Message_sidebarimg1.jpg" />
+    <Content Include="Content\img\Bravecto_HP_UnlinkedAccounts_img.jpg" />
+    <Content Include="Content\img\Bravecto_HP_UnlinkedAccounts_img1.jpg" />
     <Content Include="Content\img\Bravecto_Support_greenbgimg.jpg" />
     <Content Include="Content\img\Bravecto_Support_img2.jpg" />
     <Content Include="Content\img\Bravecto_Support_img3.jpg" />
@@ -904,6 +907,8 @@
     <Content Include="Views\Bravecto\unlinked-accounts.cshtml" />
     <Content Include="Views\Bravecto\support.cshtml" />
     <Content Include="Views\Bravecto\resources.cshtml" />
+    <Content Include="Views\Shared\_LayoutBravoPets.cshtml" />
+    <Content Include="Views\Bravopets\index.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

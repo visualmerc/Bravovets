@@ -14,9 +14,13 @@
 .btn .arrow-wrapper {
     background-color: #ff9400;
     display: inline-block;
-    margin-right: -20px;
     margin-left: 5px;
     width: 40px;
+    margin-right: -20px;
+}
+
+.link-socialaccount {
+    text-transform: uppercase;
 }
 
 .blue {
@@ -87,7 +91,8 @@
     }
 
 #subheader {
-    min-height: 30px;
+    padding:5px 0;
+    min-height:40px;
     background-color: #EEE;
 }
 
@@ -848,21 +853,25 @@
 .static-body.unlinkedaccounts-body.grey {
     background-color: #EFEFEF;
 }
+
 .static-body.unlinkedaccounts-body h2 {
     color: #009994;
     text-align: center;
 }
+
 .static-body.unlinkedaccounts-body img {
-    width:51px;
-    height:51px;
+    width: 51px;
+    height: 51px;
 }
+
 .static-body.unlinkedaccounts-body h3 {
     color: #009994;
     text-align: center;
 }
 
 .static-body.unlinkedaccounts-body p.header {
-    font-size:18px;
+    font-size: 22px;
+    font-weight: bold;
     text-align: left;
 }
 
@@ -870,6 +879,24 @@
     text-align: left;
 }
 
+.unlinkedaccounts-body .link-youraccount {
+    padding-left: 40px;
+}
+
+    .unlinkedaccounts-body .link-youraccount a {
+        display: block;
+        margin: 30px 0;
+    }
+
+        .unlinkedaccounts-body .link-youraccount a span {
+            position: absolute;
+            right: 0;
+        }
+
+.link-youraccount-border {
+    border-right: 1px solid #DDD;
+    margin-top: 20px;
+}
 /*end*/
 
 /* Social Content Page*/
