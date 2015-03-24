@@ -374,6 +374,7 @@
     <Content Include="Content\admin.css" />
     <Content Include="Content\blocks-custom.css" />
     <Content Include="Content\bravectohome.css" />
+    <Content Include="Content\bravopets.css" />
     <Content Include="Content\calendartemplate\day.html" />
     <Content Include="Content\fileupload\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\fileupload\jquery.fileupload-ui.css" />
@@ -388,9 +389,12 @@
     <Content Include="Content\fonts\bravoicons.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\rotis_sansserif_std_light.svg" />
+    <Content Include="Content\img\3_5milbooklet.png" />
     <Content Include="Content\img\aboutusheader.jpg" />
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
+    <Content Include="Content\img\Bravecto_BravoPets_header.jpg" />
+    <Content Include="Content\img\Bravecto_BravoPets_videothumb.jpg" />
     <Content Include="Content\img\Bravecto_ContactUs_header.jpg" />
     <Content Include="Content\img\Bravecto_FB Message_sidebarimg1.jpg" />
     <Content Include="Content\img\Bravecto_HP_UnlinkedAccounts_img.jpg" />
@@ -401,6 +405,10 @@
     <Content Include="Content\img\Bravecto_Support_img4.jpg" />
     <Content Include="Content\img\Bravecto_Support_img7.jpg" />
     <Content Include="Content\img\Bravecto_Support_rolethumbnail.jpg" />
+    <Content Include="Content\img\BravoPets_logo.png" />
+    <Content Include="Content\img\bug_icon.png" />
+    <Content Include="Content\img\calendar-alert_icon.png" />
+    <Content Include="Content\img\calendar_icon.png" />
     <Content Include="Content\img\clock_anim_00.png" />
     <Content Include="Content\img\clock_anim_01.png" />
     <Content Include="Content\img\clock_anim_02.png" />
@@ -417,12 +425,16 @@
     <Content Include="Content\img\clock_anim_blur01.png" />
     <Content Include="Content\img\clock_anim_blur10.png" />
     <Content Include="Content\img\clock_anim_blur11.png" />
+    <Content Include="Content\img\clock_icon.png" />
+    <Content Include="Content\img\hand_icon.png" />
     <Content Include="Content\img\linkedaccounts-bottom.jpg" />
     <Content Include="Content\img\linkedaccounts-top.jpg" />
     <Content Include="Content\img\extralargedogs.png" />
     <Content Include="Content\img\fb-icon-lg.png" />
     <Content Include="Content\img\largedogs.png" />
     <Content Include="Content\img\mediumsizeddogs.png" />
+    <Content Include="Content\img\minus_icon.png" />
+    <Content Include="Content\img\plus_icon.png" />
     <Content Include="Content\img\productsheader.jpg" />
     <Content Include="Content\img\FB-icon.png" />
     <Content Include="Content\img\flipclock.png" />
@@ -433,6 +445,7 @@
     <Content Include="Content\img\innovation.jpg" />
     <Content Include="Content\img\loading.gif" />
     <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\img\raindrop_icon.png" />
     <Content Include="Content\img\smalldogs.jpg" />
     <Content Include="Content\img\support-icon.jpg" />
     <Content Include="Content\img\support.jpg" />

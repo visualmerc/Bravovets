@@ -30,6 +30,9 @@
 .orange {
     color: #f28c00;
 }
+a.orange:hover {
+    color:#f28c00;
+}
 
 .purple {
     color: #512178;
@@ -91,10 +94,13 @@
     }
 
 #subheader {
-    padding:5px 0;
-    min-height:40px;
+    min-height: 40px;
     background-color: #EEE;
 }
+
+    #subheader.withpadding {
+        padding: 5px 0;
+    }
 
     #subheader span {
         font-size: 16px;

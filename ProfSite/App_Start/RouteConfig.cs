@@ -85,7 +85,7 @@ namespace ProfSite
             LanguageRoute.MapSubdomainRoute(routes, "domain-route-admin", "admin/{action}/{id}", new { controller = "Admin", action = "Dashboard", id = UrlParameter.Optional });
  
 
-            LanguageRoute.MapSubdomainRoute(routes, "domain-route-bravecto", "bravecto/{action}/{id}", new { controller = "Bravecto", action = "Home", id = UrlParameter.Optional });
+            LanguageRoute.MapSubdomainRoute(routes, "domain-route-bravecto", "bravecto/{action}/{id}", new { controller = "Bravecto", action = "index", id = UrlParameter.Optional });
 
             LanguageRoute.MapSubdomainRoute(routes, "domain-route-bravopets", "bravopets/{action}/{id}", new { controller = "bravopets", action = "index", id = UrlParameter.Optional });
             

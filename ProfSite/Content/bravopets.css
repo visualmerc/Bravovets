@@ -6,6 +6,15 @@
     color: #FFF;
 }
 
+a.navbar-brand.bravopets {
+    padding: 11px 0 0 15px;
+    min-height: 115px;
+}
+
+.logo-bravopets {
+    padding: 25px;
+}
+
 #top-nav li.faq {
     border-right: 1px solid #EEE;
 }
@@ -44,7 +53,23 @@
 }
 
 .static-section.protection {
+    background: url(/Content/img/adherence.jpg) no-repeat center;
+    background-size: 100% auto;
+    margin-top: 0;
+}
+
+.static-section.health {
     background: url(/Content/img/support.jpg) no-repeat center;
+    background-size: 100% auto;
+    margin-top: 0;
+}
+
+.static-body.protection {
+    padding-bottom: 90px;
+}
+
+.static-section.safety {
+    background: url(/Content/img/innovation.jpg) no-repeat center;
     background-size: 100% auto;
     margin-top: 0;
 }
@@ -63,6 +88,7 @@
         background-color: #efefef;
     }
 
+.static-body.safety h2,
 .static-body.protection h2 {
     color: #712031;
 }
@@ -71,6 +97,10 @@
     color: #712031;
     font-size: 22px;
     margin-top: 20px;
+}
+
+.bravopets-advantage-body .items .row:first-child {
+    margin-bottom: 30px;
 }
 
 .bottom-bravopets-watch-row {
@@ -102,3 +132,98 @@
         margin-bottom: 20px;
         display: inline-block;
     }
+
+.health-items {
+    margin-top: 50px;
+    text-align: left;
+}
+
+    .health-items h4 {
+        color: #009994;
+        margin-top: 20px;
+    }
+
+.safety-list-items-row {
+    margin-top: 50px;
+}
+
+    .safety-list-items-row p {
+        text-align: left;
+    }
+
+ul.safety-list > li {
+    padding: 10px 0;
+    border-bottom: 1px solid #DDD;
+}
+
+ul.safety-list li:first-child {
+    border-top: 1px solid #DDD;
+}
+
+ul.safety-list li p {
+    float: left;
+    padding-left: 20px;
+}
+
+ul.safety-list li span.label {
+    background-color: #712031;
+    padding: 8px;
+    border-radius: 50%;
+    float: left;
+}
+
+ul.safety-list li p span.header {
+    display: block;
+    font-family: 20px;
+    font-weight: bold;
+}
+
+ul.faq-list {
+    margin-top: 30px;
+}
+
+    ul.faq-list > li {
+        margin: 5px 0;
+    }
+
+        ul.faq-list > li:hover {
+            cursor: pointer;
+        }
+
+        ul.faq-list > li div.question {
+            padding: 10px;
+            background-color: #EEE;
+        }
+
+            ul.faq-list > li div.question p {
+                text-align: left;
+                float: left;
+            }
+
+        ul.faq-list > li div.content p {
+            text-align: left;
+            padding: 10px;
+        }
+
+        ul.faq-list > li img {
+            float: right;
+            margin: 10px 0;
+        }
+
+        ul.faq-list > li div.question:after, ul.faq-list > li div.question:before {
+            content: " ";
+            display: table;
+        }
+
+        ul.faq-list > li div.question:after {
+            clear: both;
+        }
+
+        ul.faq-list > li.active div.question {
+            background-color: #712031;
+            color: #FFF;
+        }
+
+        ul.faq-list > li div.content {
+            display: none;
+        }
