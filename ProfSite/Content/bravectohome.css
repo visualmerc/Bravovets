@@ -30,8 +30,9 @@
 .orange {
     color: #f28c00;
 }
+
 a.orange:hover {
-    color:#f28c00;
+    color: #f28c00;
 }
 
 .purple {
@@ -122,7 +123,7 @@ a.orange:hover {
 
     #subheader .dropdown-menu {
         left: auto;
-        right: 0;
+        right: 42px;
         padding: 0;
     }
 
@@ -600,6 +601,21 @@ a.orange:hover {
     font-size: 26px;
 }
 
+.social-content-column h3 {
+    color: #009994;
+    font-size: 28px;
+    margin-top: 0;
+}
+.social-content-column .item {
+    border-bottom:1px solid #EEE;
+    padding:10px 0;
+}
+.social-content-column h4 {
+    font-weight:bold;
+}
+.social-content-column a.share-this {
+    color:#f28c00;
+}
 /*end*/
 
 /* Resource page*/
@@ -932,6 +948,39 @@ ul.social-tabs {
 
 .social-container.withtabs {
     margin-top: 0;
+}
+
+.social-post .avatar-wrapper {
+    background-repeat: no-repeat;
+    top:10px;
+}
+
+.social-post-dialog label {
+    color: #f28c00;
+}
+
+#twitter-more,
+.social-post-dialog .modal-footer .btn,
+form.form-reply button.btn-primary {
+    background-color: #f28c00;
+    color: #fff;
+    border: 0 none;
+}
+
+.load-btn-wrapper {
+    margin-bottom: 20px;
+}
+
+#feed .twitter li.social-post a {
+    color: #f28c00;
+}
+
+#post-to-twitter {
+    width: 100%;
+}
+
+#twitter {
+    padding: 10px;
 }
 /* */
 

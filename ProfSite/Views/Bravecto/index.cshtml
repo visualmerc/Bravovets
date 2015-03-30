@@ -78,7 +78,7 @@
                     <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                         VET LOGIN
                     </a>
-                    <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                    <ul id="login-menu" class="dropdown-menu" role="menu" aria-labelledby="drop4">
                         <li>
                             <div id="login-wrapper">
                                 <div class="row">
@@ -142,7 +142,7 @@
                     </h2>
                     <p>Get access to exclusive tools and resources to help you connect with and educate your customers.</p>
                     <p>
-                        <a class="btn btn-default" href="#" role="button">
+                        <a class="btn btn-default" href="/bravecto/support" role="button">
                             READ MORE
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
@@ -155,7 +155,7 @@
                     </h2>
                     <p>Learn about the breakthrough treatment that extends flea and tick protection up to 12 weeks.</p>
                     <p>
-                        <a class="btn btn-default" href="#" role="button">
+                        <a class="btn btn-default" href="/bravecto/innovation" role="button">
                             READ MORE
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
@@ -168,7 +168,7 @@
                     </h2>
                     <p>Close adherence gaps with extended protection, so there are fewer chances for pet owners to forget.</p>
                     <p>
-                        <a class="btn btn-default" href="#" role="button">
+                        <a class="btn btn-default" href="/bravecto/adherence" role="button">
                             READ MORE
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
@@ -218,11 +218,13 @@
             <h2 class="blue">IMPROVE COMMUNICATION WITH CUSTOMERS AND ENHANCE YOUR PRACTICE.</h2>
             <p>
                 Stay up to date with clinical research, expand your social media visibility, and create new and stronger customer
-                relationships when you partner with us. <span class="orange">Contact your sales representative</span> today to learn
+                relationships when you partner with us. <a href="/bravecto/contact-us">
+                    <span class="orange">Contact your sales representative</span>
+                </a> today to learn
                 how you can grow your relationship with new and existing customers or log in now.
             </p>
             <p>
-                <a href="/account/login">
+                <a href="" class="login-link">
                     LOG IN TO LEARN MORE
                     <i class="icon icon-arrow-right"></i>
                 </a>
@@ -240,11 +242,11 @@
             <h2 class="purple">TAKE EFFICACY FURTHER THAN EVER BEFORE WITH THE LATEST INNOVATION IN TREATMENT</h2>
             <p>
                 Now it's possible to effectively protect against fleas and ticks for a full 12 weeks with a single chew.
-                That's about 3X longer than any other chew ever developed. <span class="orange">Contact your sales representative</span> today to learn
+                That's about 3X longer than any other chew ever developed. <a href="/bravecto/contact-us"><span class="orange">Contact your sales representative</span></a> today to learn
                 more about this innovative alternative to monthly OTC treatments or log in now.
             </p>
             <p>
-                <a href="/account/login">
+                <a href="" class="login-link">
                     LOG IN TO LEARN MORE
                     <i class="icon icon-arrow-right"></i>
                 </a>
@@ -263,11 +265,13 @@
             <h2 class="red">PREVENT GAPS IN COMPLIANCE WITH FEWER TREATMENTS TO FORGET</h2>
             <p>
                 The average dog is treated for fleas and ticks only 2.8 months out of the year. Help improve compliance by giving
-                pet owners fewer chances to forget with a treatment that lasts 12 full weeks. <span class="orange">Contact your sales representative</span> today to learn
+                pet owners fewer chances to forget with a treatment that lasts 12 full weeks. <a href="/bravecto/contact-us">
+                    <span class="orange">Contact your sales representative</span>
+                </a> today to learn
                 today to learn more about preventing gaps in protection for every dog you treat or log in now.
             </p>
             <p>
-                <a href="/account/login">
+                <a href="" class="login-link">
                     LOG IN TO LEARN MORE
                     <i class="icon icon-arrow-right"></i>
                 </a>
@@ -299,11 +303,18 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.dropdown-toggle').dropdown();
-
-            $('.dropdown-menu input, .dropdown-menu label, .dropdown-menu button, #login-wrapper').click(function (e) {
+            $('.dropdown-menu').click(function (e) {
                 e.stopPropagation();
             });
             $('body').scrollspy({ target: '#side-nav' });
+
+            $('.login-link').on('click', function (e) {
+                e.preventDefault();
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                setTimeout(function () {
+                    $('.dropdown-toggle').dropdown('toggle');
+                }, 1000);
+            });
 
             var imagePATH = "/Content/img/", clockImgArr = [],
                 clockImgPNGArr = [],
@@ -367,10 +378,7 @@
                 aferLoaded()
             });
 
-            // do all this crap after its loaded
             function aferLoaded() {
-                console.log('They loaded!');
-
                 $.each(clockImgArr, function (key, val) {
                     if (key > 0) {
                         $('#tweleveweeks_container ul').append('<li class="' + val + ' clockface" style="display:none"><img src="' + clockImgPNGArr[key] + '" ></li>');

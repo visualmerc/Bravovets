@@ -34,12 +34,12 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="social-container twitter">
+            <div id="feed" class="social-container twitter">
                 <h2>
                     <img src="~/Content/img/twitter-icon-lg.png" />
                     TWITTER
                 </h2>
-                <div class="social-content">
+                <div id="twitter" class="social-content twitter">
                     <ul class="twitter-timeline social-feed list-unstyled">
                         @foreach (var tweet in Model.Tweets)
                         {
@@ -217,3 +217,23 @@
         </p>
     </div>
 </div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jquery-plugins")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#twitter").twitterTimeline({
+                loadTimeline: false,
+                callback: function () {
+                    $('#post-to-twitter').addClass('btn-default');
+                }
+            });
+            $('.btn-twitter-reply').on("click", function (e) {
+                e.preventDefault();
+                var post = $(this).parent('.social-post');
+                post.find('.post-reply').removeClass('collapsed');
+                post.find('.post-reply').find('textarea').focus();
+            });
+        });
+    </script>
+}

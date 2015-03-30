@@ -4,7 +4,10 @@
     ViewBag.SelectedNode = "twitter";
     Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
 }
-
+@section head {
+    <style type="text/css">
+    </style>
+}
 <div class="container">
     <div class="row simpleheaderrow">
         <h2>TWITTER</h2>
@@ -24,8 +27,7 @@
                             <img src="~/Content/img/twitter-icon-lg.png" />
                             @@@Model.UserName
                         </h2>
-                        <div class="social-content">
-                            @{Html.RenderAction("timeline", "twitter");}
+                        <div class="social-content" id="twitter">
                         </div>
                         <a class="btn btn-default" href="https://www.twitter.com/@Model.UserName" target="_blank">
                             VIEW FULL TIMELINE
@@ -35,22 +37,56 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="tweet">
                     <div class="social-container withtabs twitter">
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 social-content-column">
             <h3>LATEST SOCIAL CONTENT</h3>
+            <div class="item">
+                <h4>LOREM IPSUM DOLOR SIT</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget rutrum augue, volutpat facilisis enim. Pellentesque porttitor eleifend felis eget varius. Aliquam interdum convallis nulla, non bibendum arcu auctor vel. Mauris quis lacinia nibh. Donec faucibus rutrum interdum
+                </p>
+                <a href="#" class="share-this">
+                    Share this
+                    <i class="icon icon-share"></i>
+                </a>
+            </div>
+            <div class="item">
+                <h4>LOREM IPSUM DOLOR SIT</h4>
+                <p>
+                    <img src="~/Content/img/Bravecto_BravoPets_videothumb.jpg" />
+                </p>
+                <a href="#" class="share-this">
+                    Share this
+                    <i class="icon icon-share"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 @section scripts {
+    @Scripts.Render("~/bundles/fileupload")
+    @Scripts.Render("~/bundles/jquery-plugins")
     <script type="text/javascript">
         $(document).ready(function () {
             $('.nav-tabs a').click(function (e) {
                 e.preventDefault()
                 $(this).tab('show')
-            })
+            });
+            $("#twitter").twitterTimeline({
+                callback: function () {
+                    $('#post-to-twitter').addClass('btn-default');
+                }
+            });
+            $('.btn-twitter-reply').on("click", function (e) {
+                e.preventDefault();
+                var post = $(this).parent('.social-post');
+                post.find('.post-reply').removeClass('collapsed');
+                post.find('.post-reply').find('textarea').focus();
+            });
         });
     </script>
 }

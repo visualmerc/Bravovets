@@ -4,7 +4,7 @@
 (function ($) {
     $.extend($.ui, { TwitterTimeline: {} });
 
-    function TwitterTimeline() {
+    function TwitterTimeline(options) {
         this.timelineUrl = null;
         this.replyUrl = null;
         this.retweetUrl = null;
@@ -26,10 +26,16 @@
             this.timelineUrl = allOptions.timelineUrl;
             this.replyUrl = allOptions.replyUrl;
             this.retweetUrl = allOptions.retweetUrl;
+            this.loadTimeline = allOptions.loadTimeline != undefined ? allOptions.loadTimeline : true;
 
             this.timelineElement = control;
+            this.callback = options.callback != undefined ? options.callback : null;
 
-            this._timeline();
+            if (this.loadTimeline === true) {
+                this._timeline();
+            } else {
+                this._bindEvents(this.timelineElement, this);
+            }
             return this;
         },
         _bindPostToTwitter: function (self) {
@@ -52,6 +58,9 @@
                     self._nextPage(self);
                     self._bindPostToTwitter(self);
                     self._bindRefresh(self);
+                    if (self.callback) {
+                        self.callback.call(this);
+                    }
                     loading.hide();
                 }
             });
@@ -67,7 +76,7 @@
         },
         _nextPage: function (self) {
 
-            var nextLink = $("#twitter-more");
+            var nextLink = $("#twitter-more"), self = this;
 
             nextLink.click(function (event) {
                 event.preventDefault();
@@ -98,7 +107,9 @@
 
                         var newElements = $(source).find("li.social-post").appendTo(".twitter-timeline");
                         loadingClone.remove();
-                        self._bindEvents(newElements, self);
+                        //self._bindEvents(newElements, self);
+                        self.timelineElement = $(".twitter-timeline");
+                        self._bindEvents(self.timelineElement, self);
                     }
                 });
 
