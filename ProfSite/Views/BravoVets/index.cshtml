@@ -1,0 +1,79 @@
+﻿@{ Layout = null;}
+@using bvResources = ProfSite.Resources.Resource
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@bvResources.Bravecto_Homepage_Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/Images/favicon.png" />
+
+    <!-- Typekit font is a close helvetica alternative. Replace with helvetica when available. -->
+    <!--
+    <script type="text/javascript" src="//use.typekit.net/nhs7hxx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+    @Styles.Render("~/Content/css", "~/Content/bravectocss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="circles-header"></div>
+    <div class="container"></div>
+    <div class="">
+        <div class="selectsitebg">
+            <div class="container">
+                <div class="jumbo-home-overlay">
+                    <div class="row top-jumbo-overlay">
+                        <h1>Extend super-long lasting protection in a flash.</h1>
+                    </div>
+                    <div class="bottom-jumbo-overlay">
+                        <h4>
+                            Extend flea and tick protection up to 12 weeks with a single chew.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row selector-row">
+                    <div class="col-md-6">
+                        <div class="selection-panel">
+                            <h3>VETERINARY<br />PROFESSIONALS</h3>
+                            <p>
+                                Get the support you need to prescribe safe,<br />
+                                broad-spectrum protection to all dogs that acts<br />
+                                faster and lasts longer - no matter what adventures they get into.
+                            </p>
+                            <p>
+                                <a href="/bravecto" class="btn btn-default">
+                                    GO TO VET SITE
+                                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="selection-panel">
+                            <h3>PET<br />OWNERS</h3>
+                            <p>
+                                Make sure your sidekick stays protected,<br />
+                                from the backyard to the deepest of<br />
+                                woods, with a chew that acts in a flash<br />
+                                and lasts up to 12 weeks.
+                            </p>
+                            <p>
+                                <a href="/bravopets" class="btn btn-default">
+                                    GO TO OWNER SITE
+                                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="selectsitefooter"></footer>
+</body>
+</html>

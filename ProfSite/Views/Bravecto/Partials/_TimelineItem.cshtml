@@ -2,18 +2,18 @@
 
 @if (Model.Type == "status")
 {
-    @Html.Partial("StatusUpdate", Model)
+    @Html.Partial("Partials/StatusUpdate", Model)
 }
 else if (Model.Type == "link")
 {
-    @Html.Partial("LinkUpdate", Model)
+    @Html.Partial("Partials/LinkUpdate", Model)
 }
 else if (Model.Type == "photo")
 {
-    @Html.Partial("PhotoUpdate", Model)
+    @Html.Partial("Partials/PhotoUpdate", Model)
 }
 else if (Model.Type == "swf" || Model.Type == "video")
 {
-    @Html.Partial("VideoUpdate", Model)
+    @Html.Partial("Partials/VideoUpdate", Model)
 }
 

@@ -55,31 +55,38 @@ namespace ProfSite.Controllers
         public ActionResult Facebook()
         {
             var model = new FacebookViewModel();
+            model.Timeline = new FacebookTimeline { };
             var userDomainService = new BravoVetsUserDomainService();
             var userId = this.GetCurrentUserId();
 
             var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
 
             model.IsFacebookLinked = user.Veterinarian.IsFacebookLinked;
+            model.Timeline.AccountLinked = model.IsFacebookLinked;
 
             if (model.IsFacebookLinked)
             {
                 var facebookInfo = userDomainService.GetFacebookSocialIntegration(user);
-                var timeline = FacebookHelper.GetTimeline(facebookInfo, "");
+                //var timeline = FacebookHelper.GetTimeline(facebookInfo, "");
+
+                var fbUser = FacebookHelper.GetProfile(facebookInfo);
+                if (fbUser != null)
+                    model.FacebookName = fbUser.first_name;
+
                 model.UserName = facebookInfo.AccountName;
 
-                var posts = new List<FacebookTimelinePost>();
-                if (timeline.data != null)
-                {
-                    foreach (FacebookHomeItemModel item in timeline.data)
-                    {
-                        if (item.type == "status" && string.IsNullOrEmpty(item.message))
-                            continue;
+                //var posts = new List<FacebookTimelinePost>();
+                //if (timeline.data != null)
+                //{
+                //    foreach (FacebookHomeItemModel item in timeline.data)
+                //    {
+                //        if (item.type == "status" && string.IsNullOrEmpty(item.message))
+                //            continue;
 
-                        posts.Add(new FacebookTimelinePost(item));
-                    }
-                }
-                model.Posts = posts;
+                //        posts.Add(new FacebookTimelinePost(item));
+                //    }
+                //}
+                //model.Timeline.Posts = posts;
             }
             return View(model);
         }

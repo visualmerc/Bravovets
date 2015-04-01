@@ -1,0 +1,42 @@
+﻿@model  FacebookTimeline
+
+<a id="post-to-facebook" class="btn btn-facebookpost">@Resource.BravoVets_Dashboard_PostToFacebook</a>
+<ul class="facebook-timeline social-feed list-unstyled">
+
+    @foreach (var post in Model.Posts)
+    {
+        if (post.Type == "status")
+        {
+            @Html.Partial("Partials/StatusUpdate", post)
+        }
+        else if (post.Type == "link")
+        {
+            @Html.Partial("Partials/LinkUpdate", post)
+        }
+        else if (post.Type == "photo")
+        {
+            @Html.Partial("Partials/PhotoUpdate", post)
+        }
+        else if (post.Type == "swf" || post.Type == "video")
+        {
+            @Html.Partial("Partials/VideoUpdate", post)
+        }
+    }
+    <li class="fbLoading" style="display:none;">
+        <div class="loader-wrapper">
+            <div class="loader css-anim">
+                <div id="animation">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="load-btn-wrapper">
+    @if (!string.IsNullOrEmpty(Model.NextPage))
+    {
+        <a id="facebook-more" class="next-page btn btn-primary" href="/facebook/timeline?until=@Model.NextPage">@Resource.BravoVets_SocialTips_LoadMore</a>
+    }
+</div>

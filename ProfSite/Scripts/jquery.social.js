@@ -198,8 +198,14 @@
 
             this.timelineUrl = allOptions.timelineUrl;
             this.timelinePlaceHolder = control;
+            this.loadTimeline = allOptions.loadTimeline != undefined ? allOptions.loadTimeline : true;
+            this.callback = options.callback != undefined ? options.callback : null;
 
-            this._timeline();
+            if (this.loadTimeline === true) {
+                this._timeline();
+            } else {
+                this._bindEvents(this.timelinePlaceHolder, this);
+            }
 
             return this;
         },
@@ -223,7 +229,9 @@
                     self._bindEvents($(".facebook-timeline"), self);
                     self._nextPage(self);
                     self._bindPostToFacebook(self);
-
+                    if (self.callback) {
+                        self.callback.call(this);
+                    }
                     loading.hide();
                 }
             });

@@ -15,26 +15,21 @@
         <div class="col-md-8">
             <ul class="nav nav-tabs social-tabs facebook">
                 <li role="presentation" class="active"><a href="#feed">NEWSFEED</a></li>
-                <li role="presentation"><a href="#messages">MESSAGES</a></li>
             </ul>
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="feed">
-                    <div class="social-container withtabs facebook">
+                    <div id="facebook-feed" class="social-container withtabs facebook">
                         <h2>
                             <img src="~/Content/img/fb-icon-lg.png" />
-                            @Model.UserName
+                            @Model.FacebookName
                         </h2>
-                        <div class="social-content">
-
+                        <div id="facebook" class="social-content">
+                            @{Html.RenderPartial("Partials/_Timeline", Model.Timeline);}
                         </div>
                         <a class="btn btn-default" href="https://www.facebook.com/@Model.UserName" target="_blank">
                             VIEW FULL TIMELINE
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
-                    </div>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="messages">
-                    <div class="social-container withtabs facebook">
                     </div>
                 </div>
             </div>
@@ -65,12 +60,19 @@
     </div>
 </div>
 @section scripts {
+    @Scripts.Render("~/bundles/fileupload")
+    @Scripts.Render("~/bundles/jquery-plugins")
     <script type="text/javascript">
         $(document).ready(function () {
             $('.nav-tabs a').click(function (e) {
                 e.preventDefault()
                 $(this).tab('show')
-            })
+            });
+            $("#facebook").facebookTimeline({
+                callback: function () {
+                    $('#post-to-facebook').addClass('btn-default');
+                }
+            });
         });
     </script>
 }

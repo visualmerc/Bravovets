@@ -4,7 +4,7 @@
 <ul class="comment-list list-unstyled fb-comment-@Model.Id">
     @foreach (var comment in Model.Comments)
     {
-        @Html.Partial("Comment", comment)
+        @Html.Partial("Partials/Comment", comment)
     }    
     @if (!string.IsNullOrEmpty(Model.FBPostUr))
     {

@@ -186,6 +186,11 @@ namespace ProfSite.Models
 
     public class FacebookTimeline
     {
+        public FacebookTimeline()
+        {
+            Posts = new List<FacebookTimelinePost>();
+        }
+
         public string NextPage { get; set; }
         public List<FacebookTimelinePost> Posts { get; set; }
         public bool AccountLinked { get; set; }

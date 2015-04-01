@@ -96,4 +96,3 @@ C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\ProfSite.Tests\bin\Debug\ru\Pro
 C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\ProfSite.Tests\obj\Debug\ProfSite.Tests.csprojResolveAssemblyReference.cache
 C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\ProfSite.Tests\obj\Debug\ProfSite.Tests.dll
 C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\ProfSite.Tests\obj\Debug\ProfSite.Tests.pdb
-C:\Data\Consulting\VisualMerc\Bravecto\Bravovets\ProfSite.Tests\bin\Debug\SqlCe\bravovets.sdf

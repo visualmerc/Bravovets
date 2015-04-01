@@ -399,6 +399,7 @@
     <Content Include="Content\img\Bravecto_FB Message_sidebarimg1.jpg" />
     <Content Include="Content\img\Bravecto_HP_UnlinkedAccounts_img.jpg" />
     <Content Include="Content\img\Bravecto_HP_UnlinkedAccounts_img1.jpg" />
+    <Content Include="Content\img\Bravecto_Self-select_img1.jpg" />
     <Content Include="Content\img\Bravecto_Support_greenbgimg.jpg" />
     <Content Include="Content\img\Bravecto_Support_img2.jpg" />
     <Content Include="Content\img\Bravecto_Support_img3.jpg" />
@@ -922,6 +923,8 @@
     <Content Include="Views\Bravecto\resources.cshtml" />
     <Content Include="Views\Shared\_LayoutBravoPets.cshtml" />
     <Content Include="Views\Bravopets\index.cshtml" />
+    <Content Include="Views\BravoVets\index.cshtml" />
+    <Content Include="Views\Bravecto\Partials\_Timeline.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

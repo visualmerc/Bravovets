@@ -606,15 +606,18 @@ a.orange:hover {
     font-size: 28px;
     margin-top: 0;
 }
+
 .social-content-column .item {
-    border-bottom:1px solid #EEE;
-    padding:10px 0;
+    border-bottom: 1px solid #EEE;
+    padding: 10px 0;
 }
+
 .social-content-column h4 {
-    font-weight:bold;
+    font-weight: bold;
 }
+
 .social-content-column a.share-this {
-    color:#f28c00;
+    color: #f28c00;
 }
 /*end*/
 
@@ -952,7 +955,7 @@ ul.social-tabs {
 
 .social-post .avatar-wrapper {
     background-repeat: no-repeat;
-    top:10px;
+    top: 10px;
 }
 
 .social-post-dialog label {
@@ -975,12 +978,18 @@ form.form-reply button.btn-primary {
     color: #f28c00;
 }
 
+#post-to-facebook,
 #post-to-twitter {
     width: 100%;
 }
 
+#facebook,
 #twitter {
     padding: 10px;
+}
+#facebook-feed a.comment-like,
+#facebook-feed a.btn-social {
+    color: #f28c00;
 }
 /* */
 
@@ -1181,3 +1190,65 @@ footer {
                 -o-transform: scale(1.1);
                 transform: scale(1.1);
             }
+
+/* Select site */
+.selectsitebg {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    padding: 0;
+    height: 700px;
+    background: url(/Content/img/Bravecto_Self-select_img1.jpg) no-repeat center;
+    background-position: 100% 19%;
+    background-size: cover;
+    color: #FFF;
+}
+
+.selectsitefooter {
+    padding-bottom: 160px;
+}
+
+.selectsitebg .jumbo-home-overlay {
+    top: -100px;
+    background-color: rgba(0, 153, 148, 0.9);
+    text-align: center;
+}
+
+    .selectsitebg .jumbo-home-overlay h1 {
+        text-align: center;
+        font-size: 38px;
+    }
+
+    .selectsitebg .jumbo-home-overlay .top-jumbo-overlay {
+        padding: 0;
+    }
+
+.selector-row .selection-panel {
+    padding: 30px;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+    .selector-row .selection-panel a {
+        text-align: left;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        width: 200px;
+    }
+
+    .selector-row .selection-panel p {
+        color: #394147;
+        font-size: 18PX;
+        text-align: center;
+    }
+
+    .selector-row .selection-panel a span.arrow-wrapper {
+        text-align: center;
+        right: 0;
+    }
+
+    .selector-row .selection-panel h3 {
+        color: #009994;
+        text-align: center;
+    }
+/* End*/

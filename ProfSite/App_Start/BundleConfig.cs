@@ -72,6 +72,16 @@ namespace ProfSite
                 "~/Content/modal_bullet_format.css"));
 
             bundles.Add(
+                new StyleBundle("~/Content/bravectocss").Include(
+                "~/Content/bravectohome.css"));
+
+            bundles.Add(
+                new StyleBundle("~/Content/bravopetscss").Include(
+                "~/Content/bravectohome.css",
+                "~/Content/bravopets.css"
+                ));
+
+            bundles.Add(
              new StyleBundle("~/Admin/Content/css").Include(
             "~/Content/admin.css"
              ));

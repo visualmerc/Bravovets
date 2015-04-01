@@ -16,6 +16,8 @@ namespace ProfSite.Models
 
         public int difference { get; set; }
         public int likes { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
     }
 
     public class FacebookPagingModel
