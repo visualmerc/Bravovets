@@ -67,26 +67,12 @@ namespace ProfSite.Controllers
             if (model.IsFacebookLinked)
             {
                 var facebookInfo = userDomainService.GetFacebookSocialIntegration(user);
-                //var timeline = FacebookHelper.GetTimeline(facebookInfo, "");
 
                 var fbUser = FacebookHelper.GetProfile(facebookInfo);
                 if (fbUser != null)
                     model.FacebookName = fbUser.first_name;
 
                 model.UserName = facebookInfo.AccountName;
-
-                //var posts = new List<FacebookTimelinePost>();
-                //if (timeline.data != null)
-                //{
-                //    foreach (FacebookHomeItemModel item in timeline.data)
-                //    {
-                //        if (item.type == "status" && string.IsNullOrEmpty(item.message))
-                //            continue;
-
-                //        posts.Add(new FacebookTimelinePost(item));
-                //    }
-                //}
-                //model.Timeline.Posts = posts;
             }
             return View(model);
         }
@@ -231,44 +217,30 @@ namespace ProfSite.Controllers
             return View();
         }
 
-        public ActionResult Home()
-        {
-            ViewBag.Title = Resource.Bravecto_Homepage_Title;
+        //public ActionResult Home()
+        //{
+        //    ViewBag.Title = Resource.Bravecto_Homepage_Title;
 
-            // Method for setting test user values
-            int testUserId;
-            string testuseridFromRoute = NullRouteInfoCheck("testuserid");
-            if (Int32.TryParse(testuseridFromRoute, out testUserId))
-            {
-                if (testUserId > 0)
-                {
-                    Session["TestUserId"] = testUserId;
-                }
-            }
+        //    // Method for setting test user values
+        //    int testUserId;
+        //    string testuseridFromRoute = NullRouteInfoCheck("testuserid");
+        //    if (Int32.TryParse(testuseridFromRoute, out testUserId))
+        //    {
+        //        if (testUserId > 0)
+        //        {
+        //            Session["TestUserId"] = testUserId;
+        //        }
+        //    }
 
 
-            return View("Home");
-        }
+        //    return View("Home");
+        //}
 
         public ActionResult Innovation()
         {
             ViewBag.Title = Resource.Bravecto_Innovation_Title;
             return View("Innovation");
         }
-
-        public ActionResult Compliance()
-        {
-            ViewBag.Title = Resource.Bravecto_Compliance_Title;
-            return View("Compliance");
-        }
-
-        public ActionResult NewBusiness()
-        {
-
-            ViewBag.Title = Resource.Bravecto_NewBusiness_Title;
-            return View("NewBusiness");
-        }
-
 
         private string NullRouteInfoCheck(string key)
         {

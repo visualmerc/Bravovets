@@ -399,21 +399,6 @@ namespace ProfSite.Controllers
             return fullQueuedContent;
         }
 
-
-
-
-        public ActionResult SocialCalendar()
-        {
-            var menu = BravectoMenu.CreateBravovetsMenu("socialcalendar");
-            ViewBag.Menu = menu;
-            ViewBag.Title = Resource.BravoVets_SocialCalendar_Title;
-
-            ViewBag.Language = this.GetSiteFullLanguage();
-
-            return View();
-        }
-
-
         //[JsonRequestBehavior(allowget)]
         public ActionResult SocialCalendarPosts(string @from, string to)
         {

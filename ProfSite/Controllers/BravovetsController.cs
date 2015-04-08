@@ -35,8 +35,6 @@ namespace ProfSite.Controllers
             syndicatedContentService = new SyndicatedContentDomainService();
         }
 
-
-
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var menu = BravectoMenu.CreateBravovetsMenu(filterContext.ActionDescriptor.ActionName);
@@ -251,22 +249,6 @@ namespace ProfSite.Controllers
         {
             var model = GetTrendingTopics(sortBy, filterBy, skip, take);
             return PartialView("TrendingTopicItems", model);
-        }
-
-        public ActionResult ResourceTopics()
-        {
-            try
-            {
-                ViewBag.Title = Resource.BravoVets_BravectoResources_Title;
-                ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
-
-                var model = GetResourceTopics(ContentSortEnum.ContentDate, ContentFilterEnum.All, 0, 5);
-                return View("ResourceTopics", model);
-            }
-            catch (Exception ex)
-            {
-                return TermsAndConditions();
-            }
         }
 
 

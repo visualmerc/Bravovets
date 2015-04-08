@@ -771,8 +771,6 @@
     <Content Include="Views\BravoVets\Dashboard.cshtml" />
     <Content Include="Views\Bravecto\Home.cshtml" />
     <Content Include="Views\Bravecto\Innovation.cshtml" />
-    <Content Include="Views\Bravecto\Compliance.cshtml" />
-    <Content Include="Views\Bravecto\NewBusiness.cshtml" />
     <Content Include="Views\BravoVets\TermsAndConditions.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\BravoVets\SelectCountry.cshtml" />
@@ -813,7 +811,6 @@
     <Content Include="Views\Shared\Disclaimer.cshtml" />
     <Content Include="Views\Shared\PrivacyPolicy.cshtml" />
     <Content Include="Views\Shared\SiteMap.cshtml" />
-    <Content Include="Views\ShareSocialContent\SocialCalendar.cshtml" />
     <Content Include="Views\Shared\_Layout_Bravecto_Public.cshtml" />
     <Content Include="Views\Facebook\NoLinkedAccount.cshtml" />
     <Content Include="Views\Twitter\NoLinkedAccount.cshtml" />
