@@ -82,6 +82,11 @@ namespace ProfSite
                 ));
 
             bundles.Add(
+                new StyleBundle("~/Content/bravovetscss").Include(
+                "~/Content/bravectohome.css",
+                "~/Content/bravovets.css"));
+
+            bundles.Add(
              new StyleBundle("~/Admin/Content/css").Include(
             "~/Content/admin.css"
              ));

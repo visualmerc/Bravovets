@@ -21,6 +21,7 @@ namespace ProfSite.Controllers
 
     using BravoVets.DomainObject;
     using BravoVets.DomainService.Contract;
+    using Newtonsoft.Json;
 
     public class BravovetsController : AbstractBaseController
     {
@@ -67,6 +68,141 @@ namespace ProfSite.Controllers
             }
 
             return View("Dashboard");
+        }
+
+        [HttpGet]
+        [ActionName("social-content")]
+        public ActionResult SocialContent()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("linked-accounts")]
+        public ActionResult LinkedAccounts()
+        {
+            var model = new LinkedAccountsViewModel();
+
+            //TODO: Check for authentication
+            var userId = this.GetCurrentUserId();
+            var userDomainService = new BravoVetsUserDomainService();
+            var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
+
+            model.IsFacebookLinked = user.Veterinarian.IsFacebookLinked;
+            model.IsTwitterLinked = user.Veterinarian.IsTwitterLinked;
+
+            if (model.IsTwitterLinked)
+            {
+                var twitterInfo = userDomainService.GetTwitterSocialIntegration(user);
+
+                var twitterAccount = TwitterHelper.GetProfile(twitterInfo.AccessCode,
+                    twitterInfo.AccessToken, twitterInfo.AccountName, GetSiteLanguage());
+
+                model.TwitterUserName = twitterAccount.screen_name;
+
+                var success = false;
+                var response = TwitterHelper.GetHomeTimeline(twitterInfo.AccessCode, twitterInfo.AccessToken, "", GetSiteLanguage(), out success);
+                var timelineResponse = JsonConvert.DeserializeObject<List<TwitterStatusModel>>(response);
+                var tweets = new List<TweetModel>();
+                var lastId = string.Empty;
+                if (timelineResponse != null)
+                {
+                    foreach (var twitterStatusModel in timelineResponse)
+                    {
+                        var item = new TweetModel(twitterStatusModel);
+                        if (twitterInfo.AccountName == item.user.id)
+                        {
+                            item.CanRetweet = false;
+                        }
+                        tweets.Add(item);
+                        lastId = twitterStatusModel.id;
+                    }
+                }
+                model.Tweets = tweets;
+            }
+
+            if (model.IsFacebookLinked)
+            {
+                var facebookInfo = userDomainService.GetFacebookSocialIntegration(user);
+                var timeline = FacebookHelper.GetTimeline(facebookInfo, "");
+
+                var posts = new List<FacebookTimelinePost>();
+                if (timeline.data != null)
+                {
+                    foreach (FacebookHomeItemModel item in timeline.data)
+                    {
+                        if (item.type == "status" && string.IsNullOrEmpty(item.message))
+                            continue;
+
+                        posts.Add(new FacebookTimelinePost(item));
+                    }
+                }
+                model.Posts = posts;
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        [ActionName("unlinked-accounts")]
+        public ActionResult UnLinkedAccounts()
+        {
+            var model = new LinkedAccountsViewModel();
+
+            var userId = this.GetCurrentUserId();
+            var userDomainService = new BravoVetsUserDomainService();
+            var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
+
+            model.IsFacebookLinked = user.Veterinarian.IsFacebookLinked;
+            model.IsTwitterLinked = user.Veterinarian.IsTwitterLinked;
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult FacebookFeed()
+        {
+            var model = new FacebookViewModel();
+            model.Timeline = new FacebookTimeline { };
+            var userDomainService = new BravoVetsUserDomainService();
+            var userId = this.GetCurrentUserId();
+
+            var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
+
+            model.IsFacebookLinked = user.Veterinarian.IsFacebookLinked;
+            model.Timeline.AccountLinked = model.IsFacebookLinked;
+
+            if (model.IsFacebookLinked)
+            {
+                var facebookInfo = userDomainService.GetFacebookSocialIntegration(user);
+
+                var fbUser = FacebookHelper.GetProfile(facebookInfo);
+                if (fbUser != null)
+                    model.FacebookName = fbUser.first_name;
+
+                model.UserName = facebookInfo.AccountName;
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult TwitterFeed()
+        {
+            var model = new TwitterViewModel();
+            var userId = this.GetCurrentUserId();
+            var userDomainService = new BravoVetsUserDomainService();
+            var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
+
+            model.IsTwitterLinked = user.Veterinarian.IsTwitterLinked;
+
+            if (model.IsTwitterLinked)
+            {
+                var twitterInfo = userDomainService.GetTwitterSocialIntegration(user);
+
+                var twitterAccount = TwitterHelper.GetProfile(twitterInfo.AccessCode,
+                    twitterInfo.AccessToken, twitterInfo.AccountName, GetSiteLanguage());
+
+                model.UserName = twitterAccount.screen_name;
+            }
+            return View(model);
         }
 
         public ActionResult Index()
@@ -121,6 +257,55 @@ namespace ProfSite.Controllers
             this.AuthManager.InvalidateCurrentIdentityInfo();
 
             return this.RedirectToAction("Home", "Bravecto");
+        }
+
+        [HttpGet]
+        public ActionResult Support()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Adherence()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult BravoVetsResources()
+        {
+            return View("resources");
+        }
+
+        [HttpGet]
+        [ActionName("about-us")]
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Products()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName("contact-us")]
+        public ActionResult ContactUs()
+        {
+            ViewBag.Countries = LanguageHelper.SupportedCountries().Select(c => new SelectListItem
+            {
+                Value = c.Code,
+                Text = c.DisplayName
+            });
+            return View();
+        }
+
+        public ActionResult Innovation()
+        {
+            ViewBag.Title = Resource.Bravecto_Innovation_Title;
+            return View();
         }
 
         public ActionResult TrendingTopics()

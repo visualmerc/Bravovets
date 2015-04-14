@@ -1,0 +1,173 @@
+﻿.header #top-nav.nav.nav-pills {
+    top: 90px;
+}
+
+.navbar-brand.bravovets {
+    padding: 11px 0 20px 15px;
+}
+
+.complete-profile-wrapper .facebook-bg {
+    background-color: #3b5998;
+    color: #FFF;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+    .complete-profile-wrapper .facebook-bg:before {
+        font-family: bravoicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e60f";
+        margin-right: 10px;
+    }
+
+.complete-profile-wrapper .twitter-bg {
+    background-color: #2ba9e1;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+    .complete-profile-wrapper .twitter-bg:before {
+        font-family: bravoicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e610";
+        margin-right: 10px;
+    }
+
+.complete-profile-wrapper .profile-step {
+    background-color: #009994;
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 20px;
+    margin: -10px -20px 0 -20px;
+}
+
+.complete-profile-wrapper .complete-profile-row {
+    background-color: #EEE;
+    margin: 50px 0;
+}
+
+.complete-profile-row .row {
+    padding: 0 20px 50px 20px;
+}
+
+div.sitemap-wrapper ul.sitemap ul.sitemap:first-of-type {
+    margin-bottom: 30px;
+}
+
+div.sitemap-wrapper {
+    background-color: #EEE;
+    padding: 40px 30px;
+}
+
+    div.sitemap-wrapper ul > li a {
+        color: #333;
+    }
+
+        div.sitemap-wrapper ul > li a.root-node {
+            text-transform: uppercase;
+        }
+
+.social-content-items-list .social-content-item {
+    background-color: #EFEFEF;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    margin: 0 15px 20px 0;
+}
+
+    .social-content-items-list .social-content-item p {
+        margin: 3px 0;
+        font-size: 16px;
+    }
+
+    .social-content-items-list .social-content-item h4 {
+        background-color: #009994;
+        color: #FFF;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .social-content-items-list .social-content-item h5 {
+        font-weight: bold;
+        font-size: 22px;
+        margin-top: 0;
+    }
+
+.social-content-items-list .social-content-item-body:after,
+.social-content-items-list .social-content-item-body:before {
+    content: " ";
+    display: table;
+}
+
+.social-content-items-list .social-content-item-body:after {
+    clear: both;
+}
+
+.social-content-items-list .social-content-item .social-content-content {
+    float: left;
+    min-height: 220px;
+    position: relative;
+}
+
+    .social-content-items-list .social-content-item .social-content-content .action-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .social-content-items-list .social-content-item .social-content-content a.btn {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+.social-content-items-list .social-content-item .resource-media-item {
+    float: right;
+    margin-left: 20px;
+    width: 150px;
+    min-height: 220px;
+}
+
+.social-content-items-list .social-content-item .social-content-item-body {
+    padding: 20px 10px;
+}
+
+.social-content-items-list .social-content-item.video-item {
+    width: 64%;
+}
+
+.social-content-items-list .social-content-item.poster-item {
+    width: 31.333%;
+}
+
+.social-content-items-list .social-content-item.video-item .social-content-content {
+    width: 45%;
+}
+
+.social-content-items-list .social-content-item.video-item img {
+    width: 300px;
+    margin: 0 0 10px 20px;
+}
+
+.social-content-items-list .social-content-item.poster-item .social-content-content {
+    width: 145px;
+}
+
+.social-content-items-list .social-content-item.poster-item img {
+    margin-left: 20px;
+    width: 115px;
+}

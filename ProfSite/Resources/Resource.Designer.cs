@@ -1651,6 +1651,24 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CONFIRM PASSWORD.
+        /// </summary>
+        public static string ConfirmPasswordText {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string ContactUsText {
+            get {
+                return ResourceManager.GetString("ContactUsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string Country {
@@ -2101,6 +2119,15 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string ProductsText {
+            get {
+                return ResourceManager.GetString("ProductsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russia.
         /// </summary>
         public static string Russia {
@@ -2142,6 +2169,15 @@ namespace ProfSite.Resources {
         public static string SelectCountryInfo {
             get {
                 return ResourceManager.GetString("SelectCountryInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SET PASSWORD.
+        /// </summary>
+        public static string SetPasswordText {
+            get {
+                return ResourceManager.GetString("SetPasswordText", resourceCulture);
             }
         }
         
@@ -2565,6 +2601,15 @@ namespace ProfSite.Resources {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string SupportText {
+            get {
+                return ResourceManager.GetString("SupportText", resourceCulture);
             }
         }
         

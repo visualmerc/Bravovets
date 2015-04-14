@@ -1,58 +1,143 @@
 ﻿@model LinkedAccountsViewModel
-@using bvResources = ProfSite.Resources.Resource
 
 @{
-    ViewBag.Title = "Linked Accounts";
+    ViewBag.Title = "Bravecto";
     ViewBag.IncludeSocialScript = true;
-    Layout = "~/Views/Shared/_LayoutBravecto.cshtml";
+    Layout = "~/Views/Shared/_LayoutBravovets.cshtml";
+    ViewBag.DisplaySubnavigation = true;
 }
+
 <div class="container">
     <div class="row simpleheaderrow">
-        <h2>Bravovets</h2>
+        <h2>BRAVOVETS</h2>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div id="facebook-feed" class="social-container facebook">
-                <h2>
-                    <img src="~/Content/img/fb-icon-lg.png" />
-                    FACEBOOK
-                </h2>
-                <div class="social-content">
-                    <ul class="facebook-timeline social-feed list-unstyled">
-                        @foreach (var item in Model.Posts)
-                        {
-                            Html.RenderPartial("Partials/_TimelineItem", item);
-                        }
-                    </ul>
+<div class="jumbotron unlinkedaccounts-page">
+    <div class="container">
+        <div class="jumbo-home-overlay">
+            <div class="row top-jumbo-overlay">
+                <h1>Extend your network with Bravovets</h1>
+            </div>
+            <div class="bottom-jumbo-overlay">
+                <h4>
+                    Link your Facebook and Twitter accounts to Bravovets for support in strengthening your ties
+                    with new and existing customers through social media.
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container static-body unlinkedaccounts-body top">
+    <div class="static-overlay bggreen">
+        <p>
+            Pet owners want the best for their dogs. With Bravecto, you can give it to them with the most
+            advanced flea and tick protection available in a chew.
+        </p>
+        <p>
+            And, with BravoVets, you can harness the power of social media to grow your visibility among pet
+            owners. Link your Facebook and Twitter business accounts to BravoVets for support in strengthening
+            your ties via the largest platforms available.
+        </p>
+    </div>
+</div>
+<div class="static-body unlinkedaccounts-body grey">
+    <div class="container">
+        <div class="row">
+            <h2>EXPAND YOUR SOCIAL VISIBILITY</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 link-youraccount-border">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="~/Content/img/fb-icon-lg.png" />
+                    </div>
+                    <div class="col-md-10">
+                        <p class="header">CONNECT WITH PET OWNERS</p>
+                        <p>
+                            The key to reaching pet owners in your community is to be present where they are.
+                            Facebook, with its more than 1.25 billion members, makes that a high probability.
+                            <a href="#" class="link-socialaccount" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">Link your Facebook</a> to share content that can help you grow relationships with your customers
+                            by demonstrating your clinic's expertise, knowledge and caring on a personal level.
+                        </p>
+                    </div>
                 </div>
-                <a class="btn btn-default" href="/bravecto/facebook" role="button">
-                    VIEW FULL NEWSFEED
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="~/Content/img/twitter-icon-lg.png" />
+                    </div>
+                    <div class="col-md-10">
+                        <p class="header">LEAD THE DISCUSSION</p>
+                        <p>
+                            Twitter can be an excellent platform to establish yourself and your clinic as an
+                            authority in leading-edge veterinary treatments. <a href="#" class="link-socialaccount" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">Link your Twitter</a>
+                            to build and reach an audience of followers - of both your customers and others around the world
+                            - with the latest news and trends relevant to animal health.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="~/Content/img/Bravecto_HP_UnlinkedAccounts_img.jpg" />
+                    </div>
+                    <div class="col-md-10">
+                        <p class="header">UPDATE YOUR PROFILE</p>
+                        <p>
+                            <a href="/editprofile">Update your profile</a> and allow Facebook and Twitter to link
+                            your business pages with previous social information on BravoVets. None of the content
+                            of your personal accounts will be seen by fans/followers of your business pages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 link-youraccount">
+                <h3>LINK YOUR SOCIAL<br /> ACCOUNTS HERE</h3>
+                <a class="btn btn-default link-socialaccount" href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+                    @if (Model.IsFacebookLinked)
+                    {
+                        <text>@Resource.UnlinkYourFacebook</text>
+                    }
+                    else
+                    {
+                        <text>@Resource.LinkYourFacebook</text>
+                    }
+                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                </a>
+                <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+                    @if (Model.IsTwitterLinked)
+                    {
+                        <text>@Resource.UnlinkYourTwitter</text>
+                    }
+                    else
+                    {
+                        <text>@Resource.LinkYourTwitter</text>
+                    }
+                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                </a>
+                <a class="btn btn-default" href="/editprofile">
+                    UPDATE YOUR PROFILE
                     <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                 </a>
             </div>
         </div>
-        <div class="col-md-6">
-            <div id="feed" class="social-container twitter">
-                <h2>
-                    <img src="~/Content/img/twitter-icon-lg.png" />
-                    TWITTER
-                </h2>
-                <div id="twitter" class="social-content twitter">
-                    <ul class="twitter-timeline social-feed list-unstyled">
-                        @foreach (var tweet in Model.Tweets)
-                        {
-                            Html.RenderPartial("Partials/_Tweet", tweet);
-                        }
-                    </ul>
-                </div>
-                <a class="btn btn-default" href="/bravecto/twitter" role="button">
-                    VIEW FULL NEWSFEED
-                    <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
+    </div>
+</div>
+<div class="container static-body unlinkedaccounts-body">
+    <div class="static-overlay bggreen">
+        <p>
+            Your online presence is the single most powerful tool available for building engagement
+            and involvement with pet owners. That's because pet owners actively use the internet to connect with
+            like-minded animal lovers and to find useful information about pet health and wellness. In fact, 70%
+            of pet owners spend up to 30 minutes every week reviewing pet-related topics online.
+        </p>
+        <p>
+            Social media can help you connect with those information seekers - allowing you to engage current
+            and potential customers, gain real insight into your audience and understand their needs.
+        </p>
+        <p>
+            From one-on-one interactions to sharing curated content. BravoVets helps you reach, connect and
+            create deeper relationships by communicating the sort of information that demonstrates your clinic's expertise,
+            knowledge and caring on a personal level.
+        </p>
     </div>
 </div>
 <div class="static-section linkedaccounttop">
@@ -124,10 +209,10 @@
         </p>
     </div>
 </div>
-<div class="static-section linkedaccountbottom">
+<div class="static-section unlinkedaccountbottom">
     <div class="container">
         <div class="static-overlay bggreen">
-            <h2>EXTEND YOUR AUTHORITY IN LEADING-EDGE <br /> VETERINARY TREATMENTS ON TWITTER</h2>
+            <h2>EXTEND YOUR AUTHORITY IN LEADING-EDGE <br />VETERINARY TREATMENTS ON TWITTER</h2>
         </div>
     </div>
 </div>
@@ -217,23 +302,3 @@
         </p>
     </div>
 </div>
-
-@section scripts {
-    @Scripts.Render("~/bundles/jquery-plugins")
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#twitter").twitterTimeline({
-                loadTimeline: false,
-                callback: function () {
-                    $('#post-to-twitter').addClass('btn-default');
-                }
-            });
-            $('.btn-twitter-reply').on("click", function (e) {
-                e.preventDefault();
-                var post = $(this).parent('.social-post');
-                post.find('.post-reply').removeClass('collapsed');
-                post.find('.post-reply').find('textarea').focus();
-            });
-        });
-    </script>
-}

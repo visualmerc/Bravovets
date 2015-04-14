@@ -1065,4 +1065,19 @@
   <data name="UnlinkYourTwitter" xml:space="preserve">
     <value>Unlink your Twitter</value>
   </data>
+  <data name="SupportText" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="ProductsText" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="ContactUsText" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="SetPasswordText" xml:space="preserve">
+    <value>SET PASSWORD</value>
+  </data>
+  <data name="ConfirmPasswordText" xml:space="preserve">
+    <value>CONFIRM PASSWORD</value>
+  </data>
 </root>

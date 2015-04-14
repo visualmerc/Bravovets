@@ -1,0 +1,179 @@
+﻿@{ Layout = null;}
+@using bvResources = ProfSite.Resources.Resource
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="~/Images/favicon.png" />
+
+    <!-- Typekit font is a close helvetica alternative. Replace with helvetica when available. -->
+    <!--
+    <script type="text/javascript" src="//use.typekit.net/nhs7hxx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    -->
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/36b782c8-14a6-42ac-b9e8-820a1ab045fd.css" />
+    @Styles.Render("~/Content/css", "~/Content/bravovetscss")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("head", false)
+</head>
+<body>
+    <div class="circles-header"></div>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul id="top-nav" class="nav nav-pills">
+                    <li class="@(ViewBag.SelectedNode == "support" ? "active" : "")">
+                        <a href="/support">
+                            Growth
+                        </a>
+                    </li>
+                    <li class="@(ViewBag.SelectedNode == "innovation" ? "active" : "")">
+                        <a href="/innovation">
+                            Innovation
+                        </a>
+                    </li>
+                    <li class="@(ViewBag.SelectedNode == "adherence" ? "active" : "")">
+                        <a href="/adherence">
+                            Adherence
+                        </a>
+                    </li>
+                    <li class="@(ViewBag.SelectedNode == "resources" ? "active" : "")">
+                        <a href="/bravovetsresources">
+                            Resources
+                        </a>
+                    </li>
+                    <li class="rightborder @(ViewBag.SelectedNode == "products" ? "active" : "")">
+                        <a href="/products">
+                            Products
+                        </a>
+                    </li>
+                    <li class="@(ViewBag.SelectedNode == "aboutus" ? "active" : "")" role="presentation"><a href="/about-us">ABOUT US</a></li>
+                    <li class="@(ViewBag.SelectedNode == "contactus" ? "active" : "")" role="presentation"><a href="/contact-us">CONTACT US</a></li>
+                </ul>
+            </nav>
+            <a href="/" class="navbar-brand bravovets">
+                <img src="~/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
+            </a>
+        </div>
+    </div>
+    <div id="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    @if (ViewBag.DisplaySubnavigation != null && (bool)ViewBag.DisplaySubnavigation == true) {
+                    <ul class="list-unstyled subnavigation clearfix">
+                        <li class="@(ViewBag.SelectedNode == "facebook" ? "active" : "")">
+                            <a href="/facebookfeed">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="@(ViewBag.SelectedNode == "twitter" ? "active" : "")">
+                            <a href="/twitterfeed">
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="@(ViewBag.SelectedNode == "social-content" ? "active" : "")">
+                            <a href="/social-content">
+                                Social Content
+                            </a>
+                        </li>
+                        <li class="@(ViewBag.SelectedNode == "socialtips" ? "active" : "")">
+                            <a href="/socialtips">
+                                Social Tips
+                            </a>
+                        </li>
+                    </ul>
+                    }
+                </div>
+                <div class="col-sm-6 subheaderright">
+                    <p class="pull-left">
+                        Logged in as [@User.Identity.Name]
+                    </p>
+                    <ul class="list-unstyled subnavigation subnavigation-right">
+                        <li>
+                            <a href="/editprofile">
+                                PROFILE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/account/logout">
+                                LOGOUT
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="@ViewBag.ContainerClass">
+            @RenderBody()
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <ul class="bottom-nav">
+                <li>
+                    <a href="/bravecto">Home</a>
+                </li>
+                <li>
+                    <a href="http://www.merck.com/about/how-we-operate/privacy/internet-privacy-policy.html?utm_source=Bravovets">PRIVACY</a>
+                </li>
+                <li>
+                    <a href="http://www.bravovets.com/termsandconditions">TERMS + CONDITIONS</a>
+                </li>
+                <li>
+                    <a href="/sitemap">SITE MAP</a>
+                </li>
+                <li>
+                    <a href="/contact-us">CONTACT US</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
+    @RenderSection("scripts", false)
+    @if (ViewBag.IncludeSocialScript != null && (bool)ViewBag.IncludeSocialScript == true)
+    {
+    <script type="text/javascript">
+        function toggleFacebook(isLinked) {
+            if (isLinked) {
+                if (confirm('@bvResources.ConfirmDelete')) {
+                    window.location.href = "/facebook/delete";
+                }
+            } else {
+                window.location.href = "/facebook/oauthredirect";
+            }
+        }
+
+        function toggleTwitter(isLinked) {
+            if (isLinked) {
+                if (confirm('@bvResources.ConfirmDelete')) {
+                    window.location.href = "/twitter/delete";
+                }
+            } else {
+                window.location.href = "/twitter/oauthredirect";
+            }
+        }
+        $(document).ready(function () {
+            $('a.link-socialaccount').on('click', function (e) {
+                e.preventDefault();
+                var $this = $(this);
+                switch ($this.data('type')) {
+                    case 'twitter':
+                        toggleTwitter($this.data('islinked'));
+                        break;
+                    case 'facebook':
+                        toggleFacebook($this.data('islinked'));
+                        break;
+                }
+            });
+
+        });
+    </script>
+    }
+</body>
+</html>

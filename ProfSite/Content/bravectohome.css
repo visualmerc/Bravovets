@@ -19,6 +19,10 @@
     margin-right: -20px;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 .link-socialaccount {
     text-transform: uppercase;
 }
@@ -203,6 +207,20 @@ a.orange:hover {
 
     .jumbotron.support-page {
         background: url(/Content/img/support_header.jpg) no-repeat center;
+        background-size: cover;
+        background-position: 100% 26%;
+        height: 300px;
+    }
+
+    .jumbotron.adherence {
+        background: url(/Content/img/adherenceheader.jpg) no-repeat center;
+        background-size: cover;
+        background-position: 100% 26%;
+        height: 300px;
+    }
+
+    .jumbotron.innovation {
+        background: url(/Content/img/innovationheader.jpg) no-repeat center;
         background-size: cover;
         background-position: 100% 26%;
         height: 300px;
@@ -987,6 +1005,7 @@ form.form-reply button.btn-primary {
 #twitter {
     padding: 10px;
 }
+
 #facebook-feed a.comment-like,
 #facebook-feed a.btn-social {
     color: #f28c00;

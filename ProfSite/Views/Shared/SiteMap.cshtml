@@ -1,30 +1,36 @@
 ﻿@using bvResources = ProfSite.Resources.Resource
 @{ var menu = (BravectoMenu)ViewBag.Menu;}
 
-@{ Layout = "~/Views/Shared/" + menu.Layout + ".cshtml"; }
-
+@{
+    Layout = "~/Views/Shared/_LayoutBravovets.cshtml";
+}
 <div class="container">
-    <div class="row">
+    <div class="row simpleheaderrow">
         <div class="col-xs-12">
-            <h1 class="alternate">@bvResources.Shared_SiteMap_SiteMap</h1>
-            <hr class="plus diagonal">
-            <br>
-            <ul class="sitemap">
-                <li class="has-children">
-                    <a href="/bravecto">@bvResources.Shared_SiteMap_BravectoHome</a>
-                    <ul class="sitemap">
-                        <li><a href="/bravecto/innovation">@bvResources.BravectoInnovation</a></li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <a href="/dashboard">@bvResources.Shared_SiteMap_BravoVets</a>
-                    <ul class="sitemap">
-                        <li><a href="/trendingtopics">@bvResources.Shared_SiteMap_TrendingTopics</a></li>
-                        <li><a href="/socialtips">@bvResources.Shared_SiteMap_SocialTips</a></li>
-                        <li><a href="/EditProfileAndFacility">@bvResources.Shared_SiteMap_EditProfile</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <h2 class="alternate">@bvResources.Shared_SiteMap_SiteMap</h2>
+            <div class="sitemap-wrapper">
+                <ul class="sitemap">
+                    <li class="has-children">
+                        <a href="/bravecto">BRAVECTO<sup>&reg;</sup> Home</a>
+                        <ul class="sitemap">
+                            <li><a href="/bravecto/support">@bvResources.SupportText</a></li>
+                            <li><a href="/bravecto/innovation">@bvResources.BravectoInnovation</a></li>
+                            <li><a href="/bravecto/products">@bvResources.ProductsText</a></li>
+                            <li><a href="/bravecto/about-us">@bvResources.AboutUsText</a></li>
+                            <li><a href="/bravecto/contact-us">@bvResources.ContactUsText</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a class="root-node" href="/dashboard">@bvResources.Shared_SiteMap_BravoVets</a>
+                        <ul class="sitemap">
+                            <li><a href="/braovetsresources">@bvResources.BravectoResourcesMenu</a></li>
+                            <li><a href="/trendingtopics">@bvResources.Shared_SiteMap_TrendingTopics</a></li>
+                            <li><a href="/socialtips">@bvResources.Shared_SiteMap_SocialTips</a></li>
+                            <li><a href="/EditProfileAndFacility">@bvResources.Shared_SiteMap_EditProfile</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
