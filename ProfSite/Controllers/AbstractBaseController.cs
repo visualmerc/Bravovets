@@ -17,7 +17,7 @@ namespace ProfSite.Controllers
 
         public readonly List<object[]> MessagesToSend = new List<object[]>();
 
-        internal IBravoVetsAuthManager AuthManager = new BravoVetsAuthManager();        
+        internal IBravoVetsAuthManager AuthManager = new BravoVetsAuthManager();
 
         protected string GetSubDomain()
         {
@@ -35,7 +35,7 @@ namespace ProfSite.Controllers
 
         protected int GetCurrentUserId()
         {
-            //TEMP
+            //TODO TEMP
             return 2;
             var firstOrDefault = ClaimsPrincipal.Current.Claims.FirstOrDefault(c => c.Type == "BravoVetsUserId");
             if (firstOrDefault == null) return 0;
@@ -49,7 +49,7 @@ namespace ProfSite.Controllers
 
         public string GetCurrentUserName()
         {
-            //TEMP
+            //TODO TEMP
             return "boulderqa7@yahoo.com";
             var userName = ClaimsPrincipal.Current.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name);
             if (userName == null)
@@ -63,7 +63,7 @@ namespace ProfSite.Controllers
         protected void SetUserLanguage()
         {
             string userLanguage = GetUserLanguage();
-//            string userLanguage = "it";
+            //            string userLanguage = "it";
 
             if (RouteData != null)
                 RouteData.Values["language"] = userLanguage;
@@ -74,8 +74,8 @@ namespace ProfSite.Controllers
         public string GetUserLanguage()
         {
             //if (Request == null || Request.UserLanguages == null)
-                return Thread.CurrentThread.CurrentCulture.Name;
-           
+            return Thread.CurrentThread.CurrentCulture.Name;
+
 
             //return Request.UserLanguages[0];
         }
@@ -84,13 +84,14 @@ namespace ProfSite.Controllers
         protected string GetSiteLanguage()
         {
             if (RouteData != null && RouteData.Values.ContainsKey("language"))
-                return (string) RouteData.Values["language"];
+                return (string)RouteData.Values["language"];
 
             return "en";
 
         }
 
-        protected string GetSiteFullLanguage() {
+        protected string GetSiteFullLanguage()
+        {
             var language = this.GetSiteLanguage();
             var fullLanguage = string.Empty;
 

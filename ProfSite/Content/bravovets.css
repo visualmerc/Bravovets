@@ -179,7 +179,17 @@ div.sitemap-wrapper {
     margin-left: 20px;
     width: 115px;
 }
+
 .static-body.support-body.no-margin {
-    margin-bottom:0;
-    padding-bottom:0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.loggedinas {
+    max-width: 260px;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
