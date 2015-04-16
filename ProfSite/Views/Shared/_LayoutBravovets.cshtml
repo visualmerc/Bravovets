@@ -23,6 +23,7 @@
     <div class="circles-header"></div>
     <div class="container">
         <div class="header clearfix">
+            <a class="prescribing-infolink" href="#">See Prescribing Information</a>
             <nav>
                 <ul id="top-nav" class="nav nav-pills">
                     <li class="@(ViewBag.SelectedNode == "support" ? "active" : "")">
@@ -86,6 +87,8 @@
                             </a>
                         </li>
                     </ul>
+                    } else {
+                        @RenderSection("subheaderleft", false)
                     }
                 </div>
                 <div class="col-sm-6 subheaderright">

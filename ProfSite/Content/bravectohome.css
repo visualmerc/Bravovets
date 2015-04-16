@@ -46,12 +46,15 @@ a.orange:hover {
 .red {
     color: #dd042b;
 }
+
 .italic {
-    font-style:italic;
+    font-style: italic;
 }
+
 .underline {
-    text-decoration:underline;
+    text-decoration: underline;
 }
+
 .label {
     background-color: #009994;
     border-radius: 13px;
@@ -241,8 +244,8 @@ a.orange:hover {
     .jumbotron.unlinkedaccounts-page {
         background: url(/Content/img/Bravecto_HP_UnlinkedAccounts_img1.jpg) no-repeat center;
         background-size: cover;
-        background-position: 100% 0;
-        height: 300px;
+        background-position: 100% 10%;
+        height: 350px;
     }
 
         .jumbotron.unlinkedaccounts-page h1,
@@ -270,14 +273,15 @@ a.orange:hover {
     top: 214px;
 }
 
-.jumbotron.unlinkedaccounts-page .jumbo-home-overlay,
 .jumbotron.resources-page .jumbo-home-overlay,
 .jumbotron.contactus-page .jumbo-home-overlay,
 .jumbotron.support-page .jumbo-home-overlay,
 .jumbotron.aboutus .jumbo-home-overlay {
     top: 217px;
 }
-
+.jumbotron.unlinkedaccounts-page .jumbo-home-overlay{
+    top: 267px;
+}
 .jumbo-home-overlay .top-jumbo-overlay {
     padding: 20px 0;
     margin: 0;
@@ -878,6 +882,10 @@ a.orange:hover {
 /* end*/
 
 /* Unlinked accounts */
+.unlinked-subheaderleft {
+    line-height: 36px;
+    font-weight: bold;
+}
 
 .static-body.unlinkedaccounts-body {
     padding-bottom: 70px;
@@ -926,7 +934,9 @@ a.orange:hover {
 .static-body.unlinkedaccounts-body p {
     text-align: left;
 }
-
+    .static-body.unlinkedaccounts-body p.text-center {
+        text-align:center;
+    }
 .unlinkedaccounts-body .link-youraccount {
     padding-left: 40px;
 }

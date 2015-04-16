@@ -4,9 +4,11 @@
     ViewBag.Title = "Bravecto";
     ViewBag.IncludeSocialScript = true;
     Layout = "~/Views/Shared/_LayoutBravovets.cshtml";
-    ViewBag.DisplaySubnavigation = true;
+    ViewBag.DisplaySubnavigation = false;
 }
-
+@section subheaderleft {
+    <strong class="unlinked-subheaderleft">Link your social profiles for the full BravoVets experience.</strong>
+}
 <div class="container">
     <div class="row simpleheaderrow">
         <h2>BRAVOVETS</h2>
@@ -37,6 +39,8 @@
             And, with BravoVets, you can harness the power of social media to grow your visibility among pet
             owners. Link your Facebook and Twitter business accounts to BravoVets for support in strengthening
             your ties via the largest platforms available.
+            <br />
+            <a href="#">LEARN MORE ABOUT THE NEED FOR A SOCIAL PRESENCE</a>
         </p>
     </div>
 </div>
@@ -44,6 +48,7 @@
     <div class="container">
         <div class="row">
             <h2>EXPAND YOUR SOCIAL VISIBILITY</h2>
+            <p class="text-center">Connect the Facebook and Twitter pages for your veterinary practice with curated social posts on BravoVets.</p>
         </div>
         <div class="row">
             <div class="col-md-8 link-youraccount-border">
@@ -58,6 +63,7 @@
                             Facebook, with its more than 1.25 billion members, makes that a high probability.
                             <a href="#" class="link-socialaccount" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">Link your Facebook</a> to share content that can help you grow relationships with your customers
                             by demonstrating your clinic's expertise, knowledge and caring on a personal level.
+                            <a href="#">LEARN HOW TO GET STARTED</a>
                         </p>
                     </div>
                 </div>
@@ -72,6 +78,7 @@
                             authority in leading-edge veterinary treatments. <a href="#" class="link-socialaccount" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">Link your Twitter</a>
                             to build and reach an audience of followers - of both your customers and others around the world
                             - with the latest news and trends relevant to animal health.
+                            <a href="#">LEARN HOW TO GET STARTED</a>
                         </p>
                     </div>
                 </div>
@@ -122,21 +129,23 @@
     </div>
 </div>
 <div class="container static-body unlinkedaccounts-body">
-    <div class="static-overlay bggreen">
+    <div class="row">
+        <h2>
+            EXTEND THE FAST-ACTING, LONGEST-LASTING<br />
+            FLEA AND TICK PROTECTION IN A CHEW.
+        </h2>
         <p>
-            Your online presence is the single most powerful tool available for building engagement
-            and involvement with pet owners. That's because pet owners actively use the internet to connect with
-            like-minded animal lovers and to find useful information about pet health and wellness. In fact, 70%
-            of pet owners spend up to 30 minutes every week reviewing pet-related topics online.
+            You strive to provide the best protection to all of the dogs you treat. And, with the first and only chewable flea and tick protection that lasts up to 12 weeks, you can. Bravecto is a breakthrough in flea and tick protection that starts working in just 2 hours – and keeps working up to 3X longer than any other monthly chewable or topical available. Close the gaps in between protection by giving pet owners fewer chances to forget – and help keep dogs healthier, longer. Plus, when you prescribe Bravecto, Merck Animal Health provides support every step of the way, with informational resources, marketing toolkits and social media tools, so you can be confident in your decision.
+            <a href="/products">LEARN MORE ABOUT BRAVECTO PRODUCTS</a>
         </p>
+        <h2>
+            EXTEND RELATIONSHIPS WITH PET OWNERS<br />
+            BEYOND THE OFFICE TO KEEP THEM COMING BACK.
+        </h2>
         <p>
-            Social media can help you connect with those information seekers - allowing you to engage current
-            and potential customers, gain real insight into your audience and understand their needs.
-        </p>
-        <p>
-            From one-on-one interactions to sharing curated content. BravoVets helps you reach, connect and
-            create deeper relationships by communicating the sort of information that demonstrates your clinic's expertise,
-            knowledge and caring on a personal level.
+            The importance of being visible online cannot be overstated. It is the single most powerful tool in your arsenal for building engagement with pet owners – and ensuring their involvement with the treatments you recommend. That’s because pet owners actively use the internet to connect with like-minded animal lovers and to find useful information about pet health and wellness. Social media provides the opportunity to connect with the 70%1 of pet owners that search pet-related topics online every week, wherever they are.
+            <br />
+            When you use BravoVets, you gain an exclusive, easy-to-use social tool that consolidates your engagements with customers, pet owners and followers on Facebook and Twitter into one platform. And, it provides you with curated content ready to share with your followers. So you can easily reach, connect, and create deeper relationships with pet owners – ultimately driving more awareness for, and loyalty to, your business.
         </p>
     </div>
 </div>
@@ -149,6 +158,20 @@
 </div>
 <div class="container static-body">
     <h2 class="green linkedaccountmainheader">CREATING A PRESENCE ON FACEBOOK REQUIRES SOME UP-FRONT STRATEGY AND SETUP.</h2>
+    <p>
+        If you already have a Facebook account for your veterinary practice,
+        <a href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+            @if (Model.IsFacebookLinked)
+            {
+                <text>@Resource.UnlinkYourFacebook</text>
+            }
+            else
+            {
+                <text>link it now</text>
+            }
+        </a>
+
+    </p>
     <div class="text-center">
         <img src="~/Content/img/fb-icon-lg.png" />
     </div>
@@ -156,8 +179,8 @@
         <div class="col-md-4">
             <p>
                 To create your business page, first log in to your personal
-                Facebook account. (Don't worry - this doesn't that fans of your clinic
-                will see any of the personal details or content in your profile, it's merely a formality).
+                Facebook account. if you don’t have an account, <a href="/newbusiness">sign up now</a> 
+                Don’t worry – this doesn’t mean that fans of your clinic will see any of the personal details or content in your profile.
                 <br />
                 Then click the small "down arrow" icon on the far right of the page, near your name,
                 and choose "Create a page".
@@ -179,6 +202,7 @@
                         <span class="header">Complete 'Basic information'</span>
                         Select a high-resoulution image of your company's logo to set as your profile picture
                         and a larger image for your "cover" photo. Complete the "About" section by adding a short summary
+                        (2 – 3 sentences) about your business with a link to your website.
                     </p>
                 </li>
                 <li>
@@ -193,7 +217,7 @@
         </div>
     </div>
     <div class="row simpleheaderrow">
-        <h3>Now you're ready to connect your Facebook page to BravoVets!</h3>
+        <h3>Now you're ready to connect your page to BravoVets!</h3>
         <p>
             <a class="btn btn-default link-socialaccount" href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
                 @if (Model.IsFacebookLinked)
@@ -202,7 +226,7 @@
                 }
                 else
                 {
-                    <text>@Resource.LinkYourFacebook</text>
+                    <text>@Resource.LinkYourFacebook ACCOUNT</text>
                 }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
@@ -218,6 +242,19 @@
 </div>
 <div class="container static-body">
     <h2 class="green linkedaccountmainheader">START YOUR JOURNEY TO A BIGGER FOLLOWING WITH A FEW SIMPLE STEPS.</h2>
+    <p>
+        If you already have a Twitter account for your veterinary practice,
+        <a href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+            @if (Model.IsTwitterLinked)
+            {
+                <text>@Resource.UnlinkYourTwitter</text>
+            }
+            else
+            {
+                <text>link it now</text>
+            }
+        </a>
+    </p>
     <div class="text-center">
         <img src="~/Content/img/twitter-icon-lg.png" />
         <h3>Creating a Twitter account for your business is quick and easy.</h3>
@@ -264,15 +301,13 @@
                 <li>
                     <span class="label label-green">1</span>
                     <p>
-                        Complete your profile by entering your clinic name, location, a link to your website and a short
-                        (160 characters or less) summary of your business or philosophy.
+                        Select a high-resolution image of your clinic’s logo to set as your photo. This image will appear next to all of your tweets.
                     </p>
                 </li>
                 <li>
                     <span class="label label-green">2</span>
                     <p>
-                        Enter the username (also known as a handle) you wish to be referred to as.
-                        This is the name other Twitter followers will use to interact with you.
+                        Complete your profile by entering your clinic name, location, a link to your website and a short (160 characters or less) summary of your business or philosophy.
                     </p>
                 </li>
                 <li>
@@ -286,7 +321,7 @@
         </div>
     </div>
     <div class="row simpleheaderrow">
-        <h3>Now you're ready to connect your Twitter to BravoVets!</h3>
+        <h3>Now you're ready to connect your Twitter account to BravoVets!</h3>
         <p>
             <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
                 @if (Model.IsTwitterLinked)
@@ -295,7 +330,7 @@
                 }
                 else
                 {
-                    <text>@Resource.LinkYourTwitter</text>
+                    <text>@Resource.LinkYourTwitter ACCOUNT</text>
                 }
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
