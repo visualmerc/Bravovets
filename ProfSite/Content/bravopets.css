@@ -227,3 +227,10 @@ ul.faq-list {
         ul.faq-list > li div.content {
             display: none;
         }
+ul.list-items {
+    width:50%;
+    margin:0 auto;
+    list-style-type:disc;
+    font-size:18px;
+    text-align:left;
+}

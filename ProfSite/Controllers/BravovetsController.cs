@@ -55,20 +55,20 @@ namespace ProfSite.Controllers
         }
 
         // [ClaimsPrincipalPermission(SecurityAction.Demand, Operation = "AcceptedToc", Resource = "BravoVets")]
-        public ActionResult Dashboard()
-        {
-            ViewBag.Title = Resource.BravoVets_Homepage_Title;
-            try
-            {
-                ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
-            }
-            catch (Exception ex)
-            {
-                return TermsAndConditions();
-            }
+        //public ActionResult Dashboard()
+        //{
+        //    ViewBag.Title = Resource.BravoVets_Homepage_Title;
+        //    try
+        //    {
+        //        ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return TermsAndConditions();
+        //    }
 
-            return View("Dashboard");
-        }
+        //    return View("Dashboard");
+        //}
 
         [HttpGet]
         [ActionName("social-content")]
@@ -81,6 +81,15 @@ namespace ProfSite.Controllers
         [ActionName("linked-accounts")]
         public ActionResult LinkedAccounts()
         {
+            try
+            {
+                ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
+            }
+            catch (Exception)
+            {
+                return TermsAndConditions();
+            }
+
             var model = new LinkedAccountsViewModel();
 
             //TODO: Check for authentication
@@ -146,8 +155,16 @@ namespace ProfSite.Controllers
         [ActionName("unlinked-accounts")]
         public ActionResult UnLinkedAccounts()
         {
-            var model = new LinkedAccountsViewModel();
+            try
+            {
+                ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
+            }
+            catch (Exception)
+            {
+                return TermsAndConditions();
+            }
 
+            var model = new LinkedAccountsViewModel();
             var userId = this.GetCurrentUserId();
             var userDomainService = new BravoVetsUserDomainService();
             var user = userDomainService.GetBravoVetsUserForProfileEdit(userId);
@@ -569,16 +586,16 @@ namespace ProfSite.Controllers
         }
 
 
-        public ActionResult EditProfileAndFacility(int? id)
-        {
-            ViewBag.Title = Resource.BravoVets_EditProfile_Title;
-            BravoVetsUser user;
-            user = id.HasValue ? this.GetCurrentUserEditableFacility(id.Value) : this.GetCurrentUserForEdit();
-            user.Veterinarian.CanEditFacilities = true;
-            ILookupDomainService lookupManager = new LookupDomainService();
-            ViewBag.Countries = lookupManager.GetBravoVetsCountries();
-            return View("Profile", user);
-        }
+        //public ActionResult EditProfileAndFacility(int? id)
+        //{
+        //    ViewBag.Title = Resource.BravoVets_EditProfile_Title;
+        //    BravoVetsUser user;
+        //    user = id.HasValue ? this.GetCurrentUserEditableFacility(id.Value) : this.GetCurrentUserForEdit();
+        //    user.Veterinarian.CanEditFacilities = true;
+        //    ILookupDomainService lookupManager = new LookupDomainService();
+        //    ViewBag.Countries = lookupManager.GetBravoVetsCountries();
+        //    return View("Profile", user);
+        //}
 
         [HttpPost]
         public ActionResult EditProfileAndFacility(BravoVetsUser bvUser)

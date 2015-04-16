@@ -46,7 +46,12 @@ a.orange:hover {
 .red {
     color: #dd042b;
 }
-
+.italic {
+    font-style:italic;
+}
+.underline {
+    text-decoration:underline;
+}
 .label {
     background-color: #009994;
     border-radius: 13px;

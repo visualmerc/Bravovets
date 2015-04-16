@@ -394,6 +394,7 @@
     <Content Include="Content\img\aboutusheader.jpg" />
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
+    <Content Include="Content\img\adherenceheader.jpg" />
     <Content Include="Content\img\Bravecto_BravoPets_header.jpg" />
     <Content Include="Content\img\Bravecto_BravoPets_videothumb.jpg" />
     <Content Include="Content\img\Bravecto_ContactUs_header.jpg" />
@@ -429,6 +430,7 @@
     <Content Include="Content\img\clock_anim_blur11.png" />
     <Content Include="Content\img\clock_icon.png" />
     <Content Include="Content\img\hand_icon.png" />
+    <Content Include="Content\img\innovationheader.jpg" />
     <Content Include="Content\img\linkedaccounts-bottom.jpg" />
     <Content Include="Content\img\linkedaccounts-top.jpg" />
     <Content Include="Content\img\extralargedogs.png" />

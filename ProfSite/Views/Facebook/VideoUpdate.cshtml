@@ -10,7 +10,7 @@
         <p>@Html.Raw(Model.Message)</p>
         <div class="share-wrapper">
             <div class="photo">
-                @Html.Raw(Model.Photo)
+                @Html.Raw(Model.Photos.FirstOrDefault())
             </div>
             <div class="caption">
                 @Model.Caption
