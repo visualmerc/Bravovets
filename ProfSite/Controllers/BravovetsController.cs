@@ -41,6 +41,15 @@ namespace ProfSite.Controllers
             var menu = BravectoMenu.CreateBravovetsMenu(filterContext.ActionDescriptor.ActionName);
             ViewBag.Menu = menu;
             ViewBag.Language = this.GetSiteFullLanguage();
+
+            ViewBag.LogoUrl = "/unlinked-accounts";
+            var user = GetLoggedInUser();
+            if (user != null)
+            {
+                var isAllLinked = IsUserAllLinked(user);
+                if (isAllLinked)
+                    ViewBag.LogoUrl = "/linked-accounts";
+            }
         }
 
         public ActionResult SelectCountry(string subdomain)
@@ -149,6 +158,20 @@ namespace ProfSite.Controllers
                 model.Posts = posts;
             }
             return View(model);
+        }
+
+        private BravoVetsUser GetLoggedInUser()
+        {
+            var userDomainService = new BravoVetsUserDomainService();
+            return userDomainService.GetBravoVetsUserForProfileEdit(this.GetCurrentUserId());
+        }
+
+        private bool IsUserAllLinked(BravoVetsUser user)
+        {
+            if (!user.Veterinarian.IsFacebookLinked || !user.Veterinarian.IsTwitterLinked)
+                return false;
+
+            return true;
         }
 
         [HttpGet]
@@ -364,8 +387,8 @@ namespace ProfSite.Controllers
                     sortBy, pageToken);
             }
             else
-            {             
-                content = syndicatedContentService.GetFilteredTrendingTopics(countryId, userId, 
+            {
+                content = syndicatedContentService.GetFilteredTrendingTopics(countryId, userId,
                   filterBy, sortBy, pageToken);
             }
 

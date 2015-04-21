@@ -55,17 +55,9 @@
                     <li class="@(ViewBag.SelectedNode == "contactus" ? "active" : "")" role="presentation"><a href="/contact-us">CONTACT</a></li>
                 </ul>
             </nav>
-            @if(User.Identity.IsAuthenticated || User.Identity != null) {
-            <a href="/linked-accounts" class="navbar-brand bravovets">
+            <a href="@ViewBag.LogoUrl" class="navbar-brand bravovets">
                 <img src="~/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
             </a>
-            }
-            else
-            {
-                <a href="/unlinked-accounts" class="navbar-brand bravovets">
-                    <img src="~/images/logo-bravovets@2x.png" alt="Bravecto Logo" class="logo-bravecto">
-                </a>
-            }
         </div>
     </div>
     <div id="subheader">
