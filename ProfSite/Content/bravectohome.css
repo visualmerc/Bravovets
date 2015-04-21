@@ -720,6 +720,7 @@ a.orange:hover {
     float: left;
     min-height: 220px;
     position: relative;
+    width:270px;
 }
 
     .resources-list .resource-item .resource-content .action-wrapper {
