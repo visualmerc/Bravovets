@@ -619,7 +619,7 @@ namespace ProfSite.Controllers
             var passedVetValidation = this.ValidateVetValues(bvUser);
             if (passedVetValidation && this.UpdateBravoVetsUserFromProfile(bvUser))
             {
-                return RedirectToAction("Dashboard");
+                return RedirectToAction("linked-accounts");
             }
             else if (showFacilities)
             {
@@ -630,12 +630,12 @@ namespace ProfSite.Controllers
                 user.Veterinarian.EditableFacility.IsEditable = true;
                 ILookupDomainService lookupManager = new LookupDomainService();
                 ViewBag.Countries = lookupManager.GetBravoVetsCountries();
-                return View("Profile", user);
+                return View("profile", user);
             }
             else
             {
                 var user = this.GetCurrentUserForEdit();
-                return View("Profile", user);
+                return View("profile", user);
             }
         }
 

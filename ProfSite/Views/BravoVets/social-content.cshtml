@@ -9,7 +9,22 @@
         <h2>SOCIAL CONTENT</h2>
     </div>
 </div>
-<div class="static-body resources-body grey">
+<div class="nomargin static-body resources-body lightgrey">
+    <div class="container">
+        <div class="row resource-searchrow">
+            <div class="col-md-8 col-md-offset-2">
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group">
+                        @Html.TextBox("Search", "", new { placeholder = "SEARCH", @class = "form-control" })
+                        <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nomargin static-body resources-body darkgrey">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
