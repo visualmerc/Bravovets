@@ -673,12 +673,14 @@ a.orange:hover {
     padding: 10px 12px;
     height: 45px;
     font-size: 20px;
-    position:relative;
-    padding-right:45px;
+    position: relative;
+    padding-right: 45px;
 }
+
 .resource-searchrow .form-group {
-    position:relative;
+    position: relative;
 }
+
 .resource-searchrow .form-control-feedback {
     position: absolute;
     top: 5px;
@@ -690,8 +692,8 @@ a.orange:hover {
     line-height: 34px;
     text-align: center;
     pointer-events: none;
-        color: #009994;
-    font-size:20px;
+    color: #009994;
+    font-size: 20px;
 }
 
 .resource-searchrow .form-control::-webkit-input-placeholder {
@@ -1332,3 +1334,21 @@ footer {
         text-align: center;
     }
 /* End*/
+
+
+@media (max-width : 568px) {
+    .jumbotron h1 {
+        font-size: 30px !important;
+    }
+
+    .jumbotron.resources-page .jumbo-home-overlay, 
+    .jumbotron.contactus-page .jumbo-home-overlay, 
+    .jumbotron.support-page .jumbo-home-overlay, 
+    .jumbotron.aboutus .jumbo-home-overlay {
+    top: 50px;
+}
+
+    .top-jumbo-overlay h3.weeks {
+        font-size: 18px;
+    }
+}
