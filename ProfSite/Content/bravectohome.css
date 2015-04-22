@@ -310,12 +310,24 @@ a.orange:hover {
     margin: 25px 25px 0 25px;
 }
 
+    .bottom-jumbo-overlay.bravecto {
+        border-top: 1px solid #fff;
+        padding: 20px 20px;
+        margin: 0;
+        background: rgba(0, 153, 148, 1);
+    }
+    .bottom-jumbo-overlay.bottomopaque {
+        border-top: 1px solid #fff;
+        padding: 20px 20px;
+        margin: 0;
+        background: rgba(0, 153, 148, 1);
+    }
+
 .jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,
 .jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
 .jumbotron.support-page .bottom-jumbo-overlay,
-.jumbotron.products .bottom-jumbo-overlay,
-.jumbotron.aboutus .bottom-jumbo-overlay {
+.jumbotron.products .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
 }
 
@@ -933,6 +945,10 @@ a.orange:hover {
     font-weight: bold;
 }
 
+    .unlinked-subheaderleft a {
+        color: #394147;
+    }
+
 .static-body.unlinkedaccounts-body {
     padding-bottom: 70px;
     margin-bottom: 30px;
@@ -940,6 +956,7 @@ a.orange:hover {
 
     .static-body.unlinkedaccounts-body.top {
         margin-top: 90px;
+        padding-bottom: 20px;
     }
 
 .unlinkedaccountbottom {
@@ -978,12 +995,16 @@ a.orange:hover {
 }
 
 .static-body.unlinkedaccounts-body p {
+    text-align: center;
+}
+
+.static-body.unlinkedaccounts-body.leftaligned p {
     text-align: left;
 }
 
-    .static-body.unlinkedaccounts-body p.text-center {
-        text-align: center;
-    }
+.static-body.unlinkedaccounts-body p.text-center {
+    text-align: center;
+}
 
 .unlinkedaccounts-body .link-youraccount {
     padding-left: 40px;
@@ -1311,11 +1332,11 @@ footer {
 }
 
     .selector-row .selection-panel a {
-        text-align: left;
+        text-align: center;
         display: block;
         margin: 0 auto;
         position: relative;
-        width: 200px;
+        width: 260px;
     }
 
     .selector-row .selection-panel p {
@@ -1324,15 +1345,20 @@ footer {
         text-align: center;
     }
 
-    .selector-row .selection-panel a span.arrow-wrapper {
-        text-align: center;
-        right: 0;
-    }
+.selector-row.aboveboxes {
+    margin-bottom: 20px;
+}
 
-    .selector-row .selection-panel h3 {
-        color: #009994;
-        text-align: center;
-    }
+.selector-row .selection-panel a span.arrow-wrapper {
+    text-align: center;
+    right: 0;
+    position: absolute;
+}
+
+.selector-row .selection-panel h3 {
+    color: #009994;
+    text-align: center;
+}
 /* End*/
 
 
@@ -1341,12 +1367,12 @@ footer {
         font-size: 30px !important;
     }
 
-    .jumbotron.resources-page .jumbo-home-overlay, 
-    .jumbotron.contactus-page .jumbo-home-overlay, 
-    .jumbotron.support-page .jumbo-home-overlay, 
+    .jumbotron.resources-page .jumbo-home-overlay,
+    .jumbotron.contactus-page .jumbo-home-overlay,
+    .jumbotron.support-page .jumbo-home-overlay,
     .jumbotron.aboutus .jumbo-home-overlay {
-    top: 50px;
-}
+        top: 50px;
+    }
 
     .top-jumbo-overlay h3.weeks {
         font-size: 18px;

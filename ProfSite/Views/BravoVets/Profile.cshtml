@@ -140,8 +140,14 @@
                                         <p>@bvResources.BravoVets_Profile_CompleteBizProfile</p>
                                     </div>
                                     <div class="col-sm-6 plus-diagonal-vertical">
-                                        <a href="javascript:void(0)" class="btn social-button facebook-bg linked" onclick="toggleFacebook(@isFacebookLinked);return false;">@facebookText</a>
-                                        <a href="javascript:void(0)" class="btn social-button twitter-bg" onclick="toggleTwitter(@isTwitterLinked);return false;">@twitterText</a>
+                                        <a class="btn btn-default link-socialaccount" href="javascript:void(0);" data-type="facebook" onclick="toggleFacebook(@isFacebookLinked);return false;">
+                                            @facebookText
+                                            <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                                        </a>
+                                        <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" onclick="toggleTwitter(@isTwitterLinked);return false;">
+                                            @twitterText
+                                            <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

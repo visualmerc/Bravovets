@@ -1363,6 +1363,15 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LOAD MORE POSTS.
+        /// </summary>
+        public static string BravoVets_SocialTips_LoadMorePosts {
+            get {
+                return ResourceManager.GetString("BravoVets_SocialTips_LoadMorePosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have no {0} items.
         /// </summary>
         public static string BravoVets_SocialTips_NoMoreItems {

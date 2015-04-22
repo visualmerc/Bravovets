@@ -8,6 +8,7 @@
     top: 60px;
     text-transform: uppercase;
     color: #394147;
+    z-index:99;
 }
 
 .navbar-brand.bravovets {
@@ -71,6 +72,9 @@
 
 .complete-profile-row .row {
     padding: 0 20px 50px 20px;
+}
+.complete-profile-row .btn.link-socialaccount {
+    margin-bottom:10px;
 }
 
 div.sitemap-wrapper ul.sitemap ul.sitemap:first-of-type {

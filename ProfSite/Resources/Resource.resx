@@ -1080,4 +1080,7 @@
   <data name="ConfirmPasswordText" xml:space="preserve">
     <value>CONFIRM PASSWORD</value>
   </data>
+  <data name="BravoVets_SocialTips_LoadMorePosts" xml:space="preserve">
+    <value>LOAD MORE POSTS</value>
+  </data>
 </root>

@@ -59,7 +59,7 @@
 <div class="static-section linkedaccounttop">
     <div class="container">
         <div class="static-overlay bggreen">
-            <h2>EXTEND YOUR CONNECTION TO PET-OWNERS <br />IN YOUR COMMUNITY WITH FACEBOOK</h2>
+            <h2>EXTEND YOUR CONNECTION TO PET-OWNERS <br />IN YOUR COMMUNITY WITH FACEBOOK.</h2>
         </div>
     </div>
 </div>
@@ -67,15 +67,27 @@
     <h2 class="green linkedaccountmainheader">CREATING A PRESENCE ON FACEBOOK REQUIRES SOME UP-FRONT STRATEGY AND SETUP.</h2>
     <div class="text-center">
         <img src="~/Content/img/fb-icon-lg.png" />
+        <p>
+            If you already have a Facebook account for your veterinary practice,
+            <a href="#" data-type="facebook" data-islinked="@Model.IsFacebookLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsFacebookLinked)
+                {
+                    <text>@Resource.UnlinkYourFacebook</text>
+                }
+                else
+                {
+                    <text>link it now</text>
+                }
+            </a>
+        </p>
     </div>
     <div class="row facebook-details-row">
         <div class="col-md-4">
             <p>
                 To create your business page, first log in to your personal
-                Facebook account. (Don't worry - this doesn't that fans of your clinic
-                will see any of the personal details or content in your profile, it's merely a formality).
-                <br />
-                Then click the small "down arrow" icon on the far right of the page, near your name,
+                Facebook account (if you don’t have an account, <a href="https://www.facebook.com/signup" target="_blank">sign up now</a>). Don't worry - this doesn't that fans of your clinic
+                will see any of the personal details or content in your profile.
+                Then click the small "down arrow" icon on the far right of the Page, near your name,
                 and choose "Create a page".
             </p>
         </div>
@@ -85,16 +97,17 @@
                     <span class="label label-green">1</span>
                     <p>
                         <span class="header">Choose your classification</span>
-                        Select "Local business of place". This will help your business come up in relevant
+                        Select "Local business or place". This will help your business come up in relevant
                         searches. Next, choose the category your business falls into and enter your business's name.
                     </p>
                 </li>
                 <li>
                     <span class="label label-green">2</span>
                     <p>
-                        <span class="header">Complete 'Basic information'</span>
-                        Select a high-resoulution image of your company's logo to set as your profile picture
+                        <span class="header">Complete "Basic information"</span>
+                        Select a high-resolution image of your company's logo to set as your profile picture
                         and a larger image for your "cover" photo. Complete the "About" section by adding a short summary
+                        (2 – 3 sentences) about your business with a link to your website.
                     </p>
                 </li>
                 <li>
@@ -128,7 +141,7 @@
 <div class="static-section linkedaccountbottom">
     <div class="container">
         <div class="static-overlay bggreen">
-            <h2>EXTEND YOUR AUTHORITY IN LEADING-EDGE <br /> VETERINARY TREATMENTS ON TWITTER</h2>
+            <h2>EXTEND YOUR AUTHORITY IN LEADING-EDGE <br /> VETERINARY TREATMENTS ON TWITTER.</h2>
         </div>
     </div>
 </div>
@@ -137,6 +150,19 @@
     <div class="text-center">
         <img src="~/Content/img/twitter-icon-lg.png" />
         <h3>Creating a Twitter account for your business is quick and easy.</h3>
+        <p>
+            If you already have a Twitter account for your veterinary practice,
+            <a href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
+                @if (Model.IsFacebookLinked)
+                {
+                    <text>@Resource.UnlinkYourTwitter</text>
+                }
+                else
+                {
+                    <text>link it now</text>
+                }
+            </a>
+        </p>
     </div>
     <div class="row twitter-details-row">
         <div class="col-md-4">
@@ -180,15 +206,14 @@
                 <li>
                     <span class="label label-green">1</span>
                     <p>
-                        Complete your profile by entering your clinic name, location, a link to your website and a short
-                        (160 characters or less) summary of your business or philosophy.
+                        Select a high-resolution image of your clinic’s logo to set as your photo. This image will appear next to all of your tweets.
                     </p>
                 </li>
                 <li>
                     <span class="label label-green">2</span>
                     <p>
-                        Enter the username (also known as a handle) you wish to be referred to as.
-                        This is the name other Twitter followers will use to interact with you.
+                        Complete your profile by entering your clinic name, location, a link to your website and a short
+                        (160 characters or less) summary of your business or philosophy.
                     </p>
                 </li>
                 <li>
@@ -202,7 +227,7 @@
         </div>
     </div>
     <div class="row simpleheaderrow">
-        <h3>Now you're ready to connect your Twitter to BravoVets!</h3>
+        <h3>Now you're ready to connect your Twitter account to BravoVets!</h3>
         <p>
             <a class="btn btn-default link-socialaccount" href="#" data-type="twitter" data-islinked="@Model.IsTwitterLinked.ToString().ToLowerInvariant()">
                 @if (Model.IsTwitterLinked)
