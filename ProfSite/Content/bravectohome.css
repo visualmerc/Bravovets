@@ -284,7 +284,6 @@ a.orange:hover {
     }
 
 .jumbo-home-overlay {
-    background-color: rgba(0, 153, 148, 0.5);
     position: relative;
     top: 214px;
 }
@@ -301,6 +300,7 @@ a.orange:hover {
 }
 
 .jumbo-home-overlay .top-jumbo-overlay {
+    background-color: rgba(0, 153, 148, 0.5);
     padding: 20px 0;
     margin: 0;
 }
@@ -321,6 +321,7 @@ a.orange:hover {
 }
 
 .bottom-jumbo-overlay {
+    background-color: rgb(0, 153, 148);
     border-top: 1px solid #fff;
     padding: 20px 0;
     margin: 25px 25px 0 25px;
