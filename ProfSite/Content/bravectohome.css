@@ -689,6 +689,9 @@ a.orange:hover {
     text-align: left;
     margin-top: 100px;
 }
+.static-body.resources-body-less {
+    margin-top: 50px;
+}
 
     .static-body.resources-body.nomargin {
         margin-top: 0;
