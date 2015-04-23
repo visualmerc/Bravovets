@@ -107,8 +107,24 @@ a.orange:hover {
     }
 
 #subheader {
+    margin-top: 130px;
     min-height: 40px;
     background-color: #EEE;
+}
+@media (min-width:500px) {
+    #subheader {
+        margin-top: 77px;
+    }
+}
+@media (min-width:680px) {
+    #subheader {
+        margin-top: 50px;
+    }
+}
+@media (min-width:768px) {
+    #subheader {
+        margin-top: 0;
+    }
 }
 
     #subheader.withpadding {

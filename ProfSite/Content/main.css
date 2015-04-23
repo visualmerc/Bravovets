@@ -3707,7 +3707,15 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
     .nav > li {
         position: relative;
-        display: block;
+        display: inline-block;
+        width: 47%;
+    }
+
+    @media (min-width:768px) {
+        .nav > li {
+            display: block;
+            width: auto;
+        }
     }
 
         .nav > li > a {
