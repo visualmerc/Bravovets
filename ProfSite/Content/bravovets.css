@@ -1,5 +1,15 @@
 ﻿.header #top-nav.nav.nav-pills {
-    top: 90px;
+    top: 100px;
+}
+@media (min-width:768px) {
+    .header #top-nav.nav.nav-pills {
+        top: 182px;
+    }
+}
+@media (min-width:992px) {
+    .header #top-nav.nav.nav-pills {
+        top: 90px;
+    }
 }
 
 .prescribing-infolink {

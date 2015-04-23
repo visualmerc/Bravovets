@@ -107,8 +107,24 @@ a.orange:hover {
     }
 
 #subheader {
+    margin-top: 130px;
     min-height: 40px;
     background-color: #EEE;
+}
+@media (min-width:500px) {
+    #subheader {
+        margin-top: 77px;
+    }
+}
+@media (min-width:680px) {
+    #subheader {
+        margin-top: 50px;
+    }
+}
+@media (min-width:768px) {
+    #subheader {
+        margin-top: 0;
+    }
 }
 
     #subheader.withpadding {
@@ -268,7 +284,6 @@ a.orange:hover {
     }
 
 .jumbo-home-overlay {
-    background-color: rgba(0, 153, 148, 0.5);
     position: relative;
     top: 214px;
 }
@@ -285,6 +300,7 @@ a.orange:hover {
 }
 
 .jumbo-home-overlay .top-jumbo-overlay {
+    background-color: rgba(0, 153, 148, 0.5);
     padding: 20px 0;
     margin: 0;
 }
@@ -305,6 +321,7 @@ a.orange:hover {
 }
 
 .bottom-jumbo-overlay {
+    background-color: rgb(0, 153, 148);
     border-top: 1px solid #fff;
     padding: 20px 0;
     margin: 25px 25px 0 25px;
@@ -900,12 +917,17 @@ a.orange:hover {
     }
 
 .support-benefits {
-    background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+    background: rgb(35, 158, 151);
     background-size: 100% auto;
     background-position: 100% 0%;
-    height: 400px;
     position: relative;
     text-align: center;
+}
+@media (min-width:992px) {
+    .support-benefits {
+        background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+        height: 400px;
+    }
 }
 
     .support-benefits h2 {
@@ -1105,8 +1127,14 @@ form.form-reply button.btn-primary {
 
 .marketing-row {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 165px;
     margin-bottom: 50px;
+}
+
+@media (max-width : 450px) {
+    .marketing-row {
+        margin-top: 100px;
+    }
 }
 
     .marketing-row p {
