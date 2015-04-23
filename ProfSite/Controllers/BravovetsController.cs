@@ -523,8 +523,6 @@ namespace ProfSite.Controllers
 
             model.CurrentView = GetCurrentView(filterBy);
 
-
-
             return model;
         }
 
@@ -537,9 +535,17 @@ namespace ProfSite.Controllers
                 ClaimsPrincipalPermission.CheckAccess("BravoVets", "AcceptedToc");
 
                 var model = GetSocialTips(ContentSortEnum.ContentDate, ContentFilterEnum.All, 0, 5);
+
+                var vetService = new VeterinarianDomainService();
+                var userDomainService = new BravoVetsUserDomainService();
+                var user = userDomainService.GetBravoVetsUserForProfileEdit(GetCurrentUserId());
+                var vet = vetService.GetVeterinarian(user.VeterinarianId);
+
+                model.Veterinarian = vet;
+
                 return View("SocialTips", model);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return TermsAndConditions();
             }

@@ -57,7 +57,7 @@ namespace ProfSite.Controllers
             return model;
         }
 
-        public ActionResult TrendingTopics()
+        public ActionResult TrendingTopics(int v = 1)
         {
             int userId = GetCurrentUserId();
             int langId = GetCountryId();
@@ -66,6 +66,11 @@ namespace ProfSite.Controllers
                     ContentSortEnum.ContentDate, new PagingToken{StartRecord = 0,TotalRecords = 5});
 
             SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("trending-topics", "Trending Topics", "/trendingtopics", contents,true);
+
+            if (v == 2)
+            {
+                return PartialView("SyndicatedContentWidgetv2", model);
+            }
             return PartialView("SyndicatedContentWidget", model);
         }
 

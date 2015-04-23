@@ -310,12 +310,17 @@ a.orange:hover {
     margin: 25px 25px 0 25px;
 }
 
+    .bottom-jumbo-overlay h4 {
+        text-align: center;
+    }
+
     .bottom-jumbo-overlay.bravecto {
         border-top: 1px solid #fff;
         padding: 20px 20px;
         margin: 0;
         background: rgba(0, 153, 148, 1);
     }
+
     .bottom-jumbo-overlay.bottomopaque {
         border-top: 1px solid #fff;
         padding: 20px 20px;
@@ -326,7 +331,6 @@ a.orange:hover {
 .jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,
 .jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
-.jumbotron.support-page .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
 }
@@ -936,6 +940,9 @@ a.orange:hover {
     text-align: center;
 }
 
+.support-benefits.adherence-benefits div h3 {
+    font-size: 20px;
+}
 
 /* end*/
 

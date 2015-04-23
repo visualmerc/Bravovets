@@ -138,6 +138,9 @@
         </div>
     </footer>
     @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery-plugins")
+    @Scripts.Render("~/bundles/locales")
+
     @RenderSection("scripts", false)
     @if (ViewBag.IncludeSocialScript != null && (bool)ViewBag.IncludeSocialScript == true)
     {

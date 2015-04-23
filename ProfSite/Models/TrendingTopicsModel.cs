@@ -128,5 +128,6 @@ namespace ProfSite.Models
 
         public string CurrentView { get; set; }
         public bool IsFirstPage { get; set; }
+        public Veterinarian Veterinarian { get; set; }
     }
 }

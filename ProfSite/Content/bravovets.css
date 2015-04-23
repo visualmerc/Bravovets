@@ -8,7 +8,7 @@
     top: 60px;
     text-transform: uppercase;
     color: #394147;
-    z-index:99;
+    z-index: 99;
 }
 
 .navbar-brand.bravovets {
@@ -73,8 +73,9 @@
 .complete-profile-row .row {
     padding: 0 20px 50px 20px;
 }
+
 .complete-profile-row .btn.link-socialaccount {
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 div.sitemap-wrapper ul.sitemap ul.sitemap:first-of-type {
@@ -196,4 +197,289 @@ div.sitemap-wrapper {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+
+.social-tips-page .socialtips-side h2 {
+    color: #009994;
+    margin-top: -4px;
+}
+
+ul.social-tips-filters {
+    margin: 0;
+}
+
+    ul.social-tips-filters.nav li.active > a {
+        background-color: #009994;
+        border: medium none;
+        color: #fff;
+        margin: 0;
+    }
+
+    ul.social-tips-filters.nav li > a {
+        color: #333;
+        font-weight: bold;
+        text-transform: uppercase;
+        background-color: #EEE;
+        margin: 0px 2px 0px 2px;
+    }
+
+    ul.social-tips-filters.nav-pills > li {
+        margin: 0;
+    }
+
+ul.bravecto-content.syndicatedcontent-socialtips {
+    border-top: 20px solid #009994;
+    background-color: #EEE;
+}
+
+.social-tips-page {
+    margin-top: 30px;
+}
+
+.social-tips-sortby {
+    margin-top: -5px;
+}
+
+.social-tips-page .social-tips-sortby .select,
+.social-tips-page .social-tips-sortby .sort-title {
+    float: left;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.social-tips-page .social-tips-sortby .sort-title {
+    line-height: 40px;
+    margin-right: 10px;
+}
+
+.social-tips-page .social-tips-sortby .select {
+    border: 0;
+    padding: 18px 24px 21px;
+}
+
+    .social-tips-page .social-tips-sortby .select .select-styled {
+        padding: 9px 20px 9px 15px;
+        background: #EEE;
+    }
+
+.select .select-styled:after {
+    background: #DDD;
+}
+
+.social-tips-page .no-items-message {
+    color: #009994;
+}
+
+.additional-content-item .additional-content-item-header {
+    background: #009994;
+    padding: 10px;
+    color: #FFF;
+}
+
+    .additional-content-item .additional-content-item-header h3 {
+        color: #FFF;
+        float: left;
+        margin: 0;
+        line-height: 26px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .additional-content-item .additional-content-item-header a.viewall {
+        color: #FFF;
+        float: right;
+        font-size: 16px;
+        line-height: 26px;
+        padding: 0;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+.additional-content-container .additional-content-item {
+    background: #EEE;
+}
+
+.additional-content-container .content-wrapper h3 {
+    color: #394147;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.additional-content-container .content-wrapper .footer {
+    border-top: 0;
+}
+
+.additional-content-container .content-wrapper .share-wrapper a.btn.btn-link {
+    color: #f28c00;
+    font-weight: bold;
+    float: left;
+}
+
+    .additional-content-container .content-wrapper .share-wrapper a.btn.btn-link i {
+        color: #f28c00;
+        font-weight: bold;
+    }
+
+.additional-content-container .content-wrapper .share-wrapper .btn-share:after {
+    color: #f28c00;
+}
+
+.additional-content-container .bv-carousel .carousel-control.left {
+    left: 0;
+}
+
+.additional-content-container .bv-carousel .carousel-control.right {
+    right: 0;
+}
+
+.socialtips-wrapper .bravecto-content > li:first-child {
+    border-bottom: 0;
+}
+
+.socialtips-wrapper .bravecto-content > li {
+    background: none;
+    border-bottom: 1px solid #DDD;
+}
+
+.socialtips-wrapper .bravecto-content .panel-diagonalbottom:after {
+    background: no-repeat;
+}
+
+.socialtips-wrapper .bravecto-content > li a {
+    color: #f28c00;
+}
+
+    .socialtips-wrapper .bravecto-content > li a:after {
+        color: #f28c00;
+    }
+
+.socialtips-wrapper .bravecto-content > li .attachment-wrapper {
+    background: #F5f5f5;
+    border: none;
+}
+
+    .socialtips-wrapper .bravecto-content > li .attachment-wrapper h4 {
+        color: #333;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+.socialtips-wrapper .bravecto-content > li hr.diagonal {
+    display: none;
+}
+
+.socialtips-wrapper .bravecto-content > li h3 {
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+    .socialtips-wrapper .bravecto-content > li h3.veterinarian {
+        color: #009994;
+        font-size: 30px;
+        font-weight: bold;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #DDD;
+    }
+
+.socialtips-wrapper .bravecto-content li.veterinarian {
+    padding: 20px 20px 0 20px;
+}
+
+.socialtips-wrapper .bravecto-content > li .attachment-wrapper ul li.link:before,
+.socialtips-wrapper .bravecto-content > li .attachment-wrapper ul li.picture:before,
+.socialtips-wrapper .bravecto-content > li .attachment-wrapper ul li.doc:before,
+.socialtips-wrapper .bravecto-content > li .attachment-wrapper ul li a {
+    color: #f28c00;
+}
+
+.social-post-dialog .modal-header h4 {
+    color: #f28c00;
+}
+
+.social-activity-wrapper .diagonal-bottom:after {
+    display: none;
+}
+
+.social-activity-wrapper hr.diagonal.plus:after,
+.social-activity-wrapper hr.diagonal.plus:before {
+    display: none;
+}
+
+.social-activity-wrapper hr.diagonal.plus {
+    border-bottom: 1px solid #DDD;
+}
+
+.social-activity-wrapper .notification-container.facebook a,
+.social-activity-wrapper .notification-container.twitter a {
+    color: #f28c00;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.social-activity-wrapper .additional-content-item > .section-nav-wrapper {
+    position: relative;
+    top: 0;
+    background: #009994;
+}
+
+    .social-activity-wrapper .additional-content-item > .section-nav-wrapper h2 {
+        color: #FFF;
+        float: left;
+        margin: 0;
+        line-height: 26px;
+        font-size: 16px;
+        background: none;
+    }
+
+        .social-activity-wrapper .additional-content-item > .section-nav-wrapper h2:after {
+            display: none;
+        }
+
+    .social-activity-wrapper .additional-content-item > .section-nav-wrapper a.viewall {
+        background: none;
+        color: #FFF;
+        margin: 0;
+    }
+
+        .social-activity-wrapper .additional-content-item > .section-nav-wrapper a.viewall:after {
+            content: "";
+            text-decoration: underline;
+        }
+
+.social-activity-wrapper .additional-content-item .notification-container.facebook .icon:before {
+    content: "";
+}
+
+.social-activity-wrapper .additional-content-item .notification-container.facebook .icon {
+    background: url(/Content/img/fb-icon-lg.png) no-repeat;
+    height: 50px;
+    background-size: 50px 50px;
+}
+
+.social-activity-wrapper .additional-content-item .notification-container.twitter .icon:before {
+    content: "";
+}
+
+.social-activity-wrapper .additional-content-item .notification-container.twitter .icon {
+    background: url(/Content/img/twitter-icon-lg.png) no-repeat;
+    height: 50px;
+    background-size: 50px 50px;
+}
+
+.social-activity-wrapper .additional-content-item .notification-container .total-notifications span,
+.social-activity-wrapper .additional-content-item .notification-container .total-notifications {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.socialtips-wrapper .load-btn-wrapper button.btn.btn-primary {
+    background-color: #f28c00;
+    border:none;
 }

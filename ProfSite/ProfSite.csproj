@@ -927,6 +927,7 @@
     <Content Include="Views\BravoVets\Partials\_Timeline.cshtml" />
     <Content Include="Views\Shared\_LayoutBravovets.cshtml" />
     <Content Include="Views\BravoVets\adherence.cshtml" />
+    <Content Include="Views\BravoVetsWidgets\SyndicatedContentWidgetv2.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
