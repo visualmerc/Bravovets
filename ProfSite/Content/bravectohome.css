@@ -913,12 +913,17 @@ a.orange:hover {
     }
 
 .support-benefits {
-    background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+    background: rgb(35, 158, 151);
     background-size: 100% auto;
     background-position: 100% 0%;
-    height: 400px;
     position: relative;
     text-align: center;
+}
+@media (min-width:992px) {
+    .support-benefits {
+        background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+        height: 400px;
+    }
 }
 
     .support-benefits h2 {
