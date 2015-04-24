@@ -74,6 +74,19 @@ namespace ProfSite.Controllers
             return PartialView("SyndicatedContentWidget", model);
         }
 
+        public ActionResult SocialContent()
+        {
+            int userId = GetCurrentUserId();
+            int langId = GetCountryId();
+
+            List<SyndicatedContent> contents = syndicatedContentService.GetTrendingTopics(userId, langId,
+                    ContentSortEnum.ContentDate, new PagingToken { StartRecord = 0, TotalRecords = 2 });
+
+            SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("social-content", "BravoVetsWidget_SocialContentWidget_Title", "/social-content", contents, true);
+
+            return PartialView("SyndicatedContentWidgetSimple", model);
+        }
+
 
         public ActionResult BravectoContent()
         {

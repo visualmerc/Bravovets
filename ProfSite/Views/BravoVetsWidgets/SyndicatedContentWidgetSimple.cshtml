@@ -1,0 +1,17 @@
+﻿@model  SyndicatedContentWidgetModel
+@using bvResources = ProfSite.Resources.Resource
+
+<h3>@bvResources.ResourceManager.GetString(Model.Title)</h3>
+@foreach (var item in Model.Contents)
+{
+    <div class="item">
+        <h4>@item.Title</h4>
+        @if (!string.IsNullOrEmpty(item.ImageUrl))
+        {
+            <img src="@item.ImageUrl" alt="@item.ImageName" />
+        }
+        <p>@Html.Raw(item.ContentText)</p>
+        @Html.Partial("SyndicatedContentShareLink", new SyndicatedShareLinkModel { SyndicatedContentId = item.Id, EnableShare = true, ShowShare = Model.ShowShare })
+
+    </div>
+}
