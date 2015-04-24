@@ -37,30 +37,8 @@
         </div>
         <div class="col-md-4 social-content-column">
             @Html.Action("BravectoContent", "BravovetsWidgets")
-            @Html.Action("SocialContent", "BravoVetsWidgets")
-            <div class="item">
-                <h4>A TALE OF TWO TREATMENTS</h4>
-                <p>
-                    Take a look at two pet owners treatment experiences and discover how much more 
-                    convenient and effective 12-week-long Bravecto can be compared to a traditional 
-                    4-week treatment.
-                </p>
-                <a href="#" class="share-this">
-                    Share this
-                    <i class="icon icon-share"></i>
-                </a>
-            </div>
-            <div class="item">
-                <h4>4 WEEK VS. 12-WEEK FLEA AND TICK PROTECTION</h4>
-                <img src="~/Content/img/Bravecto_BravoPets_videothumb.jpg" />
-                <p>
-                    
-test
-                </p>
-                <a href="#" class="share-this">
-                    Share this
-                    <i class="icon icon-share"></i>
-                </a>
+            <div class="content-widget">
+                @Html.Action("SocialContent", "BravoVetsWidgets")
             </div>
         </div>
     </div>
@@ -79,6 +57,9 @@ test
                     $('#post-to-facebook').addClass('btn-default');
                 }
             });
+
+            $(".content-widget").find(".share").socialPostDialog({ "dialogType": "trendingtopics", "fileupload": false });
+
         });
     </script>
 }
