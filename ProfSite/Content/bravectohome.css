@@ -1357,6 +1357,13 @@ footer {
     padding-bottom: 160px;
 }
 
+.footer-disc {
+    margin-left: 200px;
+    text-align: left;
+    max-width: 500px;
+    font-size: 0.9em;
+}
+
 .selectsitebg .jumbo-home-overlay {
     top: -100px;
     background-color: rgba(0, 153, 148, 0.9);
