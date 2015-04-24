@@ -1086,4 +1086,7 @@
   <data name="BravoVetsWidget_SocialContentWidget_Title" xml:space="preserve">
     <value>LATEST SOCIAL CONTENT</value>
   </data>
+  <data name="BravoVetsWidget_LatestResourcesWidget_Title" xml:space="preserve">
+    <value>Latest Resources</value>
+  </data>
 </root>

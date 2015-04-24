@@ -93,13 +93,14 @@ namespace ProfSite.Controllers
             int userId = GetCurrentUserId();
             int langId = GetCountryId();
 
-            var contents =new List<SyndicatedContent>();
+            List<SyndicatedContent> contents = syndicatedContentService.GetBravectoResources(userId, langId,
+                    ContentSortEnum.ContentDate, new PagingToken { StartRecord = 0, TotalRecords = 2 });
             if (contents.Count.Equals(0))
                 return new EmptyResult();
 
 
-            SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("bravecto-content", "Bravecto Content", "/resourcetopics", contents,false);
-            return PartialView("SyndicatedContentWidget", model);
+            SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("bravovets-resources", "BravoVetsWidget_LatestResourcesWidget_Title", "/bravovetsresources", contents, true);
+            return PartialView("SyndicatedContentWidgetSimple", model);
         }
 
         public ActionResult SocialActivity()

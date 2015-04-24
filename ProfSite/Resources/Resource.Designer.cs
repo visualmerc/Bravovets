@@ -1552,6 +1552,15 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latest Resources.
+        /// </summary>
+        public static string BravoVetsWidget_LatestResourcesWidget_Title {
+            get {
+                return ResourceManager.GetString("BravoVetsWidget_LatestResourcesWidget_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Social Activity.
         /// </summary>
         public static string BravoVetsWidget_SocialActivityWidget_SocialActivity {
