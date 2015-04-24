@@ -348,11 +348,11 @@ a.orange:hover {
     }
 
 /*.jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,*/
-.jumbotron.resources-page .bottom-jumbo-overlay,
+/*.jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay {
     margin: 0 25px 0 25px;
-}
+}*/
 
 .simpleheaderrow h2 {
     text-align: center;
