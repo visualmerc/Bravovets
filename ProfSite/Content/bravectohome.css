@@ -669,6 +669,7 @@ a.orange:hover {
     color: #009994;
     font-size: 28px;
     margin-top: 0;
+    text-transform: uppercase;
 }
 
 .social-content-column .item {
@@ -678,10 +679,12 @@ a.orange:hover {
 
 .social-content-column h4 {
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .social-content-column a.share-this {
     color: #f28c00;
+    text-transform: uppercase;
 }
 /*end*/
 
