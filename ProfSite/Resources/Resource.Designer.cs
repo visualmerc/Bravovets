@@ -1588,6 +1588,15 @@ namespace ProfSite.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LATEST SOCIAL CONTENT.
+        /// </summary>
+        public static string BravoVetsWidget_SocialContentWidget_Title {
+            get {
+                return ResourceManager.GetString("BravoVetsWidget_SocialContentWidget_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Brazil.
         /// </summary>
         public static string Brazil {

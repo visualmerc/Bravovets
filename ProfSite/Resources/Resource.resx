@@ -1083,4 +1083,7 @@
   <data name="BravoVets_SocialTips_LoadMorePosts" xml:space="preserve">
     <value>LOAD MORE POSTS</value>
   </data>
+  <data name="BravoVetsWidget_SocialContentWidget_Title" xml:space="preserve">
+    <value>LATEST SOCIAL CONTENT</value>
+  </data>
 </root>
