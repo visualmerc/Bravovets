@@ -686,6 +686,10 @@ a.orange:hover {
     color: #f28c00;
     text-transform: uppercase;
 }
+
+.social-content-column .content-widget {
+    margin-bottom: 20px;
+}
 /*end*/
 
 /* Resource page*/
