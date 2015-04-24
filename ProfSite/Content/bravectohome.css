@@ -1297,9 +1297,9 @@ footer {
             #side-nav ul.nav li > a {
                 background-color: #f28c00;
                 border-radius: 50%;
-                height: 15px;
-                width: 15px;
-                padding: 11px;
+                height: 10px;
+                width: 10px;
+                padding: 6px;
                 display: inline-block;
                 text-decoration: none;
                 vertical-align: middle;
@@ -1329,8 +1329,10 @@ footer {
 
             #side-nav ul.nav li.active a {
                 background-color: rgba(0, 153, 148, 0.8);
-                height: 18px;
-                width: 18px;
+                height: 10px;
+                width: 10px;
+                padding: 8px;
+                margin-left: -2px;
             }
 
             #side-nav ul.nav li a:hover, #side-nav ul li a:focus, #side-nav ul li a:active {
