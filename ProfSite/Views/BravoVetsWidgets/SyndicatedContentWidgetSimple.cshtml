@@ -11,6 +11,19 @@
             <img src="@item.ImageUrl" alt="@item.ImageName" />
         }
         <p>@Html.Raw(item.ContentText)</p>
+        @if (item.SyndicatedLinks != null && item.SyndicatedLinks.Count > 0)
+        {
+            <div class="attachment-wrapper">
+                <h5>@bvResources.BravoVets_Attachments</h5>
+                <hr class="diagonal diagonal2">
+                <ul>
+                    @foreach (var syndicatedLink in item.SyndicatedLinks)
+                    {
+                        @Html.Partial("~/Views/BravoVets/SyndicatedContentLink.cshtml", syndicatedLink)
+                    }
+                </ul>
+            </div>
+        }
         @Html.Partial("SyndicatedContentShareLink", new SyndicatedShareLinkModel { SyndicatedContentId = item.Id, EnableShare = true, ShowShare = Model.ShowShare })
 
     </div>
