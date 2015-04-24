@@ -324,7 +324,9 @@ a.orange:hover {
     background-color: rgb(0, 153, 148);
     border-top: 1px solid #fff;
     padding: 20px 0;
-    margin: 25px 25px 0 25px;
+    /* margin: 25px 25px 0 25px;*/
+    width: 100%;
+    margin: 0;
 }
 
     .bottom-jumbo-overlay h4 {
@@ -345,7 +347,7 @@ a.orange:hover {
         background: rgba(0, 153, 148, 1);
     }
 
-.jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,
+/*.jumbotron.unlinkedaccounts-page .bottom-jumbo-overlay,*/
 .jumbotron.resources-page .bottom-jumbo-overlay,
 .jumbotron.contactus-page .bottom-jumbo-overlay,
 .jumbotron.products .bottom-jumbo-overlay {
