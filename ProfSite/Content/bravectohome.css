@@ -111,89 +111,92 @@ a.orange:hover {
     min-height: 40px;
     background-color: #EEE;
 }
+
 @media (min-width:500px) {
     #subheader {
         margin-top: 77px;
     }
 }
+
 @media (min-width:680px) {
     #subheader {
         margin-top: 50px;
     }
 }
+
 @media (min-width:768px) {
     #subheader {
         margin-top: 0;
     }
 }
 
-    #subheader.withpadding {
-        padding: 5px 0;
-    }
+#subheader.withpadding {
+    padding: 5px 0;
+}
 
-    #subheader span {
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 13px;
-        color: #009994;
-    }
+#subheader span {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 13px;
+    color: #009994;
+}
 
-    #subheader a.dropdown-toggle {
-        background-color: #009994;
-        color: #fff;
+#subheader a.dropdown-toggle {
+    background-color: #009994;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 100%;
+    margin: -5px 0;
+    padding: 15px;
+}
+
+#subheader .dropdown-menu {
+    left: auto;
+    right: 42px;
+    padding: 0;
+}
+
+#subheader ul.social-media-list {
+    float: right;
+    margin: 5px 0 0;
+}
+
+    #subheader ul.social-media-list li {
+        float: left;
         display: inline-block;
-        font-size: 1.2em;
-        font-weight: bold;
-        height: 100%;
-        margin: -5px 0;
-        padding: 15px;
+        padding: 0 2px;
     }
 
-    #subheader .dropdown-menu {
-        left: auto;
-        right: 42px;
-        padding: 0;
+#subheader .social-media-col {
+    padding-right: 0;
+}
+
+#subheader ul.subnavigation {
+    margin: 0;
+}
+
+    #subheader ul.subnavigation li {
+        float: left;
+        display: inline-block;
     }
 
-    #subheader ul.social-media-list {
+    #subheader ul.subnavigation.subnavigation-right {
         float: right;
-        margin: 5px 0 0;
     }
 
-        #subheader ul.social-media-list li {
-            float: left;
-            display: inline-block;
-            padding: 0 2px;
+        #subheader ul.subnavigation.subnavigation-right li:first-child {
+            border-right: 1px solid #DDD;
         }
 
-    #subheader .social-media-col {
-        padding-right: 0;
+    #subheader ul.subnavigation li > a {
+        color: #394147;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        padding: 10px 15px;
     }
-
-    #subheader ul.subnavigation {
-        margin: 0;
-    }
-
-        #subheader ul.subnavigation li {
-            float: left;
-            display: inline-block;
-        }
-
-        #subheader ul.subnavigation.subnavigation-right {
-            float: right;
-        }
-
-            #subheader ul.subnavigation.subnavigation-right li:first-child {
-                border-right: 1px solid #DDD;
-            }
-
-        #subheader ul.subnavigation li > a {
-            color: #394147;
-            text-transform: uppercase;
-            font-weight: bold;
-            display: block;
-            padding: 10px 15px;
-        }
 
 #login-wrapper {
     padding: 5px 20px;
@@ -603,6 +606,10 @@ a.orange:hover {
         margin-bottom: 20px;
     }
 
+        .social-container .social-content a.btn-facebookpost {
+            width: 100%;
+        }
+
     .social-container h2 {
         padding-left: 20px;
         color: #009994;
@@ -698,21 +705,22 @@ a.orange:hover {
     text-align: left;
     margin-top: 100px;
 }
+
 .static-body.resources-body-less {
     margin-top: 50px;
 }
 
-    .static-body.resources-body.nomargin {
-        margin-top: 0;
-    }
+.static-body.resources-body.nomargin {
+    margin-top: 0;
+}
 
-    .static-body.resources-body.lightgrey {
-        background-color: #efefef;
-    }
+.static-body.resources-body.lightgrey {
+    background-color: #efefef;
+}
 
-    .static-body.resources-body.darkgrey {
-        background-color: #E8E8E8;
-    }
+.static-body.resources-body.darkgrey {
+    background-color: #E8E8E8;
+}
 
 .resource-searchrow input.form-control {
     padding: 10px 12px;
@@ -857,6 +865,14 @@ a.orange:hover {
     margin-bottom: 30px;
 }
 
+    .static-body.support-body.nopadding {
+        padding: 0;
+    }
+
+    .static-body.support-body.nopaddingtop {
+        padding-top: 0;
+    }
+
     .static-body.support-body.grey {
         background-color: #EFEFEF;
     }
@@ -908,6 +924,10 @@ a.orange:hover {
     width: 140px;
 }
 
+.bottom-support-download-row h3 {
+    color: #009994;
+}
+
 .bottom-support-download {
     margin-left: 160px;
     text-align: left !important;
@@ -930,41 +950,42 @@ a.orange:hover {
 
 .support-benefits {
     background: rgb(35, 158, 151);
-    background-size: 100% auto;
     background-position: 100% 0%;
     position: relative;
     text-align: center;
 }
+
 @media (min-width:992px) {
     .support-benefits {
         background: url(/Content/img/Bravecto_Support_greenbgimg.jpg) no-repeat center;
+        background-size: cover;
         height: 400px;
     }
 }
 
-    .support-benefits h2 {
-        margin-top: 30px;
-        margin-bottom: 20px;
-        font-size: 32px;
-    }
+.support-benefits h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
 
-    .support-benefits h2,
-    .support-benefits p,
-    .support-benefits h3 {
-        color: #FFF;
-    }
+.support-benefits h2,
+.support-benefits p,
+.support-benefits h3 {
+    color: #FFF;
+}
 
-    .support-benefits div h3 {
-        border-bottom: 2px solid #FFF;
-        padding-bottom: 20px;
-        text-align: left;
-        font-size: 24px;
-    }
+.support-benefits div h3 {
+    border-bottom: 2px solid #FFF;
+    padding-bottom: 20px;
+    text-align: left;
+    font-size: 24px;
+}
 
-    .support-benefits div p {
-        text-align: left;
-        font-size: 1.4em;
-    }
+.support-benefits div p {
+    text-align: left;
+    font-size: 1.4em;
+}
 
 .supportbottom {
     background: url(/Content/img/Bravecto_Support_img7.jpg) no-repeat center;
@@ -974,11 +995,92 @@ a.orange:hover {
     text-align: center;
 }
 
-.support-benefits.adherence-benefits div h3 {
-    font-size: 20px;
+.support-benefits.adherence-benefits {
+    background: url(/Content/img/extend-header.jpg) no-repeat center;
+    background-size: cover;
 }
 
+    .support-benefits.adherence-benefits div h3 {
+        font-size: 20px;
+    }
+
 /* end*/
+
+/* Innovation */
+.innovation-benefits {
+    background: url(/Content/img/benefits-header.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
+    .innovation-benefits .bottom-benefits {
+        margin-top: 30px;
+    }
+
+.innovation-body h2 {
+    color: #009994;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bottom-download {
+    margin-top: 30px;
+}
+
+.safety-list-items-row {
+    margin-top: 50px;
+}
+
+    .safety-list-items-row p {
+        text-align: left;
+    }
+
+ul.safety-list > li {
+    padding: 10px 0;
+    border-bottom: 1px solid #DDD;
+}
+
+ul.safety-list li:first-child {
+    border-top: 1px solid #DDD;
+}
+
+ul.safety-list li p {
+    float: left;
+    padding-left: 20px;
+    text-align: left !important;
+    width: 330px;
+    margin-top: 0;
+}
+
+ul.safety-list.innovationbugs li {
+    padding: 10px;
+}
+
+    ul.safety-list.innovationbugs li div.col-md-2 {
+        width: 14.66667%;
+        padding:0;
+    }
+    ul.safety-list.innovationbugs li div.col-md-10 {
+        padding:0;
+    }
+    ul.safety-list.innovationbugs li p {
+        width: auto;
+    }
+
+ul.safety-list li span.label {
+    background-color: #712031;
+    padding: 8px;
+    border-radius: 50%;
+    float: left;
+}
+
+ul.safety-list li p span.header {
+    display: block;
+    font-family: 20px;
+    font-weight: bold;
+}
+
+/*end/
 
 /* Unlinked accounts */
 .unlinked-subheaderleft {
@@ -1149,29 +1251,29 @@ form.form-reply button.btn-primary {
     }
 }
 
-    .marketing-row p {
-        font-size: 18px;
+.marketing-row p {
+    font-size: 18px;
+}
+
+.marketing-row img {
+    display: inline-block;
+}
+
+.marketing-row h2 {
+    font-family: 28px;
+}
+
+    .marketing-row h2.support {
+        color: #0098d8;
     }
 
-    .marketing-row img {
-        display: inline-block;
+    .marketing-row h2.innovation {
+        color: #512178;
     }
 
-    .marketing-row h2 {
-        font-family: 28px;
+    .marketing-row h2.adherence {
+        color: #dd042b;
     }
-
-        .marketing-row h2.support {
-            color: #0098d8;
-        }
-
-        .marketing-row h2.innovation {
-            color: #512178;
-        }
-
-        .marketing-row h2.adherence {
-            color: #dd042b;
-        }
 
 .full-container {
     text-align: center;
@@ -1194,6 +1296,11 @@ form.form-reply button.btn-primary {
     background: url(/Content/img/video.jpg) no-repeat center;
     background-size: cover;
 }
+
+    .video-wrapper.innovation {
+        background: url(/Content/img/videoplayer-img.jpg) no-repeat center;
+        height: 562px;
+    }
 
 .static-section {
     margin-top: 10px;

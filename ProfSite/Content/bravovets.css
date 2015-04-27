@@ -320,7 +320,7 @@ ul.bravecto-content.syndicatedcontent-socialtips {
 .additional-content-container .content-wrapper .footer {
     border-top: 0;
 }
-
+.additional-content-container .content-wrapper .share-wrapper .share-this.share,
 .additional-content-container .content-wrapper .share-wrapper a.btn.btn-link {
     color: #f28c00;
     font-weight: bold;

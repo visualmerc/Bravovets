@@ -143,41 +143,6 @@ a.navbar-brand.bravopets {
         margin-top: 20px;
     }
 
-.safety-list-items-row {
-    margin-top: 50px;
-}
-
-    .safety-list-items-row p {
-        text-align: left;
-    }
-
-ul.safety-list > li {
-    padding: 10px 0;
-    border-bottom: 1px solid #DDD;
-}
-
-ul.safety-list li:first-child {
-    border-top: 1px solid #DDD;
-}
-
-ul.safety-list li p {
-    float: left;
-    padding-left: 20px;
-}
-
-ul.safety-list li span.label {
-    background-color: #712031;
-    padding: 8px;
-    border-radius: 50%;
-    float: left;
-}
-
-ul.safety-list li p span.header {
-    display: block;
-    font-family: 20px;
-    font-weight: bold;
-}
-
 ul.faq-list {
     margin-top: 30px;
 }

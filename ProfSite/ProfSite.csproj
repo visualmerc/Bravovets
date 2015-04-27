@@ -395,6 +395,7 @@
     <Content Include="Content\img\adherence-icon.jpg" />
     <Content Include="Content\img\adherence.jpg" />
     <Content Include="Content\img\adherenceheader.jpg" />
+    <Content Include="Content\img\benefits-header.jpg" />
     <Content Include="Content\img\Bravecto_BravoPets_header.jpg" />
     <Content Include="Content\img\Bravecto_BravoPets_videothumb.jpg" />
     <Content Include="Content\img\Bravecto_ContactUs_header.jpg" />
@@ -409,9 +410,13 @@
     <Content Include="Content\img\Bravecto_Support_img7.jpg" />
     <Content Include="Content\img\Bravecto_Support_rolethumbnail.jpg" />
     <Content Include="Content\img\BravoPets_logo.png" />
+    <Content Include="Content\img\bug1.jpg" />
+    <Content Include="Content\img\bug2.jpg" />
+    <Content Include="Content\img\bug3.jpg" />
     <Content Include="Content\img\bug_icon.png" />
     <Content Include="Content\img\calendar-alert_icon.png" />
     <Content Include="Content\img\calendar_icon.png" />
+    <Content Include="Content\img\check.jpg" />
     <Content Include="Content\img\clock_anim_00.png" />
     <Content Include="Content\img\clock_anim_01.png" />
     <Content Include="Content\img\clock_anim_02.png" />
@@ -429,6 +434,7 @@
     <Content Include="Content\img\clock_anim_blur10.png" />
     <Content Include="Content\img\clock_anim_blur11.png" />
     <Content Include="Content\img\clock_icon.png" />
+    <Content Include="Content\img\extend-header.jpg" />
     <Content Include="Content\img\hand_icon.png" />
     <Content Include="Content\img\innovationheader.jpg" />
     <Content Include="Content\img\linkedaccounts-bottom.jpg" />
@@ -438,6 +444,7 @@
     <Content Include="Content\img\largedogs.png" />
     <Content Include="Content\img\mediumsizeddogs.png" />
     <Content Include="Content\img\minus_icon.png" />
+    <Content Include="Content\img\parasite-chart.jpg" />
     <Content Include="Content\img\plus_icon.png" />
     <Content Include="Content\img\productsheader.jpg" />
     <Content Include="Content\img\FB-icon.png" />
@@ -460,6 +467,7 @@
     <Content Include="Content\img\twitter-icon.jpg" />
     <Content Include="Content\img\twitter-icon.png" />
     <Content Include="Content\img\video.jpg" />
+    <Content Include="Content\img\videoplayer-img.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\main2.css" />
     <Content Include="Content\modal_bullet_format.css" />
