@@ -39,7 +39,7 @@
             return this;
         },
         _bindPostToTwitter: function (self) {
-            $("#post-to-twitter").socialPostDialog({"dialogType":"twitter"});
+            $("#post-tweet").socialPostDialog({"dialogType":"twitter"});
         },
         _timeline: function () {
             var self = this;

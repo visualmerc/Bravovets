@@ -451,7 +451,6 @@
         },
         _shareDialog_InitShareOptions: function (self) {
 
-
             if (self._dialogType == "facebook") {
                 $(".tweetlength-wrapper").hide();
             } else if (self._dialogType == "twitter") {

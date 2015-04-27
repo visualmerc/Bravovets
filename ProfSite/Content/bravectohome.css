@@ -1121,8 +1121,8 @@ form.form-reply button.btn-primary {
     color: #f28c00;
 }
 
-#post-to-facebook,
-#post-to-twitter {
+#post-message,
+#post-tweet {
     width: 100%;
 }
 
