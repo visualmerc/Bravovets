@@ -695,6 +695,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\bravovetsresources.js" />
     <Content Include="Scripts\calendar\bootstrap-datepicker.js" />
     <Content Include="Scripts\calendar\bootstrap-timepicker.js" />
     <Content Include="Scripts\calendar\bootstrap-timepicker.min.js" />
@@ -937,6 +938,8 @@
     <Content Include="Views\BravoVets\adherence.cshtml" />
     <Content Include="Views\BravoVetsWidgets\SyndicatedContentWidgetv2.cshtml" />
     <Content Include="Views\BravoVetsWidgets\SyndicatedContentWidgetSimple.cshtml" />
+    <Content Include="Views\BravoVets\Partials\_ResourceItem.cshtml" />
+    <Content Include="Views\BravoVets\Partials\_ResourceItems.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

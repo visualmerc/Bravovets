@@ -1,0 +1,24 @@
+﻿@model ViewSyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+@for (int i = 0; i < Model.Content.Count; i += 0)
+{
+    if (i % 2 == 0)
+    {
+        @BeginRow()
+    }
+    Html.RenderPartial("Partials/_ResourceItem", Model.Content[i]);
+    if (i % 2 != 0)
+    {
+        @EndRow()
+    }
+    i++;
+}
+@helper BeginRow()
+{
+    @:<div class="resource-item-row row">
+}
+@helper EndRow()
+{
+@:</div>
+}

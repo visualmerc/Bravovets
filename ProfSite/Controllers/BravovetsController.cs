@@ -318,6 +318,13 @@ namespace ProfSite.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetBravovetsResources(int page, IEnumerable<string> filters)
+        {
+            var model = GetResourceTopics(ContentSortEnum.ContentDate, ContentFilterEnum.All, null, 4);
+            return PartialView("Partials/_ResourceItems", model);
+        }
+
+        [HttpGet]
         [ActionName("about-us")]
         public ActionResult AboutUs()
         {
