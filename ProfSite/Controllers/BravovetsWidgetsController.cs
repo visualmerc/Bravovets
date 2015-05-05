@@ -65,13 +65,16 @@ namespace ProfSite.Controllers
             List<SyndicatedContent> contents = syndicatedContentService.GetTrendingTopics(userId, langId,
                     ContentSortEnum.ContentDate, new PagingToken{StartRecord = 0,TotalRecords = 5});
 
-            SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("trending-topics", "Trending Topics", "/trendingtopics", contents,true);
-
             if (v == 2)
             {
+                SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("trending-topics", "Social Content", "/social-content", contents, true);
                 return PartialView("SyndicatedContentWidgetv2", model);
             }
-            return PartialView("SyndicatedContentWidget", model);
+            else
+            {
+                SyndicatedContentWidgetModel model = GetSyndicatedContentWidgetModel("trending-topics", "Trending Topics", "/trendingtopics", contents, true);
+                return PartialView("SyndicatedContentWidget", model);
+            }
         }
 
         public ActionResult SocialContent()

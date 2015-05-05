@@ -6,6 +6,7 @@
         this.widgetList = null;
         this.filter = null;
         this.getUrl = null;
+        this.query = null;
     }
 
     $.extend(BravovetsResources.prototype, {
@@ -22,11 +23,28 @@
             this.filters = self.widget.find(allOptions.filters);
             this.loadMore = $(allOptions.loadMore);
             this.widgetList = self.widget.find(allOptions.listName);
+            this.itemClass = allOptions.itemClass;
+            this.query = $(allOptions.query);
             this.page = 1;
 
+            if (self.query) {
+                self.previousQuery = '';
+                self._bindQuery();
+            }
             self._bindPaging();
             self._bindFilter();
             self._getResources();
+        },
+        _bindQuery: function () {
+            var self = this;
+            self.query.on('blur', function (e) {
+                self.page = 1;
+                var q = self.query.val();
+                if (q != '' && self.previousQuery != q) {
+                    self.previousQuery = self.query.val();
+                    self._getResources(true);
+                }
+            });
         },
         _bindFilter: function () {
             var self = this;
@@ -52,17 +70,20 @@
                     selectedFilters.push($(this).val());
                 }
             });
-
+            var query = '';
+            if (self.query) {
+                query = self.query.val();
+            }
             self.loadMore.attr('disabled', true);
             $.ajax({
                 url: self.getUrl,
-                data: { page: self.page, filters: selectedFilters },
+                data: { page: self.page, filters: selectedFilters, query: query },
                 traditional: true,
                 type: "GET",
                 cache: false,
                 success: function (data) {
                     var response = $("<div>" + data + "</div");
-                    var newItems = response.find("div.resource-item-row");
+                    var newItems = response.find(self.itemClass);
 
                     if (clearContent && clearContent === true) {
                         self.widgetList.html(newItems);

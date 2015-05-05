@@ -87,6 +87,13 @@ namespace ProfSite.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetBravovetsSocialContent(string query, int page, IEnumerable<string> filters)
+        {
+            var model = GetResourceTopics(ContentSortEnum.ContentDate, ContentFilterEnum.All, null, 4);
+            return PartialView("Partials/_SocialContentItems", model);
+        }
+
+        [HttpGet]
         [ActionName("linked-accounts")]
         public ActionResult LinkedAccounts()
         {

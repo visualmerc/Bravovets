@@ -940,6 +940,8 @@
     <Content Include="Views\BravoVetsWidgets\SyndicatedContentWidgetSimple.cshtml" />
     <Content Include="Views\BravoVets\Partials\_ResourceItem.cshtml" />
     <Content Include="Views\BravoVets\Partials\_ResourceItems.cshtml" />
+    <Content Include="Views\BravoVets\Partials\_SocialContentItems.cshtml" />
+    <Content Include="Views\BravoVets\Partials\_SocialContentItem.cshtml" />
     <None Include="Web.Dev.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

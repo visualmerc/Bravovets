@@ -115,6 +115,7 @@ div.sitemap-wrapper {
 
     .social-content-items-list .social-content-item p {
         margin: 3px 0;
+        margin-bottom:20px;
         font-size: 16px;
     }
 
@@ -335,7 +336,10 @@ ul.bravecto-content.syndicatedcontent-socialtips {
 .additional-content-container .content-wrapper .share-wrapper .btn-share:after {
     color: #f28c00;
 }
-
+.additional-content-container .bv-carousel .carousel-control {
+    background-color:#f28c00;
+    padding:5px;
+}
 .additional-content-container .bv-carousel .carousel-control.left {
     left: 0;
 }

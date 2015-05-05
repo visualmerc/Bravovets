@@ -1,0 +1,8 @@
+﻿@model ViewSyndicatedContentModel
+@using bvResources = ProfSite.Resources.Resource
+
+@for (int i = 0; i < Model.Content.Count; i += 0)
+{
+    Html.RenderPartial("Partials/_SocialContentItem", Model.Content[i]);
+    i++;
+}
