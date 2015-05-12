@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Support";
+    ViewBag.Title = "Growth";
     ViewBag.SelectedNode = "support";
     Layout = "~/Views/Shared/_LayoutBravovets.cshtml";
     ViewBag.DisplaySubnavigation = true;
@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row simpleheaderrow">
-        <h2>SUPPORT</h2>
+        <h2>GROWTH</h2>
     </div>
 </div>
 <div class="jumbotron support-page">
@@ -106,7 +106,7 @@
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
             <br />
-            <a href="#" class="share share-this">
+            <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                 Share this
                 <i class="icon icon-share"></i>
             </a>
@@ -117,7 +117,7 @@
     <div class="support-benefits-overlay">
         <div class="container">
             <div class="row">
-                <h2>THE BENEFITS OF BRAVECTO</h2>
+                <h2>WITH THE BENEFITS OF BRAVECTO YOU WILL BE ABLE TO</h2>
                 <div class="col-md-3">
                     <h3>RECLAIM CLIENT LOYALTY</h3>
                     <p>
@@ -172,7 +172,7 @@
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
             <br />
-            <a href="#">
+            <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                 Share this
                 <i class="icon icon-share"></i>
             </a>
@@ -205,11 +205,11 @@
                     With 69% of online adults (that's about half of the entire adult US population)
                     using an online social network<sup>2</sup> - it's a business imperative to make your presence known.
                 </p>
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="text-left">
+                    <div>
                         <a href="#">LINK TO FACEBOOK</a>
                     </div>
-                    <div class="col-md-6">
+                    <div>
                         <a href="#">LINK TO TWITTER</a>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
             <br />
-            <a href="#" class="share share-this">
+            <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                 Share this
                 <i class="icon icon-share"></i>
             </a>
@@ -265,7 +265,7 @@
                 <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
             </a>
             <br />
-            <a href="#" class="share share-this">
+            <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                 Share this
                 <i class="icon icon-share"></i>
             </a>
@@ -273,6 +273,9 @@
     </div>
 </div>
 <div class="container">
+    <div class="row">
+        <hr />
+    </div>
     <div class="row">
         <p>
             <sup>*</sup> BRAVECTO is effective against <span class="italic">Rhipicephalus sanguineus</span> (brown dog tick) for 8 weeks after dosing.
@@ -286,3 +289,10 @@
         </p>
     </div>
 </div>
+@section scripts {
+<script type="text/javascript">
+        $(document).ready(function () {
+            $(".support-body").find(".share").socialPostDialog({ "dialogType": "resources", "fileupload": false });
+        });
+</script>
+}

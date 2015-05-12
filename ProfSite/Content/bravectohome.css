@@ -318,9 +318,31 @@ a.orange:hover {
 
 .top-jumbo-overlay h3.weeks {
     color: #fff;
-    font-size: 50px;
+    font-size: 46px;
     margin: 0;
     text-align: center;
+}
+
+.clock-outer-container .clock-wrapper {
+    position: absolute; 
+    bottom: 19px;
+}
+#tweleveweeks_container {
+    margin-bottom:-15px;
+}
+.clock-outer-container h1 {
+    margin-left:215px;
+    font-size:44px;
+    margin-top:0;
+    margin-bottom:0;
+    line-height:1em;
+}
+.jumbo-home-overlay.clock-outer-container {
+    position: relative;
+    top: 372px;
+}
+.clock-outer-container .top-jumbo-overlay {
+    position:relative;
 }
 
 .bottom-jumbo-overlay {
@@ -334,6 +356,8 @@ a.orange:hover {
 
     .bottom-jumbo-overlay h4 {
         text-align: center;
+        line-height: 1.4em;
+        font-size: 20px;
     }
 
     .bottom-jumbo-overlay.bravecto {
@@ -765,10 +789,12 @@ a.orange:hover {
     color: #009994;
     margin-bottom: 20px;
     text-align: left;
+    margin-top:10px;
 }
 
 .static-body.resources-body h3 {
     color: #009994;
+    margin-top:5px;
 }
 
 .resources-body .checkbox-wrapper {
@@ -907,6 +933,7 @@ a.orange:hover {
         .support-items ul li img {
             float: left;
             width: 200px;
+            height:150px;
         }
 
         .support-items ul li p {
@@ -1293,7 +1320,7 @@ form.form-reply button.btn-primary {
 .video-wrapper {
     height: 850px;
     background-color: rgba(0, 0, 0, 0.4);
-    background: url(/Content/img/video.jpg) no-repeat center;
+    background: url(/Content/img/videoplayer-img.jpg) no-repeat center;
     background-size: cover;
 }
 

@@ -77,7 +77,7 @@
                     <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                 </a>
                 <br />
-                <a href="#" class="share share-this">
+                <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                     Share this
                     <i class="icon icon-share"></i>
                 </a>
@@ -166,7 +166,7 @@
                     <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                 </a>
                 <br />
-                <a href="#" class="share share-this">
+                <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                     Share this
                     <i class="icon icon-share"></i>
                 </a>
@@ -237,7 +237,7 @@
                         <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                     </a>
                     <br />
-                    <a href="#" class="share share-this">
+                    <a href="#" class="share share-this" data-link="~/Content/img/Bravecto_Support_rolethumbnail.jpg">
                         Share this
                         <i class="icon icon-share"></i>
                     </a>
@@ -299,7 +299,9 @@
     </div>
 </div>
 <div class="container">
-    <hr />
+    <div class="row">
+        <hr />
+    </div>
     <div class="row">
         <p>
             <sup>*</sup> BRAVECTO is effective against Rhipicephalus sanguineus (brown dog tick) for 8 weeks after dosing.
@@ -310,3 +312,10 @@
         </p>
     </div>
 </div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".static-body").find(".share").socialPostDialog({ "dialogType": "resources", "fileupload": false });
+        });
+    </script>
+}

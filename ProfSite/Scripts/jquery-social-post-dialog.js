@@ -64,6 +64,7 @@
                 var url = "";
 
                 id = $(element).data("event-id");
+                self.link = $(element).data("link");
                 self._origElement = $(element);
 
                 var data = {
@@ -106,7 +107,9 @@
                         if (self._dialogType != "") {
                             self._dialogType = type;
                         }
-
+                        if (self.link) {
+                            dialog.find('textarea').val(self.link);
+                        }
                         self._bindShareDialog(self);
                     })
                     .on('hidden.bs.modal', function(e) {
