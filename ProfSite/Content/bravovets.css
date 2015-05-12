@@ -24,7 +24,9 @@
 .navbar-brand.bravovets {
     padding: 11px 0 20px 15px;
 }
-
+a.share.share-this {
+    text-transform:uppercase;
+}
 .complete-profile-wrapper .facebook-bg {
     background-color: #3b5998;
     color: #FFF;

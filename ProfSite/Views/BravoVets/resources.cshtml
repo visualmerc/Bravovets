@@ -52,7 +52,7 @@
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
                         <br />
-                        <a href="#">
+                        <a href="#" class="share share-this">
                             Share this
                             <i class="icon icon-share"></i>
                         </a>
@@ -233,7 +233,11 @@
                 listName: "ul.resources-list",
                 loadMore: '#load-more',
                 itemClass: 'li.resource-item',
-                getUrl: "/GetBravovetsResources"
+                getUrl: "/GetBravovetsResources",
+                afterAppend: function () {
+                    console.log('here');
+                    $(".resources-container").find(".share").socialPostDialog({ "dialogType": "resources", "fileupload": false });
+                }
             });
         });
     </script>

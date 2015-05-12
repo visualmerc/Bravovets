@@ -7,6 +7,7 @@
         this.filter = null;
         this.getUrl = null;
         this.query = null;
+        this.afterAppend = null;
     }
 
     $.extend(BravovetsResources.prototype, {
@@ -19,6 +20,7 @@
             };
             var allOptions = $.extend(defaults, options);
 
+            this.afterAppend = allOptions.afterAppend;
             this.getUrl = allOptions.getUrl;
             this.filters = self.widget.find(allOptions.filters);
             this.loadMore = $(allOptions.loadMore);
@@ -34,6 +36,11 @@
             self._bindPaging();
             self._bindFilter();
             self._getResources();
+        },
+        _bindItems:function () {
+            if (this.afterAppend) {
+                this.afterAppend();
+            }
         },
         _bindQuery: function () {
             var self = this;
@@ -96,6 +103,7 @@
                     } else {
                         self.loadMore.removeAttr('disabled', true);
                     }
+                    self._bindItems();
                 }
             });
         }

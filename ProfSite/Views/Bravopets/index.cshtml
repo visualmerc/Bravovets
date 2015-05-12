@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row marketing-row">
+        <div class="row marketing-row belowbravopetsheader">
             <p>
                 Ask your vet today about Bravecto – the first and only chewable
                 flea and tick protection that starts working in 2 hours and lasts up to
@@ -107,7 +107,7 @@
                             <span class="arrow-wrapper"><i class="icon icon-arrow-right"></i></span>
                         </a>
                         <br>
-                        <a href="#">
+                        <a href="#" class="share share-this">
                             Share this
                             <i class="icon icon-share"></i>
                         </a>
@@ -239,7 +239,7 @@
     </div>
 </div>
 <div id="safety">
-    <div class="static-section safety">
+    <div class="static-section safety safety-section">
         <div class="container">
             <div class="static-overlay bgbordeaux">
                 <h2>SAFETY</h2>
@@ -257,10 +257,10 @@
                 <li>Breeding dogs</li>
                 <li>Pregnant dogs</li>
                 <li>Lactating dogs</li>
-                <li class="underline">“Ivermectin-sensitive” dogs</li>
+                <li>“Ivermectin-sensitive” dogs</li>
             </ul>
             <p>
-                And, because <a href="#">Bravecto</a> works from the inside out, you, your family and other pets are not exposed to the chemical formula – unlike with traditional topical flea and tick treatments.
+                And, because Bravecto works from the inside out, you, your family and other pets are not exposed to the chemical formula – unlike with traditional topical flea and tick treatments.
                 <br />
                 Only your vet can provide the best and most convenient care that doesn’t compromise on efficacy and safety. <strong>Ask them about Bravecto today.</strong>
             </p>
@@ -273,12 +273,12 @@
             <h2>BRAVECTO FAQs</h2>
             <p>Get quick answers to some of the most frequently asked questions – or contact your vet to learn more about Bravecto.</p>
             <ul class="list-unstyled faq-list">
-                <li class="question-item">
+                <li class="question-item active">
                     <div class="question">
                         <p>Why is Bravecto only available through veterinarians?</p>
-                        <img src="~/Content/img/plus_icon.png" />
+                        <img src="~/Content/img/minus_icon.png" />
                     </div>
-                    <div class="content">
+                    <div class="content" style="display:block;">
                         <p>The veterinarian is the expert on pet health and can advise on the best and most appropriate treatments for pets. The prescription only status is also a regulatory requirement.</p>
                     </div>
                 </li>
@@ -465,10 +465,7 @@
                 aferLoaded()
             });
 
-            // do all this crap after its loaded
             function aferLoaded() {
-                console.log('They loaded!');
-
                 $.each(clockImgArr, function (key, val) {
                     if (key > 0) {
                         $('#tweleveweeks_container ul').append('<li class="' + val + ' clockface" style="display:none"><img src="' + clockImgPNGArr[key] + '" ></li>');

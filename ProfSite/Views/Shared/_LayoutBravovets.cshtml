@@ -23,7 +23,7 @@
     <div class="circles-header"></div>
     <div class="container">
         <div class="header clearfix">
-            <a class="prescribing-infolink" href="https://intervetus.naccvp.com/product/view/1047512?e=d97b22ed63e734e84c1a5910a9c8f531z1688">See Prescribing Information</a>
+            <a class="prescribing-infolink" target="_blank" href="https://intervetus.naccvp.com/product/view/1047512?e=d97b22ed63e734e84c1a5910a9c8f531z1688">See Prescribing Information</a>
             <nav>
                 <ul id="top-nav" class="nav nav-pills">
                     <li class="@(ViewBag.SelectedNode == "support" ? "active" : "")">
@@ -96,7 +96,7 @@
                         Logged in as [@User.Identity.Name]
                     </p>
                     <ul class="list-unstyled subnavigation subnavigation-right">
-                        <li>
+                        <li class="@(ViewBag.SelectedNode == "profile" ? "active" : "")">
                             <a href="/editprofile">
                                 PROFILE
                             </a>

@@ -193,7 +193,10 @@
                 itemClass: 'div.social-content-item',
                 query: '#Search',
                 loadMore: '#load-more',
-                getUrl: "/GetBravovetsSocialContent"
+                getUrl: "/GetBravovetsSocialContent",
+                afterAppend: function () {
+                    $(".social-content-items-list").find(".share").socialPostDialog({ "dialogType": "resources", "fileupload": false });
+                }
             });
         });
     </script>

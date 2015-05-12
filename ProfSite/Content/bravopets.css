@@ -24,6 +24,13 @@ a.navbar-brand.bravopets {
     background-color: rgba(113, 32, 49, 0.5);
 }
 
+.jumbo-home-overlay .top-jumbo-overlay{
+    background-color: rgba(113, 32, 49, 0.5);
+}
+.jumbo-home-overlay .bottom-jumbo-overlay{
+    background-color: rgb(113, 32, 49);
+}
+
 .top-jumbo-overlay .right-clock-text {
     position: relative;
     height: 220px;
@@ -40,6 +47,7 @@ a.navbar-brand.bravopets {
 
     .bottom-jumbo-overlay h4 {
         text-align: center;
+        font-size:22px;
     }
 
 .jumbotron.bravopets-home {
@@ -47,7 +55,9 @@ a.navbar-brand.bravopets {
     background-size: cover;
     background-position: 100% 26%;
 }
-
+.marketing-row.belowbravopetsheader {
+    margin-top:100px;
+}
 #side-nav ul.nav li.active a {
     background-color: rgba(113, 32, 49, 0.8);
 }
@@ -66,6 +76,13 @@ a.navbar-brand.bravopets {
 
 .static-body.protection {
     padding-bottom: 90px;
+}
+.static-body.protection p,
+.static-body.safety-section p {
+    margin:30px 0;
+}
+.static-body.safety ul.list-items {
+    margin:30px auto;
 }
 
 .static-section.safety {
