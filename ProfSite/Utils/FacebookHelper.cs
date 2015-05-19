@@ -32,8 +32,13 @@ namespace ProfSite.Utils
         public const string facebook_oauth_url =
             "https://www.facebook.com/dialog/oauth?client_id={0}&redirect_uri={1}&scope={2}";
 
+        //public const string facebook_scope =
+        //    "email,read_stream,user_likes,user_videos,user_status,user_friends,status_update,share_item,friends_status,manage_notifications,publish_actions,manage_pages";
+
+
         public const string facebook_scope =
-            "email,read_stream,user_likes,user_videos,user_status,user_friends,status_update,share_item,friends_status,manage_notifications,publish_actions,manage_pages";
+            "email,read_stream,user_likes,user_videos,user_status,user_friends,manage_notifications,publish_actions,manage_pages";
+
 
         public static string facebook_graph_api = "https://graph.facebook.com";
         public static string facebook_pages_url = "{0}/{1}/accounts?access_token={2}";
